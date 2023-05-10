@@ -1,0 +1,66 @@
+/* ------------------------MAIN DATA--------------------- */
+body{
+  height: 100%;
+}
+section {
+  padding: 0rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: rgb(191, 53, 53);
+  margin-bottom: 1rem;
+}
+
+#main-section {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding:8rem 0 2rem 0;
+  margin: 0 10rem 0 10rem;
+}
+
+#main-heading,
+.featured-products h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: rgb(164, 41, 41);
+  font-weight: 900;
+}
+
+#main-para {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: justify;
+  font-weight: 500;
+}
+
+.main-image img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 3rem;
+}
+
+.main .btns {
+  font-size: 1.2rem;
+}
+
+.main-data {
+  margin: auto;
+}
+
+span {
+  color: rgb(8, 5, 97);
+}
+
+.productBoxMain {
+  position: relative;
+  width: 100%;
+  height: 18rem;
+  padding: 1.2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.container-sales {
+  padding: 2rem 0 2rem 2rem;
+}

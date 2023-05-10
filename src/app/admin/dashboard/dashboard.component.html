@@ -1,0 +1,42 @@
+<div class="grid grid-two-columns">
+    <app-navbar></app-navbar>
+
+    <div class="container">
+        <section>
+            <div class="dashboardOverview" id="dashboardOverview">
+
+                <h2>Dashboard</h2>
+
+                <div class="totalAmount grid grid-dashboard-two-columns">
+                    <div class="">
+                        <h3>Total Sales Amount</h3>
+                        <p> {{totalProductAmount}} </p>
+                    </div>
+                    <div class="">
+                        <h3>Total Product Amount</h3>
+                        <p> {{totalProductAmount}} </p>
+                    </div>
+                </div>
+
+                <div class="grid dashboardOverview-three-column dashboardHistory">
+                    <div routerLink="/admin/manageProducts" class="totalProducts">
+                        <p>Products</p>
+                        <p>{{allProducts.length }}</p>
+                    </div>
+                    <div routerLink="/admin/category" class="totalProducts">
+                        <p>Category</p>
+                        <p>{{categoryCount.length }}</p>
+                    </div>
+                    <div routerLink="/admin/manageOrders" class="totalOrders">
+                        <p>Orders</p>
+                        <p>1</p>
+                    </div>
+                    <div routerLink="/admin/users" class="totalUsers">
+                        <p>Users</p>
+                        <p>{{ allUser.length }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

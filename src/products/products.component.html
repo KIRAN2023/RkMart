@@ -1,0 +1,52 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<!-- ------------------Product Section----------- -->
+
+<div class="grid-section grid-two-section">
+  <app-category></app-category>
+
+  <div class="">
+    <div class="searchBox">
+      <input type="search" id="productBox" class="clearSearch" [(ngModel)]="searchData" placeholder="Search Products">
+    </div>
+
+    <div class="productsDiv productGrid grid-four-columns">
+      <div *ngFor="let product of updatedProducts"
+        [ngClass]="{notActivate:!(product.title.toLowerCase().includes(searchData))}">
+
+        <ng-container>
+          <a routerLink="productDescription/{{product.id}}">
+            <div class="productBox groceryProducts grocery {{product.classData}}"
+              attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
+              attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+              <div class="productImage">
+                <figure><a>
+                    <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
+                    </div>
+                  </a>
+                  <figcaption class="figCaptionDiv"><b class="findProduct">{{product.productName}}</b></figcaption>
+                  <div class="addWishlistDiv">
+                    <button class="btnD addRemove" title="Add to Category">Add</button>
+                    <!-- <p title="Add to Wishlist"><i class="fa-regular fa-heart"></i></p> -->
+                  </div>
+                </figure>
+              </div>
+              <div class="productDetails"><small>{{product.quantity}}</small></div>
+              <div class="productPrice">
+                <div class="ratings"><span class="rating">{{product.rating}}<i
+                      class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
+                </div>
+                <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' : '1.0-0'}}<s
+                    class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
+                    class="btnD offerBtn"><small
+                      class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                      OFF</small></button></p>
+              </div>
+            </div>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+:root {
+    --box-shadow: -1px 6px 16px -1px rgba(8, 8, 8, 1);
+    --btns-background: rgb(29, 106, 193);
+    --white: #fff;
+    --black: #000000;
+    --font-hover: rgb(244, 240, 240);
+    --background-hover: rgba(19, 110, 29, 0.697);
+}
+
+section {
+    padding: 2rem 0;
+}
+
+section h2{
+    margin-left: 10rem;
+}
+
+.container {
+    max-width: 140rem;
+}
+
+.grid-two-columns {
+    display: grid;
+    grid-template-columns: 10% 85%;
+}
+
+.valid{
+    color: green;
+}
+
+.invalid{
+    color: red;
+}
+
+.common-heading {
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.common-heading::before {
+    content: "";
+    position: absolute;
+    top: 108%;
+    bottom: 0;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: var(--btns-background);
+    border-radius: 50%;
+}
+
+.common-heading::after {
+    content: "";
+    position: absolute;
+    top: 120%;
+    width: 5rem;
+    height: 0.2rem;
+    left: 0.6rem;
+    background: var(--btns-background);
+    margin-bottom: 3px solid red;
+}
+
+.btn {
+    outline: solid 0.1rem var(--btns-background);
+    background: var(--white);
+    color: var(--black);
+    font-weight: 900;
+    border: none;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    width: max-content;
+    margin: 0.8rem 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: var(--btns-background);
+    color: var(--white);
+}
+
+
+.productSection {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 1rem;
+    border: 0.15rem solid var(--btns-background);
+    position: relative;
+}
+
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.4rem;
+}
+
+.form-fields {
+    padding: 1rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-fields label {
+    margin-bottom: 0.5rem;
+}
+
+.form-fields input,select{
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}
+
+.form-fields option{
+    font-size: 1rem;
+}
+
+.formBtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#addProductMessage{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    color: rgb(0, 128, 0);
+    font-weight: 900;
+}

@@ -1,0 +1,63 @@
+<!-- -----------------------PRODUCT DETAILS------------------------------- -->
+<div class="grid grid-two-columns">
+    <app-navbar></app-navbar>
+
+    <div class="container">
+        <section class="productDiv">
+
+            <div>
+                <h2>Product Details</h2>
+
+                <div class="dashboardOverview">
+
+                    <div class="totalAmount">
+                        <h3>Total Products Amount</h3>
+                        <p> {{totalProductAmount}} </p>
+                    </div>
+
+                    <div class="grid products-two-columns dashboardHistory">
+                        <div class="totalProducts">
+                            <p>Products</p>
+                            <p>{{allProducts.length}}</p>
+                        </div>
+                        <div routerLink="/admin/category" class="totalUsers">
+                            <p>Categories</p>
+                            <p>  {{category.length}} </p>
+                        </div>
+                        <div class="totalUsers">
+                            <p routerLink="/admin/addProducts">Add Products</p>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="userTable">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Product Category</th>
+                            <th>Current Price</th>
+                            <th>Original Price</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productDatas">
+                        <ng-container *ngFor="let product of allProducts">
+                            <tr>
+                                <td>{{product.id}}</td>
+                                <td>{{product.title}}</td>
+                                <td>{{product.category}}</td>
+                                <td>{{product.originalAmount|currency:'INR'}}</td>
+                                <td>{{product.discounted|currency:'INR'}}</td>
+                                <td> <i routerLink="/admin/addProducts/{{product.id}}" class="fa-solid fa-pen-to-square"></i></td>
+                                <td><i (click)="removeProduct(product.id)" class="fa-solid fa-trash"></i> </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<!-- ---------------------Product------------------------ -->
+<div class="shippingBox" id="ship">
+  <div class="container">
+    <div class="shippingData">
+      <div class="header">
+        <h2>Shipping Details</h2>
+      </div>
+      <form [formGroup]="shippingForm" (ngSubmit)="shippingData()">
+        <div class="grid grid-two-columns">
+          <div class="form_fields">
+            <label>User Name</label>
+            <input type="text" name="user" value="{{activeUserData.username}}" formControlName="customerName" placeholder="Enter your name"
+              >
+          </div>
+          <div class="form_fields">
+            <label>Email</label>
+            <input type="email" name="mail" value="{{activeUserData.mail}}" formControlName="customerMail" placeholder="Enter your Mail ID"
+              >
+          </div>
+
+          <div class="form_fields">
+            <label>Mobile Number</label>
+            <input type="tel" name="mobile" maxlength="10" value="{{activeUserData.mobile}}" formControlName="customerMobile" 
+              placeholder="Enter your Mobile Number" >
+          </div>
+
+          <div class="form_fields">
+            <label>State</label>
+            <input type="text" name="state" placeholder="state" formControlName="customerState" >
+          </div>
+
+          <div class="form_fields">
+            <label>City</label>
+            <input type="text" name="city" placeholder="city" formControlName="customerCity">
+          </div>
+
+          <div class="form_fields">
+            <label>Pincode</label>
+            <input type="tel" name="mobile" minlength="6" maxlength="6" placeholder="Pincode" formControlName="customerPincode" >
+            <p id="errorMessage" *ngIf="shippingForm.controls['customerPincode'].errors?.['minlength']">Please Enter Valid Pincode </p>
+          </div>
+
+        </div>
+
+        <div class="form_fields">
+          <label>Address</label>
+          <textarea name="Address" formControlName="customerAddress" cols="10" rows="2" ></textarea>
+        </div>
+
+        <div id="proceedPayment">
+          <button routerLink="../" class="btn"><i class="fa-solid fa-arrow-left"></i>
+            Back to Cart</button>
+          <button class="btn" type="submit" *ngIf="shippingForm.valid"> Continue </button>
+          <p *ngIf="shippingForm.invalid">Enter all the fields to proceed further</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

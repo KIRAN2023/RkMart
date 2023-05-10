@@ -1,0 +1,48 @@
+<!-- --------------------------USERS------------------------------ -->
+<div class="grid grid-two-columns">
+    <app-navbar></app-navbar>
+
+    <div class="container">
+        <section>
+            <div id="usersDatas">
+                <h2>Users Data</h2>
+
+
+                <div class="dashboardOverview">
+
+                    <div class="totalAmount">
+                        <h3>Total Users</h3>
+                        <p>{{registeredUsers.length}}</p>
+                    </div>
+
+                </div>
+
+                <table class="userTable">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>User Name</th>
+                            <th>User Mail Id</th>
+                            <th>User Mobile</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="usersDataTable">
+                        <ng-container *ngFor="let registerUser of registeredUsers">
+                            <tr>
+                                <td>{{registerUser.id}}</td>
+                                <td>{{registerUser.username}}</td>
+                                <td> {{registerUser.mail}}</td>
+                                <td>{{registerUser.mobile}}</td>
+                                <td><i (click)="removerUser(registerUser.id)" class="fa-solid fa-trash"></i> </td>
+                            </tr>
+                        </ng-container>
+                        
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+    </div>
+</div>

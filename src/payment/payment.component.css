@@ -1,0 +1,78 @@
+/* PAYMENT SECTION */
+
+.paymentBox {
+    border: 2px solid var(--btns-background);
+    width: max-content;
+    height: max-content;
+    padding: 3rem;
+    margin: 2rem 0;
+    border-radius: 2rem;
+}
+
+.paymentSection {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    place-items: center;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardInfo input {
+    width: 18rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    border: 2px solid var(--btns-background);
+}
+
+.paymentSection .button {
+    margin: 1rem 0;
+}
+
+.paymentButton-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* PAYMENT SUCCESSFUL MESSAGE */
+
+.paymentModal{
+    width: 100%;
+    margin: auto;
+    background: none;
+    border: none;
+}
+
+.successMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.successMessage .modalBox {
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid var(--btns-background);
+    margin: 4rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.successMessage .modalBox h2 {
+    margin: 1.5rem;
+    font-size: 900;
+}
+
+.successMessage .button {
+    margin: 0;
+    color: var(--white);
+    font-weight: 900;
+}

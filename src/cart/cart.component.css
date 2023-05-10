@@ -1,0 +1,278 @@
+/* CART SECTION */
+
+.cartSection {
+  max-width: 60rem;
+  margin: auto;
+  position: relative;
+  padding-top: 8rem;
+
+}
+
+.cartEmpty {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: grid;
+  place-content: center;
+}
+
+.cartEmpty img{
+  width: 20rem;
+  height: 20rem;
+}
+
+.cartEmpty p{
+  font-size: 1.2rem;
+  color: var(--btns-background);
+  font-weight: 900;
+}
+
+.continueShopping{
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  flex-direction: column;
+}
+
+.cartSection>.cartGrid {
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.cartGrid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.cart-five-columns {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.incrBtn,
+.decBtn {
+  display: inline-block;
+  background-color: var(--black);
+  color: var(--white);
+  width: 0.8rem;
+  height: 1.2rem;
+  text-align: center;
+  margin: 0.2rem;
+  border-radius: 20%;
+}
+
+.items-two-columns {
+  grid-template-columns: 20% 80%;
+}
+
+.dataSection {
+  text-align: center;
+}
+
+.quantitySection p i {
+  padding: 0 0.2rem;
+  font-size: 0.9em;
+}
+
+.itemImage,
+.dataSection p {
+  padding: 2rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.itemSection .itemData p {
+  position: relative;
+}
+
+.itemSection .itemImage .productCartImages img {
+  margin-top: 1.8rem;
+}
+
+.upcomingData {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartSection .cartGrid .itemImage img {
+  width: 40px;
+}
+
+.cartSection .btn {
+  width: max-content;
+  font-size: 1rem;
+}
+
+.subTotalData {
+  position: absolute;
+  right: 0;
+  width: max-content;
+  height: max-content;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background-color: rgb(215, 223, 228);
+  border-radius: 2rem;
+}
+
+.subTotalData p {
+  line-height: 2;
+  font-weight: 900;
+}
+
+.subTotalGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.subTotal-two-columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+/* SHIPPING DETAILS */
+
+.shippingBox .grid {
+  gap: 1rem;
+}
+
+#cartBtn {
+  position: absolute;
+  margin: 0 2rem;
+  padding-top: 8rem;
+}
+
+.shippingBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relatave;
+  padding-top: 8rem;
+}
+
+.shippingData {
+  width: 40rem;
+  height: max-content;
+  padding: 1.5rem;
+  border: 2px solid var(--btns-background);
+  border-radius: 2rem;
+  margin: 3rem;
+}
+
+.shippingData .header {
+  text-align: center;
+}
+
+.shippingData label {
+  margin-bottom: 0.4rem;
+}
+
+.shipmentSection .button {
+  margin: 0;
+}
+
+/* SHIPPING INFO PROCEEDING */
+
+/* LEFT SIDE */
+
+.shipmentSection {
+  padding-top: 8rem;
+}
+
+.shipmentSection .container {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.shippingDatas {
+  padding: 1.5rem;
+  margin: 1.5rem;
+  height: max-content;
+  border: 2px solid var(--grey);
+  box-shadow: var(--shadowSupport);
+}
+
+.shippingInfo h2,
+.orderSummary h2 {
+  margin: 1rem 0;
+}
+
+.shippingInfo p,
+.summaryData p,
+.totalAmount p,
+.cartItems p {
+  margin: 1.5rem;
+  font-size: 1rem;
+}
+
+.ShipInfoGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.shippingInfo-two-columns {
+  grid-template-columns: 10% 90%;
+}
+
+.Shippinggrid-two-columns {
+  grid-template-columns: 60% 30%;
+}
+
+.shipping-three-columns {
+  grid-template-columns: 10% 30% 50%;
+}
+
+#shipment {
+  display: none;
+}
+
+.cartItems {
+  margin: 2rem 0;
+}
+
+.cartItems figure {
+  text-align: center;
+}
+
+.cartItems figure img {
+  max-width: 2rem;
+  height: 2rem;
+  margin: 0.2rem 0;
+}
+
+.cartSection .cartButton {
+  text-align: center;
+}
+
+.productCheckOutImage {
+  margin: 1rem 0;
+}
+
+.productTotal p {
+  position: relative;
+}
+
+.productTotal span {
+  position: absolute;
+  padding: 0 5rem;
+}
+
+/* RIGHT SIDE */
+
+.summaryData-two-columns {
+  grid-template-columns: 70% 30%;
+}
+
+.orderSummary h2,
+.orderSummary .button {
+  text-align: center;
+}
+
+.orderSummary {
+  width: 25rem;
+  height: max-content;
+  padding: 2rem;
+  margin: 2rem;
+}

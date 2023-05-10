@@ -1,0 +1,119 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<!-- ----------------------Cart------------------------ -->
+<section>
+    <div class="cartSection" *ngIf="product.length!=0">
+        <div class="cartGrid cart-five-columns cartHead-underline">
+            <div class="">
+                <h4>ITEM</h4>
+
+            </div>
+            <div class="">
+                <h4>PRICE</h4>
+
+            </div>
+            <div class="">
+                <h4>QUANTITY</h4>
+
+            </div>
+            <div class="">
+                <h4>SUBTOTAL</h4>
+
+            </div>
+            <div class="">
+                <h4>REMOVE</h4>
+
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="cartGrid cart-five-columns">
+            <ng-container *ngFor="let cartProduct of product">
+
+                <div class="itemSection cartGrid items-two-columns">
+                    <div class="itemImage">
+                        <img src="{{cartProduct.image}}" alt="">
+                    </div>
+                    <div class="itemData dataSection">
+                        <p>{{ cartProduct.productName }}</p>
+                    </div>
+
+                </div>
+                <div class="priceSection dataSection">
+
+                    <p>{{ cartProduct.originalAmount|currency:'INR' }}</p>
+
+                </div>
+
+                <div class="quantitySection dataSection">
+
+                    <p>
+                        <button class="incrBtn"> + </button>
+                                <small> {{productQuantityData}} </small> 
+                        <button class="decBtn"> - </button>
+                    </p>
+
+                </div>
+
+                <div class="subTotalSection dataSection">
+
+                    <p>{{ cartProduct.originalAmount|currency:'INR' }}</p>
+
+                </div>
+
+                <div class="removeSection dataSection">
+                    <div class="removeIcon">
+                        <p (click)="removeProduct(cartProduct)"><i class="fa-solid fa-trash"></i> </p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <hr>
+        <div class="upcomingData">
+            <div class="continueShopping">
+                <a routerLink="/products"> <button class="btn">CONTINUE SHOPPING</button> </a>
+            </div>
+            <div class="clearCart">
+                <button class="btn" (click)="clearCart()">CLEAR CART</button>
+            </div>
+        </div>
+        <div class="subTotalData">
+            <div class="subTotalGrid subTotal-two-columns">
+                <div class="subtotalDescription">
+                    <p>Subtotal</p>
+                    <p>Shipping Fee</p>
+                    <p>Order Total</p>
+                </div>
+                <div class="amountData">
+                    <p> {{subtotal|currency:'INR'}} </p>
+                    <p>0</p>
+                    <p>{{subtotal|currency:'INR'}}</p>
+                </div>
+            </div>
+
+            <a routerLink="shipping">
+                <div class="cartButton">
+                    <button type="submit" class="btn"> Place Order </button>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div *ngIf="product.length==0">
+        <div class="cartEmpty">
+            <div class="cartEmptyImage">
+                <img src="https://img.freepik.com/premium-vector/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912.jpg?w=740"
+                    alt="">
+                <div class="continueShopping">
+                    <p>No items in your Cart</p>
+
+                    <a routerLink="/products"> <button class="btn">CONTINUE SHOPPING</button> </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,193 @@
+<!-- ----------------------------Navigation Menu------------------------------- -->
+
+<div class="menuBox menu">
+    <div id="logo">
+        <a routerLink="">
+            <h2>RK <span> MART </span></h2>
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li routerLink="/home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"> <a> <i
+                        class="fa-solid fa-house"></i>Home </a></li>
+
+            <li routerLink="/products" [routerLinkActive]="'active'"> <a> <i
+                        class="fa-solid fa-bag-shopping"></i>Products </a>
+            </li>
+            <li routerLink="/contactUs" [routerLinkActive]="'active'"> <a> <i
+                        class="fa-solid fa-address-book"></i>Contact </a> </li>
+            <button class="loginBtn" class="login" (click)="loginModal()" [hidden]="loggedin"> <i
+                    class="fa-solid fa-user"></i> Login
+            </button>
+            <div [hidden]="!loggedin" id="mainPageCart" class="cart" attr.current-count="{{cartDataCount}}">
+                <a routerLink="/cart"> <i class="fa-sharp fa-solid fa-cart-shopping"></i> </a>
+             </div>
+        </ul>
+    </nav>
+    <div [hidden]="!loggedin">
+        <div class="user">
+            <p id="user" title="{{loggedinUser}}"> <i class="fa-regular fa-circle-user"></i>
+                {{(loggedinUser?.username)||(loggedinUser)}}</p>
+            <p id="user" title="Logout" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></p>
+        </div>
+    </div>
+</div>
+
+
+<!-- ------------------------------Login Section------------------------------- -->
+
+<div class="modelCenter">
+    <dialog class="Loginmodal" id="registerModal">
+        <div class="loginMain">
+            <div class="loginDiv">
+                <div class="close" (click)="closePanel()"><i class="fa-solid fa-xmark"></i></div>
+                <div class="grid grid-two-columns">
+                    <div class="login_Image">
+                        <div class="loginMoto">
+                            <h2>Login</h2>
+                            <p>Get access to your Orders, Wishlist and Wide Range of Products.</p>
+                        </div>
+                        <div class="LoginImage">
+                            <img src="../assets/images/SaleImages/SocialMedia.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="login_Data">
+                        <form (ngSubmit)="login(loginuser,loginpassword)">
+                            <div class="login-fields">
+                                <label for="userloginmail">Email</label>
+                                <input type="email" placeholder="Enter your Mail-Id" name="usernamillogin" #loginuser> <span>
+                                </span>
+                            </div>
+                            <div class="login-fields">
+                                <label for="userloginpass">Password</label>
+                                <div class="showpass">
+                                    <input type="password" placeholder="Enter your password" name="userloginpass" #loginpassword>
+                                </div> <span>
+                                </span>
+                                <p><small> <a routerLink="/contactUs"> Forgot Password?</a></small></p>
+                            </div>
+
+                            <div class="login-fields loginBtn">
+                                <button type="submit" name="submit" 
+                                    class="btn"> Login
+                                </button>
+                            </div>
+                            <p id="loginError"></p>
+                        </form>
+
+                        <div class="newuser">
+                            <p id="toggleRegister" (click)="registerModal()"> New to RK MART? <span> Create Account
+                                </span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+<!-- ------------------------REGISTRATION SECTION ---------------------------------------->
+<div class="modelCenter">
+    <dialog class="Registermodal">
+        <div class="RegistrationDiv">
+            <div class="RegisterBox">
+                <div class="close" (click)="closePanel()"><i class="fa-solid fa-xmark fa-2x"></i></div>
+                <div class="grid-register grid-register-two-columns">
+                    <div class="register_Image">
+                        <div class="registerMoto">
+                            <h2>Register</h2>
+                            <p>Get access to Wide Range of Products where it caters every need of your family</p>
+                        </div>
+                        <div class="registerImage">
+                            <img src="../assets/images/SaleImages/SocialMedia.png" alt="">
+                        </div>
+                    </div>
+                    <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="registerDiv">
+                        <div class="form_fields">
+                            <!-- <label>User Name</label> -->
+                            <input type="text" name="user" title="Enter Your Username" formControlName="username"
+                                placeholder="USERNAME" pattern="^[A-Za-z]+$" required>
+
+                            <div
+                                *ngIf="registerForm.controls['username'].invalid && (registerForm.controls['username'].touched||registerForm.controls['username'].dirty)">
+                                <p *ngIf="registerForm.controls['username'].errors?.['required']">This is a required
+                                    field</p>
+                                <p *ngIf="registerForm.controls['username'].errors?.['pattern']">Please Enter Only
+                                    Alphabets</p>
+                            </div>
+                        </div>
+
+                        <div class="form_fields">
+                            <!-- <label>Email</label> -->
+                            <input type="email" name="mailid" title="Enter Your Mail Id" formControlName="mail"
+                                placeholder="USER MAILID"
+                                pattern="^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$"
+                                required>
+
+                                <div
+                                *ngIf="registerForm.controls['mail'].invalid && (registerForm.controls['mail'].touched||registerForm.controls['mail'].dirty)">
+                                <p *ngIf="registerForm.controls['mail'].errors?.['required']">This is a required
+                                    field</p>
+                                <p *ngIf="registerForm.controls['mail'].errors?.['pattern']">Please Enter Valid Mail ID</p>
+                            </div>
+                        </div>
+
+                        <div class="form_fields">
+                            <!-- <label>Mobile Number</label> -->
+                            <input type="`" title="Enter Your Mobile Number" formControlName="mobile"
+                                name="mobileNumber" placeholder="MOBILE NUMBER" pattern="^[6-9]{1}[0-9]{9}$" required
+                                minlength="10" maxlength="10">
+                                <div
+                                *ngIf="registerForm.controls['mobile'].invalid && (registerForm.controls['mobile'].touched||registerForm.controls['mobile'].dirty)">
+                                <p *ngIf="registerForm.controls['mobile'].errors?.['required']">This is a required
+                                    field</p>
+                                <p *ngIf="registerForm.controls['mobile'].errors?.['pattern']">Please Enter Valid Movile Number</p>
+                            </div>
+                        </div>
+
+                        <div class="form_fields">
+                            <!-- <label>Password</label> -->
+                            <input title="Enter your Password" name="userPassword" type="password" class="passshow"
+                                placeholder="PASSWORD" formControlName="password" required>
+                                <div
+                                *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].touched||registerForm.controls['password'].dirty)">
+                                <p *ngIf="registerForm.controls['password'].errors?.['required']">This is a required
+                                    field</p>
+                                <p *ngIf="registerForm.controls['password'].errors?.['pattern']">Please Enter One Caps, Small, Number, Special Character, length must be 7 & above </p>
+                            </div>
+                        </div>
+
+                        <div class="registerModalBtns">
+                            <div class="grid grid-two-columns">
+                                <button type="submit" class="btn" [disabled]="!registerForm.valid"> Register
+                                </button>
+                                <input type="reset" title="Reset Form" value="reset" class="btn">
+                                <p class="successfulMessage"></p>
+                            </div>
+
+                            <h4 style="text-align: center;">Already a user?</h4> <span>
+                                <input type="button" value="Login" class="btn"
+                                    (click)="loginModal()"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+<!-- -------------------------------Sucess Popup Dialog Box-------------------------------- -->
+<dialog class="registerSuccessModal">
+    <div class="successMessage">
+        <div class="modalBox">
+            <i class="fa-solid fa-circle-check fa-4x" style="color: green;"></i>
+            <h2>Registered Successful</h2>
+            <div class="button">
+                <button id="" class="btn" (click)="loginModal()"> Okay </button>
+            </div>
+        </div>
+    </div>
+</dialog>

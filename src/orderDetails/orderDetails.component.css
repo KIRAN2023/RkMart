@@ -1,0 +1,109 @@
+
+/* SHIPPING INFO PROCEEDING */
+
+/* LEFT SIDE */
+
+:root{
+  --btns-background: rgb(29, 106, 193);
+}
+
+.shipmentSection {
+  padding-top: 6rem;
+  width: 100%;
+  height: 100%;
+}
+
+.shipmentSection .container {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.shippingDatas {
+  padding: 1.5rem;
+  margin: 1.5rem;
+  height: max-content;
+  width: 100%;
+  border: 2px solid var(--btns-background);
+  box-shadow: var()
+}
+
+.shippingInfo p,
+.summaryData p,
+.totalAmount p,
+.cartItems p {
+  margin: 1.5rem;
+  font-size: 1rem;
+}
+
+.ShipInfoGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.shippingInfo-two-columns {
+  grid-template-columns: 20% 80%;
+}
+
+.Shippinggrid-two-columns {
+  grid-template-columns: 60% 30%;
+}
+
+.shipping-four-columns {
+  grid-template-columns: 10% 40% 25% 25%;
+}
+
+.cartItems {
+  margin: 1rem 0;
+}
+
+.cartItems figure {
+  text-align: center;
+}
+
+.cartItems figure img {
+  max-width: 2rem;
+  height: 2rem;
+  margin: 0.2rem 0;
+}
+
+.cartSection .cartButton {
+  text-align: center;
+}
+
+.productCheckOutImage {
+  margin: 1rem 0;
+}
+
+.productTotal{
+  display: flex;
+}
+
+.productTotal p {
+  margin-right: 1rem;
+}
+
+/* RIGHT SIDE */
+
+.summaryData-two-columns {
+  grid-template-columns: 70% 30%;
+}
+
+.orderSummary h2,
+.orderSummary .button {
+  text-align: center;
+}
+
+.orderSummary {
+  width: 25rem;
+  height: max-content;
+  padding: 2rem;
+}
+
+#markData{
+  padding: 0.4rem;
+  background-color: var(--btns-background);
+  color: #ffff;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}

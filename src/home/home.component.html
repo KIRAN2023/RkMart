@@ -1,0 +1,184 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<!-- ----------------Main-Section------------------------ -->
+<section id="main-section">
+  <div class="container">
+    <main>
+      <div class="grid grid-two-columns main">
+        <div class="main-data">
+          <h3 id="main-heading" style="font-variant: small-caps;">Welcome To</h3>
+          <h1>RK <span> MART </span></h1>
+          <p id="main-para">RK Mart is an online shopping site where it caters every need of your
+            family. A self-service shop offering a wide range of variety of products in various
+            categories such as Vegetables and household, fruits, Beverages.
+          </p>
+          <div class="button">
+            <button id="btn" class="btns"> <a routerLink="/products"><i class="fa-solid fa-cart-shopping"></i> Shop Now
+              </a> </button>
+          </div>
+        </div>
+
+        <div class="main-image">
+          <img src="../assets/images/LandingPageImage.png" alt="">
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<section>
+  <div class="container container-sales">
+    <h2 class="common-heading"> <span>Household Products</span></h2>
+    <div class="grid-sales grid-sales-two-columns">
+      <div class="sales-image">
+        <img src="../assets/images/Sales/order.jpg" alt="Sales" title="40% - 60% Off" srcset="">
+        <button class="btn"> <a routerLink="/products/household"> Grab Now </a></button>
+      </div>
+      <div class="sales-products grid-sales grid-sales-four-column">
+        <div *ngFor="let product of householdProduct; let i = index">
+          <ng-container>
+            <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
+              <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
+                attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
+                attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+                <div class="productImage">
+                  <figure><a>
+                      <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
+                      </div>
+                    </a>
+                    <figcaption class="figCaptionDiv"><b class="findProduct">{{product.productName}}</b></figcaption>
+                    <div class="addWishlistDiv"><button class="btnD addRemove" title="Add to Category">Add</button>
+                    </div>
+                  </figure>
+                </div>
+                <div class="productDetails"><small>{{product.quantity}}</small></div>
+                <div class="productPrice">
+                  <div class="ratings"><span class="rating">{{product.rating}}<i
+                        class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
+                  </div>
+                  <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' : '1.0-0'}}<s
+                      class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
+                      class="btnD offerBtn"><small
+                        class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                        OFF</small></button></p>
+                </div>
+              </div>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+<section>
+  <div class="container container-sales">
+    <h2 class="common-heading"> <span>Beverages</span></h2>
+    <div class="grid-sales grid-sales-two-columns">
+      <div class="sales-image">
+        <img src="../assets/images/SaleImages/SummerSale.png" alt="Sales" title="10% - 45% Off" srcset="">
+        <button class="btn"> <a routerLink="/products/beverages"> Grab Now </a> </button>
+      </div>
+      <div class="sales-products grid-sales grid-sales-four-column">
+        <div *ngFor="let product of beveragesProduct; let i = index">
+          <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
+            <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
+              attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
+              attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+              <div class="productImage">
+                <figure><a>
+                    <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
+                    </div>
+                  </a>
+                  <figcaption class="figCaptionDiv"><b class="findProduct">{{product.productName}}</b></figcaption>
+                  <div class="addWishlistDiv"><button class="btnD addRemove" title="Add to Category">Add</button>
+                    <p title="Add to Wishlist"><i class="fa-regular fa-heart"></i></p>
+                  </div>
+                </figure>
+              </div>
+              <div class="productDetails"><small>{{product.quantity}}</small></div>
+              <div class="productPrice">
+                <div class="ratings"><span class="rating">{{product.rating}}<i
+                      class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
+                </div>
+                <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' : '1.0-0'}}<s
+                    class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
+                    class="btnD offerBtn"><small
+                      class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                      OFF</small></button></p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+<section>
+  <div class="container container-sales">
+    <h2 class="common-heading"><span>Groceries</span></h2>
+    <div class="grid-sales grid-sales-two-columns">
+      <div class="sales-image">
+        <img src="../assets/images/Sales/veggies.jpg" alt="Sales" title="10% - 30% Off" srcset="">
+        <button class="btn"> <a routerLink="/products/grocery"> Grab Now </a> </button>
+      </div>
+      <div class="sales-products grid-sales grid-sales-four-column">
+        <div *ngFor="let product of groceryProduct; let i = index">
+          <ng-container>
+            <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
+              <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
+                attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
+                attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+                <div class="productImage">
+                  <figure><a>
+                      <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
+                      </div>
+                    </a>
+                    <figcaption class="figCaptionDiv"><b class="findProduct">{{product.productName}}</b></figcaption>
+                    <div class="addWishlistDiv"><button class="btnD addRemove" title="Add to Category">Add</button>
+                      <p title="Add to Wishlist"><i class="fa-regular fa-heart"></i></p>
+                    </div>
+                  </figure>
+                </div>
+                <div class="productDetails"><small>{{product.quantity}}</small></div>
+                <div class="productPrice">
+                  <div class="ratings"><span class="rating">{{product.rating}}<i
+                        class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
+                  </div>
+                  <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' : '1.0-0'}}<s
+                      class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
+                      class="btnD offerBtn"><small
+                        class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                        OFF</small></button></p>
+                </div>
+              </div>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+<!-- Popup Message -->
+
+<dialog class="popupMsg">
+  <i class="fa-solid fa-xmark fa-1x popupClose" (click)="closeOffer()"></i>
+  <div class="offerPopUp">
+    <div class="offerImage">
+      <img src="../assets/images/Sales/Sale.jpg" alt="50% Discount" title="50% Off">
+    </div>
+    <div class="offerContent">
+      <div class="offerData">
+        <p> Mega Sale <span id="offerPercentage">10% to 60% Limited Time Offer </span> </p>
+      </div>
+      <button class="btn"> <a routerLink="/products"> Grab Now </a> </button>
+    </div>
+  </div>
+</dialog>
+<app-footer></app-footer>

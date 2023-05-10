@@ -1,0 +1,56 @@
+
+section {
+    padding: 2rem 0;
+}
+
+section h2{
+    margin-left: 10rem;
+}
+
+.container {
+    max-width: 140rem;
+}
+
+.grid-two-columns {
+    display: grid;
+    grid-template-columns: 10% 85%;
+}
+
+.valid{
+    color: rgb(0, 128, 0);
+}
+
+.invalid{
+    color: rgb(255, 0, 0);
+}
+
+.productSection {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 1rem;
+    position: relative;
+}
+
+.form-fields {
+    padding: 1rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-fields label {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.form-fields input{
+    font-size: 1.6rem;
+    padding: 0.2rem;
+}
+
+.formBtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}

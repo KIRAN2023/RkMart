@@ -1,0 +1,91 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<!-- -----------------Order Details-------------------- -->
+<div class="shipmentSection">
+  <div class="container">
+    <div class="ShipInfoGrid Shippinggrid-two-columns">
+      <div class="shippingDatas">
+        <div class="cartItems">
+          <h2>Orders</h2>
+          <div class="ShipInfoGrid shipping-four-columns">
+            <p> <b> Product </b> </p>
+
+            <p> <b> Product Description </b> </p>
+
+            <p> <b> Quantity </b> </p>
+
+            <p> <b> Total </b> </p>
+
+          </div>
+
+          <p *ngIf="orderList==''"> <mark id="markData"> No Products Has been Selected </mark> </p>
+
+          <div *ngFor="let orderListData of orderList">
+            <div class="ShipInfoGrid shipping-four-columns">
+
+              <div class="productCheckOutImage">
+                <figure><img src={{orderListData.image}} alt=""></figure>
+              </div>
+              <div class="productDesc">
+                <p> {{orderListData.title}} </p>
+              </div>
+              <div class="productTotal">
+                <p> <span> 1 x {{orderListData.originalAmount|currency:'INR'}} </span></p> 
+              </div>
+              <div class="">
+                <p> <span> {{orderListData.originalAmount|currency:'INR'}} </span></p>
+
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <button routerLink="../" id="proceedPayment" class="btn"><i class="fa-solid fa-arrow-left"></i> Back
+              To Cart </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="orderSummary">
+        <div class="shippingInfo">
+          <h2>Shipping Info</h2>
+          <hr>
+          <div class="ShipInfoGrid shippingInfo-two-columns">
+            <div class="defaultData">
+              <p> <b> Name </b></p>
+              <p> <b> Mobile </b></p>
+              <p> <b> Address </b></p>
+            </div>
+            <div class="fetchedData">
+              <p id="customer">{{activeUserData.username}}</p>
+              <p id="customerMobile">{{activeUserData.mobile}}</p>
+              <p id="customerShippingAddress"></p>
+            </div>
+
+          </div>
+        </div>
+        <h2>Order Summary</h2>
+        <hr>
+        <div class="orderSummaryData ShipInfoGrid summaryData-two-columns">
+          <div class="summaryData">
+            <p>Sub Total</p>
+            <p>Shipping Charges</p>
+            <p>GST</p>
+            <p>Total</p>
+          </div>
+
+          <div class="totalAmount">
+            <p>{{subTotal|currency:'INR'}}</p>
+            <p>{{0|currency:'INR'}}</p>
+            <p>{{0|currency:'INR'}}</p>
+            <p>{{subTotal|currency:'INR'}}</p>
+          </div>
+        </div>
+        <div class="button">
+          <button id="proceedPayment" class="btn" routerLink="payment"> Proceed To Payment </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

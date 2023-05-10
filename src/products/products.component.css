@@ -1,0 +1,22 @@
+.scrollToTop{
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    z-index: 1;
+  }
+  
+  .scrollBtn{
+     width: 3rem;
+     height: 3rem;
+     font-size: 1.2rem;
+     background-color: var(--btns-background);
+     color: var(--white);
+     padding: 1rem;
+     border-radius: 40%;
+     cursor: pointer;
+     animation: animateScroll 3s linear infinite;
+  }
+  
+  .scrollActive{
+    display: none;
+  }

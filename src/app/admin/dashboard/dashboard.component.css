@@ -1,0 +1,69 @@
+.grid {
+    display: grid;
+}
+
+.grid-two-columns {
+    grid-template-columns: 10% 80%;
+}
+
+.grid-dashboard-two-columns{
+    grid-template-columns: 1fr 1fr;
+}
+
+.container {
+    max-width: 140rem;
+    padding: 0 4rem;
+}
+
+/* DASHBOARD OVERVIEW SECTION */
+.dashboardOverview h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto;
+}
+
+.totalAmount {
+    background-color: var(--btns-background);
+    color: var(--white);
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+}
+
+.totalAmount h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 1rem auto;
+}
+
+.totalAmount p {
+    text-align: center;
+    font-weight: 900;
+    margin: 1rem auto;
+}
+
+:is(.totalProducts, .totalOrders, .totalUsers) {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: var(--btns-background);
+    color: var(--white);
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem auto;
+    cursor: pointer;
+}
+
+:is(.totalProducts, .totalOrders, .totalUsers) p {
+    font-size: 1.4rem;
+}
+
+.dashboardHistory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

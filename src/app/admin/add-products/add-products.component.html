@@ -1,0 +1,92 @@
+<section>
+    <h2 class="common-heading" [(ngModel)]="head"> {{head}} </h2>
+
+    <div class="container grid-two-columns">
+        <app-navbar></app-navbar>
+
+        <div class="productSection">
+            <form [formGroup]="addProductForm">
+                <div class="grid-products">
+                    <div class="form-fields">
+                        <label for="stock"> Stock </label>
+                        <input type="text" name="stock" #stockData formControlName="Stock">
+                    </div>
+                    <div class="form-fields">
+                        <label for="category"> Category </label>
+                        <select  #categoryData formControlName="category">
+                            <option *ngFor="let category of category" [ngValue]="category">{{ category }}</option>
+                        </select>
+                    </div>
+                    <div class="form-fields">
+                        <label for="uniqueID"> Unique ID </label>
+                        <input type="text" name="uniqueid" formControlName="uniqueId">
+                    </div>
+                    <div class="form-fields">
+                        <label for="filterValue"> Filter Value </label>
+                        <input type="text" name="filtervalue" formControlName="filterValue">
+                    </div>
+                    <div class="form-fields">
+                        <label for="classData"> Class Data </label>
+                        <input type="text" name="classdata" formControlName="classData">
+                    </div>
+                    <div class="form-fields">
+                        <label for="value"> Value </label>
+                        <select formControlName="value">
+                            <option *ngFor="let filterData of filterValue" [ngValue]="filterData">
+                                {{filterData}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-fields">
+                        <label for="image"> Image </label>
+                        <input type="text" name="image" formControlName="image">
+                    </div>
+                    <div class="form-fields">
+                        <label for="alt"> alt </label>
+                        <input type="text" name="alt" formControlName="alt">
+                    </div>
+                    <div class="form-fields">
+                        <label for="title"> Title </label>
+                        <input type="text" name="title" formControlName="title">
+                    </div>
+                    <div class="form-fields">
+                        <label for="productName"> Product Name </label>
+                        <input type="text" name="productname" formControlName="productName">
+                    </div>
+                    <div class="form-fields">
+                        <label for="quantity"> Quantity </label>
+                        <input type="text" name="quantity" formControlName="quantity">
+                    </div>
+                    <div class="form-fields">
+                        <label for="ratingCount"> Rating Count </label>
+                        <input type="text" name="ratingcount" formControlName="ratingCount">
+                    </div>
+                    <div class="form-fields">
+                        <label for="reviewCount"> Review Count </label>
+                        <input type="text" name="reviewcount" formControlName="reviewCount">
+                    </div>
+                    <div class="form-fields">
+                        <label for="originalAmount"> Original Amount </label>
+                        <input type="text" name="originalamount" formControlName="originalAmount">
+                    </div>
+                    <div class="form-fields">
+                        <label for="discounted"> Discounted </label>
+                        <input type="text" name="discounted" formControlName="discounted">
+                    </div>
+                </div>
+                <div class="formBtn">
+                    <button class="btn" routerLink="/admin/manageProducts" >Back</button>
+                    <button class="btn" (click)="addProduct(addProductForm.value)" > Add Product </button>
+                    <button class="btn" *ngIf="editProductURLId" (click)="updateProduct(addProductForm.value)"> Update Product </button>
+
+                    <button class="btn" (click)="resetForm()">Reset</button>
+                </div>
+
+                <div id="addProductMessage">
+                    <p> {{addProductMessage}} </p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>

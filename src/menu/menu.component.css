@@ -1,0 +1,654 @@
+/* -------------------MENU BAR------------------------ */
+:root {
+    --heading: rgb(0 10 45);
+    --para: #777;
+    --para-tint: #e4e4e4;
+    --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+    --gradientSupport: -webkit-linear-gradient(0deg,
+        rgb(132 144 255) 0%,
+        rgb(98 189 252) 100%);
+  
+    --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+  }
+
+span {
+    color: rgb(8, 5, 97);
+}
+
+.menu h2 {
+    margin-right: 2rem;
+    color: rgb(191, 53, 53);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(239, 242, 245);
+    padding: 1rem 5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+#alignMenu {
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+}
+
+#alignMenu i {
+    text-align: center;
+}
+
+#subMenuAlign {
+    display: grid;
+    grid-template-columns: 18% 80%;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li {
+    margin: 0 0.4rem;
+}
+
+button a {
+    text-decoration: none;
+}
+
+.menu ul li,
+button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.menu ul li .active {
+    padding: 0.5rem 1rem;
+}
+
+.menu ul button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 0.1rem solid var(--btns-background);
+    background-color: var(--white);
+    border-radius: 0.6rem;
+    margin: auto 1rem;
+}
+
+.menu ul button a {
+    color: #000000;
+}
+
+.menu ul button:hover {
+    color: var(--font-hover);
+    background-color: var(--gradientSupport);
+    transition: all 0.2s linear;
+}
+
+.menu ul button:hover> {
+    color: var(--font-hover);
+}
+
+.active {
+    border-bottom: 0.1rem solid var(--btns-background);
+    color: var(--btns-background);
+    font-weight: 600;
+}
+
+.menu ul li:not(.active):hover {
+    border-bottom: 0.1rem solid var(--btns-background);
+    color: var(--btns-background);
+}
+
+.submenu {
+    display: none;
+    transition: all 0.2s linear;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.menu .submenu ul li:hover {
+    background-color: var(--btns-background);
+    border: none;
+    transition: all 0.2s linear;
+}
+
+.menu .submenu ul li:hover #alignMenu,
+.submenu2 ul li:hover #subMenuAlign {
+    color: var(--white);
+}
+
+.menu ul li:hover .submenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.submenu ul {
+    display: block;
+    margin: 1rem;
+    color: black;
+    background-color: rgb(162, 172, 184);
+    border-radius: 5%;
+    padding: 0.5rem;
+}
+
+.submenu ul li {
+    width: 14.2rem;
+    margin: 0.4rem;
+    color: black;
+}
+
+.submenu2 {
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.submenu2 ul li {
+    width: 14rem;
+}
+
+.submenu ul li:hover .submenu2 {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 14.2rem;
+    color: black;
+    background-color: rgb(162, 172, 184);
+    border-radius: 5%;
+}
+
+.fas {
+    float: right;
+}
+
+.menu input {
+    text-align: center;
+    border-radius: 1.8rem;
+    font-size: 1rem;
+}
+
+.menu ul button:hover {
+    background: var(--btns-background);
+    transition: all 0.5s linear;
+}
+
+.menu ul button:hover>a {
+    color: rgb(244, 240, 240);
+}
+
+/*--------------------- Main Page Cart --------------------*/
+
+.cart,
+#mainPageCart {
+  margin: auto 0;
+  font-weight: 900;
+  position: relative;
+}
+
+.cart .fa-cart-shopping,
+#mainPageCart .fa-cart-shopping {
+  font-size: 1.8rem;
+}
+
+.cart::after {
+  content: attr(current-count);
+  position: absolute;
+  top: 0;
+  transform: translateY(-0.4rem);
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  color: var(--white);
+}
+
+/* LOGIN FORM */
+
+/* --------------------------LOGIN DIV------------------- */
+
+.loginMain .grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.loginMain {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.loginMain label {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.loginMain .login_Data input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+.loginDiv {
+    width: 50%;
+    height: 30rem;
+    background-color:#ffff;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+}
+
+.LoginImage {
+    position: absolute;
+}
+
+.LoginImage img {
+    max-width: 250px;
+    height: 250px;
+}
+
+.showpass {
+    display: flex;
+    position: relative;
+}
+
+.showpass i {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+#eye {
+    display: none;
+}
+
+:is(.login_Data .login-fields) #error1,
+#error2 {
+    color: rgb(167, 9, 9);
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    position: absolute;
+    font-weight: 600;
+}
+
+.login_Data #succefulLogin,
+.login_Data #successfulLogin2 {
+    color: rgb(17, 92, 17);
+    font-family: 600;
+    text-align: center;
+}
+
+.login_Data .login-fields p small a {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.2rem 0 0 0;
+    text-decoration: none;
+}
+
+.login_Data #loginError {
+    color: #Ff0000;
+    font-family: 600;
+    text-align: center;
+}
+
+/* ------------------------User Login Div--------------------- */
+
+.user {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+#user {
+    color: var(--btns-background);
+    font-weight: 700;
+    padding: 0 0.2rem;
+    margin-right: 1rem;
+}
+
+/* ---------------------LEFT SIDE------------------ */
+
+.login_Image,
+.register_Image {
+    background-color: var(--btns-background);
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30rem;
+}
+
+.register_Image {
+    background: none;
+    border-right: 0.1rem solid var(--btns-background);
+}
+
+.loginMoto {
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.loginMoto h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.loginMoto p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8rem;
+    color: var(--white);
+}
+
+/* ----------------RIGHT SIDE------------- */
+
+.login_Data {
+    display: grid;
+    place-items: center;
+    margin-top: 2.8rem;
+}
+
+.login-fields {
+    padding: 0.8rem;
+}
+
+.login-fields label {
+    display: inline-block;
+    font-weight: 900;
+}
+
+.login_Data form input {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+.login_Data .loginBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_Data form button {
+    width: 50%;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.login_Data button:hover {
+    background-color: rgb(45, 145, 227);
+    color: var(--white);
+    font-weight: 400;
+}
+
+.menu ul button:hover>a {
+    color: rgb(244, 240, 240);
+}
+
+.newuser {
+    margin: 3rem 0;
+    color: rgb(30, 30, 222);
+    cursor: pointer;
+}
+
+.newuser p a {
+    text-decoration: none;
+}
+
+.close {
+    position: relative;
+    float: right;
+    margin: 2rem 1rem 0 0;
+}
+
+.Loginmodal::backdrop,
+.Registermodal::backdrop {
+    background: #111111;
+    opacity: 0.6;
+}
+
+.Loginmodal,
+.Registermodal,
+.paymentModal,
+.registerSuccessModal {
+    width: 100%;
+    margin: auto;
+    background: none;
+    border: none;
+}
+
+#registered {
+    display: none;
+}
+
+.close,
+.RegisterClose {
+    cursor: pointer;
+}
+
+/*-- ----------------------------------------Registration Section REUSABLE CODE SECTION -----------------------------------------------------*/
+
+:root {
+    --heading: rgb(0 10 45);
+    --para: #777;
+    --para-tint: #e4e4e4;
+    --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+    --gradientSupport: -webkit-linear-gradient(0deg,
+            rgb(132 144 255) 0%,
+            rgb(98 189 252) 100%);
+
+    --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+}
+
+.RegistrationDiv .grid {
+    display: grid;
+    gap: 0.5rem;
+}
+
+/*-- ----------------------------------------REGISTRATION SECTION -----------------------------------------------------*/
+
+.grid-register {
+    display: grid;
+}
+
+.grid-register-two-columns {
+    grid-template-columns: 45% 55%;
+}
+
+.RegistrationDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+.RegisterBox {
+    background-color: var(--white);
+    width: 35rem;
+    height: max-content;
+    border-radius: 1rem;
+    box-shadow: var(--shadowSupport);
+    border: 1px solid var(--heading);
+    position: relative;
+}
+
+.RegistrationDiv .RegisterBox p {
+    color: rgb(167, 9, 9);
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    position: absolute;
+    font-weight: 600;
+    max-width: 18rem;
+}
+
+.register_Image {
+    position: relative;
+    background-color: var(--btns-background);
+    width: 100%;
+    height: 100%;
+}
+
+.register_Image h2 {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.registerMoto {
+    padding: 2rem 2rem 1rem 1rem;
+    height: 12rem;
+}
+
+.registerMoto h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.RegistrationDiv .RegisterBox .registerMoto p {
+    color: var(--white);
+    font-weight: 900;
+    margin-top: 2rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.4rem;
+    position: absolute;
+    text-align: justify;
+}
+
+.registerImage {
+    display: flex;
+    justify-content: center;
+    place-content: center;
+}
+
+.registerImage img {
+    width: 15rem;
+    height: 15rem;
+}
+
+.RegisterBox .header {
+    background: var(--btns-background);
+    color: var(--white);
+    font-weight: 900;
+    padding: 0.5rem 0;
+}
+
+.RegisterBox .header h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.RegistrationDiv form {
+    padding: 0.8rem 1.2rem;
+    position: relative;
+    display: block;
+    justify-content: center;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+form .form_fields {
+    margin: 1.2rem 0;
+}
+
+form label {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.RegisterBox .form_fields input,
+textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid var(--btns-background);
+}
+
+.registerDiv input,
+textarea {
+    margin: 0.8rem 0 0 0;
+    padding: 0.6rem 0;
+}
+
+input::placeholder {
+    font-weight: 700;
+    margin: 0.4rem;
+}
+
+/* 
+  input:focus::-webkit-input-placeholder {
+    font-size: 0.8rem;
+    position: relative;
+    top: -0.6rem; 
+    transition: 0.2s ease-out;
+    color: var(--btns-background);
+  } */
+
+select {
+    padding: 0.2rem;
+    margin: 0.5rem 0;
+}
+
+.registerModalBtns {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+
+.registerModalBtns .btn {
+    padding: 1rem;
+    font-size: 0.8rem;
+    width: max-content;
+    margin: 0.8rem 0;
+    font-weight: 700;
+}
+
+.registerMain ul li i,
+.footerData i {
+    padding-right: 0.3rem;
+}
+
+.RegisterClose {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+
+.Registermodal {
+    background: none;
+    border: none;
+    margin: auto;
+}

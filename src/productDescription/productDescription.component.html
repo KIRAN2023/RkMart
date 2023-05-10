@@ -1,0 +1,147 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu (loginStatus) = "loginStatusData($event)"></app-menu>
+
+<!-- -------------------------Product Description----------------------- -->
+
+<div class="productsDescriptionBox">
+    <div class="ProductDescriptionSection">
+        <div class="btn" routerLink="../../"> <i class="fa-solid fa-arrow-left"></i> Back</div>
+    </div>
+    <div class="productGrid productgrid-two-columns">
+        <div class="productImage productDec">
+            <div class="mainImageDiv">
+                <img src="{{finalProduct?.image}}" alt="" class="mainimg">
+
+                <p id="userStatus" *ngIf="!userLoggedin"> Login to Buy  </p>
+            </div>
+
+
+            <div [hidden]="!userLoggedin">
+                <div class="buyAddCart">
+
+                    <div class="addToCart">
+                        <i *ngIf="!removeProduct" (click)="addtoCartData()" class="fa-solid fa-cart-shopping"> Add to CART </i>
+                        <i *ngIf="removeProduct" (click)="deleteFromCart()" class="fa-solid fa-cart-shopping"> Remove From CART </i>
+                    </div>
+                    <!-- <div class="buy addToCart" routerLink="/shipping">
+                        <i class="fa-solid fa-cart-shopping"> Buy Now </i>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="productDescription">
+            <h3>{{finalProduct?.title}}</h3>
+            <div class="productRatings">
+                <div class="ratings">
+                    <span class="rating">{{finalProduct?.rating}}<i class="fa-solid fa-star fa-xs"></i></span>
+                    <span> {{finalProduct?.ratingCount}} Ratings </span>
+                </div>
+                <div class="productCostData">
+                    <h4>Special Price</h4>
+                    <div class="productDiscounts">
+                        <p class="productRate"> {{finalProduct?.originalAmount|currency:'INR'}} <span>
+                                <s>{{finalProduct?.discounted|currency:'INR'}}</s>
+                                <small class="offerData">{{myMath.abs(((finalProduct?.originalAmount-finalProduct?.discounted)/finalProduct?.discounted)*100)|number:'.0-0'}} OFF</small>
+                            </span> </p>
+                        <!-- <p id="clock"></p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="discounts">
+                <p>&#9200;</p>
+                <ul>
+                    <li *ngIf="finalProduct?.category==='beverages'"><b>Expiry Date </b> 31 Mar 2023</li>
+                    <li *ngIf="finalProduct?.category==='beverages'||finalProduct?.category==='household' "><b>
+                            Manufactured date</b> 04 Jul 2023</li>
+                    <li *ngIf="finalProduct?.category==='grocery'"> <b> Packed - 07 Jan 2023 </b></li>
+                </ul>
+            </div>
+
+            <div class="delivery">
+                <h4>Delivery</h4>
+                <i class="fa-sharp fa-solid fa-location-dot"></i> <input type="number" placeholder="Enter your Pincode">
+                <span class="check"> check </span>
+            </div>
+            <div class="delivery quantitySelection" *ngIf="finalProduct?.category==='beverages'">
+                <h4>Quantity</h4>
+                <div class="quantityData quantityActive">
+                    <b> {{finalProduct?.quantity}}, Plastic Bottle </b>
+                    <div class="quantity"> <small> {{finalProduct?.originalAmount/2}}/L </small> </div>
+                </div>
+                <div class="quantityData">
+                    <b> 1L, Plastic Bottle </b>
+                    <div class="quantity"> <small>{{finalProduct?.originalAmount/4}}/0.5L </small> </div>
+                </div>
+            </div>
+
+            <div class="aboutProductsgrid Products-two-columns">
+                <div class="aboutProducts">
+                    <h2>Additional Information</h2>
+                    <hr>
+                    <div class="aboutProductsgrid aboutProducts-two-columns">
+                        <div class="info">
+                            <p> <b>Brand</b> </p>
+                            <p> <b>Category</b> </p>
+                            <p> <b>Quantity</b> </p>
+                            <p> <b>Sold By</b> </p>
+                            <p *ngIf="finalProduct?.category=='beverages'"> <b>Expires</b> </p>
+                        </div>
+                        <div class="data">
+                            <p> {{finalProduct?.title}} </p>
+                            <p> {{finalProduct?.alt}} </p>
+                            <p> {{finalProduct?.quantity}} </p>
+                            <p> RK MART </p>
+                            <p *ngIf="finalProduct?.category=='beverages'"> 4 Months from Packing </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container container-sales">
+    <h2 class="common-heading"> <span>Featured Products</span></h2>
+    <div class="grid-sales grid-sales-two-columns">
+        <div class="sales-image">
+            <img src="../assets/images/Sales/order.jpg" alt="Sales" title="40% - 60% Off" srcset="">
+            <button class="btn"> <a routerLink="/products"> Grab Now </a></button>
+        </div>
+        <div class="sales-products grid-sales grid-sales-four-column">
+            <div *ngFor="let product of featuredProducts">
+                <ng-container>
+                    <a routerLink="/products/productDescription/{{product.id}}">
+                        <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
+                            attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
+                            attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+                            <div class="productImage">
+                                <figure><a>
+                                        <div class="imagePosition"><img [src]="product.image" alt={{product.alt}}
+                                                title={{product.title}}>
+                                        </div>
+                                    </a>
+                                    <figcaption class="figCaptionDiv"><b class="findProduct">{{product.productName}}</b>
+                                    </figcaption>
+                                    <div class="addWishlistDiv"><button class="btnD addRemove"
+                                            title="Add to Category">Add</button>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="productDetails"><small>{{product.quantity}}</small></div>
+                            <div class="productPrice">
+                                <div class="ratings"><span class="rating">{{product.rating}}<i
+                                            class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
+                                </div>
+                                
+                                <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :'1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' :'1.0-0'}}</s>
+                                    
+                                <button class="btnD offerBtn"><small class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}} OFF</small></button></p>
+                            </div>
+                        </div>
+                    </a>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

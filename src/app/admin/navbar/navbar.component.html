@@ -1,0 +1,42 @@
+<div class="">
+
+</div>
+
+<aside>
+    <ul class="dashboardMenu">
+        <li>
+            <a routerLink="/admin/dashboard" id="logo">
+                <img src="../../../assets/images/adminLogo.png" alt="">
+                <h3>RK <span> MART </span></h3>
+            </a>
+        </li>
+        <li routerLink="/admin/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <a>
+                <i class="fa-solid fa-grip"></i>
+                <span class="nav-item">Dashboard</span>
+            </a> </li>
+        <li routerLink="/admin/users" routerLinkActive="active"> <a>
+                <i class="fa-solid fa-users"></i>
+                <span class="nav-item">Users</span>
+            </a> </li>
+        <li routerLink="/admin/manageProducts" routerLinkActive="active"> <a>
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <span class="nav-item">Products</span>
+            </a> </li>
+        <li routerLink="/admin/category" routerLinkActive="active"> <a>
+                <i class="fa-solid fa-list"></i>
+                <span class="nav-item">Category</span>
+            </a> </li>
+        <li routerLink="/admin/manageOrders" id="orders" routerLinkActive="active"> <a>
+                <i class="fa-solid fa-sort"></i>
+                <span class="nav-item">Orders</span>
+            </a> </li>
+        <li id="reviews" routerLinkActive="active"> <a>
+                <i class="fa-brands fa-readme"></i>
+                <span class="nav-item">Reviews</span>
+            </a> </li>
+        <li id="logout" (click)="logout()"> <a>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="nav-item">Logout</span></a>
+        </li>
+    </ul>
+</aside>

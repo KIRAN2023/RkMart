@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* RESUABLE CODE */
+
+:root {
+    --box-shadow: -1px 6px 16px -1px rgba(8, 8, 8, 1);
+    --btns-background: rgb(29, 106, 193);
+    --white: #fff;
+    --menu: rgb(189, 201, 213);
+    --title: rgb(8, 5, 97);
+    --span: rgb(191, 53, 53);
+    --gray: rgb(121, 113, 113);
+}
+
+body {
+    background-color: rgb(250, 246, 246);
+}
+
+.container {
+    max-width: 140rem;
+    padding: 0 4rem;
+}
+
+section {
+    padding: 2rem 0;
+    margin: 1rem 0 1rem 2rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-two-columns {
+    grid-template-columns: 10% 90%;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 7rem;
+    background: var(--white);
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#logo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    padding: 1.2rem 2rem;
+}
+
+#logo img {
+    position: absolute;
+    width: 4rem;
+    text-align: center;
+}
+
+#logo h3 {
+    font-weight: 9rem;
+    padding: 1rem 6rem;
+    text-transform: uppercase;
+}
+
+#logo span {
+    color: var(--title);
+}
+
+#logo h3 {
+    color: var(--title);
+}
+
+#logo span {
+    color: var(--span);
+}
+
+a {
+    position: relative;
+    color: var(--gray);
+    font-size: 1.2rem;
+    display: table;
+    width: 30rem;
+    padding: 1rem;
+}
+
+aside ul li i {
+    position: relative;
+    width: 5rem;
+    height: 2.5rem;
+    top: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.nav-item {
+    position: relative;
+    top: 0;
+    margin-left: 1rem;
+}
+
+aside:hover {
+    width: 15rem;
+    transition: all 0.4s linear;
+}
+
+#logout {
+    position: absolute;
+    bottom: 0;
+}
+
+.active {
+    color: var(--btns-background);
+    height: max-content;
+    width: max-content;
+    font-weight: 900;
+}

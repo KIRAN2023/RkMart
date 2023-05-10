@@ -1,0 +1,584 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: none;
+}
+
+body{
+  background-color: rgb(253, 255, 253);
+}
+
+/* -----------------------REUSABLE CODE----------------------- */
+
+:root {
+  --box-shadow: -1px 6px 16px -1px rgba(8, 8, 8, 1);
+  --btns-background: rgb(29, 106, 193);
+  --white: #fff;
+  --black: #000000;
+  --font-hover: rgb(244, 240, 240);
+  --background-hover: rgba(19, 110, 29, 0.697);
+}
+
+section {
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 140rem;
+}
+
+.grid-section {
+  display: grid;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.grid-two-columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-columns {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-columns {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-five-columns {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-two-section {
+  grid-template-columns: 25% 75%;
+  position: relative;
+  top: 6rem;
+}
+
+i {
+  padding-right: 0.4rem;
+}
+
+.common-heading {
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.common-heading::before {
+  content: "";
+  position: absolute;
+  top: 108%;
+  bottom: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--btns-background);
+  border-radius: 50%;
+}
+
+.common-heading::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  width: 5rem;
+  height: 0.2rem;
+  left: 0.6rem;
+  background: var(--btns-background);
+  margin-bottom: 3px solid red;
+}
+
+.container-sales {
+  background-color: var(--white);
+  padding: 2rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------- */
+
+input,
+button, select, textarea {
+  border: 0.1rem solid var(--btns-background);
+}
+
+.button {
+  margin: 2rem 0;
+}
+
+.btns {
+  width: 10rem;
+  padding: 1rem;
+  background-color: rgb(83, 101, 161);
+  border-radius: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.btns>a {
+  color: var(--white);
+}
+
+.btns:hover {
+  background-color: var(--btns-background);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+.btn {
+  outline: solid 0.1rem var(--btns-background);
+  background: var(--white);
+  color: var(--black);
+  font-weight: 900;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  width: max-content;
+  margin: 0.8rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnD {
+  background: var(--btns-background);
+  color: var(--white);
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  width: max-content;
+}
+
+.btn:hover {
+  background: var(--btns-background);
+  color: var(--white);
+}
+
+.price-box {
+  padding: 0.4rem;
+}
+
+/* ------------------------------Sales Section-------------------------------------- */
+
+
+.grid-sales {
+  display: grid;
+  padding: 0 1rem;
+  background: var(--white);
+}
+
+.grid-sales-two-columns {
+  grid-template-columns: 20% 80%;
+}
+
+.grid-sales-four-column {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sales-image {
+  display: grid;
+  place-items: center;
+  border-right: 2px solid var(--btns-background);
+}
+
+.sales-image img {
+  width: 100%;
+}
+
+/* NUMBER OF PRODUCTS DISPALYING */
+
+.productsCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.productsCount p {
+  color: rgb(31, 79, 142);
+  font-weight: 600;
+  font-size: 1.4rem;
+  position: relative;
+  padding-right: 2rem;
+}
+
+.valid {
+  border: 1px solid green;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.scrollToTop {
+  position: fixed;
+  right: 2%;
+  bottom: 5%;
+  z-index: 1;
+}
+
+.scrollBtn {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  background-color: var(--btns-background);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 40%;
+  cursor: pointer;
+  animation: animateScroll 3s linear infinite;
+}
+
+.scrollActive {
+  display: none;
+}
+
+@keyframes animateScroll {
+  0% {
+    border-radius: 118px 119px 156px 200px;
+  }
+
+  50% {
+    border-radius: 136px 88px 183px 162px;
+  }
+
+  100% {
+    border-radius: 118px 119px 156px 200px;
+  }
+}
+
+/* Shipping Section */
+
+:is(.shippingBox, .shipmentSection, .paymentSection ) .btn{
+  font-weight: 700;
+}
+
+:is(.shippingBox, .shipmentSection, .paymentSection ) .btn:hover{
+  background: var(--btns-background);
+  color: var(--white);
+}
+
+/* ---------------------------------Pop Up Offer Modal------------------------------- */
+.offerPopUp {
+  background-color: var(--white);
+  width: 30rem;
+  height: 25rem;
+  border-radius: 10%;
+}
+
+.popupMsg>a {
+  color: inherit;
+}
+
+.popupMsg {
+  margin: auto;
+  background: none;
+  border: none;
+}
+
+.popupMsg::backdrop {
+  background: #111111;
+  opacity: 0.6;
+}
+
+.popupMsg .offerImage img {
+  width: 100%;
+  height: 15rem;
+  background-image: cover;
+}
+
+.offerPopUp .offerContent {
+  padding: 1rem;
+  font-weight: 900;
+}
+
+.offerContent {
+  display: grid;
+  place-items: center;
+}
+
+.offerPopUp .btn a {
+  color: inherit;
+  margin: 1.5rem 0;
+}
+
+.offerPopUp #offerPercentage {
+  color: var(--btns-background);
+  font-weight: 900;
+  padding: 0.4rem;
+  border-radius: 1rem;
+}
+
+.popupMsg .popupClose {
+  position: absolute;
+  top: 15px;
+  right: 14px;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+}
+
+.fa-xmark {
+  border-radius: 50%;
+  padding: 0.2rem 0.6rem;
+  transition: all 0.3s linear;
+}
+
+.popupMsg .popupClose:hover,
+.fa-xmark:hover {
+  background-color: var(--btns-background);
+  color: var(--white);
+}
+
+
+/* -----------------------------------------BEVERGES PAGE-------------------------------- */
+
+/* Beverges Page Reusable code */
+
+:root {
+  --productbuy: rgb(24, 154, 63);
+  --rating: rgb(24, 154, 63);
+  --grey: #878787;
+}
+
+main {
+  height: 100%;
+}
+
+.mainData {
+  position: relative;
+}
+
+/* ------------------------------------Beverges Page Starts---------------------------- */
+
+.mainDivison {
+  width: 100%;
+  padding: 1rem;
+}
+
+.searchBox {
+  padding-top: 4rem;
+}
+
+.categoryData {
+  max-width: 15%;
+  position: absolute;
+  cursor: pointer;
+  position: fixed;
+}
+
+.categoryData aside {
+  background-color: var(--white);
+}
+
+.clearSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* PRODUCT SECTION */
+
+.productsDiv {
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.productGrid {
+  display: grid;
+}
+
+.productBox {
+  position: relative;
+  width: 100%;
+  height: 18rem;
+  padding: 1.2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.productImage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImage img {
+  height: 6rem;
+  max-width: 100%;
+}
+
+.imagePosition {
+  display: flex;
+  justify-content: center;
+}
+
+.productDec {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 3rem;
+}
+
+.productDetails {
+  margin-bottom: 0.5rem;
+}
+
+.productPrice .rating {
+  background-color: var(--rating);
+  color: var(--white);
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 2px 4px 2px 6px;
+  margin-right: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.productPrice {
+  position: relative;
+}
+
+.productPrice .ratings {
+  margin-bottom: 0.5rem;
+}
+
+.productPrice s {
+  color: var(--grey);
+}
+
+.productBox:hover,
+.productBoxMain:hover {
+  box-shadow: 0px 0px 18px -5px rgba(0, 0, 0, 0.75);
+}
+
+.productBox:hover .figCaptionDiv {
+  color: var(--gradient);
+}
+
+.productBox:hover .fa-heart {
+  color: #Ff0000;
+}
+
+/* ----------------Product Page----------- */
+
+.searchBox input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 1px solid var(--btns-background);
+  padding: 0.6rem;
+  margin-right: 2rem;
+  border-radius: 1rem;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.addWishlistDiv {
+  display: flex;
+  margin: 0.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.offerBtn {
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+  bottom: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.addWishlistDiv .btnD {
+  position: absolute;
+  margin: 0 1.2rem;
+  left: 0;
+}
+
+.addWishlistDiv p {
+  position: absolute;
+  margin: 0 1.2rem;
+  right: 0;
+}
+
+.AddNotDisplay {
+  display: none;
+}
+
+#filterPrice {
+  position: absolute;
+  right: 15rem;
+  margin: 1rem;
+}
+
+.figCaptionDiv {
+  min-height: 3rem;
+  text-align: center;
+  color: var(--black);
+}
+
+.notActivate {
+  display: none;
+}
+
+/* Successful Popup Message */
+
+/* PAYMENT SUCCESSFUL MESSAGE */
+
+.successMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.successMessage .modalBox {
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid var(--btns-background);
+  margin: 4rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.successMessage .modalBox h2 {
+  margin: 1.5rem;
+  font-size: 900;
+}
+
+.successMessage .button {
+  margin: 0;
+  color: var(--white);
+  font-weight: 900;
+}
+
+
+/* -------------------------------Resuable Code Ends--------------------------------------- */

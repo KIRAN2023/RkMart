@@ -1,0 +1,38 @@
+<section>
+  <h2 class="common-heading"> Add Category </h2>
+
+  <div class="container grid-two-columns">
+    <app-navbar></app-navbar>
+
+    <div class="productSection">
+      <form [formGroup]="categoryData">
+        <div class="grid-products">
+          <div class="form-fields">
+            <label for="categoryType"> Category Type </label>
+            <input type="text" name="categoryType" #stockData formControlName="categoryType">
+          </div>
+          <div class="form-fields">
+            <label for="category"> Categories </label>
+            <input type="text" name="category" #stockData formControlName="category">
+          </div>
+          <div class="form-fields">
+            <label for="categoryClass"> Category Class </label>
+            <input type="text" name="categoryClass" #stockData formControlName="categoryClass">
+          </div>
+          <div class="form-fields">
+            <label for="categoryUniqueValue"> Category Unique Value </label>
+            <input type="text" name="categoryUniqueValue" #stockData formControlName="categoryUniqueValue">
+          </div>
+        </div>
+        <div class="formBtn">
+          <button class="btn" routerLink="/admin/category">Back</button>
+          <button class="btn" (click)="addProduct(categoryData.value)"> Add Category </button>
+          <button class="btn">Reset</button>
+        </div>
+      </form>
+      <div id="addProductMessage">
+        <p> {{this.categoryStatusMessage}} </p>
+      </div>
+    </div>
+  </div>
+</section> 

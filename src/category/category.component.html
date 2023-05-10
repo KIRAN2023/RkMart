@@ -1,0 +1,201 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<!-- -------------Catergory Section----------------- -->
+<div class="mainDivison bevergeSection">
+
+    <div class="productsCount">
+        <p id="productsAvailable"></p>
+        <p id="OverallProductsAvailable"></p>
+        <p id="noProductsAvailable"></p>
+    </div>
+
+    <div class="twoSection sectionGrid">
+
+        <div class="categoryData">
+            <aside>
+                <h2>Filters</h2>
+                <hr>
+                <h5> <b class="findProduct"> Categories </b></h5>
+                <a *ngIf="category!=''" id="categoryBackButton"> <button routerLink="../" class="btn"><i
+                            class="fa-solid fa-arrow-left"></i> Back</button> </a>
+                <h3 class="categoryDetails">
+                    <div *ngIf="category=='grocery'||category==''">
+                        <a routerLink="/products/grocery" id="1001" class="categoryAvailable">Vegetables and Fruits <i
+                                class="fa-solid fa-angle-right"></i></a>
+                        <div class="categoryAvailable" id="1001">
+                            <ul>
+                                <li>Fresh Vegetables</li>
+                                <li>Fresh Fruits</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <div *ngIf="category=='beverages'||category==''">
+                        <a routerLink="/products/beverages" id="1002" class="categoryAvailable">Beverages <i
+                                class="fa-solid fa-angle-right"></i></a>
+                        <div class="categoryAvailable" id="1002">
+                            <ul>
+                                <li>Soft Drinks</li>
+                                <li>Soft Drinks Can</li>
+                                <li>Energy Drinks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <div *ngIf="category=='household'||category==''">
+
+                        <a routerLink="/products/household" id="1003" class="categoryAvailable">Household Products <i
+                                class="fa-solid fa-angle-right"></i></a>
+                        <div class="categoryAvailable" id="1003">
+                            <ul>
+                                <li>Home & Kitchen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </h3>
+
+                <h4 class="categoryChoosen"></h4>
+                <hr>
+
+                <div *ngIf="category=='grocery'||category==''" class="brands categoryAvailable" id="1001">
+                    <ng-container *ngFor="let category of categoryDisplay">
+                        <h5> <b> {{category.categoryType}} </b></h5>
+                        <div class="clearSection">
+                            <input type="search" id="grocery" class="clearSearch" placeholder="Search Variety">
+                            <p id="clearFilter">Clear All</p>
+                        </div>
+                        <ul>
+                            <li *ngFor="let categoryData of category.category, index as i">
+                                <input type="checkbox" name={{categoryData}}
+                                    attr.data-btn-num={{category?.categoryUniqueValue[i]}}
+                                    value={{category?.categoryUniqueValue[i]}} class={{category?.categoryClass[i]}}>
+                                {{categoryData}}
+                            </li>
+                        </ul>
+                    </ng-container>
+                </div>
+                <hr>
+
+                <div *ngIf="category=='beverages'||category==''" class="brands categoryAvailable" id="1002">
+                    <h5><b>Beverages Brands</b></h5>
+                    <input type="search" class="clearSearch" name="search" id="beverges" onclick="scrollToProduct('2')"
+                        placeholder="Search Brand">
+                    <ul>
+                        <li> <input type="checkbox" class="checkbox check bevergeCheck allProductsBeverge data-btn-10"
+                                name="Soft Drinks" data-btn-num="10" data-specific-category-data="1002" value="10">
+                            Soft Drinks</li>
+                        <li> <input type="checkbox" class="checkbox check bevergeCheck allProductsBeverge data-btn-11"
+                                name="Soft Drinks Can" data-btn-num="11" data-specific-category-data="1002" value="11">
+                            Soft Drinks Can </li>
+                        <li> <input type="checkbox" class="checkbox check bevergeCheck allProductsBeverge data-btn-12"
+                                name="Energy Drinks" data-btn-num="12" data-specific-category-data="1002" value="12">
+                            Engery Drinks</li>
+                        <li> <input type="checkbox" name="" class="checkbox AllCheckBox bevergeCheck data-btn-13"
+                                data-btn-num="13" data-specific-category-data="1002" value="13" id="allProductsBeverge">
+                            All </li>
+                    </ul>
+                    <hr>
+                </div>
+                <div *ngIf="category=='household'||category==''" class="brands categoryAvailable" id="1003">
+                    <h5> <b class="findProduct"> Household Products Brands </b></h5>
+                    <input type="search" class="clearSearch" name="search" id="household" onclick="scrollToProduct('3')"
+                        placeholder="Search Brand">
+                    <div class="bevergesBrands">
+                        <ul>
+                            <li> <input type="checkbox"
+                                    class="checkbox check HouseholdCheck allProductsHousehold data-btn-15"
+                                    name="Aquaguard Brand" data-btn-num="15" data-specific-category-data="1003"
+                                    value="15">
+                                Aquaguard </li>
+                            <li> <input type="checkbox"
+                                    class="checkbox check HouseholdCheck allProductsHousehold data-btn-16"
+                                    name="Prestige Brand" data-btn-num="16" data-specific-category-data="1003"
+                                    value="16">
+                                Prestige </li>
+                            <li> <input type="checkbox"
+                                    class="checkbox check HouseholdCheck allProductsHousehold data-btn-17"
+                                    name="Pigeon Brand" data-btn-num="17" data-specific-category-data="1003" value="17">
+                                Pigeon </li>
+                            <li> <input type="checkbox"
+                                    class="checkbox check HouseholdCheck allProductsHousehold data-btn-18"
+                                    name="Butterfly Brand" data-btn-num="18" data-specific-category-data="1003"
+                                    value="18">
+                                Butterfly </li>
+                            <li> <input type="checkbox"
+                                    class="checkbox check HouseholdCheck allProductsHousehold data-btn-19"
+                                    name="Bajaj Brand" data-btn-num="19" data-specific-category-data="1003" value="19">
+                                Bajaj </li>
+                            <li> <input type="checkbox"
+                                    class="checkbox check HouseholdCheck allProductsHousehold data-btn-20"
+                                    name="Philips Brand" data-btn-num="20" data-specific-category-data="1003"
+                                    value="20">
+                                Philips </li>
+                            <li> <input type="checkbox"
+                                    class="checkbox check HouseholdCheck allProductsHousehold data-btn-21"
+                                    name="Other Brands" data-btn-num="21" data-specific-category-data="1003" value="21">
+                                Other Brands </li>
+                            <li> <input type="checkbox" name="" class="checkbox AllCheckBox data-btn-22"
+                                    data-btn-num="22" data-specific-category-data="1003" value="22"
+                                    id="allProductsHousehold"> All
+                                Brands </li>
+                        </ul>
+                    </div>
+                    <hr>
+                </div>
+                <div class="accordin">
+                    <input type="checkbox" name="discount" id="accordinData" class="accordinInput">
+                    <label for="accordinData" class="accordinLabel">
+                        <h5><b>Discounts</b></h5> <i class="fa-solid fa-chevron-down"></i>
+                    </label>
+                    <div class="discountData">
+                        <ul>
+                            <li> <input type="checkbox" name="50% or More Discounted" class="checkbox"
+                                    id="discountCheckBox" data-btn-num="23" value="050"> 50%
+                                or more </li>
+                            <li> <input type="checkbox" name="40% or More Discounted" class="checkbox"
+                                    id="discountCheckBox" data-btn-num="24" value="040"> 40%
+                                or more </li>
+                            <li> <input type="checkbox" name="30% or More Discounted" class="checkbox"
+                                    id="discountCheckBox" data-btn-num="25" value="030"> 30%
+                                or more </li>
+                            <li> <input type="checkbox" name="20% or More Discounted" class="checkbox"
+                                    id="discountCheckBox" data-btn-num="26" value="020"> 20%
+                                or more </li>
+                            <li> <input type="checkbox" name="10% or More Discounted" class="checkbox"
+                                    id="discountCheckBox" data-btn-num="27" value="010"> 10%
+                                or more </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="accordin">
+                    <input type="checkbox" name="discount" id="accordinData2" class="accordinInput">
+                    <label for="accordinData2" class="accordinLabel">
+                        <h5><b>Customer Ratings</b></h5> <i class="fa-solid fa-chevron-down"></i>
+                    </label>
+                    <div class="discountData">
+                        <ul>
+                            <li> <input type="checkbox" class="checkbox" id="reviewData" name="4 &#9733; & above Rated"
+                                    data-btn-num="28" value="04"> 4
+                                <span class="reviewStar">&#9733;</span> & above
+                            </li>
+                            <li> <input type="checkbox" class="checkbox" id="reviewData" name="3 &#9733; & above Rated"
+                                    data-btn-num="29" value="03"> 3
+                                <span class="reviewStar">&#9733;</span> & above
+                            </li>
+                            <li> <input type="checkbox" class="checkbox" id="reviewData" name="2 &#9733; & above Rated"
+                                    data-btn-num="30" value="02"> 2
+                                <span class="reviewStar">&#9733;</span> & above
+                            </li>
+                            <li> <input type="checkbox" class="checkbox" id="reviewData" name="1 &#9733; & above Rated"
+                                    data-btn-num="31" value="01"> 1
+                                <span class="reviewStar">&#9733;</span> & above
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
