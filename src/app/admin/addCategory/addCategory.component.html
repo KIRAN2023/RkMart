@@ -1,5 +1,7 @@
 <section>
-  <h2 class="common-heading"> Add Category </h2>
+  <h2 class="common-heading" *ngIf="!queryParamData"> Add Category </h2>
+  <h2 class="common-heading" *ngIf="queryParamData"> Update Category </h2>
+
 
   <div class="container grid-two-columns">
     <app-navbar></app-navbar>
@@ -26,7 +28,9 @@
         </div>
         <div class="formBtn">
           <button class="btn" routerLink="/admin/category">Back</button>
-          <button class="btn" (click)="addProduct(categoryData.value)"> Add Category </button>
+          <button class="btn" *ngIf="!queryParamData" (click)="addProduct(categoryData.value)"> Add Category </button>
+          <button class="btn" *ngIf="queryParamData" (click)="updateProduct(categoryData.value)"> Update Category </button>
+
           <button class="btn">Reset</button>
         </div>
       </form>

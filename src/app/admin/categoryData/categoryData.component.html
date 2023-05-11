@@ -42,7 +42,7 @@
                 <td>{{categoryData}}</td>
                 <td>{{category.categoryClass[i]}}</td>
                 <td>{{category.categoryUniqueValue[i]}}</td>
-                <td routerLink='/admin/addCategory/{{category.id}}' [state]="{categoryType:category.categoryType,category:category,categoryClass:category.categoryClass[i],categoryUnique:category.categoryUniqueValue[i]}" > <i class="fa-solid fa-pen-to-square"></i> </td>
+                <td [routerLink]="['/admin/addCategory/',category.id]" [queryParams]="{categoryType:category.categoryType,category:categoryData,categoryClass:category.categoryClass[i],categoryUnique:category.categoryUniqueValue[i]}" > <i class="fa-solid fa-pen-to-square"></i> </td>
                 <td (click)="removeCategory(category.id, categoryData,category.categoryClass[i],category.categoryUniqueValue[i])"> <i class="fa-solid fa-trash"></i> </td>
               </tr>
             </ng-container>

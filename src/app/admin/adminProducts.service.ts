@@ -72,6 +72,10 @@ export class AdminProductsService {
     return this.http.patch(`${this.getCategoryUrl}/${id}`, { [key]: categoryData });
   }
 
+  updateCategoryData(categoryId:any, categoryData:any){
+    return this.http.put(`${this.getCategoryUrl}/${categoryId}`, categoryData);
+  }
+
   getCategory() {
     return this.http.get(`${this.getCategoryUrl}`);
   }

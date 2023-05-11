@@ -830,108 +830,114 @@
     {
       "categoryTypeData": "t1",
       "id": 13
+    },
+    {
+      "categoryTypeData": "testUpdateAdd",
+      "id": 14
+    },
+    {
+      "categoryTypeData": "testingUpdateAdd",
+      "id": 15
+    },
+    {
+      "categoryTypeData": "testttt",
+      "id": 16
+    },
+    {
+      "categoryTypeData": "demi",
+      "id": 17
+    },
+    {
+      "categoryTypeData": "testing Multiple",
+      "id": 18
     }
   ],
   "category": [
     {
-      "categoryType": "demo",
-      "category": [
-        "d"
-      ],
-      "categoryClass": [
-        "d d1 d2"
-      ],
-      "categoryUniqueValue": [
-        "1"
-      ],
-      "id": 1
-    },
-    {
-      "categoryType": "test1",
-      "category": [
-        "t"
-      ],
-      "categoryClass": [
-        "t"
-      ],
-      "categoryUniqueValue": [
-        "t"
-      ],
+      "categoryType": "test done",
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
       "id": 3
     },
     {
       "categoryType": "test2",
-      "category": [
-        "t2"
-      ],
-      "categoryClass": [
-        "t"
-      ],
-      "categoryUniqueValue": [
-        "t"
-      ],
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
       "id": 4
     },
     {
       "categoryType": "okay",
-      "category": [
-        "okak"
-      ],
-      "categoryClass": [
-        "ksk"
-      ],
-      "categoryUniqueValue": [
-        "k"
-      ],
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
       "id": 5
     },
     {
-      "categoryType": "tested",
-      "category": [
-        "t7",
-        "12",
-        "1225"
-      ],
-      "categoryClass": [
-        "t1 t2t2",
-        "test1 test2",
-        "12"
-      ],
-      "categoryUniqueValue": [
-        "1",
-        "12",
-        "12111111111111"
-      ],
+      "categoryType": "tested workin",
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
       "id": 6
     },
     {
       "categoryType": "tesed",
-      "category": [
-        "12"
-      ],
-      "categoryClass": [
-        "12"
-      ],
-      "categoryUniqueValue": [
-        "12"
-      ],
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
       "id": 7
     },
     {
       "categoryType": "t1",
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
+      "id": 8
+    },
+    {
+      "categoryType": "testUpdateAdd",
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
+      "id": 9
+    },
+    {
+      "categoryType": "testingUpdateAdd",
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
+      "id": 10
+    },
+    {
+      "categoryType": "testttt",
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
+      "id": 11
+    },
+    {
+      "categoryType": "dem",
+      "category": [],
+      "categoryClass": [],
+      "categoryUniqueValue": [],
+      "id": 12
+    },
+    {
+      "categoryType": "testing Multiple",
       "category": [
-        "t111",
-        "t11112"
+        "1 ok",
+        "1 ok2"
       ],
       "categoryClass": [
-        "t1",
-        "t1"
+        "o ok",
+        "o ok2"
       ],
       "categoryUniqueValue": [
-        "t1",
-        "t1"
+        "1 ok",
+        "1 ok2"
       ],
-      "id": 8
+      "id": 13
     }
   ],
   "cartData": [
