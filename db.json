@@ -36,13 +36,6 @@
       "id": 6
     },
     {
-      "username": "babu",
-      "mail": "babu@gmail.com",
-      "mobile": "8878797798",
-      "password": "Babu2023!",
-      "id": 7
-    },
-    {
       "username": "dinesh",
       "mail": "mdk@gmail.com",
       "mobile": "9878799888",
@@ -850,6 +843,14 @@
     {
       "categoryTypeData": "testing Multiple",
       "id": 18
+    },
+    {
+      "categoryTypeData": "t",
+      "id": 19
+    },
+    {
+      "categoryTypeData": "tested",
+      "id": 20
     }
   ],
   "category": [
@@ -924,20 +925,49 @@
       "id": 12
     },
     {
-      "categoryType": "testing Multiple",
+      "categoryType": "idisdisi",
       "category": [
-        "1 ok",
-        "1 ok2"
+        "banansdsd",
+        "1 okay do"
       ],
       "categoryClass": [
-        "o ok",
+        "kkk",
         "o ok2"
       ],
       "categoryUniqueValue": [
-        "1 ok",
+        "k",
         "1 ok2"
       ],
       "id": 13
+    },
+    {
+      "categoryType": "t",
+      "category": [
+        "tested",
+        "tested tested"
+      ],
+      "categoryClass": [
+        "t",
+        "t"
+      ],
+      "categoryUniqueValue": [
+        "t",
+        "t"
+      ],
+      "id": 14
+    },
+    {
+      "categoryType": "tested",
+      "category": [
+        "ok"
+      ],
+      "categoryClass": [
+        "ueru"
+      ],
+      "categoryUniqueValue": [
+        "jdfj"
+      ],
+      "id": 15
     }
   ],
   "cartData": [
@@ -964,17 +994,6 @@
       "id": 4
     },
     {
-      "productName": "Alofrut Mint Mojito",
-      "title": "Mojito",
-      "image": "assets/images/Beverges/bevergeMojito.png",
-      "productUniqueId": "23",
-      "quantity": "24 x 250ml",
-      "originalAmount": "1030",
-      "productid": 23,
-      "uid": "1",
-      "id": 5
-    },
-    {
       "productName": "Minute Maid Puply Orange",
       "title": "Minute Maid",
       "image": "assets/images/Beverges/bevergeMinuteMaid.png",
@@ -984,17 +1003,6 @@
       "productid": 22,
       "uid": "6",
       "id": 6
-    },
-    {
-      "productName": "Apple Red Delicious 4 pcs",
-      "title": "Apple Red",
-      "image": "assets/images/VeggetablesFruits/appleRed.png",
-      "productUniqueId": "3",
-      "quantity": "550g - 700g (Approx)",
-      "originalAmount": "172",
-      "productid": 3,
-      "uid": "1",
-      "id": 7
     },
     {
       "productName": "Lauki (Bottle Gourd)",
@@ -1019,13 +1027,13 @@
       "id": 10
     },
     {
-      "productName": "Prestige Atlas 3.0 Induction Cooktop",
-      "title": "Prestige Induction Cooktop",
-      "image": "assets/images/HouseHoldProducts/electricInduction.png",
-      "productUniqueId": "30",
-      "quantity": "1.5 years Warranty",
-      "originalAmount": "895",
-      "productid": 30,
+      "productName": "Apple Red Delicious 4 pcs",
+      "title": "Apple Red",
+      "image": "assets/images/VeggetablesFruits/appleRed.png",
+      "productUniqueId": "3",
+      "quantity": "550g - 700g (Approx)",
+      "originalAmount": "172",
+      "productid": 3,
       "uid": "1",
       "id": 11
     }
@@ -1268,6 +1276,31 @@
       "totalAmount": 211,
       "uid": "16",
       "id": 6
+    },
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran@gmail.com",
+      "customerMobile": "9569956959",
+      "customerState": "kk",
+      "customerCity": "k",
+      "customerPincode": "949549",
+      "customerAddress": "kk",
+      "cartItems": [
+        {
+          "productName": "Apple Red Delicious 4 pcs",
+          "title": "Apple Red",
+          "image": "assets/images/VeggetablesFruits/appleRed.png",
+          "productUniqueId": "3",
+          "quantity": "550g - 700g (Approx)",
+          "originalAmount": "172",
+          "productid": 3,
+          "uid": "1",
+          "id": 11
+        }
+      ],
+      "totalAmount": 172,
+      "uid": "1",
+      "id": 7
     }
   ]
 }

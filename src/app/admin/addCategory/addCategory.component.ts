@@ -78,20 +78,30 @@ export class AddCategoryComponent implements OnInit {
 
   updateProduct(updatedData: any) {
     this.http.get(`http://localhost:3000/category/${this.categoryId}`).subscribe((categoryData: any) => {
-      console.warn(categoryData.category);
+      const categoryTypeData = updatedData.categoryType;
+      
+      const existingCategory = [...categoryData.category];
+      existingCategory[existingCategory.indexOf(this.categoryValueData)] = updatedData.category;
 
-      let dataToUpdate = {
+      const existingCategoryClass = [...categoryData.categoryClass];
+      existingCategoryClass[existingCategoryClass.indexOf(this.categoryClass)] = updatedData.categoryClass;
+
+      const existingCategoryUniqueValue = [...categoryData.categoryUniqueValue];
+      existingCategoryUniqueValue[existingCategoryUniqueValue.indexOf(this.categoryUniqueId)] = updatedData.categoryUniqueValue;
+
+      const updatedDataValue = {
         ...categoryData,
-        categoryType: categoryData.categoryType.replace(`${this.categoryType}`, updatedData.categoryType),
-        category: categoryData.category.map((data:any) => data.replace(`${this.categoryValueData}`, updatedData.category)),
-        categoryClass: categoryData.categoryClass.map((data: any) => data.replace(`${this.categoryClass}`, updatedData.categoryClass)),
-        categoryUniqueValue: categoryData.categoryUniqueValue.map((data: any) => data.replace(`${this.categoryUniqueId}`, updatedData.categoryUniqueValue)), 
+        categoryType:categoryTypeData,
+        category: existingCategory,
+        categoryClass: existingCategoryClass,
+        categoryUniqueValue: existingCategoryUniqueValue
       }
-      console.warn(dataToUpdate);
+      console.warn(updatedDataValue);
+      
 
-      // this.adminService.updateCategoryData(this.categoryId, dataToUpdate).subscribe((response) => {
-      //   alert("Updated Successfully")
-      // })
+      this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
+        alert("Updated Successfully")
+      })
     })
   }
 
