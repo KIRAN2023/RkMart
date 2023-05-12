@@ -137,7 +137,9 @@ export class MenuComponent implements OnInit {
 
     if (!this.loggedin) {
       for (let user of this.admins) {
-        if (usermail.value == user.mail && userpassword.value == user.password) {
+        let decryptedValue = CryptoJS.AES.decrypt(user.password,userpassword.value).toString(CryptoJS.enc.Utf8);
+
+        if (usermail.value === user.mail && userpassword.value === decryptedValue) {
           this.loggedin = true;
           this.admin.admin = true;
           sessionStorage.setItem('adminLoggedIn', 'true')
