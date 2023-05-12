@@ -1,7 +1,10 @@
+import * as CryptoJS from 'crypto-js';
+
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AdminProductsService } from 'src/app/admin/adminProducts.service';
 import { AuthUserGuard } from 'src/app/auth-user.guard';
 import { CartService } from 'src/cart.service';
@@ -51,7 +54,7 @@ export class MenuComponent implements OnInit {
       username: [, [Validators['required'], Validators['pattern']]],
       mail: [, [Validators['required'], Validators['pattern']]],
       mobile: [, [Validators['required'], Validators['pattern']]],
-      password: [, [Validators['required'], Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$")]]
+      password: ['', [Validators['required'], Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$")]]
     }
   )
 
@@ -96,6 +99,9 @@ export class MenuComponent implements OnInit {
         }
       });
       if (newUser) {
+        let userPassword:any = this.registerForm.controls["password"].value;
+        let encryptedPassword = CryptoJS.AES.encrypt(userPassword,userPassword).toString();
+        this.registerForm.get("password")?.setValue(encryptedPassword);
         this.dataService.registerUser(this.registerForm.value).subscribe(data => { });
         SuccessfulRegistered.showModal();
       } else {
@@ -109,7 +115,8 @@ export class MenuComponent implements OnInit {
     var invalidLogin: any = document.querySelector('#loginError');
     this.loggedin = false;
     for (let user of this.users) {
-      if (usermail.value === user.mail && userpassword.value === user.password) {
+      let decryptedValue = CryptoJS.AES.decrypt(user.password,userpassword.value).toString(CryptoJS.enc.Utf8);
+      if (usermail.value === user.mail && userpassword.value === decryptedValue) {
         invalidLogin.innerHTML = "";
         this.loggedinUser = user;
         this.dataService.activeUser = this.loggedinUser;
