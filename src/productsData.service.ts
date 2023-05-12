@@ -18,6 +18,7 @@ export class ProductsDataService {
   getAdminUrl = 'http://localhost:3000/admin';
   getProductDataUrl = 'http://localhost:3000/Productdata';
   getCategoryUrl = 'http://localhost:3000/category';
+  getCategoryUrlTypes = 'http://localhost:3000/categoryTypes';
   getRegisteredUsersUrl = 'http://localhost:3000/registeredUser';
 
   constructor(private http: HttpClient) { }
@@ -32,6 +33,10 @@ export class ProductsDataService {
 
   getCategory(){
     return this.http.get(`${this.getCategoryUrl}`);
+  }
+
+  getCategoryTypes(){
+    return this.http.get(`${this.getCategoryUrlTypes}`);
   }
 
   registerUser(userData: any) {

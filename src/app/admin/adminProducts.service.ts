@@ -80,8 +80,16 @@ export class AdminProductsService {
     return this.http.get(`${this.getCategoryUrl}`);
   }
 
+  getCategoryTypes(){
+    return this.http.get(`${this.getCategoryTypesUrl}`);
+  }
+
   addCategoryTypes(category: string) {
     return this.http.post(`${this.getCategoryTypesUrl}`, category);
+  }
+
+  removeCategoryTypes(id:any){
+    return this.http.delete(`${this.getCategoryTypesUrl}/${id}`);
   }
 
   removeCategory(categoryId:any, updatedData:any){

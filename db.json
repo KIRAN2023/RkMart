@@ -253,7 +253,6 @@
       "title": "Brinjal Black Big",
       "productName": "Brinjal Black Big",
       "quantity": "500g (Approx)",
-      "rating": "3.5",
       "ratingCount": "131",
       "reviewCount": "32",
       "originalAmount": "35",
@@ -696,178 +695,56 @@
   ],
   "categoryTypes": [
     {
-      "categoryTypeData": "demo",
+      "categoryTypeData": "k",
       "id": 1
     },
     {
-      "categoryTypeData": "demo1",
+      "categoryTypeData": "p",
       "id": 2
     },
     {
-      "categoryTypeData": "demo12",
-      "id": 3
-    },
-    {
-      "categoryTypeData": "demo121",
-      "id": 4
-    },
-    {
-      "categoryTypeData": "de",
-      "id": 5
-    },
-    {
-      "categoryTypeData": "testing",
-      "id": 6
-    },
-    {
-      "categoryTypeData": "test",
-      "id": 7
-    },
-    {
-      "categoryTypeData": "test1",
-      "id": 8
-    },
-    {
-      "categoryTypeData": "test2",
-      "id": 9
-    },
-    {
-      "categoryTypeData": "okay",
-      "id": 10
-    },
-    {
-      "categoryTypeData": "tested",
-      "id": 11
-    },
-    {
-      "categoryTypeData": "tesed",
-      "id": 12
-    },
-    {
-      "categoryTypeData": "t1",
-      "id": 13
-    },
-    {
-      "categoryTypeData": "testUpdateAdd",
-      "id": 14
-    },
-    {
-      "categoryTypeData": "testingUpdateAdd",
-      "id": 15
-    },
-    {
-      "categoryTypeData": "testttt",
-      "id": 16
-    },
-    {
-      "categoryTypeData": "demi",
-      "id": 17
-    },
-    {
-      "categoryTypeData": "testing Multiple",
-      "id": 18
-    },
-    {
       "categoryTypeData": "t",
-      "id": 19
-    },
-    {
-      "categoryTypeData": "tested",
-      "id": 20
+      "id": 3
     }
   ],
   "category": [
     {
-      "categoryType": "test done",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 3
-    },
-    {
-      "categoryType": "test2",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 4
-    },
-    {
-      "categoryType": "okay",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 5
-    },
-    {
-      "categoryType": "tested workin",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 6
-    },
-    {
-      "categoryType": "tesed",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 7
-    },
-    {
-      "categoryType": "t1",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 8
-    },
-    {
-      "categoryType": "testUpdateAdd",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 9
-    },
-    {
-      "categoryType": "testingUpdateAdd",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 10
-    },
-    {
-      "categoryType": "testttt",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 11
-    },
-    {
-      "categoryType": "dem",
-      "category": [],
-      "categoryClass": [],
-      "categoryUniqueValue": [],
-      "id": 12
-    },
-    {
-      "categoryType": "idisdisi",
+      "categoryType": "k",
       "category": [
-        "banansdsd",
-        "1 okay do"
+        "tkkpo",
+        "t2"
       ],
       "categoryClass": [
-        "kkk",
-        "o ok2"
+        "t",
+        "t"
       ],
       "categoryUniqueValue": [
-        "k",
-        "1 ok2"
+        "t",
+        "t"
       ],
-      "id": 13
+      "id": 1
+    },
+    {
+      "categoryType": "p",
+      "category": [
+        "p",
+        "p2"
+      ],
+      "categoryClass": [
+        "p",
+        "p"
+      ],
+      "categoryUniqueValue": [
+        "p",
+        "p"
+      ],
+      "id": 2
     },
     {
       "categoryType": "t",
       "category": [
-        "tested",
-        "tested tested"
+        "tkkpo",
+        "t2"
       ],
       "categoryClass": [
         "t",
@@ -877,22 +754,32 @@
         "t",
         "t"
       ],
-      "id": 14
-    },
-    {
-      "categoryType": "tested",
-      "category": [
-        "ok"
-      ],
-      "categoryClass": [
-        "ueru"
-      ],
-      "categoryUniqueValue": [
-        "jdfj"
-      ],
-      "id": 15
+      "id": 3
     }
   ],
-  "cartData": [],
+  "cartData": [
+    {
+      "productName": "Prestige Atlas 3.0 Induction Cooktop",
+      "title": "Prestige Induction Cooktop",
+      "image": "assets/images/HouseHoldProducts/electricInduction.png",
+      "productUniqueId": "30",
+      "quantity": "1.5 years Warranty",
+      "originalAmount": "895",
+      "productid": 30,
+      "uid": "1",
+      "id": 1
+    },
+    {
+      "productName": "Apple Fuji Pack 4 pcs",
+      "title": "Apple Fuji",
+      "image": "assets/images/VeggetablesFruits/appleFuji.png",
+      "productUniqueId": 1,
+      "quantity": "500g - 700g (Approx)",
+      "originalAmount": "169",
+      "productid": 1,
+      "uid": "1",
+      "id": 3
+    }
+  ],
   "orders": []
 }

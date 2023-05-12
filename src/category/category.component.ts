@@ -9,6 +9,9 @@ import { ProductsDataService } from 'src/productsData.service';
 })
 export class CategoryComponent implements OnInit {
   category: string | null = "";
+  currentCategory:string|null|undefined;
+
+  categoryTypes:any=[];
   categoryDisplay: any = "";
 
   constructor(private route: ActivatedRoute, private productService: ProductsDataService) { }
@@ -16,14 +19,17 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
     if (this.route.snapshot.paramMap.get('category')) {
       this.category = this.route.snapshot.paramMap.get('category');
+      this.currentCategory = this.route.snapshot.paramMap.get('category');
     }
 
     this.productService.getCategory().subscribe((data) => {
       this.categoryDisplay = data;
     });
 
-    this.productService.getCategory().subscribe((data)=>{
-      this.categoryDisplay = data;        
-  });
+    this.productService.getCategoryTypes().subscribe((categoryType:any)=>{
+      categoryType.forEach((data:any)=>{
+        this.categoryTypes.push(data.categoryTypeData);
+      })
+    })    
   }
 }

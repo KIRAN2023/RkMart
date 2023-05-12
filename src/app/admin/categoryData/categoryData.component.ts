@@ -13,32 +13,40 @@ export class CategoryDataComponent implements OnInit {
   constructor(private adminService: AdminProductsService, private http: HttpClient) {
     this.adminService.getCategory().subscribe((data) => {
       this.categoryDisplay = data;
-    });
+    }); 
     this.adminService.categoryTypesCount().subscribe((category: any) => this.categoryCount = category);
   }
+
 
   ngOnInit(): void { }
 
   removeCategory(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any) {
-    this.http.get(`http://localhost:3000/category/${categoryId}`).subscribe((categoryData: any) => {
-      let categoryDataObject = categoryData;
-      let categoryKey = "category";
-      let categoryClassKey = "categoryClass";
-      let categoryUniqueValueKey = "categoryUniqueValue"
+    let confirmation = confirm("Are you sure want to delete");
+    if (confirmation) {
+      this.http.get(`http://localhost:3000/category/${categoryId}`).subscribe((categoryData: any) => {
+        let categoryDataObject = categoryData;
 
-      if (categoryDataObject[categoryKey].indexOf(categoryValue) != -1 && categoryDataObject[categoryClassKey].indexOf(categoryClass) != -1 && categoryDataObject[categoryUniqueValueKey].indexOf(categoryUniqueValue) != -1) {
-        categoryDataObject[categoryKey].splice(categoryDataObject[categoryKey].indexOf(categoryValue), 1);
-        categoryDataObject[categoryClassKey].splice(categoryDataObject[categoryClassKey].indexOf(categoryValue), 1);
-        categoryDataObject[categoryUniqueValueKey].splice(categoryDataObject[categoryUniqueValueKey].indexOf(categoryValue), 1);
-      }
-
-      this.adminService.removeCategory(categoryId, categoryDataObject).subscribe((response) => {
-        if (response) {
-          alert("Category Remove Successfully");
-        } else {
-          alert("Error While Removing Category");
+        if (categoryDataObject["category"].indexOf(categoryValue) != -1 && categoryDataObject["categoryClass"].indexOf(categoryClass) != -1 && categoryDataObject["categoryUniqueValue"].indexOf(categoryUniqueValue) != -1) {
+          categoryDataObject["category"].splice(categoryDataObject["category"].indexOf(categoryValue), 1);
+          categoryDataObject["categoryClass"].splice(categoryDataObject["categoryClass"].indexOf(categoryValue), 1);
+          categoryDataObject["categoryUniqueValue"].splice(categoryDataObject["categoryUniqueValue"].indexOf(categoryValue), 1);
         }
-      })
-    });
+
+        if (categoryData.category.length !== 0) {
+          this.adminService.removeCategory(categoryId, categoryDataObject).subscribe((response) => {
+            response ? alert("Category Remove Successfully") : alert("Error While Removing Category");
+          })
+        }
+        if (categoryData.category.length == 0) {
+          this.adminService.removeCategoryTypes(categoryId).subscribe();
+
+          this.http.delete(`http://localhost:3000/category/${categoryId}`).subscribe();
+        }
+        this.adminService.getCategory().subscribe((data) => {
+          this.categoryDisplay = data;
+        });
+        this.adminService.categoryTypesCount().subscribe((category: any) => this.categoryCount = category);
+      });
+    }
   }
 } 

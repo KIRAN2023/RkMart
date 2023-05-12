@@ -79,7 +79,7 @@ export class AddCategoryComponent implements OnInit {
   updateProduct(updatedData: any) {
     this.http.get(`http://localhost:3000/category/${this.categoryId}`).subscribe((categoryData: any) => {
       const categoryTypeData = updatedData.categoryType;
-      
+
       const existingCategory = [...categoryData.category];
       existingCategory[existingCategory.indexOf(this.categoryValueData)] = updatedData.category;
 
@@ -91,17 +91,47 @@ export class AddCategoryComponent implements OnInit {
 
       const updatedDataValue = {
         ...categoryData,
-        categoryType:categoryTypeData,
+        categoryType: categoryTypeData,
         category: existingCategory,
         categoryClass: existingCategoryClass,
         categoryUniqueValue: existingCategoryUniqueValue
       }
-      console.warn(updatedDataValue);
-      
 
-      this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
-        alert("Updated Successfully")
+      this.http.get<any>('http://localhost:3000/category').subscribe((data) => {
+        let exist: boolean = false;
+        let existId: any;
+        data.find((data: any) => {
+          if (data.categoryType == updatedDataValue.categoryType && this.categoryType != updatedData.categoryType) {
+            existId = data.id
+            exist = true;
+            alert(existId);
+          }
+        });
+        if (exist == false) {
+          this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
+            alert("Updated Successfully");
+          })
+        } else {
+          alert("oh yes");
+
+          this.http.get<any>(`http://localhost:3000/category/${existId}`).subscribe((data: any) => {
+            let updated = {
+              ...data,
+              categoryType: categoryTypeData,
+              category: existingCategory,
+              categoryClass: existingCategoryClass,
+              categoryUniqueValue: existingCategoryUniqueValue
+            }
+            console.warn(updated);
+            this.adminService.updateCategoryData(existId, updated).subscribe((response) => {
+              alert("Updated Successfully");
+            })
+          });
+        }
       })
+      // this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
+      //   alert("Updated Successfully")
+      // })
     })
   }
 

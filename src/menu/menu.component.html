@@ -27,7 +27,7 @@
     <div [hidden]="!loggedin">
         <div class="user">
             <p id="user" title="{{loggedinUser}}"> <i class="fa-regular fa-circle-user"></i>
-                {{(loggedinUser?.username)||(loggedinUser)}}</p>
+                {{(loggedinUser?.username)||(loggedinUser)|uppercase}}</p>
             <p id="user" title="Logout" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></p>
         </div>
     </div>
