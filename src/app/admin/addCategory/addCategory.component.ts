@@ -115,23 +115,16 @@ export class AddCategoryComponent implements OnInit {
           alert("oh yes");
 
           this.http.get<any>(`http://localhost:3000/category/${existId}`).subscribe((data: any) => {
-            let updated = {
-              ...data,
-              categoryType: categoryTypeData,
-              category: existingCategory,
-              categoryClass: existingCategoryClass,
-              categoryUniqueValue: existingCategoryUniqueValue
+            let categoryValues = {
+              categoryType: updatedData.categoryType,
+              category: updatedData.category.split(','),
+              categoryClass: updatedData.categoryClass.split(','),
+              categoryUniqueValue: updatedData.categoryUniqueValue.split(',')
             }
-            console.warn(updated);
-            this.adminService.updateCategoryData(existId, updated).subscribe((response) => {
-              alert("Updated Successfully");
-            })
+            this.dataUpdating(true,categoryValues,existId);
           });
         }
       })
-      // this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
-      //   alert("Updated Successfully")
-      // })
     })
   }
 

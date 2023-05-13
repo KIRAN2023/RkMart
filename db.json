@@ -711,6 +711,28 @@
     {
       "categoryType": "k",
       "category": [
+        "tk",
+        "t2",
+        "kpop",
+        "pkkpo"
+      ],
+      "categoryClass": [
+        "t",
+        "t",
+        "t",
+        "tdpfpdap"
+      ],
+      "categoryUniqueValue": [
+        "t",
+        "t",
+        "t",
+        "tsjfvsfkvk"
+      ],
+      "id": 1
+    },
+    {
+      "categoryType": "pkkkkk",
+      "category": [
         "tkkpo",
         "t2"
       ],
@@ -721,22 +743,6 @@
       "categoryUniqueValue": [
         "t",
         "t"
-      ],
-      "id": 1
-    },
-    {
-      "categoryType": "p",
-      "category": [
-        "p",
-        "p2"
-      ],
-      "categoryClass": [
-        "p",
-        "p"
-      ],
-      "categoryUniqueValue": [
-        "p",
-        "p"
       ],
       "id": 2
     },
