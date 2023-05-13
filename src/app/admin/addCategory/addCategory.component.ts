@@ -117,11 +117,13 @@ export class AddCategoryComponent implements OnInit {
           this.http.get<any>(`http://localhost:3000/category/${existId}`).subscribe((data: any) => {
             let categoryValues = {
               categoryType: updatedData.categoryType,
-              category: updatedData.category.split(','),
-              categoryClass: updatedData.categoryClass.split(','),
-              categoryUniqueValue: updatedData.categoryUniqueValue.split(',')
+              category: updatedData.category,
+              categoryClass: updatedData.categoryClass,
+              categoryUniqueValue: updatedData.categoryUniqueValue
             }
             this.dataUpdating(true,categoryValues,existId);
+            this.adminService.removeCategoryData(this.categoryId, this.categoryValueData, this.categoryClass, this.categoryUniqueId);
+            this.adminService.getCategory();
           });
         }
       })

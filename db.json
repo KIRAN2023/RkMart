@@ -701,10 +701,6 @@
     {
       "categoryTypeData": "p",
       "id": 2
-    },
-    {
-      "categoryTypeData": "t",
-      "id": 3
     }
   ],
   "category": [
@@ -713,54 +709,38 @@
       "category": [
         "tk",
         "t2",
-        "kpop",
-        "pkkpo"
+        "test2"
       ],
       "categoryClass": [
         "t",
         "t",
-        "t",
-        "tdpfpdap"
+        "t"
       ],
       "categoryUniqueValue": [
         "t",
         "t",
-        "t",
-        "tsjfvsfkvk"
+        "t"
       ],
       "id": 1
     },
     {
       "categoryType": "pkkkkk",
       "category": [
-        "tkkpo",
-        "t2"
+        "t2 to pkkkkk",
+        "pkkpo of K to pkkkkk",
+        "testingD of k to pkkkkk"
       ],
       "categoryClass": [
         "t",
+        "tedtisngn",
         "t"
       ],
       "categoryUniqueValue": [
         "t",
+        "trfer",
         "t"
       ],
       "id": 2
-    },
-    {
-      "categoryType": "t",
-      "category": [
-        "tkkpo",
-        "t2"
-      ],
-      "categoryClass": [
-        "t",
-        "t"
-      ],
-      "categoryUniqueValue": [
-        "t",
-        "t"
-      ],
-      "id": 3
     }
   ],
   "cartData": [

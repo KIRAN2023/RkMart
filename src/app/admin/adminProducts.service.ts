@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProductsDataService } from 'src/productsData.service';
 import { product } from './product';
 import { map, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { map, switchMap, tap } from 'rxjs/operators';
 export class AdminProductsService {
 
   categoryCount: number = 0;
+  categoryList = new BehaviorSubject<any>([]);
 
   adminName: any = "";
 
@@ -129,5 +131,31 @@ export class AdminProductsService {
         return this.http.patch(`${this.getCategoryUrl}/${categoryID}`, updatedValue);
       })
     )
+  }
+
+  removeCategoryData(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any) {
+    let confirmation = confirm("Are you sure want to delete");
+    if (confirmation) {
+      this.http.get(`http://localhost:3000/category/${categoryId}`).subscribe((categoryData: any) => {
+        let categoryDataObject = categoryData;
+
+        if (categoryDataObject["category"].indexOf(categoryValue) != -1 && categoryDataObject["categoryClass"].indexOf(categoryClass) != -1 && categoryDataObject["categoryUniqueValue"].indexOf(categoryUniqueValue) != -1) {
+          categoryDataObject["category"].splice(categoryDataObject["category"].indexOf(categoryValue), 1);
+          categoryDataObject["categoryClass"].splice(categoryDataObject["categoryClass"].indexOf(categoryValue), 1);
+          categoryDataObject["categoryUniqueValue"].splice(categoryDataObject["categoryUniqueValue"].indexOf(categoryValue), 1);
+        }
+
+        if (categoryData.category.length !== 0) {
+          this.removeCategory(categoryId, categoryDataObject).subscribe((response) => {
+            response ? alert("Category Remove Successfully") : alert("Error While Removing Category");
+          })
+        }
+        if (categoryData.category.length == 0) {
+          this.removeCategoryTypes(categoryId).subscribe();
+
+          this.http.delete(`http://localhost:3000/category/${categoryId}`).subscribe();
+        }
+      });
+    }
   }
 }
