@@ -14,6 +14,7 @@ export class AuthAdminGuard implements OnInit, CanActivate, CanActivateChild {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+
     if (this.authenticate.admin || sessionStorage.getItem('adminLoggedIn')) {
       // sessionStorage.setItem('adminLogin', `${this.authenticate.admin}`);
       // alert("Login Successfull");

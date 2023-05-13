@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ShippingService } from 'src/app/shipping.service';
 import { CartService } from 'src/cart.service';
 import { ProductsDataService } from 'src/productsData.service';
 
@@ -14,7 +15,8 @@ export class OrderDetailsComponent implements OnInit {
   orderList:any = [];
 
   subTotal:number=0;
-  constructor(private userData:ProductsDataService, private cartService:CartService, private title:Title) { }
+  data:any=""
+  constructor(private userData:ProductsDataService, private shippingService:ShippingService ,private cartService:CartService,private title:Title) { }
 
   ngOnInit() {
     this.userData.registeredUser().subscribe((data) => {
@@ -32,7 +34,8 @@ export class OrderDetailsComponent implements OnInit {
       this.orderList = productData;
     });
 
-    this.title.setTitle('Order Summary | RK MART')
-
+    this.title.setTitle('Order Summary | RK MART');
+    this.data = sessionStorage.getItem("shippingData");
+    this.data =this.data? JSON.parse(this.data):this.shippingService.userShippingData;
   }
 }

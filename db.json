@@ -2,17 +2,24 @@
   "admin": [
     {
       "name": "Kiran",
-      "mail": "kiran2023@gmail.com",
+      "mail": "kiran@gmail.com",
       "password": "U2FsdGVkX192pbKQKHzFPumyOG+inzZF2CzFx6hjruM="
     }
   ],
   "registeredUser": [
     {
       "username": "kiran",
-      "mail": "kiran@gmail.com",
+      "mail": "kiran2023@gmail.com",
       "mobile": "7866956856",
       "password": "U2FsdGVkX1/Nn03A/esNGvYM5I3kpq30A105yKFOU+Y=",
       "id": 1
+    },
+    {
+      "username": "sakthivel",
+      "mail": "sakthi@gmail.com",
+      "mobile": "7898696978",
+      "password": "U2FsdGVkX1/K34j9CLDACK4uNtGEMyYORUqhopl/NV4=",
+      "id": 2
     }
   ],
   "Productdata": [
@@ -695,46 +702,38 @@
   ],
   "categoryTypes": [
     {
-      "categoryTypeData": "d",
+      "categoryTypeData": "u",
       "id": 4
-    },
-    {
-      "categoryTypeData": "l",
-      "id": 5
     }
   ],
   "category": [
     {
-      "categoryType": "d",
+      "categoryType": "u",
       "category": [
-        "d",
-        "dkdk",
-        "dksk"
+        "u",
+        "kjdj",
+        "y34",
+        "uiruii",
+        "t",
+        "udkwkdkw"
       ],
       "categoryClass": [
-        "d",
-        "d",
-        "d"
+        "u",
+        "k",
+        "yy",
+        "ii",
+        "tt",
+        "u"
       ],
       "categoryUniqueValue": [
-        "d",
-        "d",
-        "d"
+        "u",
+        "k",
+        "y",
+        "i",
+        "t",
+        "u"
       ],
       "id": 4
-    },
-    {
-      "categoryType": "l",
-      "category": [
-        "l"
-      ],
-      "categoryClass": [
-        "ll"
-      ],
-      "categoryUniqueValue": [
-        "l"
-      ],
-      "id": 5
     }
   ],
   "cartData": [
@@ -759,7 +758,124 @@
       "productid": 1,
       "uid": "1",
       "id": 3
+    },
+    {
+      "productName": "Apple Fuji Pack 4 pcs",
+      "title": "Apple Fuji",
+      "image": "assets/images/VeggetablesFruits/appleFuji.png",
+      "productUniqueId": 1,
+      "quantity": "500g - 700g (Approx)",
+      "originalAmount": "169",
+      "productid": 1,
+      "uid": "2",
+      "id": 4
+    },
+    {
+      "productName": "Alofrut Mint Mojito",
+      "title": "Mojito",
+      "image": "assets/images/Beverges/bevergeMojito.png",
+      "productUniqueId": "23",
+      "quantity": "24 x 250ml",
+      "originalAmount": "1030",
+      "productid": 23,
+      "uid": "2",
+      "id": 5
+    },
+    {
+      "productName": "Aquaguard SkyLand 18 Ltr",
+      "title": "Aquaguard SkyLand",
+      "image": "assets/images/HouseHoldProducts/aquaguard.png",
+      "productUniqueId": "27",
+      "quantity": "1 year Warranty",
+      "originalAmount": "4578",
+      "productid": 27,
+      "uid": "2",
+      "id": 6
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "7866956856",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "667868",
+      "customerAddress": "kk",
+      "cartItems": [
+        {
+          "productName": "Prestige Atlas 3.0 Induction Cooktop",
+          "title": "Prestige Induction Cooktop",
+          "image": "assets/images/HouseHoldProducts/electricInduction.png",
+          "productUniqueId": "30",
+          "quantity": "1.5 years Warranty",
+          "originalAmount": "895",
+          "productid": 30,
+          "uid": "1",
+          "id": 1
+        },
+        {
+          "productName": "Apple Fuji Pack 4 pcs",
+          "title": "Apple Fuji",
+          "image": "assets/images/VeggetablesFruits/appleFuji.png",
+          "productUniqueId": 1,
+          "quantity": "500g - 700g (Approx)",
+          "originalAmount": "169",
+          "productid": 1,
+          "uid": "1",
+          "id": 3
+        }
+      ],
+      "totalAmount": 1064,
+      "uid": "1",
+      "id": 1
+    },
+    {
+      "customerName": "sakthivel",
+      "customerMail": "sakthi@gmail.com",
+      "customerMobile": "7898696978",
+      "customerState": "tn",
+      "customerCity": "er",
+      "customerPincode": "989898",
+      "customerAddress": "rkv\n",
+      "cartItems": [
+        {
+          "productName": "Apple Fuji Pack 4 pcs",
+          "title": "Apple Fuji",
+          "image": "assets/images/VeggetablesFruits/appleFuji.png",
+          "productUniqueId": 1,
+          "quantity": "500g - 700g (Approx)",
+          "originalAmount": "169",
+          "productid": 1,
+          "uid": "2",
+          "id": 4
+        },
+        {
+          "productName": "Alofrut Mint Mojito",
+          "title": "Mojito",
+          "image": "assets/images/Beverges/bevergeMojito.png",
+          "productUniqueId": "23",
+          "quantity": "24 x 250ml",
+          "originalAmount": "1030",
+          "productid": 23,
+          "uid": "2",
+          "id": 5
+        },
+        {
+          "productName": "Aquaguard SkyLand 18 Ltr",
+          "title": "Aquaguard SkyLand",
+          "image": "assets/images/HouseHoldProducts/aquaguard.png",
+          "productUniqueId": "27",
+          "quantity": "1 year Warranty",
+          "originalAmount": "4578",
+          "productid": 27,
+          "uid": "2",
+          "id": 6
+        }
+      ],
+      "totalAmount": 5777,
+      "uid": "2",
+      "id": 2
+    }
+  ]
 }

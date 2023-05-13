@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsDataService } from 'src/productsData.service';
 import { product } from './product';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -31,9 +31,7 @@ export class AdminProductsService {
   }
 
   getProducts() {
-    // return this.http.get(`${this.getProductDataUrl}`);
-
-    return this.categoryList.asObservable();
+    return this.http.get(`${this.getProductDataUrl}`);
   }
 
   productTotalAmount() {
@@ -159,6 +157,5 @@ export class AdminProductsService {
         }
       });
     }
-    return true;
   }
 }

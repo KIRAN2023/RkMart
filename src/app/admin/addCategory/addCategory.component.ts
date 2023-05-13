@@ -40,7 +40,8 @@ export class AddCategoryComponent implements OnInit {
         this.categoryData.controls['categoryType'].setValue(params['categoryType']),
           this.categoryData.controls['category'].setValue(params['category']),
           this.categoryData.controls['categoryClass'].setValue(params['categoryClass']),
-          this.categoryData.controls['categoryUniqueValue'].setValue(params['categoryUnique'])
+          this.categoryData.controls['categoryUniqueValue'].setValue(params['categoryUnique']),
+          this.categoryData.markAsPristine()
       });
       this.categoryType = this.categoryData.controls['categoryType'].value;
       this.categoryValueData = this.categoryData.controls['category'].value;
@@ -49,7 +50,9 @@ export class AddCategoryComponent implements OnInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
 
   addProduct(formData: any) {
     let categoryExist: boolean = false;
@@ -77,57 +80,56 @@ export class AddCategoryComponent implements OnInit {
   }
 
   updateProduct(updatedData: any) {
-    this.http.get(`http://localhost:3000/category/${this.categoryId}`).subscribe((categoryData: any) => {
-      const categoryTypeData = updatedData.categoryType;
+      if (!this.categoryData.pristine) {
+      this.http.get(`http://localhost:3000/category/${this.categoryId}`).subscribe((categoryData: any) => {
+        const categoryTypeData = updatedData.categoryType;
 
-      const existingCategory = [...categoryData.category];
-      existingCategory[existingCategory.indexOf(this.categoryValueData)] = updatedData.category;
+        const existingCategory = [...categoryData.category];
+        existingCategory[existingCategory.indexOf(this.categoryValueData)] = updatedData.category;
 
-      const existingCategoryClass = [...categoryData.categoryClass];
-      existingCategoryClass[existingCategoryClass.indexOf(this.categoryClass)] = updatedData.categoryClass;
+        const existingCategoryClass = [...categoryData.categoryClass];
+        existingCategoryClass[existingCategoryClass.indexOf(this.categoryClass)] = updatedData.categoryClass;
 
-      const existingCategoryUniqueValue = [...categoryData.categoryUniqueValue];
-      existingCategoryUniqueValue[existingCategoryUniqueValue.indexOf(this.categoryUniqueId)] = updatedData.categoryUniqueValue;
+        const existingCategoryUniqueValue = [...categoryData.categoryUniqueValue];
+        existingCategoryUniqueValue[existingCategoryUniqueValue.indexOf(this.categoryUniqueId)] = updatedData.categoryUniqueValue;
 
-      const updatedDataValue = {
-        ...categoryData,
-        categoryType: categoryTypeData,
-        category: existingCategory,
-        categoryClass: existingCategoryClass,
-        categoryUniqueValue: existingCategoryUniqueValue
-      }
-
-      this.http.get<any>('http://localhost:3000/category').subscribe((data) => {
-        let exist: boolean = false;
-        let existId: any;
-        data.find((data: any) => {
-          if (data.categoryType == updatedDataValue.categoryType && this.categoryType != updatedData.categoryType) {
-            existId = data.id
-            exist = true;
-            alert(existId);
-          }
-        });
-        if (exist == false) {
-          this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
-            alert("Updated Successfully");
-          })
-        } else {
-          alert("oh yes");
-
-          this.http.get<any>(`http://localhost:3000/category/${existId}`).subscribe((data: any) => {
-            let categoryValues = {
-              categoryType: updatedData.categoryType,
-              category: updatedData.category,
-              categoryClass: updatedData.categoryClass,
-              categoryUniqueValue: updatedData.categoryUniqueValue
-            }
-            this.dataUpdating(true,categoryValues,existId);
-            this.adminService.removeCategoryData(this.categoryId, this.categoryValueData, this.categoryClass, this.categoryUniqueId);
-            this.adminService.getCategory();
-          });
+        const updatedDataValue = {
+          ...categoryData,
+          categoryType: categoryTypeData,
+          category: existingCategory,
+          categoryClass: existingCategoryClass,
+          categoryUniqueValue: existingCategoryUniqueValue
         }
+
+        this.http.get<any>('http://localhost:3000/category').subscribe((data) => {
+          let exist: boolean = false;
+          let existId: any;
+          data.find((data: any) => {
+            if (data.categoryType == updatedDataValue.categoryType && this.categoryType != updatedData.categoryType) {
+              existId = data.id
+              exist = true;
+            }
+          });
+          if (exist == false) {
+            this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
+              alert("Updated Successfully");
+            })
+          } else {
+            this.http.get<any>(`http://localhost:3000/category/${existId}`).subscribe((data: any) => {
+              let categoryValues = {
+                categoryType: updatedData.categoryType,
+                category: updatedData.category,
+                categoryClass: updatedData.categoryClass,
+                categoryUniqueValue: updatedData.categoryUniqueValue
+              }
+              this.dataUpdating(true, categoryValues, existId);
+            });
+          }
+        })
       })
-    })
+    }else{
+      alert("No Data has been Modified")
+    }
   }
 
   dataUpdating(categoryExist: boolean, categoryData: any, existingCategoryId: number | string | undefined) {
@@ -157,9 +159,9 @@ export class AddCategoryComponent implements OnInit {
         if (categoryDataExist == false) {
           this.adminService.addCategoryTest(existingCategoryId, "category", "categoryClass", "categoryUniqueValue", categoryData.category, categoryData.categoryClass, categoryData.categoryUniqueValue).subscribe((response) => {
             if (response) {
-              console.warn(response);
+              this.adminService.removeCategoryData(this.categoryId, this.categoryValueData, this.categoryClass, this.categoryUniqueId);
+              this.categoryStatusMessage = "Category Updated Successfully";
             }
-            this.categoryStatusMessage = "Category Updated Successfully";
             setTimeout(() => this.categoryStatusMessage = undefined, 3000);
           });
         }

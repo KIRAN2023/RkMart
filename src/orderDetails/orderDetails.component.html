@@ -57,9 +57,9 @@
               <p> <b> Address </b></p>
             </div>
             <div class="fetchedData">
-              <p id="customer">{{activeUserData.username}}</p>
-              <p id="customerMobile">{{activeUserData.mobile}}</p>
-              <p id="customerShippingAddress"></p>
+              <p id="customer">{{data.customerName ||activeUserData.username}}</p>
+              <p id="customerMobile">{{data.customerMobile||activeUserData.mobile}}</p>
+              <p id="customerShippingAddress">{{data.customerAddress}}</p>
             </div>
 
           </div>
