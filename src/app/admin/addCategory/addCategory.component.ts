@@ -149,6 +149,8 @@ export class AddCategoryComponent implements OnInit {
         data.category.forEach((datas: any) => {
           if (datas == categoryData.category) {
             categoryDataExist = true;
+            this.categoryStatusMessage = "Category Already Exist";
+            setTimeout(() => this.categoryStatusMessage = undefined, 3000);
           }
         })
 
@@ -157,6 +159,7 @@ export class AddCategoryComponent implements OnInit {
             if (response) {
               console.warn(response);
             }
+            this.categoryStatusMessage = "Category Updated Successfully";
             setTimeout(() => this.categoryStatusMessage = undefined, 3000);
           });
         }

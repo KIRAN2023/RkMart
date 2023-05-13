@@ -695,52 +695,46 @@
   ],
   "categoryTypes": [
     {
-      "categoryTypeData": "k",
-      "id": 1
+      "categoryTypeData": "d",
+      "id": 4
     },
     {
-      "categoryTypeData": "p",
-      "id": 2
+      "categoryTypeData": "l",
+      "id": 5
     }
   ],
   "category": [
     {
-      "categoryType": "k",
+      "categoryType": "d",
       "category": [
-        "tk",
-        "t2",
-        "test2"
+        "d",
+        "dkdk",
+        "dksk"
       ],
       "categoryClass": [
-        "t",
-        "t",
-        "t"
+        "d",
+        "d",
+        "d"
       ],
       "categoryUniqueValue": [
-        "t",
-        "t",
-        "t"
+        "d",
+        "d",
+        "d"
       ],
-      "id": 1
+      "id": 4
     },
     {
-      "categoryType": "pkkkkk",
+      "categoryType": "l",
       "category": [
-        "t2 to pkkkkk",
-        "pkkpo of K to pkkkkk",
-        "testingD of k to pkkkkk"
+        "l"
       ],
       "categoryClass": [
-        "t",
-        "tedtisngn",
-        "t"
+        "ll"
       ],
       "categoryUniqueValue": [
-        "t",
-        "trfer",
-        "t"
+        "l"
       ],
-      "id": 2
+      "id": 5
     }
   ],
   "cartData": [

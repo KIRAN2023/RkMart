@@ -21,10 +21,12 @@ export class CategoryDataComponent implements OnInit {
   ngOnInit(): void { }
 
   removeCategory(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any) {
-    this.adminService.removeCategoryData(categoryId, categoryValue, categoryClass, categoryUniqueValue);
-    this.adminService.getCategory().subscribe((data) => {
-      this.categoryDisplay = data;
-    });
-    this.adminService.categoryTypesCount().subscribe((category: any) => this.categoryCount = category);
+    let result = this.adminService.removeCategoryData(categoryId, categoryValue, categoryClass, categoryUniqueValue);
+    if(result){
+      this.adminService.getCategory().subscribe((data) => {
+        this.categoryDisplay = data;
+      });
+      this.adminService.categoryTypesCount().subscribe((category: any) => this.categoryCount = category);
+    }
   }
 } 

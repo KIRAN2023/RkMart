@@ -31,7 +31,9 @@ export class AdminProductsService {
   }
 
   getProducts() {
-    return this.http.get(`${this.getProductDataUrl}`);
+    // return this.http.get(`${this.getProductDataUrl}`);
+
+    return this.categoryList.asObservable();
   }
 
   productTotalAmount() {
@@ -157,5 +159,6 @@ export class AdminProductsService {
         }
       });
     }
+    return true;
   }
 }
