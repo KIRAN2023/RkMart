@@ -49,7 +49,7 @@
                 <div class="quantitySection dataSection">
 
                     <p>
-                        <button class="incrBtn" (click)="quantityIncrement(cartProduct.id)" > + </button>
+                        <button class="incrBtn" (click)="quantityIncrement(cartProduct.id,cartProduct.productid)" > + </button>
                                 <small> {{cartProduct.quantity}} </small> 
                         <button class="decBtn" (click)="quantityDecrement(cartProduct.id)"> - </button>
                     </p>

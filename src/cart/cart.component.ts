@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 import { AuthUserGuard } from 'src/app/auth-user.guard';
 import { CartService } from 'src/cart.service';
 
@@ -16,7 +18,7 @@ export class CartComponent implements OnInit, AfterViewChecked {
 
   productQuantityData = 1;
 
-  constructor(private cartService: CartService, private route: Router, private guard: AuthUserGuard, private title: Title) { }
+  constructor(private cartService: CartService, private route: Router, private http: HttpClient, private guard: AuthUserGuard, private title: Title) { }
 
   ngOnInit() {
     this.cartService.getProducts().subscribe((productData: any) => {
@@ -27,14 +29,16 @@ export class CartComponent implements OnInit, AfterViewChecked {
     this.title.setTitle('Cart | RK MART');
   }
 
-  quantityIncrement(id: any) {
-    this.productQuantityData = this.cartService.increaseQuantity(id);
+  quantityIncrement(id: any, productid: any) {
+    this.http.get(`http://localhost:3000/Productdata/${productid}`).subscribe((productData: any) => {
+      this.productQuantityData = this.cartService.increaseQuantity(id, productData.Stock);
+    });
   }
 
   quantityDecrement(id: any) {
-    const indexValue = this.cartService.cartProducts.findIndex((cartData:any)=> cartData.id == id );
+    const indexValue = this.cartService.cartProducts.findIndex((cartData: any) => cartData.id == id);
 
-    if(indexValue!==-1 && this.cartService.cartProducts[indexValue].quantity>1){
+    if (indexValue !== -1 && this.cartService.cartProducts[indexValue].quantity > 1) {
       this.productQuantityData = this.cartService.decreaseQuantity(id);
     }
   }

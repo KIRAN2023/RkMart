@@ -20,14 +20,15 @@
                 <div class="buyAddCart">
 
                     <div class="addToCart">
-                        <i *ngIf="!removeProduct" (click)="addtoCartData()" class="fa-solid fa-cart-shopping"> Add to CART </i>
+                        <i *ngIf="stockAvailibility && !removeProduct" (click)="deleteFromCart()" class="fa-solid fa-cart-shopping"> Out Of Stock </i>
+                        <i *ngIf="!removeProduct && !stockAvailibility" (click)="addtoCartData()" class="fa-solid fa-cart-shopping"> Add to CART </i>
                         <i *ngIf="removeProduct" (click)="deleteFromCart()" class="fa-solid fa-cart-shopping"> Remove From CART </i>
                     </div>
                     <!-- <div class="buy addToCart" routerLink="/shipping">
                         <i class="fa-solid fa-cart-shopping"> Buy Now </i>
                     </div> -->
                 </div>
-            </div>
+            </div>      
         </div>
 
         <div class="productDescription">

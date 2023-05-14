@@ -41,15 +41,15 @@ export class CartService {
     return returnData; 
   }
 
-  increaseQuantity(productid:any){
+  increaseQuantity(productid:any, stock:any){
     const indexValue = this.cartProducts.findIndex((products:any)=> products.id==productid );
-    if(indexValue!==-1){
+    if(indexValue!==-1 &&  this.cartProducts[indexValue].quantity<stock ){
       this.cartProducts[indexValue].quantity++;
     }
 
     this.productList.next(this.cartProducts);
     this.getProductTotalAmount();
-    // this.http.put(`${this.cartUrl}/${productid}`, this.cartProducts[indexValue]).subscribe();
+    this.http.put(`${this.cartUrl}/${productid}`, this.cartProducts[indexValue]).subscribe();
     return this.cartProducts[indexValue].quantity;
 
   }
@@ -62,7 +62,7 @@ export class CartService {
 
     this.productList.next(this.cartProducts);
     this.getProductTotalAmount();
-    // this.http.put(`${this.cartUrl}/${productid}`, this.cartProducts[indexValue]).subscribe();
+    this.http.put(`${this.cartUrl}/${productid}`, this.cartProducts[indexValue]).subscribe();
     return this.cartProducts[indexValue].quantity;
   }
 

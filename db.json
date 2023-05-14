@@ -24,7 +24,7 @@
   ],
   "Productdata": [
     {
-      "Stock": 20,
+      "Stock": 19,
       "category": "grocery",
       "uniqueId": 1,
       "filterValue": 1,
@@ -35,6 +35,7 @@
       "title": "Apple Fuji",
       "productName": "Apple Fuji Pack 4 pcs",
       "quantity": "500g - 700g (Approx)",
+      "rating": "4.4",
       "ratingCount": "1726",
       "reviewCount": "105",
       "originalAmount": "169",
@@ -53,6 +54,7 @@
       "title": "Apple Granny",
       "productName": "Apple Granny Smith 4 pcs",
       "quantity": "450g - 600g (Approx)",
+      "rating": "4.7",
       "ratingCount": "976",
       "reviewCount": "256",
       "originalAmount": "249",
@@ -60,7 +62,7 @@
       "id": 2
     },
     {
-      "Stock": "8",
+      "Stock": 0,
       "category": "grocery",
       "uniqueId": "3",
       "filterValue": "1",
@@ -109,6 +111,7 @@
       "title": "Banana Nendran",
       "productName": "Banana Nendran 4 pcs (Box)",
       "quantity": "800g - 1200g (Approx)",
+      "rating": "3.8",
       "ratingCount": "848",
       "reviewCount": "93",
       "originalAmount": "129",
@@ -116,7 +119,7 @@
       "id": "5"
     },
     {
-      "Stock": "25",
+      "Stock": 19,
       "category": "grocery",
       "uniqueId": "6",
       "filterValue": "2",
@@ -135,7 +138,7 @@
       "id": 6
     },
     {
-      "Stock": "6",
+      "Stock": 0,
       "category": "grocery",
       "uniqueId": "7",
       "filterValue": "3",
@@ -260,6 +263,7 @@
       "title": "Brinjal Black Big",
       "productName": "Brinjal Black Big",
       "quantity": "500g (Approx)",
+      "rating": "3.5",
       "ratingCount": "131",
       "reviewCount": "32",
       "originalAmount": "35",
@@ -430,6 +434,7 @@
       "title": "Minute Maid",
       "productName": "Minute Maid Puply Orange",
       "quantity": "1L",
+      "rating": "3.9",
       "ratingCount": "9,356",
       "reviewCount": "3,180",
       "originalAmount": "60",
@@ -513,7 +518,7 @@
       "id": 26
     },
     {
-      "Stock": "5",
+      "Stock": 4,
       "category": "household",
       "uniqueId": "27",
       "filterValue": "15",
@@ -600,6 +605,7 @@
       "title": "PHILIPS Hair Dryer",
       "productName": "PHILIPS HP8/46 Hair Dryer (100 W, Purple)",
       "quantity": "56 Months Warranty",
+      "rating": "4.8",
       "ratingCount": "61,953",
       "reviewCount": "29,548",
       "originalAmount": "598",
@@ -675,6 +681,7 @@
       "title": "Butterfly Mixer Grinder",
       "productName": "Butterfly Rapid Plus 750 W Mixer Grinder",
       "quantity": "2 years Warranty",
+      "rating": "4.1",
       "ratingCount": "9,478",
       "reviewCount": "6,810",
       "originalAmount": "3199",
@@ -693,6 +700,7 @@
       "title": "Bajaj Mixer Grinder",
       "productName": "Bajaj GX1 500 W Mixer Grinder",
       "quantity": "1 year Warranty",
+      "rating": "4.5",
       "ratingCount": "7,844",
       "reviewCount": "2,810",
       "originalAmount": "1199",
@@ -738,17 +746,6 @@
   ],
   "cartData": [
     {
-      "productName": "Prestige Atlas 3.0 Induction Cooktop",
-      "title": "Prestige Induction Cooktop",
-      "image": "assets/images/HouseHoldProducts/electricInduction.png",
-      "productUniqueId": "30",
-      "quantity": 2,
-      "originalAmount": "895",
-      "productid": 30,
-      "uid": "1",
-      "id": 1
-    },
-    {
       "productName": "Apple Fuji Pack 4 pcs",
       "title": "Apple Fuji",
       "image": "assets/images/VeggetablesFruits/appleFuji.png",
@@ -771,29 +768,51 @@
       "id": 6
     },
     {
-      "productName": "Apple Red Delicious 4 pcs",
-      "title": "Apple Red",
-      "image": "assets/images/VeggetablesFruits/appleRed.png",
-      "productUniqueId": "3",
-      "quantity": 1,
-      "originalAmount": "172",
-      "productid": 3,
-      "uid": "1",
-      "id": 7
-    },
-    {
       "productName": "Banana Red (Box)",
       "title": "Banana Red",
       "image": "assets/images/VeggetablesFruits/bananaRed.png",
       "productUniqueId": "6",
-      "quantity": 2,
+      "quantity": 6,
       "originalAmount": "129",
       "productid": 6,
       "uid": "1",
       "id": 8
+    },
+    {
+      "productName": "Apple Indian 6 pcs",
+      "title": "Apple Indian",
+      "image": "assets/images/VeggetablesFruits/appleIndian.png",
+      "productUniqueId": "4",
+      "quantity": 1,
+      "originalAmount": "99",
+      "productid": 4,
+      "uid": "1",
+      "id": 9
+    },
+    {
+      "productName": "Sapota 6 pcs (Pack)",
+      "title": "Sapota",
+      "image": "assets/images/VeggetablesFruits/sapota.png",
+      "productUniqueId": "7",
+      "quantity": 6,
+      "originalAmount": "108",
+      "productid": 7,
+      "uid": "1",
+      "id": 10
+    },
+    {
+      "productName": "Sapota 6 pcs (Pack)",
+      "title": "Sapota",
+      "image": "assets/images/VeggetablesFruits/sapota.png",
+      "productUniqueId": "7",
+      "quantity": 6,
+      "originalAmount": "108",
+      "productid": 7,
+      "uid": "2",
+      "id": 11
     }
   ],
-  "orders": [     
+  "orders": [
     {
       "customerName": "kiran",
       "customerMail": "kiran2023@gmail.com",
@@ -840,6 +859,89 @@
       "totalAmount": 2220,
       "uid": "1",
       "id": 4
+    },
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "7866956856",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "878766",
+      "customerAddress": "kk",
+      "cartItems": [
+        {
+          "productName": "Banana Red (Box)",
+          "title": "Banana Red",
+          "image": "assets/images/VeggetablesFruits/bananaRed.png",
+          "productUniqueId": "6",
+          "quantity": 6,
+          "originalAmount": "129",
+          "productid": 6,
+          "uid": "1",
+          "id": 8
+        },
+        {
+          "productName": "Apple Red Delicious 4 pcs",
+          "title": "Apple Red",
+          "image": "assets/images/VeggetablesFruits/appleRed.png",
+          "productUniqueId": "3",
+          "quantity": 8,
+          "originalAmount": "172",
+          "productid": 3,
+          "uid": "1",
+          "id": 9
+        }
+      ],
+      "totalAmount": 2150,
+      "uid": "1",
+      "id": 5
+    },
+    {
+      "customerName": "sakthivel",
+      "customerMail": "sakthi@gmail.com",
+      "customerMobile": "7898696978",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "876979",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Apple Fuji Pack 4 pcs",
+          "title": "Apple Fuji",
+          "image": "assets/images/VeggetablesFruits/appleFuji.png",
+          "productUniqueId": 1,
+          "quantity": 1,
+          "originalAmount": "169",
+          "productid": 1,
+          "uid": "2",
+          "id": 4
+        },
+        {
+          "productName": "Aquaguard SkyLand 18 Ltr",
+          "title": "Aquaguard SkyLand",
+          "image": "assets/images/HouseHoldProducts/aquaguard.png",
+          "productUniqueId": "27",
+          "quantity": 1,
+          "originalAmount": "4578",
+          "productid": 27,
+          "uid": "2",
+          "id": 6
+        },
+        {
+          "productName": "Sapota 6 pcs (Pack)",
+          "title": "Sapota",
+          "image": "assets/images/VeggetablesFruits/sapota.png",
+          "productUniqueId": "7",
+          "quantity": 6,
+          "originalAmount": "108",
+          "productid": 7,
+          "uid": "2",
+          "id": 11
+        }
+      ],
+      "totalAmount": 5395,
+      "uid": "2",
+      "id": 6
     }
   ]
 }

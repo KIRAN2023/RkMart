@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -21,11 +22,13 @@ export class ProductDescriptionComponent implements OnInit {
   categoryData: string | null = "";
   featuredProducts: any = [];
 
+  stockAvailibility: boolean | undefined = true;
+
   removeProduct: boolean = false;
   removeCartProduct: cart | null | undefined;
   pid: number | string | undefined;
 
-  constructor(private productDataService: ProductsDataService, private cartService: CartService, private route: ActivatedRoute, private titleService: Title) {
+  constructor(private productDataService: ProductsDataService, private cartService: CartService, private route: ActivatedRoute, private titleService: Title, private http: HttpClient) {
     this.userLoggedin = Boolean(sessionStorage.getItem("userLoggedIn")) || this.productDataService.userLogin;
     this.productDataService.userLogin = this.userLoggedin;
     this.route.paramMap.subscribe(urlData => {
@@ -35,6 +38,12 @@ export class ProductDescriptionComponent implements OnInit {
 
         this.requiredProduct = urlData.get('productID');
         this.removeProduct = false;
+
+        this.http.get(`http://localhost:3000/Productdata/${this.requiredProduct}`).subscribe((productData: any) => {
+          if (productData.Stock > 0) {
+            this.stockAvailibility = false;
+          }
+        });
 
         this.finalProduct = this.allProducts.find((product: product) => product.id == this.requiredProduct);
 
@@ -47,7 +56,7 @@ export class ProductDescriptionComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   }
 
   loadFeaturedProducts() {
@@ -62,7 +71,7 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   cartData() {
-    let productFound:boolean|undefined=false;
+    let productFound: boolean | undefined = false;
     this.cartService.getProducts().subscribe((products: any) => {
       products.filter((product: any) => {
         if (product.productid == this.requiredProduct) {
@@ -72,7 +81,7 @@ export class ProductDescriptionComponent implements OnInit {
         }
       });
     });
-    !productFound?this.removeProduct=false:this.removeProduct;
+    !productFound ? this.removeProduct = false : this.removeProduct;
   }
 
   loginStatusData(loginData: boolean) {
@@ -83,7 +92,7 @@ export class ProductDescriptionComponent implements OnInit {
 
   addtoCartData() {
     if (this.productDataService.userLogin) {
-      
+
       let uid = sessionStorage.getItem('userId');
       let dataToCart: cart = {
         productName: this.finalProduct.productName,
@@ -115,5 +124,5 @@ export class ProductDescriptionComponent implements OnInit {
     this.cartService.removeProduct(this.removeCartProduct!, sessionStorage.getItem('userId'))?.subscribe();
     this.removeProduct = false;
   }
-  
+
 }

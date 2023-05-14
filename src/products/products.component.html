@@ -27,7 +27,8 @@
                   </a>
                   <figcaption class="figCaptionDiv"><b class="findProduct">{{product.productName}}</b></figcaption>
                   <div class="addWishlistDiv">
-                    <button class="btnD addRemove" title="Add to Category">Add</button>
+                    <button *ngIf="product.Stock>0" class="btnD addRemove" title="Add to Category">{{product.Stock}} Available</button>
+                    <button *ngIf="product.Stock==0" class="btnD addRemove" title="Add to Category">Out Of Stock</button>
                     <!-- <p title="Add to Wishlist"><i class="fa-regular fa-heart"></i></p> -->
                   </div>
                 </figure>
