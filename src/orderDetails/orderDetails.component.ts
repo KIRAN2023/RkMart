@@ -29,9 +29,11 @@ export class OrderDetailsComponent implements OnInit {
       });
     });
 
-    this.subTotal=this.cartService.getProductTotalAmount();
     this.cartService.getProducts().subscribe( (productData) => {
       this.orderList = productData;
+
+      this.subTotal=this.cartService.getProductTotalAmount();
+
     });
 
     this.title.setTitle('Order Summary | RK MART');

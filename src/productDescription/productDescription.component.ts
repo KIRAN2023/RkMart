@@ -90,7 +90,7 @@ export class ProductDescriptionComponent implements OnInit {
         title: this.finalProduct.title,
         image: this.finalProduct.image,
         productUniqueId: this.finalProduct.uniqueId,
-        quantity: this.finalProduct.quantity,
+        quantity: 1,
         originalAmount: this.finalProduct.originalAmount,
         productid: this.finalProduct.id,
         uid,

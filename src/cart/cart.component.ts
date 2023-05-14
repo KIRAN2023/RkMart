@@ -24,7 +24,19 @@ export class CartComponent implements OnInit, AfterViewChecked {
 
       this.subtotal = this.cartService.getProductTotalAmount();
     });
-    this.title.setTitle('Cart | RK MART')
+    this.title.setTitle('Cart | RK MART');
+  }
+
+  quantityIncrement(id: any) {
+    this.productQuantityData = this.cartService.increaseQuantity(id);
+  }
+
+  quantityDecrement(id: any) {
+    const indexValue = this.cartService.cartProducts.findIndex((cartData:any)=> cartData.id == id );
+
+    if(indexValue!==-1 && this.cartService.cartProducts[indexValue].quantity>1){
+      this.productQuantityData = this.cartService.decreaseQuantity(id);
+    }
   }
 
   removeProduct(product: any) {
@@ -36,7 +48,7 @@ export class CartComponent implements OnInit, AfterViewChecked {
       this.cartService.clearCart(product.id);
     })
   }
-  
+
   ngAfterViewChecked() {
     if (!sessionStorage.getItem('userLoggedIn')) {
       this.route.navigate(['home']);

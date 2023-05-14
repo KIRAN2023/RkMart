@@ -31,10 +31,10 @@
                 <p> {{orderListData.title}} </p>
               </div>
               <div class="productTotal">
-                <p> <span> 1 x {{orderListData.originalAmount|currency:'INR'}} </span></p> 
+                <p> <span> {{orderListData.quantity}} x {{orderListData.originalAmount|currency:'INR'}} </span></p> 
               </div>
               <div class="">
-                <p> <span> {{orderListData.originalAmount|currency:'INR'}} </span></p>
+                <p> <span> {{orderListData.quantity * orderListData.originalAmount|currency:'INR'}} </span></p>
 
               </div>
             </div>

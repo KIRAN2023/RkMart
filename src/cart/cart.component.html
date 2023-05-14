@@ -42,23 +42,23 @@
                 </div>
                 <div class="priceSection dataSection">
 
-                    <p>{{ cartProduct.originalAmount|currency:'INR' }}</p>
+                    <p >{{ cartProduct.originalAmount|currency:'INR' }}</p>
 
                 </div>
 
                 <div class="quantitySection dataSection">
 
                     <p>
-                        <button class="incrBtn"> + </button>
-                                <small> {{productQuantityData}} </small> 
-                        <button class="decBtn"> - </button>
+                        <button class="incrBtn" (click)="quantityIncrement(cartProduct.id)" > + </button>
+                                <small> {{cartProduct.quantity}} </small> 
+                        <button class="decBtn" (click)="quantityDecrement(cartProduct.id)"> - </button>
                     </p>
 
                 </div>
 
                 <div class="subTotalSection dataSection">
 
-                    <p>{{ cartProduct.originalAmount|currency:'INR' }}</p>
+                    <p>{{ cartProduct.originalAmount * cartProduct.quantity|currency:'INR' }}</p>
 
                 </div>
 

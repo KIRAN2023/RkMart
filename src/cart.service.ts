@@ -41,10 +41,35 @@ export class CartService {
     return returnData; 
   }
 
+  increaseQuantity(productid:any){
+    const indexValue = this.cartProducts.findIndex((products:any)=> products.id==productid );
+    if(indexValue!==-1){
+      this.cartProducts[indexValue].quantity++;
+    }
+
+    this.productList.next(this.cartProducts);
+    this.getProductTotalAmount();
+    // this.http.put(`${this.cartUrl}/${productid}`, this.cartProducts[indexValue]).subscribe();
+    return this.cartProducts[indexValue].quantity;
+
+  }
+
+  decreaseQuantity(productid:any){
+    const indexValue = this.cartProducts.findIndex((products:any)=> products.id==productid );
+    if(indexValue!==-1){
+       this.cartProducts[indexValue].quantity--;
+    }
+
+    this.productList.next(this.cartProducts);
+    this.getProductTotalAmount();
+    // this.http.put(`${this.cartUrl}/${productid}`, this.cartProducts[indexValue]).subscribe();
+    return this.cartProducts[indexValue].quantity;
+  }
+
   getProductTotalAmount():number {
     let grandTotal = 0;
     this.cartProducts.map((product: product) => {
-      grandTotal = grandTotal + parseInt(product.originalAmount,10)
+      grandTotal = grandTotal + parseInt(product.originalAmount,10)*product.quantity;
     });
     return grandTotal;
   }
