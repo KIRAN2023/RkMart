@@ -710,38 +710,105 @@
   ],
   "categoryTypes": [
     {
-      "categoryTypeData": "u",
-      "id": 4
+      "categoryTypeData": "grocery",
+      "id": 1
+    },
+    {
+      "categoryTypeData": "beverages",
+      "id": 2
+    },
+    {
+      "categoryTypeData": "household",
+      "id": 3
     }
   ],
   "category": [
     {
-      "categoryType": "u",
+      "categoryType": "grocery",
       "category": [
-        "u",
-        "kjdj",
-        "y34",
-        "uiruii",
-        "t",
-        "udkwkdkw"
+        "Apples",
+        "Bananas",
+        "Sapota",
+        "Garlic",
+        "Green Capsicum",
+        "Lauki",
+        "Potato",
+        "Brinjal Black",
+        "Cluster Beans"
       ],
       "categoryClass": [
-        "u",
-        "k",
-        "yy",
-        "ii",
-        "tt",
-        "u"
+        "p-btn--1",
+        "p-btn--2",
+        "p-btn--3",
+        "p-btn--4",
+        "p-btn--5",
+        "p-btn--6",
+        "p-btn--7",
+        "p-btn--8",
+        "p-btn--9"
       ],
       "categoryUniqueValue": [
-        "u",
-        "k",
-        "y",
-        "i",
-        "t",
-        "u"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
       ],
-      "id": 4
+      "id": 1
+    },
+    {
+      "categoryType": "beverages",
+      "category": [
+        "Soft Drinks",
+        "Soft Drinks Can",
+        "Engery Drinks"
+      ],
+      "categoryClass": [
+        "p-btn--11",
+        "p-btn--13",
+        "p-btn--12"
+      ],
+      "categoryUniqueValue": [
+        "11",
+        "13",
+        "12"
+      ],
+      "id": 2
+    },
+    {
+      "categoryType": "household",
+      "category": [
+        "Aquaguard",
+        "Prestige",
+        "Butterfly",
+        "Bajaj",
+        "Philips",
+        "Other Brands",
+        "Pigeon"
+      ],
+      "categoryClass": [
+        "p-btn--15",
+        "p-btn--16",
+        "p-btn--17",
+        "p-btn--19",
+        "p-btn--20",
+        "p-btn--21",
+        "p-btn--18"
+      ],
+      "categoryUniqueValue": [
+        "15",
+        "16",
+        "17",
+        "19",
+        "20",
+        "21",
+        "18"
+      ],
+      "id": 3
     }
   ],
   "cartData": [
@@ -768,15 +835,15 @@
       "id": 6
     },
     {
-      "productName": "Banana Red (Box)",
-      "title": "Banana Red",
-      "image": "assets/images/VeggetablesFruits/bananaRed.png",
-      "productUniqueId": "6",
+      "productName": "Sapota 6 pcs (Pack)",
+      "title": "Sapota",
+      "image": "assets/images/VeggetablesFruits/sapota.png",
+      "productUniqueId": "7",
       "quantity": 6,
-      "originalAmount": "129",
-      "productid": 6,
-      "uid": "1",
-      "id": 8
+      "originalAmount": "108",
+      "productid": 7,
+      "uid": "2",
+      "id": 11
     },
     {
       "productName": "Apple Indian 6 pcs",
@@ -787,29 +854,7 @@
       "originalAmount": "99",
       "productid": 4,
       "uid": "1",
-      "id": 9
-    },
-    {
-      "productName": "Sapota 6 pcs (Pack)",
-      "title": "Sapota",
-      "image": "assets/images/VeggetablesFruits/sapota.png",
-      "productUniqueId": "7",
-      "quantity": 6,
-      "originalAmount": "108",
-      "productid": 7,
-      "uid": "1",
-      "id": 10
-    },
-    {
-      "productName": "Sapota 6 pcs (Pack)",
-      "title": "Sapota",
-      "image": "assets/images/VeggetablesFruits/sapota.png",
-      "productUniqueId": "7",
-      "quantity": 6,
-      "originalAmount": "108",
-      "productid": 7,
-      "uid": "2",
-      "id": 11
+      "id": 12
     }
   ],
   "orders": [

@@ -24,9 +24,7 @@ export class PaymentComponent implements OnInit {
     this.data = JSON.parse(this.data);
   }
 
-  async paymentModal() {
-    let currentProduct: any = [];
-    let orderedProducts:any = [];
+  paymentModal() {
 
     this.data.cartItems.forEach((product:any)=>{
       this.http.get(`http://localhost:3000/Productdata/${product.productid}`).subscribe((data:any)=>{
@@ -38,10 +36,8 @@ export class PaymentComponent implements OnInit {
       });
     })
 
-    this.cartService.order(this.data).subscribe((response)=>{
-
-      response?alert("order Placed Successfully"):alert("Error while placing order");
-    });
+    this.cartService.order(this.data).subscribe();
+  
     let paymentModal:any = document.querySelector(".paymentModal");
     paymentModal.showModal();
   }

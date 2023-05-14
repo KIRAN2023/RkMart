@@ -74,13 +74,17 @@ export class AddCategoryComponent implements OnInit {
           categoryClass: formData.categoryClass.split(','),
           categoryUniqueValue: formData.categoryUniqueValue.split(',')
         }
-        this.dataUpdating(categoryExist, categoryValues, existingCategoryId);
+        if (categoryExist) {
+          this.dataUpdating(categoryExist, categoryValues, existingCategoryId);
+        }else{
+          this.dataUpdating(false, categoryValues, existingCategoryId);
+        }
       });
     }
   }
 
   updateProduct(updatedData: any) {
-      if (!this.categoryData.pristine) {
+    if (!this.categoryData.pristine) {
       this.http.get(`http://localhost:3000/category/${this.categoryId}`).subscribe((categoryData: any) => {
         const categoryTypeData = updatedData.categoryType;
 
@@ -127,7 +131,7 @@ export class AddCategoryComponent implements OnInit {
           }
         })
       })
-    }else{
+    } else {
       alert("No Data has been Modified")
     }
   }

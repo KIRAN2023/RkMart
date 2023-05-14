@@ -38,7 +38,7 @@
             <ng-container *ngFor="let category of categoryDisplay">
               <tr *ngFor="let categoryData of category.category; index as i">
                 <td>{{category.id}}</td>
-                <td>{{category.categoryType}}</td>
+                <td>{{category.categoryType|titlecase}}</td>
                 <td>{{categoryData}}</td>
                 <td>{{category.categoryClass[i]}}</td>
                 <td>{{category.categoryUniqueValue[i]}}</td>
