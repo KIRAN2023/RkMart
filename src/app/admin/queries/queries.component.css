@@ -1,0 +1,59 @@
+.grid {
+    display: grid;
+}
+
+.grid-two-columns {
+    grid-template-columns: 10% 80%;
+}
+
+.container {
+    max-width: 140rem;
+    padding: 0 4rem;
+}
+
+.ordersDashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.userTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 3rem 0;
+    min-width: 40rem;
+    font-size: 1.2rem;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.userTable thead {
+    text-align: left;
+    background-color: var(--btns-background);
+    color: var(--white);
+    font-weight: 900;
+}
+
+.userTable th,
+.userTable td {
+    padding: 1rem 1.2rem;
+}
+
+.userTable tbody tr {
+    border-bottom: 1px solid var(--btns-background);
+    cursor: pointer;
+}
+
+.userTable tbody tr:nth-of-type(even) {
+    background: rgb(238, 238, 241);
+}
+
+.userTable tbody tr:hover{
+    background-color: var(--btns-background);
+    color: var(--white);
+}
+
+.userTable tbody tr:last-of-type {
+    border-bottom: 0.3rem solid var(--btns-background);
+}

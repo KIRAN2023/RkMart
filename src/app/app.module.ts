@@ -4,25 +4,26 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from '../home/home.component';
-import { ProductsComponent } from '../products/products.component';
-import { ContactUsComponent } from '../contactUs/contactUs.component';
-import { CartComponent } from '../cart/cart.component';
-import { ProductDescriptionComponent } from '../productDescription/productDescription.component';
-import { CategoryComponent } from '../category/category.component';
+import { HomeComponent } from './user/home/home.component';
+import { ProductsComponent } from './user/products/products.component';
+import { ContactUsComponent } from './user/contactUs/contactUs.component';
+import { CartComponent } from './user/cart/cart.component';
+import { ProductDescriptionComponent } from './user/productDescription/productDescription.component';
+import { CategoryComponent } from './user/category/category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from '../footer/footer.component';
-import { ErrorComponent } from '../error/error.component';
-import { MenuComponent } from '../menu/menu.component';
-import { ShippingComponent } from '../shipping/shipping.component';
-import { OrderDetailsComponent } from '../orderDetails/orderDetails.component';
-import { PaymentComponent } from '../payment/payment.component';
-import { MyOrdersComponent } from '../myOrders/myOrders.component';
+import { FooterComponent } from './user/footer/footer.component';
+import { ErrorComponent } from './user/error/error.component';
+import { MenuComponent } from './user/menu/menu.component';
+import { ShippingComponent } from './user/shipping/shipping.component';
+import { OrderDetailsComponent } from './user/orderDetails/orderDetails.component';
+import { PaymentComponent } from './user/payment/payment.component';
+import { MyOrdersComponent } from './user/myOrders/myOrders.component';
 import { AdminModule } from './admin/admin.module';
+import { OrderStatusUpdateComponent } from '../app/admin/orderStatusUpdate/orderStatusUpdate.component';
 
 
 @NgModule({
-  declarations: [																		
+  declarations: [																			
       AppComponent,
       HomeComponent,
       ProductsComponent,
@@ -38,6 +39,7 @@ import { AdminModule } from './admin/admin.module';
       OrderDetailsComponent,
       PaymentComponent,
       MyOrdersComponent,
+      OrderStatusUpdateComponent
    ],
   imports: [
     BrowserModule,

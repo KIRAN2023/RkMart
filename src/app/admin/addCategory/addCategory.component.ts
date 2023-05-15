@@ -163,7 +163,9 @@ export class AddCategoryComponent implements OnInit {
         if (categoryDataExist == false) {
           this.adminService.addCategoryTest(existingCategoryId, "category", "categoryClass", "categoryUniqueValue", categoryData.category, categoryData.categoryClass, categoryData.categoryUniqueValue).subscribe((response) => {
             if (response) {
-              this.adminService.removeCategoryData(this.categoryId, this.categoryValueData, this.categoryClass, this.categoryUniqueId);
+              if(this.queryParamData){
+                this.adminService.removeCategoryData(this.categoryId, this.categoryValueData, this.categoryClass, this.categoryUniqueId, true,this.categoryType);
+              }
               this.categoryStatusMessage = "Category Updated Successfully";
             }
             setTimeout(() => this.categoryStatusMessage = undefined, 3000);

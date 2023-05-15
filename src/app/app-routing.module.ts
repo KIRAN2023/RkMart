@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from 'src/cart/cart.component';
-import { ContactUsComponent } from 'src/contactUs/contactUs.component';
-import { ErrorComponent } from 'src/error/error.component';
-import { HomeComponent } from 'src/home/home.component';
-import { MyOrdersComponent } from 'src/myOrders/myOrders.component';
-import { OrderDetailsComponent } from 'src/orderDetails/orderDetails.component';
-import { PaymentComponent } from 'src/payment/payment.component';
-import { ProductDescriptionComponent } from 'src/productDescription/productDescription.component';
-import { ProductsComponent } from 'src/products/products.component';
-import { ShippingComponent } from 'src/shipping/shipping.component';
+import { CartComponent } from './user/cart/cart.component';
+import { ContactUsComponent } from './user/contactUs/contactUs.component';
+import { ErrorComponent } from './user/error/error.component';
+import { HomeComponent } from 'src/app/user/home/home.component';
+import { MyOrdersComponent } from 'src/app/user/myOrders/myOrders.component';
+import { OrderDetailsComponent } from 'src/app/user/orderDetails/orderDetails.component';
+import { PaymentComponent } from 'src/app/user/payment/payment.component';
+import { ProductDescriptionComponent } from 'src/app/user/productDescription/productDescription.component';
+import { ProductsComponent } from './user/products/products.component';
+import { ShippingComponent } from 'src/app/user/shipping/shipping.component';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ManageOrdersComponent } from './admin/manage-orders/manage-orders.component';
@@ -18,9 +18,10 @@ import { UsersComponent } from './admin/users/users.component';
 import { AuthUserGuard } from './auth-user.guard';
 import { AddProductsComponent } from './admin/add-products/add-products.component';
 import { AuthAdminGuard } from './admin/auth-admin.guard';
-import { CategoryComponent } from 'src/category/category.component';
+import { CategoryComponent } from './user/category/category.component';
 import { CategoryDataComponent } from './admin/categoryData/categoryData.component';
 import { AddCategoryComponent } from './admin/addCategory/addCategory.component';
+import { QueriesComponent } from './admin/queries/queries.component';
 
 
 const routes: Routes = [
@@ -51,7 +52,8 @@ const routes: Routes = [
     { path: 'category', component: CategoryDataComponent },
     { path: 'addProducts/:id', component: AddProductsComponent },
     { path: 'addCategory', component: AddCategoryComponent },
-    { path: 'addCategory/:id', component: AddCategoryComponent }
+    { path: 'addCategory/:id', component: AddCategoryComponent },
+    { path: 'queries', component: QueriesComponent },
   ]},
 
   { path: '**', component: ErrorComponent }

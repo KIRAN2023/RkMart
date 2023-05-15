@@ -1,0 +1,33 @@
+<div class="grid grid-two-columns">
+  <app-navbar></app-navbar>
+
+  <div class="container">
+    <section>
+      <div id="ordersDashboard">
+        <h2 class="common-heading">Queries</h2>
+        <table class="userTable">
+          <thead>
+            <tr>
+              <th>Query ID</th>
+              <th>User Name</th>
+              <th>User Mail</th>
+              <th>Subject</th>
+              <th>Query</th>
+            </tr>
+          </thead>
+          <tbody id="orderDatas">
+            <ng-container *ngFor="let query of queries">
+              <tr>
+                <td> {{query.id}} </td>
+                <td> {{query.username}} </td>
+                <td> {{query.email}} </td>
+                <td> {{query.subject}} </td>
+                <td> {{query.textarea}} </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

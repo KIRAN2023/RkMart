@@ -20,11 +20,25 @@
       "mobile": "7898696978",
       "password": "U2FsdGVkX1/K34j9CLDACK4uNtGEMyYORUqhopl/NV4=",
       "id": 2
+    },
+    {
+      "username": "sk",
+      "mail": "sk@gmail.com",
+      "mobile": "9697969796",
+      "password": "U2FsdGVkX18tg4KLtglDseZhuh4GW7k6e5KeFWfbyfM=",
+      "id": 3
+    },
+    {
+      "username": "sk",
+      "mail": "skl@gmail.com",
+      "mobile": "9697967969",
+      "password": "U2FsdGVkX19bIJIPOp6AIonP+nI9t+dxn/MDyNhKkng=",
+      "id": 4
     }
   ],
   "Productdata": [
     {
-      "Stock": 19,
+      "Stock": 15,
       "category": "grocery",
       "uniqueId": 1,
       "filterValue": 1,
@@ -43,7 +57,7 @@
       "id": 1
     },
     {
-      "Stock": "15",
+      "Stock": 14,
       "category": "grocery",
       "uniqueId": "2",
       "filterValue": "1",
@@ -81,7 +95,7 @@
       "id": 3
     },
     {
-      "Stock": "21",
+      "Stock": 19,
       "category": "grocery",
       "uniqueId": "4",
       "filterValue": "1",
@@ -100,7 +114,7 @@
       "id": 4
     },
     {
-      "Stock": "18",
+      "Stock": 17,
       "category": "grocery",
       "uniqueId": "5",
       "filterValue": "2",
@@ -138,7 +152,7 @@
       "id": 6
     },
     {
-      "Stock": 0,
+      "Stock": "10",
       "category": "grocery",
       "uniqueId": "7",
       "filterValue": "3",
@@ -149,7 +163,6 @@
       "title": "Sapota",
       "productName": "Sapota 6 pcs (Pack)",
       "quantity": "450g - 550g (Approx)",
-      "rating": "4.2",
       "ratingCount": "798",
       "reviewCount": "369",
       "originalAmount": "108",
@@ -176,7 +189,7 @@
       "id": 8
     },
     {
-      "Stock": "3",
+      "Stock": -3,
       "category": "grocery",
       "uniqueId": "9",
       "filterValue": "5",
@@ -366,7 +379,7 @@
       "id": 18
     },
     {
-      "Stock": "In Stock",
+      "Stock": "0",
       "category": "beverages",
       "uniqueId": "19",
       "filterValue": "10",
@@ -377,7 +390,6 @@
       "title": "Mango Drink",
       "productName": "Maaza Mango Drink",
       "quantity": "500ml",
-      "rating": "3.9",
       "ratingCount": "11,736",
       "reviewCount": "6,690",
       "originalAmount": "33",
@@ -518,7 +530,7 @@
       "id": 26
     },
     {
-      "Stock": 4,
+      "Stock": 3,
       "category": "household",
       "uniqueId": "27",
       "filterValue": "15",
@@ -782,36 +794,48 @@
     {
       "categoryType": "household",
       "category": [
-        "Aquaguard",
         "Prestige",
         "Butterfly",
         "Bajaj",
         "Philips",
         "Other Brands",
-        "Pigeon"
+        "Pigeon",
+        "Aquaguard"
       ],
       "categoryClass": [
-        "p-btn--15",
+        "p-btn--14",
         "p-btn--16",
         "p-btn--17",
         "p-btn--19",
         "p-btn--20",
         "p-btn--21",
-        "p-btn--18"
+        "p-btn--15"
       ],
       "categoryUniqueValue": [
-        "15",
+        "14",
         "16",
         "17",
         "19",
         "20",
         "21",
-        "18"
+        "15"
       ],
       "id": 3
     }
   ],
   "cartData": [
+    {
+      "productName": "Apple Granny Smith 4 pcs",
+      "title": "Apple Granny",
+      "image": "assets/images/VeggetablesFruits/appleGranny.png",
+      "productUniqueId": "2",
+      "quantity": 1,
+      "originalAmount": "249",
+      "productid": 2,
+      "uid": "1",
+      "orderUniqueId": 14005,
+      "id": 2
+    },
     {
       "productName": "Apple Fuji Pack 4 pcs",
       "title": "Apple Fuji",
@@ -820,41 +844,21 @@
       "quantity": 1,
       "originalAmount": "169",
       "productid": 1,
-      "uid": "2",
-      "id": 4
-    },
-    {
-      "productName": "Aquaguard SkyLand 18 Ltr",
-      "title": "Aquaguard SkyLand",
-      "image": "assets/images/HouseHoldProducts/aquaguard.png",
-      "productUniqueId": "27",
-      "quantity": 1,
-      "originalAmount": "4578",
-      "productid": 27,
-      "uid": "2",
-      "id": 6
-    },
-    {
-      "productName": "Sapota 6 pcs (Pack)",
-      "title": "Sapota",
-      "image": "assets/images/VeggetablesFruits/sapota.png",
-      "productUniqueId": "7",
-      "quantity": 6,
-      "originalAmount": "108",
-      "productid": 7,
-      "uid": "2",
-      "id": 11
-    },
-    {
-      "productName": "Apple Indian 6 pcs",
-      "title": "Apple Indian",
-      "image": "assets/images/VeggetablesFruits/appleIndian.png",
-      "productUniqueId": "4",
-      "quantity": 1,
-      "originalAmount": "99",
-      "productid": 4,
       "uid": "1",
-      "id": 12
+      "orderUniqueId": 7871,
+      "id": 3
+    },
+    {
+      "productName": "Banana Nendran 4 pcs (Box)",
+      "title": "Banana Nendran",
+      "image": "assets/images/VeggetablesFruits/bananaNendran.png",
+      "productUniqueId": "5",
+      "quantity": 1,
+      "originalAmount": "129",
+      "productid": "5",
+      "uid": "1",
+      "orderUniqueId": 84268,
+      "id": 4
     }
   ],
   "orders": [
@@ -864,129 +868,50 @@
       "customerMobile": "7866956856",
       "customerState": "k",
       "customerCity": "k",
-      "customerPincode": "868786",
+      "customerPincode": "959495",
       "customerAddress": "k",
       "cartItems": [
         {
-          "productName": "Prestige Atlas 3.0 Induction Cooktop",
-          "title": "Prestige Induction Cooktop",
-          "image": "assets/images/HouseHoldProducts/electricInduction.png",
-          "productUniqueId": "30",
-          "quantity": 2,
-          "originalAmount": "895",
-          "productid": 30,
-          "uid": "1",
-          "id": 1
-        },
-        {
-          "productName": "Apple Red Delicious 4 pcs",
-          "title": "Apple Red",
-          "image": "assets/images/VeggetablesFruits/appleRed.png",
-          "productUniqueId": "3",
+          "productName": "Apple Granny Smith 4 pcs",
+          "title": "Apple Granny",
+          "image": "assets/images/VeggetablesFruits/appleGranny.png",
+          "productUniqueId": "2",
           "quantity": 1,
-          "originalAmount": "172",
-          "productid": 3,
+          "originalAmount": "249",
+          "productid": 2,
           "uid": "1",
-          "id": 7
+          "orderUniqueId": 14005,
+          "id": 2
         },
-        {
-          "productName": "Banana Red (Box)",
-          "title": "Banana Red",
-          "image": "assets/images/VeggetablesFruits/bananaRed.png",
-          "productUniqueId": "6",
-          "quantity": 2,
-          "originalAmount": "129",
-          "productid": 6,
-          "uid": "1",
-          "id": 8
-        }
-      ],
-      "totalAmount": 2220,
-      "uid": "1",
-      "id": 4
-    },
-    {
-      "customerName": "kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "7866956856",
-      "customerState": "k",
-      "customerCity": "k",
-      "customerPincode": "878766",
-      "customerAddress": "kk",
-      "cartItems": [
-        {
-          "productName": "Banana Red (Box)",
-          "title": "Banana Red",
-          "image": "assets/images/VeggetablesFruits/bananaRed.png",
-          "productUniqueId": "6",
-          "quantity": 6,
-          "originalAmount": "129",
-          "productid": 6,
-          "uid": "1",
-          "id": 8
-        },
-        {
-          "productName": "Apple Red Delicious 4 pcs",
-          "title": "Apple Red",
-          "image": "assets/images/VeggetablesFruits/appleRed.png",
-          "productUniqueId": "3",
-          "quantity": 8,
-          "originalAmount": "172",
-          "productid": 3,
-          "uid": "1",
-          "id": 9
-        }
-      ],
-      "totalAmount": 2150,
-      "uid": "1",
-      "id": 5
-    },
-    {
-      "customerName": "sakthivel",
-      "customerMail": "sakthi@gmail.com",
-      "customerMobile": "7898696978",
-      "customerState": "k",
-      "customerCity": "k",
-      "customerPincode": "876979",
-      "customerAddress": "k",
-      "cartItems": [
         {
           "productName": "Apple Fuji Pack 4 pcs",
           "title": "Apple Fuji",
           "image": "assets/images/VeggetablesFruits/appleFuji.png",
           "productUniqueId": 1,
-          "quantity": 1,
+          "quantity": 3,
           "originalAmount": "169",
           "productid": 1,
-          "uid": "2",
-          "id": 4
+          "uid": "1",
+          "orderUniqueId": 7871,
+          "id": 3
         },
         {
-          "productName": "Aquaguard SkyLand 18 Ltr",
-          "title": "Aquaguard SkyLand",
-          "image": "assets/images/HouseHoldProducts/aquaguard.png",
-          "productUniqueId": "27",
+          "productName": "Banana Nendran 4 pcs (Box)",
+          "title": "Banana Nendran",
+          "image": "assets/images/VeggetablesFruits/bananaNendran.png",
+          "productUniqueId": "5",
           "quantity": 1,
-          "originalAmount": "4578",
-          "productid": 27,
-          "uid": "2",
-          "id": 6
-        },
-        {
-          "productName": "Sapota 6 pcs (Pack)",
-          "title": "Sapota",
-          "image": "assets/images/VeggetablesFruits/sapota.png",
-          "productUniqueId": "7",
-          "quantity": 6,
-          "originalAmount": "108",
-          "productid": 7,
-          "uid": "2",
-          "id": 11
+          "originalAmount": "129",
+          "productid": "5",
+          "uid": "1",
+          "orderUniqueId": 84268,
+          "id": 4
         }
       ],
-      "totalAmount": 5395,
-      "uid": "2",
-      "id": 6
+      "totalAmount": 885,
+      "uid": "1",
+      "id": 1
     }
-  ]
+  ],
+  "Queries": []
 }

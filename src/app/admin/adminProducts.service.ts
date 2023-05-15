@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductsDataService } from 'src/productsData.service';
+import { ProductsDataService } from 'src/app/user/productsData.service';
 import { product } from './product';
 import { map, switchMap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
@@ -133,8 +133,8 @@ export class AdminProductsService {
     )
   }
 
-  removeCategoryData(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any) {
-    let confirmation = confirm("Are you sure want to delete");
+  removeCategoryData(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any,  redirectStatus?:boolean, redirect?:any,) {
+    let confirmation =  redirectStatus? confirm(`Do you want to delete the previous category "${redirect}"`):confirm("Are you sure you want to delete");
     if (confirmation) {
       this.http.get(`http://localhost:3000/category/${categoryId}`).subscribe((categoryData: any) => {
         let categoryDataObject = categoryData;
@@ -148,12 +148,13 @@ export class AdminProductsService {
         if (categoryData.category.length !== 0) {
           this.removeCategory(categoryId, categoryDataObject).subscribe((response) => {
             response ? alert("Category Remove Successfully") : alert("Error While Removing Category");
+            window.location.reload();
           })
         }
         if (categoryData.category.length == 0) {
           this.removeCategoryTypes(categoryId).subscribe();
-
           this.http.delete(`http://localhost:3000/category/${categoryId}`).subscribe();
+          window.location.reload();
         }
       });
     }

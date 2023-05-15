@@ -29,6 +29,7 @@ export interface cart {
     originalAmount: any;
     id: number|undefined;
     uid: any;
+    orderUniqueId:any;
     productid:number;
 }
 

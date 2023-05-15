@@ -1,0 +1,67 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<!-- -------------------------Contact Us---------------------- -->
+
+<section class="section contact-section">
+    <div class="container">
+        <h3 class="common-heading">Contact Us</h3>
+    </div>
+
+    <div class="container map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.933835570356!2d77.72430831479062!3d11.339543451647614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f4138c09375%3A0x405a7d329f30110c!2sPS%20Park%2C%20Erode%20Fort%2C%20Erode%2C%20Tamil%20Nadu%20638001!5e0!3m2!1sen!2sin!4v1651581190670!5m2!1sen!2sin"
+            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <form [formGroup]="contactUs" (ngSubmit)="submitQuery(contactUs.value)">
+        <div class="formBox">
+            <div class="grid grid-two-columns">
+                <div class="username">
+                    <div class="">
+                        <label for="username"></label>
+                        <input type="text" name="username" formControlName="username" placeholder="Username"
+                            autocomplete="off" required>
+                    </div>
+                    <div class="errorData"
+                        *ngIf="contactUs.controls['username'].invalid && (contactUs.controls['username'].touched||contactUs.controls['username'].dirty)">
+                        <p *ngIf="contactUs.controls['username'].errors?.['required']">This is a required
+                            field</p>
+                        <p *ngIf="contactUs.controls['username'].errors?.['pattern']">Please Enter Only
+                            Alphabets</p>
+                    </div>
+                </div>
+
+                <div class="username">
+                    <label for="email"></label>
+                    <input type="email" name="email" formControlName="email" placeholder="user@gmail.com"
+                        autocomplete="off" required>
+                    <div class="errorData"
+                        *ngIf="contactUs.controls['email'].invalid && (contactUs.controls['email'].touched||contactUs.controls['email'].dirty)">
+                        <p *ngIf="contactUs.controls['email'].errors?.['required']">This is a required field</p>
+                        <p *ngIf="contactUs.controls['email'].errors?.['pattern']">Please Enter Valid Mail</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <label for="subject"></label>
+                <input type="text" formControlName="subject" name="subject" placeholder="Subject" required>
+            </div>
+
+            <div>
+                <label for="textarea"></label>
+                <textarea type="textarea" formControlName="textarea" cols="30" row="10" placeholder="Textarea" required
+                    name="message"></textarea>
+            </div>
+
+            <div class="submitbtn"> <button class="btn" type="submit">Submit</button> </div>
+            <p id="errorMessage" *ngIf="dataValid">Enter all the fields</p>
+        </div>
+    </form>
+</section>
+
+<app-footer></app-footer>

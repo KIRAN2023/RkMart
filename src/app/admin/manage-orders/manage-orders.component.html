@@ -4,7 +4,7 @@
     <div class="container">
         <section>
             <div id="ordersDashboard">
-                <h2>Orders</h2>
+                <h2 class="common-heading" >Orders</h2>
                 <table class="userTable">
                     <thead>
                         <tr>
@@ -19,7 +19,7 @@
                     <tbody id="orderDatas">
                         <ng-container *ngFor="let order of orderData">
                             <tr *ngFor="let productData of order.cartItems">
-                                <td>{{order.id}} </td>
+                                <td>{{productData.orderUniqueId}} </td>
                                 <td>{{order.customerName}}</td>
                                 <td>{{order.customerAddress}}</td>
                                 <td>{{productData.productName}}</td>
