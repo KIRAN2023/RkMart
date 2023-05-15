@@ -22,6 +22,7 @@ import { CategoryComponent } from './user/category/category.component';
 import { CategoryDataComponent } from './admin/categoryData/categoryData.component';
 import { AddCategoryComponent } from './admin/addCategory/addCategory.component';
 import { QueriesComponent } from './admin/queries/queries.component';
+import { OrderStatusUpdateComponent } from './admin/orderStatusUpdate/orderStatusUpdate.component';
 
 
 const routes: Routes = [
@@ -54,6 +55,7 @@ const routes: Routes = [
     { path: 'addCategory', component: AddCategoryComponent },
     { path: 'addCategory/:id', component: AddCategoryComponent },
     { path: 'queries', component: QueriesComponent },
+    { path: 'orderStatus/:orderId', component: OrderStatusUpdateComponent },
   ]},
 
   { path: '**', component: ErrorComponent }

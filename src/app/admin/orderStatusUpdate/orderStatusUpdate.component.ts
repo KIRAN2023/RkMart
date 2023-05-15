@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-orderStatusUpdate',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orderStatusUpdate.component.css']
 })
 export class OrderStatusUpdateComponent implements OnInit {
-
-  constructor() { }
+  orderStatus = ['Processing','Packed','Delivered','Cancelled'];
+  orderId:any;
+  constructor(private router:ActivatedRoute) { 
+    this.router.paramMap.subscribe((url:any)=>{
+      this.orderId = url.get('orderId');
+    })
+  }
 
   ngOnInit() {
   }

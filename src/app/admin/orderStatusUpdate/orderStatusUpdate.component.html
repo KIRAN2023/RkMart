@@ -1,3 +1,36 @@
-<p>
-  orderStatusUpdate works!
-</p>
+<section>
+  <h2 class="common-heading"> Update Status </h2>
+
+
+  <div class="container grid-two-columns">
+    <app-navbar></app-navbar>
+
+    <div class="productSection">
+      <form>
+        <div class="grid-products">
+          <div class="form-fields">
+            <label for="orderId"> Order ID </label>
+            <input type="text" value="{{orderId}}" name="categoryType" #stockData>
+          </div>
+          <div class="form-fields">
+            <label for="status"> Order Status </label>
+            <select>
+              <option *ngFor="let order of orderStatus" [ngValue]="order">
+                {{order}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="formBtn">
+          <button class="btn" routerLink="/admin/manageOrders">Back</button>
+          <button class="btn"> Update Category </button>
+
+          <button class="btn">Reset</button>
+        </div>
+      </form>
+      <div id="addProductMessage">
+        <!-- <p> {{this.categoryStatusMessage}} </p> -->
+      </div>
+    </div>
+  </div>
+</section>
