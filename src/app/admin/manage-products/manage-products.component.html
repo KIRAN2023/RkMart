@@ -6,13 +6,13 @@
         <section class="productDiv">
 
             <div>
-                <h2>Product Details</h2>
+                <h2 class="common-heading">Product Details</h2>
 
                 <div class="dashboardOverview">
 
                     <div class="totalAmount">
                         <h3>Total Products Amount</h3>
-                        <p> {{totalProductAmount}} </p>
+                        <p> {{totalProductAmount|currency:'INR':true:'1.0-0'}} </p>
                     </div>
 
                     <div class="grid products-two-columns dashboardHistory">
@@ -22,7 +22,7 @@
                         </div>
                         <div routerLink="/admin/category" class="totalUsers">
                             <p>Categories</p>
-                            <p>  {{category.length}} </p>
+                            <p>  {{categoryCount}} </p>
                         </div>
                         <div class="totalUsers">
                             <p routerLink="/admin/addProducts">Add Products</p>

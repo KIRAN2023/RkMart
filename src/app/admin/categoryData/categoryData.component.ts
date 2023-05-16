@@ -9,21 +9,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CategoryDataComponent implements OnInit {
   categoryDisplay: any = "";
-  categoryCount: any = 0;
+  categoryCount: number = 0;
   constructor(private adminService: AdminProductsService, private http: HttpClient) {
     this.adminService.getCategory().subscribe((data) => {
       this.categoryDisplay = data;
     });
-    this.adminService.categoryTypesCount().subscribe((category: any) => this.categoryCount = category);
+    this.adminService.categoryTypesCount().subscribe((category: any) => this.categoryCount = category.length);
   }
 
   ngOnInit(): void { }
 
   removeCategory(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any) {
-    this.adminService.removeCategoryData(categoryId, categoryValue, categoryClass, categoryUniqueValue);
-    // this.adminService.getCategory().subscribe((data) => {
-    //   this.categoryDisplay = data;
-    // });
-    // this.adminService.categoryTypesCount().subscribe((category: any) => this.categoryCount = category);
+    if(confirm(`Are you sure want to delete ${categoryValue}`)){
+      this.adminService.removeCategoryData(categoryId, categoryValue, categoryClass, categoryUniqueValue);
+      window.location.reload();
+    }
   }
 } 

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminProductsService } from '../adminProducts.service';
 import { product } from '../product';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-products',
@@ -27,11 +28,9 @@ export class AddProductsComponent implements OnInit {
   filterValue = ['010', '020', '030', '040', '050'];
   category:any = [];
 
-  constructor(private productService: AdminProductsService, private formBuilder: FormBuilder, private activateUrl: ActivatedRoute) {
+  constructor(private productService: AdminProductsService, private formBuilder: FormBuilder, private activateUrl: ActivatedRoute, private http:HttpClient) {
     this.productService.categoryTypesCount().subscribe((category: any) => {
-      category.forEach((category:any) => {
-        console.warn((category.categoryTypeData));
-        
+      category.forEach((category:any) => {        
         this.category.push(category.categoryTypeData);
       })
     })
@@ -82,6 +81,7 @@ export class AddProductsComponent implements OnInit {
             this.addProductForm.controls['discounted'].setValue(product.discounted)
         }
       })
+      this.addProductForm.markAsPristine()
     }
     this.activateUrl.paramMap.subscribe((data) => {
       this.editProductURLId = data.get('id');
@@ -89,28 +89,34 @@ export class AddProductsComponent implements OnInit {
   }
 
   addProduct(formData: product) {
-
+    let existProductData:any|undefined;
     this.addProductForm.invalid ? this.addProductMessage = 'Fill all the fields' : this.addProductMessage = undefined;
-
-    if (this.addProductForm.valid) {
-      this.productService.addProduct(formData).subscribe((response) => {
-        if (response) {
-          this.addProductMessage = "Product Added Successfully";
-        }
-        setTimeout(() => this.addProductMessage = undefined, 3000);
-      });
-    }
+    this.http.get(`http://localhost:3000/Productdata?productName=${formData.productName}`).subscribe((response:any)=>{
+       existProductData = response[0]?.productName;    
+       if (this.addProductForm.valid && existProductData != formData.productName) {        
+        this.productService.addProduct(formData).subscribe((response) => {
+          if (response) {
+            this.addProductMessage = "Product Added Successfully";
+          }
+          setTimeout(() => this.addProductMessage = undefined, 3000);
+        });
+      }else{
+        alert(`Product ${formData.productName} Already Exist`);
+      }     
+    })
   }
 
   updateProduct(productData: product) {
     this.addProductForm.invalid ? this.addProductMessage = 'Fill all the fields' : this.addProductMessage = undefined;
-    if (this.addProductForm.valid) {
+    if (this.addProductForm.valid && !this.addProductForm.pristine) {
       this.productService.updateProductData(productData, this.editProductURLId).subscribe((response) => {
         if (response) {
           this.addProductMessage = "Product Updated Successfully";
         }
         setTimeout(() => this.addProductMessage = undefined, 3000);
       });
+    }else{
+      alert("No Data has been Modified");
     }
   }
 

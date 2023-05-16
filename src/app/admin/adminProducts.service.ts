@@ -26,12 +26,14 @@ export class AdminProductsService {
   getCategoryTypesUrl = 'http://localhost:3000/categoryTypes';
   getRegisteredUsersUrl = 'http://localhost:3000/registeredUser';
 
+  getOrdersUrl = 'http://localhost:3000/orders'
+
   constructor(private http: HttpClient, private userAuth: ProductsDataService, private route: Router) {
     this.adminName = sessionStorage.getItem("adminLoggedin");
   }
 
   getProducts() {
-    return this.http.get(`${this.getProductDataUrl}`);
+    return this.http.get<any>(`${this.getProductDataUrl}`);
   }
 
   productTotalAmount() {
@@ -41,13 +43,13 @@ export class AdminProductsService {
         product.forEach((product: any) => {
           productTotalAmount += parseInt(product.originalAmount);
         });
-        return productTotalAmount.toLocaleString('en');
+        return productTotalAmount;
       })
     )
   }
 
   getUsers() {
-    return this.http.get(`${this.getRegisteredUsersUrl}`);
+    return this.http.get<any>(`${this.getRegisteredUsersUrl}`);
   }
 
   deleteProduct(id: any) {
@@ -63,7 +65,7 @@ export class AdminProductsService {
   }
 
   categoryTypesCount() {
-    return this.http.get(`${this.getCategoryTypesUrl}`);
+    return this.http.get<any>(`${this.getCategoryTypesUrl}`);
   }
 
   addCategory(categoryData: any) {
@@ -108,6 +110,10 @@ export class AdminProductsService {
 
   removerUser(user: any) {
     return this.http.delete(`${this.getRegisteredUsersUrl}/${user}`);
+  }
+
+  getOrders(){
+    return this.http.get(`${this.getOrdersUrl}`);
   }
 
   logout() {

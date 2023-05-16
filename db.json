@@ -27,11 +27,18 @@
       "mobile": "8858586858",
       "password": "U2FsdGVkX18N/S4vAkscesAYTnJpc77g1dNYUjUnUMc=",
       "id": 3
+    },
+    {
+      "username": "test",
+      "mail": "test@gmail.com",
+      "mobile": "8567588588",
+      "password": "U2FsdGVkX1/E8+04OVw1l/8xAqQHOcGCH87SThNTql4=",
+      "id": 4
     }
   ],
   "Productdata": [
     {
-      "Stock": 15,
+      "Stock": 9,
       "category": "grocery",
       "uniqueId": 1,
       "filterValue": 1,
@@ -42,7 +49,6 @@
       "title": "Apple Fuji",
       "productName": "Apple Fuji Pack 4 pcs",
       "quantity": "500g - 700g (Approx)",
-      "rating": "4.4",
       "ratingCount": "1726",
       "reviewCount": "105",
       "originalAmount": "169",
@@ -50,7 +56,7 @@
       "id": 1
     },
     {
-      "Stock": 14,
+      "Stock": 2,
       "category": "grocery",
       "uniqueId": "2",
       "filterValue": "1",
@@ -107,7 +113,7 @@
       "id": 4
     },
     {
-      "Stock": 17,
+      "Stock": 10,
       "category": "grocery",
       "uniqueId": "5",
       "filterValue": "2",
@@ -182,7 +188,7 @@
       "id": 8
     },
     {
-      "Stock": -3,
+      "Stock": "5",
       "category": "grocery",
       "uniqueId": "9",
       "filterValue": "5",
@@ -193,7 +199,6 @@
       "title": "Green Capsicum",
       "productName": "Green Capsicum",
       "quantity": "500g (Approx)",
-      "rating": "4.4",
       "ratingCount": "467",
       "reviewCount": "136",
       "originalAmount": "66",
@@ -201,7 +206,7 @@
       "id": 9
     },
     {
-      "Stock": "23",
+      "Stock": 21,
       "category": "grocery",
       "uniqueId": "10",
       "filterValue": "6",
@@ -466,7 +471,7 @@
       "id": 23
     },
     {
-      "Stock": "84",
+      "Stock": 82,
       "category": "beverages",
       "uniqueId": "24",
       "filterValue": "11",
@@ -694,7 +699,7 @@
       "id": 35
     },
     {
-      "Stock": "35",
+      "Stock": 33,
       "category": "household",
       "uniqueId": "36",
       "filterValue": "19",
@@ -822,7 +827,7 @@
       "title": "Apple Granny",
       "image": "assets/images/VeggetablesFruits/appleGranny.png",
       "productUniqueId": "2",
-      "quantity": 1,
+      "quantity": 2,
       "originalAmount": "249",
       "productid": 2,
       "uid": "1",
@@ -852,6 +857,42 @@
       "uid": "1",
       "orderUniqueId": 84268,
       "id": 4
+    },
+    {
+      "productName": "Lauki (Bottle Gourd)",
+      "title": "Lauki",
+      "image": "assets/images/VeggetablesFruits/bottleGourd.png",
+      "productUniqueId": "10",
+      "quantity": 1,
+      "originalAmount": "39",
+      "productid": 10,
+      "uid": "2",
+      "orderUniqueId": 80093,
+      "id": 5
+    },
+    {
+      "productName": "Mountain Dew Can",
+      "title": "Mountain Dew",
+      "image": "assets/images/Beverges/bevergeMountainDew.png",
+      "productUniqueId": "24",
+      "quantity": 3,
+      "originalAmount": "26",
+      "productid": 24,
+      "uid": "2",
+      "orderUniqueId": 48345,
+      "id": 6
+    },
+    {
+      "productName": "Apple Fuji Pack 4 pcs",
+      "title": "Apple Fuji",
+      "image": "assets/images/VeggetablesFruits/appleFuji.png",
+      "productUniqueId": 1,
+      "quantity": 2,
+      "originalAmount": "169",
+      "productid": 1,
+      "uid": "2",
+      "orderUniqueId": 85755,
+      "id": 9
     }
   ],
   "orders": [
@@ -861,15 +902,15 @@
       "customerMobile": "7866956856",
       "customerState": "k",
       "customerCity": "k",
-      "customerPincode": "959495",
-      "customerAddress": "k",
+      "customerPincode": "999999",
+      "customerAddress": "l",
       "cartItems": [
         {
           "productName": "Apple Granny Smith 4 pcs",
           "title": "Apple Granny",
           "image": "assets/images/VeggetablesFruits/appleGranny.png",
           "productUniqueId": "2",
-          "quantity": 1,
+          "quantity": 2,
           "originalAmount": "249",
           "productid": 2,
           "uid": "1",
@@ -901,11 +942,218 @@
           "id": 4
         }
       ],
-      "totalAmount": 885,
+      "totalAmount": 1134,
       "uid": "1",
       "id": 1
+    },
+    {
+      "customerName": "sakthivel",
+      "customerMail": "sakthi@gmail.com",
+      "customerMobile": "7898696978",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "856858",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Lauki (Bottle Gourd)",
+          "title": "Lauki",
+          "image": "assets/images/VeggetablesFruits/bottleGourd.png",
+          "productUniqueId": "10",
+          "quantity": 1,
+          "originalAmount": "39",
+          "productid": 10,
+          "uid": "2",
+          "orderUniqueId": 80093,
+          "id": 5
+        },
+        {
+          "productName": "Mountain Dew Can",
+          "title": "Mountain Dew",
+          "image": "assets/images/Beverges/bevergeMountainDew.png",
+          "productUniqueId": "24",
+          "quantity": 1,
+          "originalAmount": "26",
+          "productid": 24,
+          "uid": "2",
+          "orderUniqueId": 48345,
+          "id": 6
+        },
+        {
+          "productName": "Bajaj GX1 500 W Mixer Grinder",
+          "title": "Bajaj Mixer Grinder",
+          "image": "assets/images/HouseHoldProducts/mixer2.png",
+          "productUniqueId": "36",
+          "quantity": 1,
+          "originalAmount": "1199",
+          "productid": 36,
+          "uid": "2",
+          "orderUniqueId": 68244,
+          "id": 7
+        },
+        {
+          "productName": "Apple Granny Smith 4 pcs",
+          "title": "Apple Granny",
+          "image": "assets/images/VeggetablesFruits/appleGranny.png",
+          "productUniqueId": "2",
+          "quantity": 1,
+          "originalAmount": "249",
+          "productid": 2,
+          "uid": "2",
+          "orderUniqueId": 61280,
+          "id": 8
+        }
+      ],
+      "totalAmount": 1513,
+      "uid": "2",
+      "id": 2
+    },
+    {
+      "customerName": "sakthivel",
+      "customerMail": "sakthi@gmail.com",
+      "customerMobile": "7898696978",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "949584",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Lauki (Bottle Gourd)",
+          "title": "Lauki",
+          "image": "assets/images/VeggetablesFruits/bottleGourd.png",
+          "productUniqueId": "10",
+          "quantity": 1,
+          "originalAmount": "39",
+          "productid": 10,
+          "uid": "2",
+          "orderUniqueId": 80093,
+          "id": 5
+        },
+        {
+          "productName": "Mountain Dew Can",
+          "title": "Mountain Dew",
+          "image": "assets/images/Beverges/bevergeMountainDew.png",
+          "productUniqueId": "24",
+          "quantity": 1,
+          "originalAmount": "26",
+          "productid": 24,
+          "uid": "2",
+          "orderUniqueId": 48345,
+          "id": 6
+        },
+        {
+          "productName": "Bajaj GX1 500 W Mixer Grinder",
+          "title": "Bajaj Mixer Grinder",
+          "image": "assets/images/HouseHoldProducts/mixer2.png",
+          "productUniqueId": "36",
+          "quantity": 1,
+          "originalAmount": "1199",
+          "productid": 36,
+          "uid": "2",
+          "orderUniqueId": 68244,
+          "id": 7
+        },
+        {
+          "productName": "Apple Granny Smith 4 pcs",
+          "title": "Apple Granny",
+          "image": "assets/images/VeggetablesFruits/appleGranny.png",
+          "productUniqueId": "2",
+          "quantity": 1,
+          "originalAmount": "249",
+          "productid": 2,
+          "uid": "2",
+          "orderUniqueId": 61280,
+          "id": 8
+        },
+        {
+          "productName": "Apple Fuji Pack 4 pcs",
+          "title": "Apple Fuji",
+          "image": "assets/images/VeggetablesFruits/appleFuji.png",
+          "productUniqueId": 1,
+          "quantity": 1,
+          "originalAmount": "169",
+          "productid": 1,
+          "uid": "2",
+          "orderUniqueId": 85755,
+          "id": 9
+        }
+      ],
+      "totalAmount": 1682,
+      "uid": "2",
+      "id": 3
     }
   ],
-  "orderStatusUpdate":[],
+  "orderStatusUpdate": [
+    {
+      "orderid": 14005,
+      "status": "Packed",
+      "id": 1
+    },
+    {
+      "orderid": 7871,
+      "status": "Processing",
+      "id": 2
+    },
+    {
+      "orderid": 84268,
+      "status": "Cancelled",
+      "id": 3
+    },
+    {
+      "orderid": 80093,
+      "status": "Processing",
+      "id": 4
+    },
+    {
+      "orderid": 48345,
+      "status": "Packed",
+      "id": 5
+    },
+    {
+      "orderid": 61280,
+      "status": "Processing",
+      "id": 6
+    },
+    {
+      "orderid": 68244,
+      "status": "Processing",
+      "id": 7
+    },
+    {
+      "orderid": 61280,
+      "status": "Processing",
+      "id": 8
+    },
+    {
+      "orderid": 68244,
+      "status": "Processing",
+      "id": 9
+    },
+    {
+      "orderid": 80093,
+      "status": "Processing",
+      "id": 10
+    },
+    {
+      "orderid": 48345,
+      "status": "Processing",
+      "id": 11
+    },
+    {
+      "orderid": 68244,
+      "status": "Processing",
+      "id": 12
+    },
+    {
+      "orderid": 61280,
+      "status": "Processing",
+      "id": 13
+    },
+    {
+      "orderid": 85755,
+      "status": "Processing",
+      "id": 14
+    }
+  ],
   "Queries": []
 }

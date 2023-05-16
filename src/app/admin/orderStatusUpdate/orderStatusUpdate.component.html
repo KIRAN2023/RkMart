@@ -6,15 +6,15 @@
     <app-navbar></app-navbar>
 
     <div class="productSection">
-      <form>
+      <form [formGroup] = "orderStatusData">
         <div class="grid-products">
           <div class="form-fields">
             <label for="orderId"> Order ID </label>
-            <input type="text" value="{{orderId}}" name="categoryType" #stockData>
+            <input type="text" name="categoryType" formControlName="orderId">
           </div>
           <div class="form-fields">
             <label for="status"> Order Status </label>
-            <select>
+            <select formControlName="status">
               <option *ngFor="let order of orderStatus" [ngValue]="order">
                 {{order}}
               </option>
@@ -23,9 +23,8 @@
         </div>
         <div class="formBtn">
           <button class="btn" routerLink="/admin/manageOrders">Back</button>
-          <button class="btn"> Update Category </button>
+          <button class="btn" (click)="updateData()"> Update Status </button>
 
-          <button class="btn">Reset</button>
         </div>
       </form>
       <div id="addProductMessage">

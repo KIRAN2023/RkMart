@@ -32,11 +32,21 @@ export class PaymentComponent implements OnInit {
         ...data,
         Stock:data.Stock - product.quantity
        }
-       this.http.put(`http://localhost:3000/Productdata/${product.productid}`,updatedData).subscribe();
+
+       let orderId = {
+        orderid:product.orderUniqueId,
+        status:'Processing'
+       }
+
+       this.http.put(`http://localhost:3000/Productdata/${product.productid}`,updatedData).subscribe((response)=>{
+        this.http.post('http://localhost:3000/orderStatusUpdate', orderId).subscribe();
+       });
       });
     })
 
-    this.cartService.order(this.data).subscribe();
+    this.cartService.order(this.data).subscribe((response)=>{
+      sessionStorage.removeItem("shippingData");
+    });
   
     let paymentModal:any = document.querySelector(".paymentModal");
     paymentModal.showModal();

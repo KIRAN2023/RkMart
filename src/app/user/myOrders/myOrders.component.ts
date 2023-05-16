@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { cart, order } from 'src/app/admin/product';
 import { CartService } from 'src/app/user/cart.service';
@@ -9,18 +10,31 @@ import { CartService } from 'src/app/user/cart.service';
 })
 export class MyOrdersComponent implements OnInit {
   userid = sessionStorage.getItem("userId");
-  orderData:any="";
-  orderTotalAmount:any;
+  orderData:any = [];
+  orderTotalAmount: any;
 
-  cartOrderList:cart[]|undefined;
+  cartOrderList: cart[] | undefined;
 
-  constructor(private cartService:CartService) { }
+  constructor(private cartService: CartService, private http: HttpClient) { }
 
   ngOnInit() {
-    this.orderData = this.cartService.ordersData(this.userid).subscribe((data:any)=>{
+    this.cartService.ordersData(this.userid).subscribe((data: any) => {
       let orderDetails = data;
-      orderDetails.forEach((orderDatas:any) => {
-          this.orderData = orderDatas.cartItems;          
+
+      orderDetails.forEach((orderDatas: any) => {
+        let cartData = orderDatas.cartItems;
+
+        cartData.forEach((cart: any) => {
+          this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${cart.orderUniqueId}`).subscribe((response: any) => {
+            let orderStatus = {
+              ...cart,
+              orderStatus: response[0].status
+            }
+            this.orderData.push(orderStatus);
+            console.warn(this.orderData);
+            
+          })
+        })
       });
     });
   }

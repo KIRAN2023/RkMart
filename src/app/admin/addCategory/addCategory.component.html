@@ -28,8 +28,8 @@
         </div>
         <div class="formBtn">
           <button class="btn" routerLink="/admin/category">Back</button>
-          <button class="btn" *ngIf="!queryParamData" (click)="addProduct(categoryData.value)"> Add Category </button>
-          <button class="btn" *ngIf="queryParamData" (click)="updateProduct(categoryData.value)"> Update Category </button>
+          <button class="btn" *ngIf="!queryParamData" (click)="addCategory(categoryData.value)"> Add Category </button>
+          <button class="btn" *ngIf="queryParamData" (click)="updateCategory(categoryData.value)"> Update Category </button>
 
           <button class="btn">Reset</button>
         </div>

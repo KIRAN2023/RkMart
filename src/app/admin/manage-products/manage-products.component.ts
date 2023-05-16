@@ -14,25 +14,23 @@ import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 export class ManageProductsComponent implements OnInit {
 
   allProducts: product[] = [];
-  totalProductAmount:number=0;
-  category:any = [];
+  totalProductAmount: number = 0;
+  categoryCount: number = 0;
   editIcon = faEdit
   deleteIcon = faTrash;
 
-  constructor(private productData: AdminProductsService, private http: HttpClient, private route: Router) { }
+  constructor(private productData: AdminProductsService, private http: HttpClient, private route: Router) {
 
-  loadProductData() {
     this.productData.getProducts().subscribe(product => {
       this.allProducts = product as product[];
-      this.productData.categoryTypesCount().subscribe( (category:any) => this.category = category);
+      this.productData.categoryTypesCount().subscribe( (category:any) => this.categoryCount = category.length);
     });
-    this.productData.productTotalAmount().subscribe((totalAmount:number) => {
+    this.productData.productTotalAmount().subscribe((totalAmount: number) => {
       this.totalProductAmount = totalAmount;
     });
-  }
 
+  }
   ngOnInit(): void {
-    this.loadProductData();
   }
 
   removeProduct(id: number) {
@@ -40,7 +38,7 @@ export class ManageProductsComponent implements OnInit {
     if (result) {
       this.productData.deleteProduct(id).subscribe((data) => {
         alert("Product Removed Successfully");
-        this.loadProductData();
+        window.location.reload();
       });
     }
   }
