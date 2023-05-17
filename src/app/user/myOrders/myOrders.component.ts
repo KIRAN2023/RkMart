@@ -23,19 +23,31 @@ export class MyOrdersComponent implements OnInit {
 
       orderDetails.forEach((orderDatas: any) => {
         let cartData = orderDatas.cartItems;
-
+        
         cartData.forEach((cart: any) => {
           this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${cart.orderUniqueId}`).subscribe((response: any) => {
+            let status = response[0].status;
             let orderStatus = {
               ...cart,
-              orderStatus: response[0].status
+              orderStatus: status
             }
-            this.orderData.push(orderStatus);
-            console.warn(this.orderData);
-            
+            this.orderData.push(orderStatus); 
+            console.warn(orderStatus.orderStatus);
+                      
           })
         })
       });
     });
+
+    // if(this.orderData.length==0){
+    //   setTimeout(()=>{
+    //     const offerData:any = document.querySelector('.popupMsg');
+    //     offerData.showModal();
+    //   },3000);
+    // }
+  }
+  closeOffer() {
+    const $offerData: any = document.querySelector('.popupMsg');
+    $offerData.close();
   }
 }

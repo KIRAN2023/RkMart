@@ -23,6 +23,7 @@ import { CategoryDataComponent } from './admin/categoryData/categoryData.compone
 import { AddCategoryComponent } from './admin/addCategory/addCategory.component';
 import { QueriesComponent } from './admin/queries/queries.component';
 import { OrderStatusUpdateComponent } from './admin/orderStatusUpdate/orderStatusUpdate.component';
+import { QueryComponent } from './user/query/query.component';
 
 
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
     { path: 'shipping', component: ShippingComponent },
     { path: 'shipping/orderDetails', component: OrderDetailsComponent },
     { path: 'shipping/orderDetails/payment', component: PaymentComponent },
-    { path: 'myOrders', component: MyOrdersComponent }
+    { path: 'myOrders', component: MyOrdersComponent },
+    { path: 'query', component:QueryComponent }
   ]},
   {path: 'admin', canActivate:[AuthAdminGuard], component: AdminComponent},
     

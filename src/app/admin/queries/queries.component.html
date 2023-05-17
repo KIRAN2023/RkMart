@@ -1,7 +1,7 @@
 <div class="grid grid-two-columns">
   <app-navbar></app-navbar>
 
-  <div *ngIf="queries.length!=0" class="container">
+  <div *ngIf="queries.length!=0 && queryDisplay" class="container">
     <section>
       <div id="ordersDashboard">
         <h2 class="common-heading">Queries</h2>
@@ -9,20 +9,24 @@
           <thead>
             <tr>
               <th>Query ID</th>
-              <th>User Name</th>
+              <!-- <th>User Name</th> -->
               <th>User Mail</th>
               <th>Subject</th>
               <th>Query</th>
+              <th>Query Status</th>
+              <th>Update Status</th>
             </tr>
           </thead>
           <tbody id="orderDatas">
             <ng-container *ngFor="let query of queries">
               <tr>
-                <td> {{query.id}} </td>
-                <td> {{query.username}} </td>
+                <td> {{query.uid}} </td>
+                <!-- <td> {{query.username}} </td> -->
                 <td> {{query.email}} </td>
                 <td> {{query.subject}} </td>
                 <td> {{query.textarea}} </td>
+                <td> {{query.queryStatus}} </td>
+                <td (click)="updateData(query.id)"><i class="fa-solid fa-pen-to-square"></i></td>
               </tr>
             </ng-container>
           </tbody>
@@ -30,6 +34,49 @@
       </div>
     </section>
   </div>
+
+  <section *ngIf="!queryDisplay">
+    <h2 class="common-heading"> Update Status </h2>
+  
+  
+    <div class="container grid-two-columns">
+      <app-navbar></app-navbar>
+  
+      <div class="productSection">
+        <form [formGroup]="updateQueries">
+          <div class="grid-products">
+            <div class="form-fields">
+              <label for="uid"> Order ID </label>
+              <input type="text" name="uid" formControlName="uid">
+            </div>
+            <div class="form-fields">
+              <label for="queryStatus"> Order Status </label>
+              <select   name="queryStatus" formControlName="queryStatus">
+                <option *ngFor="let query of queryStatus" [ngValue]="query">
+                  {{query}}
+                </option>
+              </select>
+            </div>
+            <div class="form-fields">
+              <label for="id"> Unique ID </label>
+              <input type="text" name="id" formControlName="id">
+            </div>
+            <div class="form-fields">
+              <label for="addressingData"> Query Reply </label>
+              <textarea type="text" name="addressingData" formControlName="addressingData"></textarea>
+            </div>
+          </div>
+          <div class="formBtn">
+            <button class="btn" (click)="back()" >Back</button>
+            <button class="btn" (click)="updateQueryStatus(updateQueries.value)">Update Status</button>
+  
+          </div>
+        </form>
+        <div id="addProductMessage">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div id="queriesBox" *ngIf="queries.length==0">
     <p> <mark id="markData"> No Queries to Show </mark> </p>

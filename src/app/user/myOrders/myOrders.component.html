@@ -3,9 +3,11 @@
 
 <!-- --------------------------Order Section----------------------------- -->
 <div class="orders">
-  <h2 class="common-heading">My Orders</h2>
+  <h2 routerLink="../"> <button class="btn">  <i class="fa-solid fa-arrow-right fa-flip-horizontal"></i> Back </button></h2>
 </div>
-<div id="orderPage">
+<div id="myOrderHead" *ngIf="orderData.length!=0"> <h2 > Orders </h2> </div>
+
+<div id="orderPage" *ngIf="orderData.length!=0">
   <div class="container orderDataBox">
     <div class="orderBox">
       <ng-container *ngFor="let orderData of orderData">
@@ -36,3 +38,33 @@
     </div>
   </div>
 </div>
+
+<div *ngIf="orderData.length==0">
+  <div class="orderDiv">
+      <div class="">
+          <img src="https://img.freepik.com/free-vector/abstract-shaped-order-now-banner_23-2148718483.jpg?w=740&t=st=1684328746~exp=1684329346~hmac=d3220d9c9cbbd33be2042d71e011aec88d852cf61844e2fd799a6216ba2f5626"
+              alt="">
+          <div class="continueShopping">
+              <p>No orders has been Placed</p>
+              <a routerLink="/products"> <button class="btn">Order Now</button> </a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Popup Message -->
+
+<dialog class="popupMsg">
+  <i class="fa-solid fa-xmark fa-1x popupClose" (click)="closeOffer()"></i>
+  <div class="offerPopUp">
+    <div class="offerImage">
+      <img src="../assets/images/Sales/Sale.jpg" alt="50% Discount" title="50% Off">
+    </div>
+    <div class="offerContent">
+      <div class="offerData">
+        <p> Mega Sale <span id="offerPercentage">10% to 60% Limited Time Offer </span> </p>
+      </div>
+      <button class="btn"> <a routerLink="/products"> Grab Now </a> </button>
+    </div>
+  </div>
+</dialog>

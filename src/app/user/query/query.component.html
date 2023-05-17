@@ -1,0 +1,53 @@
+<!-- ------------------Navigation Menu----------------- -->
+<app-menu></app-menu>
+
+<section *ngIf="query">
+  <div class="container">
+    <div class="querySection">
+      <div class="grid">
+        <div class="query">
+          <h3>User Name</h3>
+          <p> {{queryAddressedData.username}} </p>
+        </div>
+        <div class="query">
+          <h3>Subject</h3>
+          <p> {{queryAddressedData.email}} </p>
+        </div>
+      </div>
+      <hr>
+      <div class="query">
+        <h3>Subject</h3>
+        <p> {{queryAddressedData.subject}} </p>
+      </div>
+      <hr>
+      <div class="query">
+        <h3>Query</h3>
+        <p> {{queryAddressedData.textarea}} </p>
+      </div>
+      <hr>
+      <div class="query">
+        <h3>Addressed Query</h3>
+        <p> {{queryAddressedData.addressingData}} </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div *ngIf="!query">
+  <div class="queryDiv">
+    <div class="">
+      <img
+        src="https://img.freepik.com/premium-vector/concept-searching-opportunities-decisions-new-business-ideas-staff-people-looking-into-future-choosing-direction-development-colorful-flat-vector-illustration-isolated-whitexa_647728-53.jpg?w=740"
+        alt="">
+      <div class="continueShopping">
+        <h3>No Queries has been Raised</h3>
+        <div class="queriesRedirect">
+          <a routerLink="/products"> <button class="btn">Continue Shopping</button> </a>
+          <a routerLink="/contactUs"> <button class="btn">Raise Query</button> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

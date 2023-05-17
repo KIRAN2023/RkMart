@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminProductsService } from '../adminProducts.service';
-import { product } from '../product';
 
 @Component({
   selector: 'app-dashboard',

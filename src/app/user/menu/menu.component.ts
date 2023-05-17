@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
 
   cartDataCount: number = 0;
 
-  @Output() loginStatus:EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() loginStatus: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private dataService: ProductsDataService, private cartService: CartService, private loginFormBuilder: FormBuilder, private admin: AdminProductsService, private auth: AuthUserGuard, private router: Router, private http: HttpClient) {
     this.dataService.registeredUser().subscribe((user) => {
@@ -86,77 +86,90 @@ export class MenuComponent implements OnInit {
   }
 
   registerUser() {
-    let newUser: boolean = true;
+    let invalidRegistration: any = document.querySelector('#registerError');
 
-    let SuccessfulRegistered: any = document.querySelector('.registerSuccessModal');
-    const RegisterPanel: any = document.querySelector(".Registermodal");
-    RegisterPanel.close();
+    if (this.registerForm.valid) {
+      let newUser: boolean = true;
 
-    this.http.get<any>("http://localhost:3000/registeredUser").subscribe((user) => {
-      user.find((userData: any) => {
-        if (userData.mail == this.registerForm.get('mail')?.value || userData.mobile == this.registerForm.get('mobile')?.value) {
-          newUser = false;
+      let SuccessfulRegistered: any = document.querySelector('.registerSuccessModal');
+      const RegisterPanel: any = document.querySelector(".Registermodal");
+      RegisterPanel.close();
+
+      this.http.get<any>("http://localhost:3000/registeredUser").subscribe((user) => {
+        user.find((userData: any) => {
+          if (userData.mail == this.registerForm.get('mail')?.value || userData.mobile == this.registerForm.get('mobile')?.value) {
+            newUser = false;
+          }
+        });
+        if (newUser) {
+          let userPassword: any = this.registerForm.controls["password"].value;
+          let encryptedPassword = CryptoJS.AES.encrypt(userPassword, userPassword).toString();
+          this.registerForm.get("password")?.setValue(encryptedPassword);
+          this.dataService.registerUser(this.registerForm.value).subscribe(data => { });
+          SuccessfulRegistered.showModal();
+        } else {
+          alert("Already Registered");
+          RegisterPanel.showModal();
         }
       });
-      if (newUser) {
-        let userPassword:any = this.registerForm.controls["password"].value;
-        let encryptedPassword = CryptoJS.AES.encrypt(userPassword,userPassword).toString();
-        this.registerForm.get("password")?.setValue(encryptedPassword);
-        this.dataService.registerUser(this.registerForm.value).subscribe(data => { });
-        SuccessfulRegistered.showModal();
-      } else {
-        alert("Already Registered");
-        RegisterPanel.showModal();
-      }
-    });
+    }else{
+      invalidRegistration.innerHTML = "Enter all the fields";
+      setTimeout(() => invalidRegistration.innerHTML = '', 3000 )
+    }
   }
 
   login(usermail: any, userpassword: any) {
     var invalidLogin: any = document.querySelector('#loginError');
     this.loggedin = false;
-    for (let user of this.users) {
-      let decryptedValue = CryptoJS.AES.decrypt(user.password,userpassword.value).toString(CryptoJS.enc.Utf8);
-      if (usermail.value === user.mail && userpassword.value === decryptedValue) {
-        invalidLogin.innerHTML = "";
-        this.loggedinUser = user;
-        this.dataService.activeUser = this.loggedinUser;
-        this.loggedin = true;
-        this.dataService.userLogin = this.loggedin;
-        sessionStorage.setItem('userLoggedIn', 'true')
-        sessionStorage.setItem('userName', user.username);
-        sessionStorage.setItem('userMail', user.mail);
-        sessionStorage.setItem('userId', user.id);
-        this.cartService.getUsersCartList(sessionStorage.getItem('userId'));
-        this.cartService.getProducts().subscribe(product => this.cartDataCount = product.length);
-        this.closePanel();
-        alert("Login Successful");
-        this.loginStatus.emit(this.loggedin);
-        break;
-      }
-    }
 
-    if (!this.loggedin) {
-      for (let user of this.admins) {
-        let decryptedValue = CryptoJS.AES.decrypt(user.password,userpassword.value).toString(CryptoJS.enc.Utf8);
-
+    if (usermail.value.trim() !== '' || userpassword.value.trim() !== '') {
+      for (let user of this.users) {
+        let decryptedValue = CryptoJS.AES.decrypt(user.password, userpassword.value).toString(CryptoJS.enc.Utf8);
         if (usermail.value === user.mail && userpassword.value === decryptedValue) {
+          invalidLogin.innerHTML = "";
+          this.loggedinUser = user;
+          this.dataService.activeUser = this.loggedinUser;
           this.loggedin = true;
-          this.admin.admin = true;
-          sessionStorage.setItem('adminLoggedIn', 'true')
-          sessionStorage.setItem('userName', user.name);
+          this.dataService.userLogin = this.loggedin;
+          sessionStorage.setItem('userLoggedIn', 'true')
+          sessionStorage.setItem('userName', user.username);
+          sessionStorage.setItem('userMail', user.mail);
+          sessionStorage.setItem('userId', user.id);
+          this.cartService.getUsersCartList(sessionStorage.getItem('userId'));
+          this.cartService.getProducts().subscribe(product => this.cartDataCount = product.length);
           this.closePanel();
-          this.router.navigate(['admin/dashboard']);
+          alert("Login Successful");
+          this.loginStatus.emit(this.loggedin);
           break;
         }
       }
-    }
 
-    if (!this.loggedin) {
-      var invalidLogin: any = document.querySelector('#loginError');
-      invalidLogin.innerHTML = "Invalid Credentials";
+
+      if (!this.loggedin) {
+        for (let user of this.admins) {
+          let decryptedValue = CryptoJS.AES.decrypt(user.password, userpassword.value).toString(CryptoJS.enc.Utf8);
+
+          if (usermail.value === user.mail && userpassword.value === decryptedValue) {
+            this.loggedin = true;
+            this.admin.admin = true;
+            sessionStorage.setItem('adminLoggedIn', 'true')
+            sessionStorage.setItem('userName', user.name);
+            this.closePanel();
+            this.router.navigate(['admin/dashboard']);
+            break;
+          }
+        }
+      }
+
+      if (!this.loggedin) {
+        var invalidLogin: any = document.querySelector('#loginError');
+        invalidLogin.innerHTML = "Invalid Credentials";
+      }
+    } else {
+      invalidLogin.innerHTML = "Enter all the fields";
+      setTimeout(() => invalidLogin = undefined, 3000 )
     }
   }
-
   logout() {
     let result = confirm("Are you sure want to Logout");
     if (result) {

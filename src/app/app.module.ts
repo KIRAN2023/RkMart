@@ -20,7 +20,7 @@ import { PaymentComponent } from './user/payment/payment.component';
 import { MyOrdersComponent } from './user/myOrders/myOrders.component';
 import { AdminModule } from './admin/admin.module';
 import { OrderStatusUpdateComponent } from '../app/admin/orderStatusUpdate/orderStatusUpdate.component';
-
+import { QueryComponent } from './user/query/query.component';
 
 @NgModule({
   declarations: [																			
@@ -39,7 +39,8 @@ import { OrderStatusUpdateComponent } from '../app/admin/orderStatusUpdate/order
       OrderDetailsComponent,
       PaymentComponent,
       MyOrdersComponent,
-      OrderStatusUpdateComponent
+      OrderStatusUpdateComponent,
+      QueryComponent
    ],
   imports: [
     BrowserModule,
