@@ -18,12 +18,12 @@ import { UsersComponent } from './admin/users/users.component';
 import { AuthUserGuard } from './auth-user.guard';
 import { AddProductsComponent } from './admin/add-products/add-products.component';
 import { AuthAdminGuard } from './admin/auth-admin.guard';
-import { CategoryComponent } from './user/category/category.component';
 import { CategoryDataComponent } from './admin/categoryData/categoryData.component';
 import { AddCategoryComponent } from './admin/addCategory/addCategory.component';
 import { QueriesComponent } from './admin/queries/queries.component';
 import { OrderStatusUpdateComponent } from './admin/orderStatusUpdate/orderStatusUpdate.component';
 import { QueryComponent } from './user/query/query.component';
+import { PaymentDataComponent } from './admin/paymentData/paymentData.component';
 
 
 const routes: Routes = [
@@ -58,6 +58,7 @@ const routes: Routes = [
     { path: 'addCategory/:id', component: AddCategoryComponent },
     { path: 'queries', component: QueriesComponent },
     { path: 'orderStatus/:orderId', component: OrderStatusUpdateComponent },
+    { path: 'paymentData', component: PaymentDataComponent }
   ]},
 
   { path: '**', component: ErrorComponent }

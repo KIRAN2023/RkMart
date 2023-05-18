@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminProductsService } from '../adminProducts.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   ordersCount:number=0;
 
-  constructor(private user: AdminProductsService) {
+  constructor(private user: AdminProductsService, private title:Title) {
     this.user.getUsers().subscribe(user => this.allUser = user.length);
     this.user.getProducts().subscribe(product => this.allProducts = product.length);
     this.user.categoryTypesCount().subscribe( (category) => this.categoryCount = category.length);
@@ -34,5 +35,7 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.title.setTitle('Dashboard | RK MART');
+  }
 }

@@ -1,5 +1,5 @@
 <!-- ------------------Navigation Menu----------------- -->
-<app-menu (loginStatus) = "loginStatusData($event)"></app-menu>
+<app-menu (loginStatus)="loginStatusData($event)"></app-menu>
 
 <!-- -------------------------Product Description----------------------- -->
 
@@ -12,7 +12,7 @@
             <div class="mainImageDiv">
                 <img src="{{finalProduct?.image}}" alt="" class="mainimg">
 
-                <p id="userStatus" *ngIf="!userLoggedin"> Login to Buy  </p>
+                <p id="userStatus" *ngIf="!userLoggedin"> Login to Buy </p>
             </div>
 
 
@@ -20,15 +20,20 @@
                 <div class="buyAddCart">
 
                     <div class="addToCart">
-                        <i *ngIf="stockAvailibility && !removeProduct" (click)="deleteFromCart()" class="fa-solid fa-cart-shopping"> Out Of Stock </i>
-                        <i *ngIf="!removeProduct && !stockAvailibility" (click)="addtoCartData()" class="fa-solid fa-cart-shopping"> Add to CART </i>
-                        <i *ngIf="removeProduct" (click)="deleteFromCart()" class="fa-solid fa-cart-shopping"> Remove From CART </i>
+
+                        <i *ngIf="!removeProduct && !stockAvailibility" (click)="addtoCartData()"
+                            class="fa-solid fa-cart-shopping"> Add to CART </i>
+                        <i *ngIf="removeProduct" (click)="deleteFromCart()" class="fa-solid fa-cart-shopping"> Remove
+                            From CART </i>
+                        <i *ngIf="stockAvailibility && !removeProduct" (click)="deleteFromCart()"
+                            class="fa-solid fa-cart-shopping"> Out Of Stock </i>
                     </div>
                     <!-- <div class="buy addToCart" routerLink="/shipping">
                         <i class="fa-solid fa-cart-shopping"> Buy Now </i>
                     </div> -->
                 </div>
-            </div>      
+            </div>
+            <p id="addedCartMessage"></p>
         </div>
 
         <div class="productDescription">
@@ -43,7 +48,9 @@
                     <div class="productDiscounts">
                         <p class="productRate"> {{finalProduct?.originalAmount|currency:'INR'}} <span>
                                 <s>{{finalProduct?.discounted|currency:'INR'}}</s>
-                                <small class="offerData">{{myMath.abs(((finalProduct?.originalAmount-finalProduct?.discounted)/finalProduct?.discounted)*100)|number:'.0-0'}} OFF</small>
+                                <small
+                                    class="offerData">{{myMath.abs(((finalProduct?.originalAmount-finalProduct?.discounted)/finalProduct?.discounted)*100)|number:'.0-0'}}
+                                    OFF</small>
                             </span> </p>
                         <!-- <p id="clock"></p> -->
                     </div>
@@ -134,10 +141,15 @@
                                 <div class="ratings"><span class="rating">{{product.rating}}<i
                                             class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
                                 </div>
-                                
-                                <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :'1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' :'1.0-0'}}</s>
-                                    
-                                <button class="btnD offerBtn"><small class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}} OFF</small></button></p>
+
+                                <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol'
+                                    :'1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol'
+                                        :'1.0-0'}}</s>
+
+                                    <button class="btnD offerBtn"><small
+                                            class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                                            OFF</small></button>
+                                </p>
                             </div>
                         </div>
                     </a>

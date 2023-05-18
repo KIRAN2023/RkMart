@@ -110,8 +110,10 @@ export class ProductDescriptionComponent implements OnInit {
 
       this.cartService.addToCart(dataToCart)?.subscribe((res: any) => {
         if (res) {
-          alert(`${dataToCart.title} Added to the Cart`);
           this.removeProduct = true;
+          let success:any = document.querySelector('#addedCartMessage');
+          success.innerHTML = `<b> ${dataToCart.title} Added to the Cart <b>`;
+          setTimeout(()=> success.innerHTML='',3000);
         } else {
           alert("error");
         }

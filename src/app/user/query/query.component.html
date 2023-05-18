@@ -1,33 +1,42 @@
 <!-- ------------------Navigation Menu----------------- -->
 <app-menu></app-menu>
-
+<div class="queryBackBtn">
+  <h2 routerLink="/contactUs"> <button class="btn"> <i class="fa-solid fa-arrow-right fa-flip-horizontal"></i> Back
+    </button></h2>
+</div>
 <section *ngIf="query">
+
   <div class="container">
-    <div class="querySection">
-      <div class="grid">
-        <div class="query">
-          <h3>User Name</h3>
-          <p> {{queryAddressedData.username}} </p>
+
+    <div class="querySection" >
+      <div class="queryBox" *ngFor="let query of queryAddressedData">
+        <div class="grid">
+          <div class="query">
+            <h3>User Name</h3>
+            <p> {{query.username}} </p>
+          </div>
+          <div class="query">
+            <h3>Subject</h3>
+            <p> {{query.email}} </p>
+          </div>
         </div>
+        <hr>
         <div class="query">
           <h3>Subject</h3>
-          <p> {{queryAddressedData.email}} </p>
+          <p> {{query.subject}} </p>
         </div>
-      </div>
-      <hr>
-      <div class="query">
-        <h3>Subject</h3>
-        <p> {{queryAddressedData.subject}} </p>
-      </div>
-      <hr>
-      <div class="query">
-        <h3>Query</h3>
-        <p> {{queryAddressedData.textarea}} </p>
-      </div>
-      <hr>
-      <div class="query">
-        <h3>Addressed Query</h3>
-        <p> {{queryAddressedData.addressingData}} </p>
+        <hr>
+        <div class="query">
+          <h3>Query</h3>
+          <p> {{query.textarea}} </p>
+        </div>
+        <hr>
+        <div class="query">
+          <h3>Addressed Query</h3>
+          <p> {{query.addressingData}} </p>
+          <p *ngIf="query.addressingData==undefined||null"> <mark>Awaiting Response try back after sometime</mark> </p>
+
+        </div>
       </div>
     </div>
   </div>

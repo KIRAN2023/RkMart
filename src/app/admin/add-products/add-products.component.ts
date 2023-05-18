@@ -4,6 +4,7 @@ import { AdminProductsService } from '../adminProducts.service';
 import { product } from '../product';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-products',
@@ -28,7 +29,7 @@ export class AddProductsComponent implements OnInit {
   filterValue = ['010', '020', '030', '040', '050'];
   category:any = [];
 
-  constructor(private productService: AdminProductsService, private formBuilder: FormBuilder, private activateUrl: ActivatedRoute, private http:HttpClient) {
+  constructor(private productService: AdminProductsService, private formBuilder: FormBuilder, private activateUrl: ActivatedRoute, private http:HttpClient, private title:Title) {
     this.productService.categoryTypesCount().subscribe((category: any) => {
       category.forEach((category:any) => {        
         this.category.push(category.categoryTypeData);
@@ -80,12 +81,14 @@ export class AddProductsComponent implements OnInit {
             this.addProductForm.controls['originalAmount'].setValue(product.originalAmount),
             this.addProductForm.controls['discounted'].setValue(product.discounted)
         }
-      })
+        this.title.setTitle(`${this.addProductForm.get('title')?.value} | RK MART`);
+      });
+
       this.addProductForm.markAsPristine()
     }
     this.activateUrl.paramMap.subscribe((data) => {
       this.editProductURLId = data.get('id');
-    })
+    });
   }
 
   addProduct(formData: product) {

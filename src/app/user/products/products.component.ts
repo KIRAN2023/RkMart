@@ -36,6 +36,7 @@ export class ProductsComponent implements OnInit {
 
           this.productsData = productData;
           this.requiredProduct = urlData.get('category');
+          this.titleService.setTitle(`${this.requiredProduct?.charAt(0)?.toUpperCase()}${this.requiredProduct?.slice(1)}  | RK MART`);
 
           this.updatedProducts = this.productsData.filter((product: any) => product.category == this.requiredProduct);
         });

@@ -4,10 +4,10 @@
 <!-- ----------------------Cart------------------------ -->
 
 <section>
+    <div class="myOrderSection">
+        <a routerLink="/cart/myOrders"> <button class="btn">My Orders <i class="fa-solid fa-arrow-left fa-flip-horizontal"></i></button> </a>
+    </div>
     <div class="cartSection" *ngIf="product.length!=0">
-        <div class="myOrderSection">
-            <a routerLink="/cart/myOrders"> <button class="btn">My Orders <i class="fa-solid fa-arrow-left fa-flip-horizontal"></i></button> </a>
-        </div>
         <div class="cartGrid cart-five-columns cartHead-underline">
             <div class="">
                 <h4>ITEM</h4>

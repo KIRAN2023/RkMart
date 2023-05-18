@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-orders',
   templateUrl: './manage-orders.component.html',
   styleUrls: ['./manage-orders.component.css']
 })
-export class ManageOrdersComponent {
+export class ManageOrdersComponent implements OnInit{
   orderData: any = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private title:Title) {
     this.http.get('http://localhost:3000/orders').subscribe((orderData: any) => {
 
       let orderDatas = orderData;
@@ -30,5 +31,9 @@ export class ManageOrdersComponent {
         })
       });
     });
+  }
+
+  ngOnInit(){
+    this.title.setTitle('Orders | RK MART');
   }
 }

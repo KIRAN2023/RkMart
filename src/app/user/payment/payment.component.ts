@@ -93,7 +93,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CartService } from 'src/app/user/cart.service';
-import { concat, concatMap } from 'rxjs';
+import { concat, concatMap, forkJoin } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -106,6 +106,10 @@ export class PaymentComponent implements OnInit {
   paymentAmount: number = 0;
   data: any = "";
   retrivedStocks: any = [];
+
+  ps: any = [];
+  status: any = [];
+  pay: any = [];
 
   payment: FormGroup;
 
@@ -122,25 +126,21 @@ export class PaymentComponent implements OnInit {
     this.paymentAmount = this.cartService.getProductTotalAmount();
 
     this.title.setTitle('Payment | RK MART');
-    let extractedData:any = sessionStorage.getItem("shippingData");
+    let extractedData: any = sessionStorage.getItem("shippingData");
     this.data = JSON.parse(extractedData);
   }
 
   paymentModal(paymentDetails: any) {
-
     if (this.payment.valid) {
       this.data.cartItems.forEach((product: any) => {
-        this.http.get(`http://localhost:3000/Productdata/${product.productid}`).subscribe((data: any) => {
-          let updatedData = {
-            ...data,
-            Stock: data.Stock - product.quantity
-          }
-
+        this.http.get(`http://localhost:3000/Productdata/${product.productid}`).subscribe((productData: any) => {
+          productData.Stock = productData.Stock - product.quantity
+          this.ps.push(productData);
           let orderId = {
             orderid: product.orderUniqueId,
             status: 'Processing'
           }
-
+          this.status.push(orderId);
           let payment = {
             orderid: product.orderUniqueId,
             uid: product.uid,
@@ -149,24 +149,37 @@ export class PaymentComponent implements OnInit {
             customerMobile: this.data.customerMobile,
             status: "Payment Done"
           }
-
-          this.http.put(`http://localhost:3000/Productdata/${product.productid}`, updatedData).pipe(
-            concatMap(() =>{
-              return this.http.post('http://localhost:3000/orderStatusUpdate', orderId);
-            }),
-            concatMap(()=>  {
-              return this.http.post('http://localhost:3000/payments', payment)
-            })
-          ).subscribe();
+          this.pay.push(payment);
         });
       });
 
       this.cartService.order(this.data).subscribe((response) => {
-        sessionStorage.removeItem("shippingData");
+        if (response) {
+          sessionStorage.removeItem("shippingData");
+          let paymentModal: any = document.querySelector(".paymentModal");
+          paymentModal.showModal();
+        }
       });
 
-      let paymentModal: any = document.querySelector(".paymentModal");
-      paymentModal.showModal();
+      
+
+      // const ud = this.http.put(`http://localhost:3000/Productdata/${product.productid}`, productData);
+      // const osu = this.http.post('http://localhost:3000/orderStatusUpdate', orderId);
+      // const pay = this.http.post('http://localhost:3000/payments', payment);
+
+      // forkJoin([ud,osu,pay]).subscribe(([r1,r2,r3])=>{
+      //   console.warn("okay");
+      // })
+
+      // this.http.put(`http://localhost:3000/Productdata/${product.productid}`, updatedData).pipe(
+      //   concatMap(() =>{
+      //     return this.http.post('http://localhost:3000/orderStatusUpdate', orderId);
+      //   }),
+      //   concatMap(()=>  {
+      //     return this.http.post('http://localhost:3000/payments', payment)
+      //   })
+      // ).subscribe();
+
     } else {
       let errorMessage: any = document.querySelector('#errorMessage');
       errorMessage.innerHTML = "Enter all the Fields";

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminProductsService } from '../adminProducts.service';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-products',
@@ -19,7 +20,7 @@ export class ManageProductsComponent implements OnInit {
   editIcon = faEdit
   deleteIcon = faTrash;
 
-  constructor(private productData: AdminProductsService, private http: HttpClient, private route: Router) {
+  constructor(private productData: AdminProductsService, private http: HttpClient, private route: Router, private title:Title) {
 
     this.productData.getProducts().subscribe(product => {
       this.allProducts = product as product[];
@@ -31,6 +32,7 @@ export class ManageProductsComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.title.setTitle('Products | RK MART');
   }
 
   removeProduct(id: number) {

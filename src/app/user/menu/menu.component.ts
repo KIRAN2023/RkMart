@@ -25,6 +25,8 @@ export class MenuComponent implements OnInit {
 
   cartDataCount: number = 0;
 
+  private readonly encryptionKey = 'RkMart Member';
+
   @Output() loginStatus: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private dataService: ProductsDataService, private cartService: CartService, private loginFormBuilder: FormBuilder, private admin: AdminProductsService, private auth: AuthUserGuard, private router: Router, private http: HttpClient) {
@@ -103,9 +105,12 @@ export class MenuComponent implements OnInit {
         });
         if (newUser) {
           let userPassword: any = this.registerForm.controls["password"].value;
-          let encryptedPassword = CryptoJS.AES.encrypt(userPassword, userPassword).toString();
-          this.registerForm.get("password")?.setValue(encryptedPassword);
-          this.dataService.registerUser(this.registerForm.value).subscribe(data => { });
+          let encryptedPassword:any = CryptoJS.AES.encrypt(userPassword, this.encryptionKey).toString();
+          let d = {
+            ...this.registerForm.value,
+            password:encryptedPassword
+          }
+          this.dataService.registerUser(d).subscribe(data => { });
           SuccessfulRegistered.showModal();
         } else {
           alert("Already Registered");
@@ -124,7 +129,7 @@ export class MenuComponent implements OnInit {
 
     if (usermail.value.trim() !== '' || userpassword.value.trim() !== '') {
       for (let user of this.users) {
-        let decryptedValue = CryptoJS.AES.decrypt(user.password, userpassword.value).toString(CryptoJS.enc.Utf8);
+        let decryptedValue = CryptoJS.AES.decrypt(user.password, this.encryptionKey).toString(CryptoJS.enc.Utf8);
         if (usermail.value === user.mail && userpassword.value === decryptedValue) {
           invalidLogin.innerHTML = "";
           this.loggedinUser = user;
@@ -147,7 +152,7 @@ export class MenuComponent implements OnInit {
 
       if (!this.loggedin) {
         for (let user of this.admins) {
-          let decryptedValue = CryptoJS.AES.decrypt(user.password, userpassword.value).toString(CryptoJS.enc.Utf8);
+          let decryptedValue = CryptoJS.AES.decrypt(user.password, this.encryptionKey).toString(CryptoJS.enc.Utf8);
 
           if (usermail.value === user.mail && userpassword.value === decryptedValue) {
             this.loggedin = true;
@@ -179,6 +184,7 @@ export class MenuComponent implements OnInit {
       this.dataService.activeUser = this.loggedinUser;
       sessionStorage.clear();
       this.loginStatus.emit(this.loggedin);
+      this.router.navigate(['/home']);
     }
   }
 }

@@ -29,9 +29,7 @@ export class QueriesComponent implements OnInit {
     this.http.get('http://localhost:3000/Queries').subscribe((queryData:any)=>{
       this.queries = queryData;
     });
-    this.title.setTitle('Queries | RK MART');
-
-    
+    this.title.setTitle('Query | RK MART');
   }
   updateData(id:number){
     this.queryDisplay = false;

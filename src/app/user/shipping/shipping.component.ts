@@ -65,9 +65,6 @@ export class ShippingComponent implements OnInit {
     }
     this.shippingService.userShippingData = userOrderData;
     sessionStorage.setItem('shippingData',JSON.stringify(userOrderData));
-    console.warn(userOrderData);
-    console.warn(sessionStorage.getItem("shippingData"));
-    
     this.route.navigate(['cart/shipping/orderDetails']);
   }
 }

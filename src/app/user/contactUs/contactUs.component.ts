@@ -43,11 +43,11 @@ export class ContactUsComponent implements OnInit {
       }
       
       this.http.post('http://localhost:3000/Queries',userData).subscribe();
-      invalidMessage.innerHTML = "Query Submitted Successfully We will reach you through Mail";
+      !this.userLogin?invalidMessage.innerHTML = "Query Submitted Successfully We will reach you through Mail":invalidMessage.innerHTML = "Query Submitted Successfully check back later in query section";
       setTimeout(()=> { 
         invalidMessage.innerHTML='';  
         this.contactUs.reset();
-      },2000);
+      },5000);
     }
     if(this.contactUs.invalid){
       invalidMessage.innerHTML= "Enter all the fields";

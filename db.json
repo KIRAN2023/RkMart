@@ -3,42 +3,28 @@
     {
       "name": "Kiran",
       "mail": "kiran@gmail.com",
-      "password": "U2FsdGVkX192pbKQKHzFPumyOG+inzZF2CzFx6hjruM="
+      "password": "U2FsdGVkX1+H2EGvEaus0QWfV8Ju3c1WiHOl8NnzQMY="
     }
   ],
   "registeredUser": [
     {
       "username": "kiran",
       "mail": "kiran2023@gmail.com",
-      "mobile": "7866956856",
-      "password": "U2FsdGVkX1/Nn03A/esNGvYM5I3kpq30A105yKFOU+Y=",
+      "mobile": "9956995969",
+      "password": "U2FsdGVkX19pEmA8oy9ElPEPyKcXhq5xMSpScSsWmM0=",
       "id": 1
     },
     {
       "username": "sakthivel",
       "mail": "sakthi@gmail.com",
-      "mobile": "7898696978",
-      "password": "U2FsdGVkX1/K34j9CLDACK4uNtGEMyYORUqhopl/NV4=",
+      "mobile": "9496495949",
+      "password": "U2FsdGVkX18I71FHH4JYDBs0+FtPzctAKOEMf85KkQY=",
       "id": 2
-    },
-    {
-      "username": "roni",
-      "mail": "roni@gmail.com",
-      "mobile": "8858586858",
-      "password": "U2FsdGVkX18N/S4vAkscesAYTnJpc77g1dNYUjUnUMc=",
-      "id": 3
-    },
-    {
-      "username": "test",
-      "mail": "test@gmail.com",
-      "mobile": "8567588588",
-      "password": "U2FsdGVkX1/E8+04OVw1l/8xAqQHOcGCH87SThNTql4=",
-      "id": 4
     }
   ],
   "Productdata": [
     {
-      "Stock": 20,
+      "Stock": 87,
       "category": "grocery",
       "uniqueId": 1,
       "filterValue": 1,
@@ -49,6 +35,7 @@
       "title": "Apple Fuji",
       "productName": "Apple Fuji Pack 4 pcs",
       "quantity": "500g - 700g (Approx)",
+      "rating": "4.4",
       "ratingCount": "1726",
       "reviewCount": "105",
       "originalAmount": "169",
@@ -56,7 +43,7 @@
       "id": 1
     },
     {
-      "Stock": 2,
+      "Stock": 91,
       "category": "grocery",
       "uniqueId": "2",
       "filterValue": "1",
@@ -75,7 +62,7 @@
       "id": 2
     },
     {
-      "Stock": 0,
+      "Stock": 89,
       "category": "grocery",
       "uniqueId": "3",
       "filterValue": "1",
@@ -113,7 +100,7 @@
       "id": 4
     },
     {
-      "Stock": 4,
+      "Stock": 90,
       "category": "grocery",
       "uniqueId": "5",
       "filterValue": "2",
@@ -132,7 +119,7 @@
       "id": "5"
     },
     {
-      "Stock": 19,
+      "Stock": 87,
       "category": "grocery",
       "uniqueId": "6",
       "filterValue": "2",
@@ -151,7 +138,7 @@
       "id": 6
     },
     {
-      "Stock": 10,
+      "Stock": 60,
       "category": "grocery",
       "uniqueId": "7",
       "filterValue": "3",
@@ -169,7 +156,7 @@
       "id": 7
     },
     {
-      "Stock": 19,
+      "Stock": 59,
       "category": "grocery",
       "uniqueId": "8",
       "filterValue": "4",
@@ -188,7 +175,7 @@
       "id": 8
     },
     {
-      "Stock": 5,
+      "Stock": 56,
       "category": "grocery",
       "uniqueId": "9",
       "filterValue": "5",
@@ -206,7 +193,7 @@
       "id": 9
     },
     {
-      "Stock": 21,
+      "Stock": 91,
       "category": "grocery",
       "uniqueId": "10",
       "filterValue": "6",
@@ -225,7 +212,7 @@
       "id": 10
     },
     {
-      "Stock": 10,
+      "Stock": 20,
       "category": "grocery",
       "uniqueId": "11",
       "filterValue": "7",
@@ -263,7 +250,7 @@
       "id": 12
     },
     {
-      "Stock": 21,
+      "Stock": 61,
       "category": "grocery",
       "uniqueId": "13",
       "filterValue": "8",
@@ -282,7 +269,7 @@
       "id": 13
     },
     {
-      "Stock": 8,
+      "Stock": 28,
       "category": "grocery",
       "uniqueId": "14",
       "filterValue": "9",
@@ -301,7 +288,7 @@
       "id": 14
     },
     {
-      "Stock": 46,
+      "Stock": 43,
       "category": "beverages",
       "uniqueId": "15",
       "filterValue": "10",
@@ -339,7 +326,7 @@
       "id": 16
     },
     {
-      "Stock": 34,
+      "Stock": 33,
       "category": "beverages",
       "uniqueId": "17",
       "filterValue": "12",
@@ -358,7 +345,7 @@
       "id": 17
     },
     {
-      "Stock": 21,
+      "Stock": 20,
       "category": "beverages",
       "uniqueId": "18",
       "filterValue": "12",
@@ -377,7 +364,7 @@
       "id": 18
     },
     {
-      "Stock": 0,
+      "Stock": 40,
       "category": "beverages",
       "uniqueId": "19",
       "filterValue": "10",
@@ -414,7 +401,7 @@
       "id": 20
     },
     {
-      "Stock": 6,
+      "Stock": 67,
       "category": "beverages",
       "uniqueId": "21",
       "filterValue": "10",
@@ -433,7 +420,7 @@
       "id": 21
     },
     {
-      "Stock": 16,
+      "Stock": 86,
       "category": "beverages",
       "uniqueId": "22",
       "filterValue": "10",
@@ -452,7 +439,7 @@
       "id": 22
     },
     {
-      "Stock": 11,
+      "Stock": 34,
       "category": "beverages",
       "uniqueId": "23",
       "filterValue": "12",
@@ -528,7 +515,7 @@
       "id": 26
     },
     {
-      "Stock": 3,
+      "Stock": 26,
       "category": "household",
       "uniqueId": "27",
       "filterValue": "15",
@@ -585,7 +572,7 @@
       "id": 29
     },
     {
-      "Stock": 6,
+      "Stock": 65,
       "category": "household",
       "uniqueId": "30",
       "filterValue": "16",
@@ -604,7 +591,7 @@
       "id": 30
     },
     {
-      "Stock": 7,
+      "Stock": 75,
       "category": "household",
       "uniqueId": "31",
       "filterValue": "20",
@@ -730,6 +717,10 @@
     {
       "categoryTypeData": "household",
       "id": 3
+    },
+    {
+      "categoryTypeData": "test",
+      "id": 4
     }
   ],
   "category": [
@@ -819,144 +810,235 @@
         "15"
       ],
       "id": 3
+    },
+    {
+      "categoryType": "test",
+      "category": [
+        "test"
+      ],
+      "categoryClass": [
+        "test"
+      ],
+      "categoryUniqueValue": [
+        "test"
+      ],
+      "id": 4
     }
   ],
   "cartData": [
     {
-      "productName": "Apple Granny Smith 4 pcs",
-      "title": "Apple Granny",
-      "image": "assets/images/VeggetablesFruits/appleGranny.png",
-      "productUniqueId": "2",
-      "quantity": 2,
-      "originalAmount": "249",
-      "productid": 2,
-      "uid": "1",
-      "orderUniqueId": 14005,
+      "productName": "Pepsi Can (pack 6)",
+      "title": "Pepsi",
+      "image": "assets/images/Beverges/bevergePepsiCan.png",
+      "productUniqueId": "26",
+      "quantity": 1,
+      "originalAmount": "920",
+      "productid": 26,
+      "uid": "2",
+      "orderUniqueId": 61841,
+      "id": 1
+    },
+    {
+      "productName": "Limca Lime n Lemoni",
+      "title": "Limca",
+      "image": "assets/images/Beverges/bevergeLimca.png",
+      "productUniqueId": "15",
+      "quantity": 1,
+      "originalAmount": "68",
+      "productid": 15,
+      "uid": "2",
+      "orderUniqueId": 66558,
       "id": 2
-    },
-    {
-      "productName": "Apple Fuji Pack 4 pcs",
-      "title": "Apple Fuji",
-      "image": "assets/images/VeggetablesFruits/appleFuji.png",
-      "productUniqueId": 1,
-      "quantity": 3,
-      "originalAmount": "169",
-      "productid": 1,
-      "uid": "1",
-      "orderUniqueId": 7871,
-      "id": 3
-    },
-    {
-      "productName": "Banana Nendran 4 pcs (Box)",
-      "title": "Banana Nendran",
-      "image": "assets/images/VeggetablesFruits/bananaNendran.png",
-      "productUniqueId": "5",
-      "quantity": 1,
-      "originalAmount": "129",
-      "productid": "5",
-      "uid": "1",
-      "orderUniqueId": 84268,
-      "id": 4
-    },
-    {
-      "productName": "Lauki (Bottle Gourd)",
-      "title": "Lauki",
-      "image": "assets/images/VeggetablesFruits/bottleGourd.png",
-      "productUniqueId": "10",
-      "quantity": 1,
-      "originalAmount": "39",
-      "productid": 10,
-      "uid": "2",
-      "orderUniqueId": 80093,
-      "id": 5
-    },
-    {
-      "productName": "Mountain Dew Can",
-      "title": "Mountain Dew",
-      "image": "assets/images/Beverges/bevergeMountainDew.png",
-      "productUniqueId": "24",
-      "quantity": 3,
-      "originalAmount": "26",
-      "productid": 24,
-      "uid": "2",
-      "orderUniqueId": 48345,
-      "id": 6
-    },
-    {
-      "productName": "Apple Fuji Pack 4 pcs",
-      "title": "Apple Fuji",
-      "image": "assets/images/VeggetablesFruits/appleFuji.png",
-      "productUniqueId": 1,
-      "quantity": 2,
-      "originalAmount": "169",
-      "productid": 1,
-      "uid": "2",
-      "orderUniqueId": 85755,
-      "id": 9
-    },
-    {
-      "productName": "Apple Fuji Pack 4 pcs",
-      "title": "Apple Fuji",
-      "image": "assets/images/VeggetablesFruits/appleFuji.png",
-      "productUniqueId": 1,
-      "quantity": 1,
-      "originalAmount": "169",
-      "productid": 1,
-      "uid": "4",
-      "orderUniqueId": 7639,
-      "id": 10
     }
   ],
   "orders": [
     {
       "customerName": "kiran",
       "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "7866956856",
-      "customerState": "y",
-      "customerCity": "y",
-      "customerPincode": "567877",
-      "customerAddress": "y",
+      "customerMobile": "9956995969",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "877667",
+      "customerAddress": "k",
       "cartItems": [
-        {
-          "productName": "Apple Granny Smith 4 pcs",
-          "title": "Apple Granny",
-          "image": "assets/images/VeggetablesFruits/appleGranny.png",
-          "productUniqueId": "2",
-          "quantity": 2,
-          "originalAmount": "249",
-          "productid": 2,
-          "uid": "1",
-          "orderUniqueId": 14005,
-          "id": 2
-        },
         {
           "productName": "Apple Fuji Pack 4 pcs",
           "title": "Apple Fuji",
           "image": "assets/images/VeggetablesFruits/appleFuji.png",
           "productUniqueId": 1,
-          "quantity": 3,
+          "quantity": 1,
           "originalAmount": "169",
           "productid": 1,
           "uid": "1",
-          "orderUniqueId": 7871,
-          "id": 3
+          "orderUniqueId": 48540,
+          "id": 1
         },
         {
-          "productName": "Banana Nendran 4 pcs (Box)",
-          "title": "Banana Nendran",
-          "image": "assets/images/VeggetablesFruits/bananaNendran.png",
-          "productUniqueId": "5",
+          "productName": "Apple Granny Smith 4 pcs",
+          "title": "Apple Granny",
+          "image": "assets/images/VeggetablesFruits/appleGranny.png",
+          "productUniqueId": "2",
           "quantity": 1,
-          "originalAmount": "129",
-          "productid": "5",
+          "originalAmount": "249",
+          "productid": 2,
           "uid": "1",
-          "orderUniqueId": 84268,
-          "id": 4
+          "orderUniqueId": 40985,
+          "id": 2
+        },
+        {
+          "productName": "Apple Red Delicious 4 pcs",
+          "title": "Apple Red",
+          "image": "assets/images/VeggetablesFruits/appleRed.png",
+          "productUniqueId": "3",
+          "quantity": 1,
+          "originalAmount": "172",
+          "productid": 3,
+          "uid": "1",
+          "orderUniqueId": 84864,
+          "id": 3
         }
       ],
-      "totalAmount": 1134,
+      "totalAmount": 590,
       "uid": "1",
       "id": 1
+    },
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "9956995969",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "874784",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Alofrut Mint Mojito",
+          "title": "Mojito",
+          "image": "assets/images/Beverges/bevergeMojito.png",
+          "productUniqueId": "23",
+          "quantity": 1,
+          "originalAmount": "1030",
+          "productid": 23,
+          "uid": "1",
+          "orderUniqueId": 63868,
+          "id": 5
+        },
+        {
+          "productName": "Miranda Plastic Bottle",
+          "title": "Miranda",
+          "image": "assets/images/Beverges/bevergeMiranda.png",
+          "productUniqueId": "16",
+          "quantity": 2,
+          "originalAmount": "54",
+          "productid": 16,
+          "uid": "1",
+          "orderUniqueId": 63967,
+          "id": 6
+        },
+        {
+          "productName": "Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle",
+          "title": "Butterfly Kettle & Water Bottle",
+          "image": "assets/images/HouseHoldProducts/butterfluRapidKettle.png",
+          "productUniqueId": "29",
+          "quantity": 1,
+          "originalAmount": "800",
+          "productid": 29,
+          "uid": "1",
+          "orderUniqueId": 7169,
+          "id": 7
+        }
+      ],
+      "totalAmount": 1938,
+      "uid": "1",
+      "id": 2
+    },
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "9956995969",
+      "customerState": "kkk",
+      "customerCity": "k",
+      "customerPincode": "858485",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Alofrut Mint Mojito",
+          "title": "Mojito",
+          "image": "assets/images/Beverges/bevergeMojito.png",
+          "productUniqueId": "23",
+          "quantity": 1,
+          "originalAmount": "1030",
+          "productid": 23,
+          "uid": "1",
+          "orderUniqueId": 63868,
+          "id": 5
+        },
+        {
+          "productName": "Miranda Plastic Bottle",
+          "title": "Miranda",
+          "image": "assets/images/Beverges/bevergeMiranda.png",
+          "productUniqueId": "16",
+          "quantity": 2,
+          "originalAmount": "54",
+          "productid": 16,
+          "uid": "1",
+          "orderUniqueId": 63967,
+          "id": 6
+        },
+        {
+          "productName": "Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle",
+          "title": "Butterfly Kettle & Water Bottle",
+          "image": "assets/images/HouseHoldProducts/butterfluRapidKettle.png",
+          "productUniqueId": "29",
+          "quantity": 1,
+          "originalAmount": "800",
+          "productid": 29,
+          "uid": "1",
+          "orderUniqueId": 7169,
+          "id": 7
+        }
+      ],
+      "totalAmount": 1938,
+      "uid": "1",
+      "id": 3
+    },
+    {
+      "customerName": "sakthivel",
+      "customerMail": "sakthi@gmail.com",
+      "customerMobile": "9496495949",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "848584",
+      "customerAddress": "okay",
+      "cartItems": [
+        {
+          "productName": "Pepsi Can (pack 6)",
+          "title": "Pepsi",
+          "image": "assets/images/Beverges/bevergePepsiCan.png",
+          "productUniqueId": "26",
+          "quantity": 1,
+          "originalAmount": "920",
+          "productid": 26,
+          "uid": "2",
+          "orderUniqueId": 61841,
+          "id": 1
+        },
+        {
+          "productName": "Limca Lime n Lemoni",
+          "title": "Limca",
+          "image": "assets/images/Beverges/bevergeLimca.png",
+          "productUniqueId": "15",
+          "quantity": 1,
+          "originalAmount": "68",
+          "productid": 15,
+          "uid": "2",
+          "orderUniqueId": 66558,
+          "id": 2
+        }
+      ],
+      "totalAmount": 988,
+      "uid": "2",
+      "id": 4
     }
   ],
   "payments": [],
@@ -965,32 +1047,68 @@
     {
       "username": "kiran",
       "email": "kiran2023@gmail.com",
-      "subject": "demo",
-      "textarea": "test",
-      "queryStatus": "Pending",
+      "subject": "testing",
+      "textarea": "testing",
+      "queryStatus": "Addressed",
       "uid": "1",
       "id": 1,
-      "addressingData": "mm"
+      "addressingData": "tested"
     },
     {
       "username": "kiran",
       "email": "kiran2023@gmail.com",
-      "subject": "ok",
-      "textarea": "ok",
-      "queryStatus": "Pending",
+      "subject": "kk",
+      "textarea": "kkk",
+      "queryStatus": "Addressed",
       "uid": "1",
       "id": 2,
+      "addressingData": "done"
+    },
+    {
+      "username": "kiran",
+      "email": "kiran2023@gmail.com",
+      "subject": "testing",
+      "textarea": "no responded",
+      "queryStatus": "Pending",
+      "uid": "1",
+      "id": 3
+    },
+    {
+      "username": "sakthivel",
+      "email": "sakthi@gmail.com",
+      "subject": "test",
+      "textarea": "tetsing",
+      "queryStatus": "Pending",
+      "uid": "2",
+      "id": 4
+    },
+    {
+      "username": "sakthivel",
+      "email": "sakthi@gmail.com",
+      "subject": "user",
+      "textarea": "uesr testing",
+      "queryStatus": "Pending",
+      "uid": "2",
+      "id": 5,
       "addressingData": "tested"
     },
     {
-      "username": "rk",
-      "email": "rkm@gmail.com",
-      "subject": "ok",
-      "textarea": "ok",
-      "queryStatus": "Addressed",
-      "uid": "6",
-      "id": 3,
-      "addressingData": "okay"
+      "username": "sakthivel",
+      "email": "sakthi@gmail.com",
+      "subject": "user",
+      "textarea": "user tets",
+      "queryStatus": "Pending",
+      "uid": "2",
+      "id": 6
+    },
+    {
+      "username": "kiran",
+      "email": "ki@gmail.com",
+      "subject": "non user",
+      "textarea": "non user test",
+      "queryStatus": "Pending",
+      "uid": 62629,
+      "id": 7
     }
   ]
 }

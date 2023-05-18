@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminProductsService } from '../adminProducts.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-addCategory',
@@ -23,7 +24,7 @@ export class AddCategoryComponent implements OnInit {
 
   queryParamData: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private adminService: AdminProductsService, private http: HttpClient, private route: ActivatedRoute, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private adminService: AdminProductsService, private http: HttpClient, private route: ActivatedRoute, private router: Router, private title:Title) {
     this.categoryData = this.formBuilder.group({
       categoryType: [, Validators.required],
       category: [, Validators.required],
@@ -45,11 +46,14 @@ export class AddCategoryComponent implements OnInit {
       this.categoryValueData = this.categoryData.controls['category'].value;
       this.categoryClass = this.categoryData.controls['categoryClass'].value;
       this.categoryUniqueId = this.categoryData.controls['categoryUniqueValue'].value;
+
+      this.title.setTitle(`${this.categoryValueData} | RK MART`);
+    }else{
+      this.title.setTitle(`Category | RK MART`);
     }
   }
 
   ngOnInit() {
-
   }
 
   addCategory(formData: any) {
