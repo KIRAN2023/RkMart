@@ -93,7 +93,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CartService } from 'src/app/user/cart.service';
-import { concat, concatMap, forkJoin } from 'rxjs';
+import { concat, concatMap, delay, forkJoin, of } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -112,6 +112,9 @@ export class PaymentComponent implements OnInit {
   pay: any = [];
 
   payment: FormGroup;
+
+  updateRequests: any = [];
+  paymentStatus: string = "Payment Done";
 
   constructor(private cartService: CartService, private http: HttpClient, private formBuilder: FormBuilder, private title: Title) {
     this.payment = this.formBuilder.group({
@@ -133,57 +136,46 @@ export class PaymentComponent implements OnInit {
   paymentModal(paymentDetails: any) {
     if (this.payment.valid) {
       this.data.cartItems.forEach((product: any) => {
-        this.http.get(`http://localhost:3000/Productdata/${product.productid}`).subscribe((productData: any) => {
-          productData.Stock = productData.Stock - product.quantity
-          this.ps.push(productData);
+        this.http.get(`http://localhost:3000/Productdata/${product.productid}`).subscribe((data: any) => {
+
+          let updatedData = {
+            ...data,
+            Stock: data.Stock - product.quantity
+          }
+
           let orderId = {
             orderid: product.orderUniqueId,
             status: 'Processing'
           }
-          this.status.push(orderId);
+
           let payment = {
             orderid: product.orderUniqueId,
             uid: product.uid,
-            customerName: this.data.customerName,
-            customerMail: this.data.customerMail,
-            customerMobile: this.data.customerMobile,
-            status: "Payment Done"
-          }
-          this.pay.push(payment);
+            status: this.paymentStatus,
+          };
+
+          this.http.put(`http://localhost:3000/Productdata/${product.productid}`, updatedData).subscribe((response) => {
+            if (response) {
+              this.http.post('http://localhost:3000/orderStatusUpdate', orderId).subscribe((response) => {
+                if (response) {
+                  this.http.post(`http://localhost:3000/payments`, payment).subscribe();
+                }
+              });
+            }
+          });
         });
-      });
+      })
 
       this.cartService.order(this.data).subscribe((response) => {
         if (response) {
-          sessionStorage.removeItem("shippingData");
           let paymentModal: any = document.querySelector(".paymentModal");
+          sessionStorage.removeItem("shippingData");
           paymentModal.showModal();
         }
       });
-
-      
-
-      // const ud = this.http.put(`http://localhost:3000/Productdata/${product.productid}`, productData);
-      // const osu = this.http.post('http://localhost:3000/orderStatusUpdate', orderId);
-      // const pay = this.http.post('http://localhost:3000/payments', payment);
-
-      // forkJoin([ud,osu,pay]).subscribe(([r1,r2,r3])=>{
-      //   console.warn("okay");
-      // })
-
-      // this.http.put(`http://localhost:3000/Productdata/${product.productid}`, updatedData).pipe(
-      //   concatMap(() =>{
-      //     return this.http.post('http://localhost:3000/orderStatusUpdate', orderId);
-      //   }),
-      //   concatMap(()=>  {
-      //     return this.http.post('http://localhost:3000/payments', payment)
-      //   })
-      // ).subscribe();
-
     } else {
       let errorMessage: any = document.querySelector('#errorMessage');
       errorMessage.innerHTML = "Enter all the Fields";
-
       setTimeout(() => errorMessage.innerHTML = '', 3000);
     }
   }

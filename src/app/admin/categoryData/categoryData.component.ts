@@ -25,7 +25,6 @@ export class CategoryDataComponent implements OnInit {
   removeCategory(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any) {
     if(confirm(`Are you sure want to delete ${categoryValue}`)){
       this.adminService.removeCategoryData(categoryId, categoryValue, categoryClass, categoryUniqueValue);
-      window.location.reload();
     }
   }
 } 

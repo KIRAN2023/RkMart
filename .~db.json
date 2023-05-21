@@ -302,7 +302,7 @@
       "id": 15
     },
     {
-      "Stock": 10,
+      "Stock": 7,
       "category": "beverages",
       "uniqueId": "16",
       "filterValue": "10",
@@ -473,7 +473,7 @@
       "id": 24
     },
     {
-      "Stock": 82,
+      "Stock": 81,
       "category": "beverages",
       "uniqueId": "25",
       "filterValue": "10",
@@ -568,7 +568,7 @@
       "id": 29
     },
     {
-      "Stock": 21,
+      "Stock": 19,
       "category": "household",
       "uniqueId": "30",
       "filterValue": "14",
@@ -934,7 +934,58 @@
       "id": 7
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "9956995969",
+      "customerState": "test",
+      "customerCity": "test",
+      "customerPincode": "475475",
+      "customerAddress": "test",
+      "cartItems": [
+        {
+          "productName": "Miranda Plastic Bottle",
+          "title": "Miranda",
+          "image": "assets/images/Beverges/bevergeMiranda.png",
+          "productUniqueId": "16",
+          "quantity": 3,
+          "originalAmount": "54",
+          "productid": 16,
+          "uid": "1",
+          "orderUniqueId": 16034,
+          "id": 3
+        },
+        {
+          "productName": "Prestige Atlas 3.0 Induction Cooktop",
+          "title": "Prestige Induction Cooktop",
+          "image": "assets/images/HouseHoldProducts/electricInduction.png",
+          "productUniqueId": "30",
+          "quantity": 2,
+          "originalAmount": "895",
+          "productid": 30,
+          "uid": "1",
+          "orderUniqueId": 53565,
+          "id": 7
+        },
+        {
+          "productName": "Thumbs Up",
+          "title": "Thumbs Up",
+          "image": "assets/images/Beverges/bevergeThumbsUp.png",
+          "productUniqueId": "25",
+          "quantity": 1,
+          "originalAmount": "72",
+          "productid": 25,
+          "uid": "1",
+          "orderUniqueId": 42708,
+          "id": 12
+        }
+      ],
+      "totalAmount": 2024,
+      "uid": "1",
+      "id": 1
+    }
+  ],
   "payments": [],
   "orderStatusUpdate": []
 }

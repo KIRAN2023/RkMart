@@ -140,7 +140,7 @@ export class AdminProductsService {
   }
 
   removeCategoryData(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any,  redirectStatus?:boolean, redirect?:any,) {
-    let confirmation =  redirectStatus? confirm(`Do you want to delete the previous category "${redirect}"`):confirm("Are you sure you want to delete");
+    let confirmation =  redirectStatus? confirm(`Do you want to delete the previous category "${redirect}"`):true;
     if (confirmation) {
       this.http.get(`http://localhost:3000/category/${categoryId}`).subscribe((categoryData: any) => {
         let categoryDataObject = categoryData;
@@ -152,12 +152,16 @@ export class AdminProductsService {
         }
 
         if (categoryData.category.length !== 0) {
+          console.warn("entry length");
+          
           this.removeCategory(categoryId, categoryDataObject).subscribe((response) => {
             response ? alert("Category Remove Successfully") : alert("Error While Removing Category");
             window.location.reload();
           })
         }
         if (categoryData.category.length == 0) {
+          console.warn("entry length 0");
+
           this.removeCategoryTypes(categoryId).subscribe();
           this.http.delete(`http://localhost:3000/category/${categoryId}`).subscribe();
           window.location.reload();

@@ -20,3 +20,7 @@
   .scrollActive{
     display: none;
   }
+
+  .grid-section{
+    margin-bottom: 4rem;
+  }
