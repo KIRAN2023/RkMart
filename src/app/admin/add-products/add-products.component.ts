@@ -26,7 +26,7 @@ export class AddProductsComponent implements OnInit {
   editProductEnable: boolean = false;
   idData: undefined | string | null;
 
-  filterValue = ['010', '020', '030', '040', '050'];
+  filterValue = ['10', '20', '30', '40', '50'];
   category:any = [];
 
   constructor(private productService: AdminProductsService, private formBuilder: FormBuilder, private activateUrl: ActivatedRoute, private http:HttpClient, private title:Title) {

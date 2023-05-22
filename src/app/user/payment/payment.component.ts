@@ -154,16 +154,12 @@ export class PaymentComponent implements OnInit {
             status: this.paymentStatus,
           };
 
-          this.http.put(`http://localhost:3000/Productdata/${product.productid}`, updatedData).subscribe((response) => {
-            if (response) {
-              this.http.post('http://localhost:3000/orderStatusUpdate', orderId).subscribe((response) => {
-                if (response) {
-                  this.http.post(`http://localhost:3000/payments`, payment).subscribe();
-                }
-              });
-            }
-          });
-        });
+          this.http.put(`http://localhost:3000/Productdata/${product.productid}`, updatedData).subscribe();
+
+          this.http.post('http://localhost:3000/orderStatusUpdate', orderId).subscribe();
+
+          this.http.post(`http://localhost:3000/payments`, payment).subscribe();
+        })
       })
 
       this.cartService.order(this.data).subscribe((response) => {

@@ -21,22 +21,21 @@ export class MyOrdersComponent implements OnInit {
     this.cartService.ordersData(this.userid).subscribe((data: any) => {
       let orderDetails = data;
 
-      // orderDetails.forEach((orderDatas: any) => {
-      //   let cartData = orderDatas.cartItems;
+      orderDetails.forEach((orderDatas: any) => {
+        let cartData = orderDatas.cartItems;
         
-      //   cartData.forEach((cart: any) => {
-      //     this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${cart.orderUniqueId}`).subscribe((response: any) => {
-      //       let status = response[0].status;
-      //       let orderStatus = {
-      //         ...cart,
-      //         orderStatus: status
-      //       }
-      //       this.orderData.push(orderStatus); 
-      //       console.warn(orderStatus.orderStatus);
+        cartData.forEach((cart: any) => {
+          // this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${cart.orderUniqueId}`).subscribe((response: any) => {
+          //   let status = response[0].status;
+          //   let orderStatus = {
+          //     ...cart,
+          //     orderStatus: status
+          //   }
+            this.orderData.push(cart); 
                       
-      //     })
-      //   })
-      // });
+          // })
+        })
+      });
     });
 
     // if(this.orderData.length==0){

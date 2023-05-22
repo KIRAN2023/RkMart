@@ -13,7 +13,7 @@
       <ng-container *ngFor="let orderData of orderData">
         <div class="orderStatusData">
           <p id="OrderId"> <b> Order Id: </b> {{orderData.orderUniqueId}} </p>
-          <p id="OrderStatus"> <b> Order: </b> {{orderData?.orderStatus}}</p>
+          <p id="OrderStatus"> <b> Order: </b> </p>
           <button class="btn" id="cancelOrder">Cancel Order</button>
         </div>
         <hr>
@@ -28,7 +28,7 @@
               <p id="productPrice"> <b> Price : </b> {{ orderData.originalAmount }} </p>
             </div>
           </div>
-          <div class="orderStatus"> <b> Status : {{orderData?.orderStatus}}</b>
+          <div class="orderStatus"> <b> Status : </b>
           </div>
           <!-- <div class="deliveryExcepted"> <b> Delivery Excepted by</b> 28 Feb 2022</div> -->
           <div class="total"> <b> Total : </b> {{ orderData.originalAmount * orderData.quantity}}</div>

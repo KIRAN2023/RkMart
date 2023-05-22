@@ -106,6 +106,8 @@ export class CartService {
   }
 
   order(orderData:any){
+    console.warn(orderData);
+    
     return this.http.post(`${this.orderUrl}`, orderData)
   }
 

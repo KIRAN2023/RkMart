@@ -302,7 +302,7 @@
       "id": 15
     },
     {
-      "Stock": 10,
+      "Stock": 11,
       "category": "beverages",
       "uniqueId": "16",
       "filterValue": "10",
@@ -321,7 +321,7 @@
       "id": 16
     },
     {
-      "Stock": 33,
+      "Stock": 30,
       "category": "beverages",
       "uniqueId": "17",
       "filterValue": "12",
@@ -435,7 +435,7 @@
       "id": 22
     },
     {
-      "Stock": 34,
+      "Stock": 26,
       "category": "beverages",
       "uniqueId": "23",
       "filterValue": "12",
@@ -473,7 +473,7 @@
       "id": 24
     },
     {
-      "Stock": 82,
+      "Stock": 63,
       "category": "beverages",
       "uniqueId": "25",
       "filterValue": "10",
@@ -511,7 +511,7 @@
       "id": 26
     },
     {
-      "Stock": 13,
+      "Stock": 10,
       "category": "household",
       "uniqueId": "27",
       "filterValue": "13",
@@ -549,7 +549,7 @@
       "id": 28
     },
     {
-      "Stock": 27,
+      "Stock": 24,
       "category": "household",
       "uniqueId": "29",
       "filterValue": "16",
@@ -568,7 +568,7 @@
       "id": 29
     },
     {
-      "Stock": 21,
+      "Stock": 30,
       "category": "household",
       "uniqueId": "30",
       "filterValue": "14",
@@ -587,7 +587,7 @@
       "id": 30
     },
     {
-      "Stock": 75,
+      "Stock": 71,
       "category": "household",
       "uniqueId": "31",
       "filterValue": "18",
@@ -858,12 +858,72 @@
       "title": "Thumbs Up",
       "image": "assets/images/Beverges/bevergeThumbsUp.png",
       "productUniqueId": "25",
-      "quantity": 1,
+      "quantity": 4,
       "originalAmount": "72",
       "productid": 25,
       "uid": "1",
       "orderUniqueId": 42708,
       "id": 12
+    },
+    {
+      "productName": "Alofrut Mint Mojito",
+      "title": "Mojito",
+      "image": "assets/images/Beverges/bevergeMojito.png",
+      "productUniqueId": "23",
+      "quantity": 2,
+      "originalAmount": "1030",
+      "productid": 23,
+      "uid": "1",
+      "orderUniqueId": 78752,
+      "id": 13
+    },
+    {
+      "productName": "Badam Drink Mix",
+      "title": "Badam Drink",
+      "image": "assets/images/Beverges/bevergeBadamMix.png",
+      "productUniqueId": "17",
+      "quantity": 1,
+      "originalAmount": "191",
+      "productid": 17,
+      "uid": "1",
+      "orderUniqueId": 94679,
+      "id": 14
+    },
+    {
+      "productName": "Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle",
+      "title": "Butterfly Kettle & Water Bottle",
+      "image": "assets/images/HouseHoldProducts/butterfluRapidKettle.png",
+      "productUniqueId": "29",
+      "quantity": 1,
+      "originalAmount": "800",
+      "productid": 29,
+      "uid": "1",
+      "orderUniqueId": 67424,
+      "id": 15
+    },
+    {
+      "productName": "PHILIPS HP8/46 Hair Dryer (100 W, Purple)",
+      "title": "PHILIPS Hair Dryer",
+      "image": "assets/images/HouseHoldProducts/hairdryer.png",
+      "productUniqueId": "31",
+      "quantity": 1,
+      "originalAmount": "598",
+      "productid": 31,
+      "uid": "1",
+      "orderUniqueId": 31129,
+      "id": 16
+    },
+    {
+      "productName": "Aquaguard SkyLand 18 Ltr",
+      "title": "Aquaguard SkyLand",
+      "image": "assets/images/HouseHoldProducts/aquaguard.png",
+      "productUniqueId": "27",
+      "quantity": 1,
+      "originalAmount": "4578",
+      "productid": 27,
+      "uid": "1",
+      "orderUniqueId": 73371,
+      "id": 17
     }
   ],
   "Queries": [
