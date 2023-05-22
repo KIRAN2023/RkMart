@@ -10,7 +10,7 @@ import { CartService } from 'src/app/user/cart.service';
 })
 export class MyOrdersComponent implements OnInit {
   userid = sessionStorage.getItem("userId");
-  orderData:any = [];
+  orderData: any = [];
   orderTotalAmount: any;
 
   cartOrderList: cart[] | undefined;
@@ -23,27 +23,28 @@ export class MyOrdersComponent implements OnInit {
 
       orderDetails.forEach((orderDatas: any) => {
         let cartData = orderDatas.cartItems;
-        
-        cartData.forEach((cart: any) => {
-          // this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${cart.orderUniqueId}`).subscribe((response: any) => {
-          //   let status = response[0].status;
-          //   let orderStatus = {
-          //     ...cart,
-          //     orderStatus: status
-          //   }
-            this.orderData.push(cart); 
-                      
-          // })
-        })
-      });
-    });
 
-    // if(this.orderData.length==0){
-    //   setTimeout(()=>{
-    //     const offerData:any = document.querySelector('.popupMsg');
-    //     offerData.showModal();
-    //   },3000);
-    // }
+        cartData.forEach((cart: any) => {
+          this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${cart.orderUniqueId}`).subscribe((response: any) => {
+            let status = response[0].status;
+            let orderStatus = {
+              ...cart,
+              orderStatus: status
+            }
+            this.orderData.push(orderStatus);
+
+            // })
+          })
+        });
+      });
+
+      // if(this.orderData.length==0){
+      //   setTimeout(()=>{
+      //     const offerData:any = document.querySelector('.popupMsg');
+      //     offerData.showModal();
+      //   },3000);
+      // }
+    });   
   }
   closeOffer() {
     const $offerData: any = document.querySelector('.popupMsg');

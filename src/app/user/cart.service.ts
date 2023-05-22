@@ -106,7 +106,7 @@ export class CartService {
   }
 
   order(orderData:any){
-    console.warn(orderData);
+    sessionStorage.removeItem("shippingData");
     
     return this.http.post(`${this.orderUrl}`, orderData)
   }

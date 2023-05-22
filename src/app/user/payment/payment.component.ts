@@ -154,7 +154,7 @@ export class PaymentComponent implements OnInit {
             status: this.paymentStatus,
           };
 
-          this.http.put(`http://localhost:3000/Productdata/${product.productid}`, updatedData).subscribe();
+          this.http.patch(`http://localhost:3000/Productdata/${product.productid}`, updatedData).subscribe();
 
           this.http.post('http://localhost:3000/orderStatusUpdate', orderId).subscribe();
 
@@ -165,7 +165,6 @@ export class PaymentComponent implements OnInit {
       this.cartService.order(this.data).subscribe((response) => {
         if (response) {
           let paymentModal: any = document.querySelector(".paymentModal");
-          sessionStorage.removeItem("shippingData");
           paymentModal.showModal();
         }
       });

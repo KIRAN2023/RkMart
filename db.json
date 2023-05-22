@@ -13,6 +13,13 @@
       "mobile": "9956995969",
       "password": "U2FsdGVkX19pEmA8oy9ElPEPyKcXhq5xMSpScSsWmM0=",
       "id": 1
+    },
+    {
+      "username": "sakthi",
+      "mail": "sk@gmail.com",
+      "mobile": "8458458458",
+      "password": "U2FsdGVkX19Z4mHSH4sp2N7xmZtgPsKMsd0DAVAAY78=",
+      "id": 2
     }
   ],
   "Productdata": [
@@ -283,7 +290,7 @@
       "id": 14
     },
     {
-      "Stock": 24,
+      "Stock": 23,
       "category": "beverages",
       "uniqueId": "15",
       "filterValue": "10",
@@ -302,7 +309,7 @@
       "id": 15
     },
     {
-      "Stock": 11,
+      "Stock": 83,
       "category": "beverages",
       "uniqueId": "16",
       "filterValue": "10",
@@ -321,7 +328,7 @@
       "id": 16
     },
     {
-      "Stock": 30,
+      "Stock": 33,
       "category": "beverages",
       "uniqueId": "17",
       "filterValue": "12",
@@ -435,7 +442,7 @@
       "id": 22
     },
     {
-      "Stock": 26,
+      "Stock": 34,
       "category": "beverages",
       "uniqueId": "23",
       "filterValue": "12",
@@ -473,7 +480,7 @@
       "id": 24
     },
     {
-      "Stock": 63,
+      "Stock": 78,
       "category": "beverages",
       "uniqueId": "25",
       "filterValue": "10",
@@ -492,7 +499,7 @@
       "id": 25
     },
     {
-      "Stock": 56,
+      "Stock": 55,
       "category": "beverages",
       "uniqueId": "26",
       "filterValue": "11",
@@ -511,7 +518,7 @@
       "id": 26
     },
     {
-      "Stock": 10,
+      "Stock": 13,
       "category": "household",
       "uniqueId": "27",
       "filterValue": "13",
@@ -549,7 +556,7 @@
       "id": 28
     },
     {
-      "Stock": 24,
+      "Stock": 27,
       "category": "household",
       "uniqueId": "29",
       "filterValue": "16",
@@ -568,7 +575,7 @@
       "id": 29
     },
     {
-      "Stock": 30,
+      "Stock": 9,
       "category": "household",
       "uniqueId": "30",
       "filterValue": "14",
@@ -587,7 +594,7 @@
       "id": 30
     },
     {
-      "Stock": 71,
+      "Stock": 75,
       "category": "household",
       "uniqueId": "31",
       "filterValue": "18",
@@ -858,72 +865,12 @@
       "title": "Thumbs Up",
       "image": "assets/images/Beverges/bevergeThumbsUp.png",
       "productUniqueId": "25",
-      "quantity": 4,
+      "quantity": 1,
       "originalAmount": "72",
       "productid": 25,
       "uid": "1",
       "orderUniqueId": 42708,
       "id": 12
-    },
-    {
-      "productName": "Alofrut Mint Mojito",
-      "title": "Mojito",
-      "image": "assets/images/Beverges/bevergeMojito.png",
-      "productUniqueId": "23",
-      "quantity": 2,
-      "originalAmount": "1030",
-      "productid": 23,
-      "uid": "1",
-      "orderUniqueId": 78752,
-      "id": 13
-    },
-    {
-      "productName": "Badam Drink Mix",
-      "title": "Badam Drink",
-      "image": "assets/images/Beverges/bevergeBadamMix.png",
-      "productUniqueId": "17",
-      "quantity": 1,
-      "originalAmount": "191",
-      "productid": 17,
-      "uid": "1",
-      "orderUniqueId": 94679,
-      "id": 14
-    },
-    {
-      "productName": "Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle",
-      "title": "Butterfly Kettle & Water Bottle",
-      "image": "assets/images/HouseHoldProducts/butterfluRapidKettle.png",
-      "productUniqueId": "29",
-      "quantity": 1,
-      "originalAmount": "800",
-      "productid": 29,
-      "uid": "1",
-      "orderUniqueId": 67424,
-      "id": 15
-    },
-    {
-      "productName": "PHILIPS HP8/46 Hair Dryer (100 W, Purple)",
-      "title": "PHILIPS Hair Dryer",
-      "image": "assets/images/HouseHoldProducts/hairdryer.png",
-      "productUniqueId": "31",
-      "quantity": 1,
-      "originalAmount": "598",
-      "productid": 31,
-      "uid": "1",
-      "orderUniqueId": 31129,
-      "id": 16
-    },
-    {
-      "productName": "Aquaguard SkyLand 18 Ltr",
-      "title": "Aquaguard SkyLand",
-      "image": "assets/images/HouseHoldProducts/aquaguard.png",
-      "productUniqueId": "27",
-      "quantity": 1,
-      "originalAmount": "4578",
-      "productid": 27,
-      "uid": "1",
-      "orderUniqueId": 73371,
-      "id": 17
     }
   ],
   "Queries": [
@@ -994,7 +941,153 @@
       "id": 7
     }
   ],
-  "orders": [],
-  "payments": [],
-  "orderStatusUpdate": []
+  "orders": [
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "9956995969",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "485848",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Miranda Plastic Bottle",
+          "title": "Miranda",
+          "image": "assets/images/Beverges/bevergeMiranda.png",
+          "productUniqueId": "16",
+          "quantity": 3,
+          "originalAmount": "54",
+          "productid": 16,
+          "uid": "1",
+          "orderUniqueId": 16034,
+          "id": 3
+        },
+        {
+          "productName": "Prestige Atlas 3.0 Induction Cooktop",
+          "title": "Prestige Induction Cooktop",
+          "image": "assets/images/HouseHoldProducts/electricInduction.png",
+          "productUniqueId": "30",
+          "quantity": 2,
+          "originalAmount": "895",
+          "productid": 30,
+          "uid": "1",
+          "orderUniqueId": 53565,
+          "id": 7
+        },
+        {
+          "productName": "Thumbs Up",
+          "title": "Thumbs Up",
+          "image": "assets/images/Beverges/bevergeThumbsUp.png",
+          "productUniqueId": "25",
+          "quantity": 1,
+          "originalAmount": "72",
+          "productid": 25,
+          "uid": "1",
+          "orderUniqueId": 42708,
+          "id": 12
+        }
+      ],
+      "totalAmount": 2024,
+      "uid": "1",
+      "id": 1
+    },
+    {
+      "customerName": "sakthi",
+      "customerMail": "sk@gmail.com",
+      "customerMobile": "8458458458",
+      "customerState": "test",
+      "customerCity": "test",
+      "customerPincode": "373747",
+      "customerAddress": "test",
+      "cartItems": [
+        {
+          "productName": "Pepsi Can (pack 6)",
+          "title": "Pepsi",
+          "image": "assets/images/Beverges/bevergePepsiCan.png",
+          "productUniqueId": "26",
+          "quantity": 1,
+          "originalAmount": "920",
+          "productid": 26,
+          "uid": "2",
+          "orderUniqueId": 61841,
+          "id": 1
+        },
+        {
+          "productName": "Limca Lime n Lemoni",
+          "title": "Limca",
+          "image": "assets/images/Beverges/bevergeLimca.png",
+          "productUniqueId": "15",
+          "quantity": 1,
+          "originalAmount": "68",
+          "productid": 15,
+          "uid": "2",
+          "orderUniqueId": 66558,
+          "id": 2
+        }
+      ],
+      "totalAmount": 988,
+      "uid": "2",
+      "id": 2
+    }
+  ],
+  "payments": [
+    {
+      "orderid": 53565,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 1
+    },
+    {
+      "orderid": 42708,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 2
+    },
+    {
+      "orderid": 16034,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 3
+    },
+    {
+      "orderid": 66558,
+      "uid": "2",
+      "status": "Payment Done",
+      "id": 4
+    },
+    {
+      "orderid": 61841,
+      "uid": "2",
+      "status": "Payment Done",
+      "id": 5
+    }
+  ],
+  "orderStatusUpdate": [
+    {
+      "orderid": 53565,
+      "status": "Packed",
+      "id": 1
+    },
+    {
+      "orderid": 42708,
+      "status": "Processing",
+      "id": 2
+    },
+    {
+      "orderid": 16034,
+      "status": "Processing",
+      "id": 3
+    },
+    {
+      "orderid": 66558,
+      "status": "Processing",
+      "id": 4
+    },
+    {
+      "orderid": 61841,
+      "status": "Processing",
+      "id": 5
+    }
+  ]
 }
