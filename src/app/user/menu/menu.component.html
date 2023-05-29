@@ -33,7 +33,6 @@
     </div>
 </div>
 
-
 <!-- ------------------------------Login Section------------------------------- -->
 
 <div class="modelCenter">
@@ -56,13 +55,13 @@
                         <form (ngSubmit)="login(loginuser,loginpassword)">
                             <div class="login-fields">
                                 <label for="userloginmail">Email</label>
-                                <input type="email" placeholder="Enter your Mail-Id" name="usernamillogin" #loginuser> <span>
+                                <input type="email" placeholder="Enter your Mail-Id" name="usernamillogin" #loginuser required> <span>
                                 </span>
                             </div>
                             <div class="login-fields">
                                 <label for="userloginpass">Password</label>
                                 <div class="showpass">
-                                    <input type="password" placeholder="Enter your password" name="userloginpass" #loginpassword>
+                                    <input type="password" placeholder="Enter your password" name="userloginpass" #loginpassword required>
                                 </div> <span>
                                 </span>
                                 <p><small> <a routerLink="/contactUs"> Forgot Password?</a></small></p>
@@ -86,7 +85,6 @@
         </div>
     </dialog>
 </div>
-
 
 <!-- ------------------------REGISTRATION SECTION ---------------------------------------->
 <div class="modelCenter">
@@ -158,10 +156,13 @@
                                 <p *ngIf="registerForm.controls['password'].errors?.['pattern']">Please Enter One Caps, Small, Number, Special Character, length must be 7 & above </p>
                             </div>
                         </div>
-
+                        <div class="errorData">
+                            <p id="registerError"></p>
+                        </div>
                         <div class="registerModalBtns">
+
                             <div class="grid grid-two-columns">
-                                <button type="submit" class="btn" [disabled]="!registerForm.valid"> Register
+                                <button type="submit" class="btn"> Register
                                 </button>
                                 <input type="reset" title="Reset Form" value="reset" class="btn">
                                 <p class="successfulMessage"></p>

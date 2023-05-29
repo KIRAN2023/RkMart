@@ -26,12 +26,14 @@ export class AdminProductsService {
   getCategoryTypesUrl = 'http://localhost:3000/categoryTypes';
   getRegisteredUsersUrl = 'http://localhost:3000/registeredUser';
 
+  getOrdersUrl = 'http://localhost:3000/orders'
+
   constructor(private http: HttpClient, private userAuth: ProductsDataService, private route: Router) {
     this.adminName = sessionStorage.getItem("adminLoggedin");
   }
 
   getProducts() {
-    return this.http.get(`${this.getProductDataUrl}`);
+    return this.http.get<any>(`${this.getProductDataUrl}`);
   }
 
   productTotalAmount() {
@@ -41,13 +43,13 @@ export class AdminProductsService {
         product.forEach((product: any) => {
           productTotalAmount += parseInt(product.originalAmount);
         });
-        return productTotalAmount.toLocaleString('en');
+        return productTotalAmount;
       })
     )
   }
 
   getUsers() {
-    return this.http.get(`${this.getRegisteredUsersUrl}`);
+    return this.http.get<any>(`${this.getRegisteredUsersUrl}`);
   }
 
   deleteProduct(id: any) {
@@ -63,7 +65,7 @@ export class AdminProductsService {
   }
 
   categoryTypesCount() {
-    return this.http.get(`${this.getCategoryTypesUrl}`);
+    return this.http.get<any>(`${this.getCategoryTypesUrl}`);
   }
 
   addCategory(categoryData: any) {
@@ -110,6 +112,10 @@ export class AdminProductsService {
     return this.http.delete(`${this.getRegisteredUsersUrl}/${user}`);
   }
 
+  getOrders(){
+    return this.http.get(`${this.getOrdersUrl}`);
+  }
+
   logout() {
     this.admin = false;
     this.userAuth.adminLogin = false;
@@ -134,7 +140,7 @@ export class AdminProductsService {
   }
 
   removeCategoryData(categoryId: any, categoryValue: any, categoryClass: any, categoryUniqueValue: any,  redirectStatus?:boolean, redirect?:any,) {
-    let confirmation =  redirectStatus? confirm(`Do you want to delete the previous category "${redirect}"`):confirm("Are you sure you want to delete");
+    let confirmation =  redirectStatus? confirm(`Do you want to delete the previous category "${redirect}"`):true;
     if (confirmation) {
       this.http.get(`http://localhost:3000/category/${categoryId}`).subscribe((categoryData: any) => {
         let categoryDataObject = categoryData;
@@ -146,12 +152,16 @@ export class AdminProductsService {
         }
 
         if (categoryData.category.length !== 0) {
+          console.warn("entry length");
+          
           this.removeCategory(categoryId, categoryDataObject).subscribe((response) => {
             response ? alert("Category Remove Successfully") : alert("Error While Removing Category");
             window.location.reload();
           })
         }
         if (categoryData.category.length == 0) {
+          console.warn("entry length 0");
+
           this.removeCategoryTypes(categoryId).subscribe();
           this.http.delete(`http://localhost:3000/category/${categoryId}`).subscribe();
           window.location.reload();

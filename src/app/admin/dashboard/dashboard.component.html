@@ -10,30 +10,30 @@
                 <div class="totalAmount grid grid-dashboard-two-columns">
                     <div class="">
                         <h3>Total Sales Amount</h3>
-                        <p> {{totalProductAmount}} </p>
+                        <p> {{salesAmount|currency:'INR':true:'1.0-0'}} </p>
                     </div>
                     <div class="">
                         <h3>Total Product Amount</h3>
-                        <p> {{totalProductAmount}} </p>
+                        <p> {{totalProductAmount|currency:'INR':true:'1.0-0'}} </p>
                     </div>
                 </div>
 
                 <div class="grid dashboardOverview-three-column dashboardHistory">
                     <div routerLink="/admin/manageProducts" class="totalProducts">
                         <p>Products</p>
-                        <p>{{allProducts.length }}</p>
+                        <p>{{allProducts }}</p>
                     </div>
                     <div routerLink="/admin/category" class="totalProducts">
                         <p>Category</p>
-                        <p>{{categoryCount.length }}</p>
+                        <p>{{categoryCount }}</p>
                     </div>
                     <div routerLink="/admin/manageOrders" class="totalOrders">
                         <p>Orders</p>
-                        <p>1</p>
+                        <p>{{ordersCount}}</p>
                     </div>
                     <div routerLink="/admin/users" class="totalUsers">
                         <p>Users</p>
-                        <p>{{ allUser.length }}</p>
+                        <p>{{ allUser }}</p>
                     </div>
                 </div>
             </div>

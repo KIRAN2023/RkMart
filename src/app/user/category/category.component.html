@@ -42,7 +42,7 @@
                             </div>
                             <ul>
                                 <li *ngFor="let categoryData of category.category, index as i">
-                                    <input type="checkbox" name={{categoryData}}
+                                    <input type="checkbox" (change)="categorySelected($event, category?.categoryUniqueValue[i])" name={{categoryData}}
                                         attr.data-btn-num={{category?.categoryUniqueValue[i]}}
                                         value={{category?.categoryUniqueValue[i]}} class={{category?.categoryClass[i]}}>
                                     {{categoryData|titlecase}}
@@ -58,21 +58,21 @@
                         <h5><b>Discounts</b></h5> <i class="fa-solid fa-chevron-down"></i>
                     </label>
                     <div class="discountData">
-                        <ul>
+                        <ul (click)="discountData($event)">
                             <li> <input type="checkbox" name="50% or More Discounted" class="checkbox"
-                                    id="discountCheckBox" data-btn-num="23" value="050"> 50%
+                                    id="discountCheckBox" data-btn-num="23" value="50"> 50%
                                 or more </li>
                             <li> <input type="checkbox" name="40% or More Discounted" class="checkbox"
-                                    id="discountCheckBox" data-btn-num="24" value="040"> 40%
+                                    id="discountCheckBox" data-btn-num="24" value="40"> 40%
                                 or more </li>
                             <li> <input type="checkbox" name="30% or More Discounted" class="checkbox"
-                                    id="discountCheckBox" data-btn-num="25" value="030"> 30%
+                                    id="discountCheckBox" data-btn-num="25" value="30"> 30%
                                 or more </li>
                             <li> <input type="checkbox" name="20% or More Discounted" class="checkbox"
-                                    id="discountCheckBox" data-btn-num="26" value="020"> 20%
+                                    id="discountCheckBox" data-btn-num="26" value="20"> 20%
                                 or more </li>
                             <li> <input type="checkbox" name="10% or More Discounted" class="checkbox"
-                                    id="discountCheckBox" data-btn-num="27" value="010"> 10%
+                                    id="discountCheckBox" data-btn-num="27" value="10"> 10%
                                 or more </li>
                         </ul>
                     </div>
@@ -84,21 +84,21 @@
                         <h5><b>Customer Ratings</b></h5> <i class="fa-solid fa-chevron-down"></i>
                     </label>
                     <div class="discountData">
-                        <ul>
+                        <ul (click)="reviewData($event)">
                             <li> <input type="checkbox" class="checkbox" id="reviewData" name="4 &#9733; & above Rated"
-                                    data-btn-num="28" value="04"> 4
+                                    data-btn-num="28" value="4"> 4
                                 <span class="reviewStar">&#9733;</span> & above
                             </li>
                             <li> <input type="checkbox" class="checkbox" id="reviewData" name="3 &#9733; & above Rated"
-                                    data-btn-num="29" value="03"> 3
+                                    data-btn-num="29" value="3"> 3
                                 <span class="reviewStar">&#9733;</span> & above
                             </li>
                             <li> <input type="checkbox" class="checkbox" id="reviewData" name="2 &#9733; & above Rated"
-                                    data-btn-num="30" value="02"> 2
+                                    data-btn-num="30" value="2"> 2
                                 <span class="reviewStar">&#9733;</span> & above
                             </li>
                             <li> <input type="checkbox" class="checkbox" id="reviewData" name="1 &#9733; & above Rated"
-                                    data-btn-num="31" value="01"> 1
+                                    data-btn-num="31" value="1"> 1
                                 <span class="reviewStar">&#9733;</span> & above
                             </li>
                         </ul>

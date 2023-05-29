@@ -4,17 +4,15 @@
   max-width: 60rem;
   margin: auto;
   position: relative;
-  padding-top: 8rem;
-
+  padding-top: 4rem;
 }
 
 .cartEmpty {
   width: 100%;
   height: 100%;
-  position: absolute;
   top: 0;
   display: grid;
-  place-content: center;
+  place-items: center;
 }
 
 .cartEmpty img{
@@ -33,6 +31,12 @@
   justify-content: center;
   place-items: center;
   flex-direction: column;
+}
+
+.myOrderSection{
+  display: flex;
+  justify-content: flex-end;
+  margin: 3rem 3rem 0 0;
 }
 
 .cartSection>.cartGrid {
@@ -127,7 +131,6 @@
 .subTotal-two-columns {
   grid-template-columns: repeat(2, 1fr);
 }
-
 
 
 /* SHIPPING DETAILS */

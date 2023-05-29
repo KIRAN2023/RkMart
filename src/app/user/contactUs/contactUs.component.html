@@ -4,10 +4,16 @@
 <!-- -------------------------Contact Us---------------------- -->
 
 <section class="section contact-section">
-    <div class="container">
-        <h3 class="common-heading">Contact Us</h3>
+    
+    <div class="contactHeaderDiv">
+        <div class="container">
+            <h3 class="common-heading">Contact Us</h3>
+        </div>
+        <div *ngIf="userLogin" class="">
+            <a routerLink="/cart/query"> <button class="btn">My Queries <i
+                        class="fa-solid fa-arrow-left fa-flip-horizontal"></i></button> </a>
+        </div>
     </div>
-
     <div class="container map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.933835570356!2d77.72430831479062!3d11.339543451647614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f4138c09375%3A0x405a7d329f30110c!2sPS%20Park%2C%20Erode%20Fort%2C%20Erode%2C%20Tamil%20Nadu%20638001!5e0!3m2!1sen!2sin!4v1651581190670!5m2!1sen!2sin"
@@ -47,19 +53,27 @@
 
             </div>
 
-            <div>
+            <div class="username">
                 <label for="subject"></label>
                 <input type="text" formControlName="subject" name="subject" placeholder="Subject" required>
+                <div class="errorData"
+                    *ngIf="contactUs.controls['subject'].invalid && (contactUs.controls['subject'].touched||contactUs.controls['subject'].dirty)">
+                    <p *ngIf="contactUs.controls['subject'].errors?.['required']">This is a required field</p>
+                </div>
             </div>
 
-            <div>
+            <div class="username">
                 <label for="textarea"></label>
                 <textarea type="textarea" formControlName="textarea" cols="30" row="10" placeholder="Textarea" required
                     name="message"></textarea>
+                <div class="errorData"
+                    *ngIf="contactUs.controls['textarea'].invalid && (contactUs.controls['textarea'].touched||contactUs.controls['textarea'].dirty)">
+                    <p *ngIf="contactUs.controls['textarea'].errors?.['required']">This is a required field</p>
+                </div>
             </div>
 
             <div class="submitbtn"> <button class="btn" type="submit">Submit</button> </div>
-            <p id="errorMessage" *ngIf="dataValid">Enter all the fields</p>
+            <p id="errorMessage"></p>
         </div>
     </form>
 </section>

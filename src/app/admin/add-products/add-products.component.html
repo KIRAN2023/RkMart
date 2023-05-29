@@ -13,25 +13,25 @@
                     </div>
                     <div class="form-fields">
                         <label for="category"> Category </label>
-                        <select  #categoryData formControlName="category">
+                        <select  #categoryData name="category" formControlName="category">
                             <option *ngFor="let category of category" [ngValue]="category">{{ category }}</option>
                         </select>
                     </div>
                     <div class="form-fields">
                         <label for="uniqueID"> Unique ID </label>
-                        <input type="text" name="uniqueid" formControlName="uniqueId">
+                        <input type="text" name="uniqueId" formControlName="uniqueId">
                     </div>
                     <div class="form-fields">
                         <label for="filterValue"> Filter Value </label>
-                        <input type="text" name="filtervalue" formControlName="filterValue">
+                        <input type="text" name="filterValue" formControlName="filterValue">
                     </div>
                     <div class="form-fields">
                         <label for="classData"> Class Data </label>
-                        <input type="text" name="classdata" formControlName="classData">
+                        <input type="text" name="classData" formControlName="classData">
                     </div>
                     <div class="form-fields">
                         <label for="value"> Value </label>
-                        <select formControlName="value">
+                        <select name="value" formControlName="value">
                             <option *ngFor="let filterData of filterValue" [ngValue]="filterData">
                                 {{filterData}}
                             </option>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-fields">
                         <label for="productName"> Product Name </label>
-                        <input type="text" name="productname" formControlName="productName">
+                        <input type="text" name="productName" formControlName="productName">
                     </div>
                     <div class="form-fields">
                         <label for="quantity"> Quantity </label>
@@ -59,15 +59,15 @@
                     </div>
                     <div class="form-fields">
                         <label for="ratingCount"> Rating Count </label>
-                        <input type="text" name="ratingcount" formControlName="ratingCount">
+                        <input type="text" name="ratingCount" formControlName="ratingCount">
                     </div>
                     <div class="form-fields">
                         <label for="reviewCount"> Review Count </label>
-                        <input type="text" name="reviewcount" formControlName="reviewCount">
+                        <input type="text" name="reviewCount" formControlName="reviewCount">
                     </div>
                     <div class="form-fields">
                         <label for="originalAmount"> Original Amount </label>
-                        <input type="text" name="originalamount" formControlName="originalAmount">
+                        <input type="text" name="originalAmount" formControlName="originalAmount">
                     </div>
                     <div class="form-fields">
                         <label for="discounted"> Discounted </label>

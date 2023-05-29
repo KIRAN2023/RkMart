@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { AuthUserGuard } from 'src/app/auth-user.guard';
+import { UrlGuard } from 'src/app/url.guard';
 import { CartService } from 'src/app/user/cart.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class CartComponent implements OnInit, AfterViewChecked {
 
   productQuantityData = 1;
 
-  constructor(private cartService: CartService, private route: Router, private http: HttpClient, private guard: AuthUserGuard, private title: Title) { }
+  constructor(private cartService: CartService, private route: Router, private urlGuard:UrlGuard ,private http: HttpClient, private guard: AuthUserGuard, private title: Title) { 
+    this.urlGuard.navigatePermission = false;
+  }
 
   ngOnInit() {
     this.cartService.getProducts().subscribe((productData: any) => {
@@ -45,6 +48,13 @@ export class CartComponent implements OnInit, AfterViewChecked {
 
   removeProduct(product: any) {
     this.cartService.removeProduct(product, sessionStorage.getItem('userId')).subscribe();
+  }
+
+  shipping(){
+    if(this.product.length!=0){
+      this.urlGuard.navigatePermission = true;
+      this.route.navigate(['/cart/shipping']);
+    }
   }
 
   clearCart() {

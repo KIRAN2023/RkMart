@@ -14,17 +14,19 @@
                             <th>Product</th>
                             <th>Order Status</th>
                             <th>Order Quantity</th>
+                            <th>Update Status</th>
                         </tr>
                     </thead>
                     <tbody id="orderDatas">
                         <ng-container *ngFor="let order of orderData">
-                            <tr *ngFor="let productData of order.cartItems">
-                                <td>{{productData.orderUniqueId}} </td>
+                            <tr>
+                                <td>{{order.orderUniqueId}} </td>
                                 <td>{{order.customerName}}</td>
                                 <td>{{order.customerAddress}}</td>
-                                <td>{{productData.productName}}</td>
-                                <td>Pending</td>
-                                <td>{{productData.quantity}}</td>
+                                <td>{{order.productName}}</td>
+                                <td>{{order.orderStatus}}</td>
+                                <td>{{order.quantity}}</td>
+                                <td routerLink="/admin/orderStatus/{{order.orderUniqueId}}" > <i class="fa-solid fa-pen-to-square"></i></td>
                             </tr>
                         </ng-container>
                     </tbody>

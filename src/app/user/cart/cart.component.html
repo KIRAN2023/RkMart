@@ -2,7 +2,11 @@
 <app-menu></app-menu>
 
 <!-- ----------------------Cart------------------------ -->
+
 <section>
+    <div class="myOrderSection">
+        <a routerLink="/cart/myOrders"> <button class="btn">My Orders <i class="fa-solid fa-arrow-left fa-flip-horizontal"></i></button> </a>
+    </div>
     <div class="cartSection" *ngIf="product.length!=0">
         <div class="cartGrid cart-five-columns cartHead-underline">
             <div class="">
@@ -42,15 +46,16 @@
                 </div>
                 <div class="priceSection dataSection">
 
-                    <p >{{ cartProduct.originalAmount|currency:'INR' }}</p>
+                    <p>{{ cartProduct.originalAmount|currency:'INR' }}</p>
 
                 </div>
 
                 <div class="quantitySection dataSection">
 
                     <p>
-                        <button class="incrBtn" (click)="quantityIncrement(cartProduct.id,cartProduct.productid)" > + </button>
-                                <small> {{cartProduct.quantity}} </small> 
+                        <button class="incrBtn" (click)="quantityIncrement(cartProduct.id,cartProduct.productid)"> +
+                        </button>
+                        <small> {{cartProduct.quantity}} </small>
                         <button class="decBtn" (click)="quantityDecrement(cartProduct.id)"> - </button>
                     </p>
 
@@ -93,7 +98,7 @@
                 </div>
             </div>
 
-            <a routerLink="shipping">
+            <a (click)="shipping()">
                 <div class="cartButton">
                     <button type="submit" class="btn"> Place Order </button>
                 </div>

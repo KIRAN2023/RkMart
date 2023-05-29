@@ -3,15 +3,15 @@
     {
       "name": "Kiran",
       "mail": "kiran@gmail.com",
-      "password": "U2FsdGVkX192pbKQKHzFPumyOG+inzZF2CzFx6hjruM="
+      "password": "U2FsdGVkX1+H2EGvEaus0QWfV8Ju3c1WiHOl8NnzQMY="
     }
   ],
   "registeredUser": [
     {
       "username": "kiran",
       "mail": "kiran2023@gmail.com",
-      "mobile": "7866956856",
-      "password": "U2FsdGVkX1/Nn03A/esNGvYM5I3kpq30A105yKFOU+Y=",
+      "mobile": "9956995969",
+      "password": "U2FsdGVkX19pEmA8oy9ElPEPyKcXhq5xMSpScSsWmM0=",
       "id": 1
     },
     {
@@ -24,12 +24,12 @@
   ],
   "Productdata": [
     {
-      "Stock": 15,
+      "Stock": 87,
       "category": "grocery",
-      "uniqueId": 1,
-      "filterValue": 1,
+      "uniqueId": "1",
+      "filterValue": "1",
       "classData": "p-btn--1 p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/VeggetablesFruits/appleFuji.png",
       "alt": "Fresh Groceries",
       "title": "Apple Fuji",
@@ -42,12 +42,12 @@
       "id": 1
     },
     {
-      "Stock": 14,
+      "Stock": 91,
       "category": "grocery",
       "uniqueId": "2",
       "filterValue": "1",
       "classData": "p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/VeggetablesFruits/appleGranny.png",
       "alt": "Fresh Groceries",
       "title": "Apple Granny",
@@ -61,12 +61,12 @@
       "id": 2
     },
     {
-      "Stock": 0,
+      "Stock": 81,
       "category": "grocery",
       "uniqueId": "3",
       "filterValue": "1",
       "classData": " p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/VeggetablesFruits/appleRed.png",
       "alt": "Fresh Groceries",
       "title": "Apple Red",
@@ -85,7 +85,7 @@
       "uniqueId": "4",
       "filterValue": "1",
       "classData": "  p-btn--1 p-btn--14 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/VeggetablesFruits/appleIndian.png",
       "alt": "Fresh Groceries",
       "title": "Apple Indian",
@@ -99,12 +99,12 @@
       "id": 4
     },
     {
-      "Stock": 17,
+      "Stock": 90,
       "category": "grocery",
       "uniqueId": "5",
       "filterValue": "2",
       "classData": " p-btn--2 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/VeggetablesFruits/bananaNendran.png",
       "alt": "Fresh Groceries",
       "title": "Banana Nendran",
@@ -118,12 +118,12 @@
       "id": "5"
     },
     {
-      "Stock": 19,
+      "Stock": 87,
       "category": "grocery",
       "uniqueId": "6",
       "filterValue": "2",
       "classData": " p-btn--2 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/bananaRed.png",
       "alt": "Fresh Groceries",
       "title": "Banana Red",
@@ -137,17 +137,18 @@
       "id": 6
     },
     {
-      "Stock": "10",
+      "Stock": 60,
       "category": "grocery",
       "uniqueId": "7",
       "filterValue": "3",
       "classData": " p-btn--3 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/sapota.png",
       "alt": "Fresh Groceries",
       "title": "Sapota",
       "productName": "Sapota 6 pcs (Pack)",
       "quantity": "450g - 550g (Approx)",
+      "rating": "3.9",
       "ratingCount": "798",
       "reviewCount": "369",
       "originalAmount": "108",
@@ -155,12 +156,12 @@
       "id": 7
     },
     {
-      "Stock": "19",
+      "Stock": 59,
       "category": "grocery",
       "uniqueId": "8",
       "filterValue": "4",
       "classData": " p-btn--4 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/garlic.png",
       "alt": "Fresh Groceries",
       "title": "Garlic",
@@ -174,18 +175,18 @@
       "id": 8
     },
     {
-      "Stock": -3,
+      "Stock": 56,
       "category": "grocery",
       "uniqueId": "9",
       "filterValue": "5",
       "classData": " p-btn--5 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/greenCapsicum.png",
       "alt": "Fresh Groceries",
       "title": "Green Capsicum",
       "productName": "Green Capsicum",
       "quantity": "500g (Approx)",
-      "rating": "4.4",
+      "rating": "3.7",
       "ratingCount": "467",
       "reviewCount": "136",
       "originalAmount": "66",
@@ -193,12 +194,12 @@
       "id": 9
     },
     {
-      "Stock": "23",
+      "Stock": 91,
       "category": "grocery",
       "uniqueId": "10",
       "filterValue": "6",
       "classData": " p-btn--6 p-btn--14 p-btn--26 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/bottleGourd.png",
       "alt": "Fresh Groceries",
       "title": "Lauki",
@@ -212,12 +213,12 @@
       "id": 10
     },
     {
-      "Stock": "10",
+      "Stock": 20,
       "category": "grocery",
       "uniqueId": "11",
       "filterValue": "7",
       "classData": " p-btn--7 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/potato.png",
       "alt": "Fresh Groceries",
       "title": "potato",
@@ -231,12 +232,12 @@
       "id": 11
     },
     {
-      "Stock": "31",
+      "Stock": 31,
       "category": "grocery",
       "uniqueId": "12",
       "filterValue": "7",
       "classData": "p-btn--7 p-btn--14 p-btn--26 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/sweetPotato.png",
       "alt": "Fresh Groceries",
       "title": "Sweet Potato",
@@ -250,12 +251,12 @@
       "id": 12
     },
     {
-      "Stock": "21",
+      "Stock": 50,
       "category": "grocery",
       "uniqueId": "13",
       "filterValue": "8",
       "classData": "  p-btn--8 p-btn--14 p-btn--26 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/blackBrinjal.png",
       "alt": "Fresh Groceries",
       "title": "Brinjal Black Big",
@@ -269,12 +270,12 @@
       "id": 13
     },
     {
-      "Stock": "8",
+      "Stock": 28,
       "category": "grocery",
       "uniqueId": "14",
       "filterValue": "9",
       "classData": " p-btn--9 p-btn--14 p-btn--26 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/VeggetablesFruits/CLusterBeans.png",
       "alt": "Fresh Groceries",
       "title": "Cluster Beans",
@@ -288,12 +289,12 @@
       "id": 14
     },
     {
-      "Stock": "46",
+      "Stock": 22,
       "category": "beverages",
       "uniqueId": "15",
       "filterValue": "10",
       "classData": "p-btn--13 p-btn--10 p-btn--26 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/Beverges/bevergeLimca.png",
       "alt": "beverges",
       "title": "Limca",
@@ -307,12 +308,12 @@
       "id": 15
     },
     {
-      "Stock": "91",
+      "Stock": 50,
       "category": "beverages",
       "uniqueId": "16",
       "filterValue": "10",
       "classData": " p-btn--10 p-btn--13 p-btn--24 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "040",
+      "value": "40",
       "image": "assets/images/Beverges/bevergeMiranda.png",
       "alt": "beverges",
       "title": "Miranda",
@@ -326,12 +327,12 @@
       "id": 16
     },
     {
-      "Stock": "34",
+      "Stock": 33,
       "category": "beverages",
       "uniqueId": "17",
       "filterValue": "12",
       "classData": "p-btn--12 p-btn--13 p-btn--25 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "030",
+      "value": "30",
       "image": "assets/images/Beverges/bevergeBadamMix.png",
       "alt": "beverges",
       "title": "Badam Drink",
@@ -345,12 +346,12 @@
       "id": 17
     },
     {
-      "Stock": "21",
+      "Stock": 19,
       "category": "beverages",
       "uniqueId": "18",
       "filterValue": "12",
       "classData": " p-btn--12 p-btn--13 p-btn--26 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/Beverges/bevergeEvocus.png",
       "alt": "beverges",
       "title": "Evocus Black Alkaline Water",
@@ -364,17 +365,18 @@
       "id": 18
     },
     {
-      "Stock": "0",
+      "Stock": 40,
       "category": "beverages",
       "uniqueId": "19",
       "filterValue": "10",
       "classData": " p-btn--10 p-btn--13 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/Beverges/bevergeMaaza.png",
       "alt": "beverges",
       "title": "Mango Drink",
       "productName": "Maaza Mango Drink",
       "quantity": "500ml",
+      "rating": "3.8",
       "ratingCount": "11,736",
       "reviewCount": "6,690",
       "originalAmount": "33",
@@ -382,12 +384,12 @@
       "id": 19
     },
     {
-      "Stock": "76",
+      "Stock": 76,
       "category": "beverages",
       "uniqueId": "20",
       "filterValue": "10",
       "classData": " p-btn--13 p-btn--10 p-btn--27 p-btn--25 p-btn--29 p-btn--30 p-btn--31",
-      "value": "030",
+      "value": "30",
       "image": "assets/images/Beverges/beverges7up.png",
       "alt": "beverges",
       "title": "7up Plastic Bottle",
@@ -401,12 +403,12 @@
       "id": 20
     },
     {
-      "Stock": "6",
+      "Stock": 67,
       "category": "beverages",
       "uniqueId": "21",
       "filterValue": "10",
       "classData": " p-btn--10 p-btn--13 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/Beverges/bevergeCocaColaTin.png",
       "alt": "beverges",
       "title": "Coca Cola",
@@ -420,12 +422,12 @@
       "id": 21
     },
     {
-      "Stock": "16",
+      "Stock": 86,
       "category": "beverages",
       "uniqueId": "22",
       "filterValue": "10",
       "classData": " p-btn--10 p-btn--13 p-btn--27 p-btn--26 p-btn--29 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/Beverges/bevergeMinuteMaid.png",
       "alt": "beverges",
       "title": "Minute Maid",
@@ -439,12 +441,12 @@
       "id": 22
     },
     {
-      "Stock": "11",
+      "Stock": 34,
       "category": "beverages",
       "uniqueId": "23",
       "filterValue": "12",
       "classData": " p-btn--12 p-btn--13 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/Beverges/bevergeMojito.png",
       "alt": "beverges",
       "title": "Mojito",
@@ -458,12 +460,12 @@
       "id": 23
     },
     {
-      "Stock": "84",
+      "Stock": 82,
       "category": "beverages",
       "uniqueId": "24",
       "filterValue": "11",
       "classData": " p-btn--11 p-btn--13 p-btn--26 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/Beverges/bevergeMountainDew.png",
       "alt": "beverges",
       "title": "Mountain Dew",
@@ -477,12 +479,12 @@
       "id": 24
     },
     {
-      "Stock": "97",
+      "Stock": 62,
       "category": "beverages",
       "uniqueId": "25",
       "filterValue": "10",
       "classData": " p-btn--10 p-btn--13 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31",
-      "value": "010",
+      "value": "10",
       "image": "assets/images/Beverges/bevergeThumbsUp.png",
       "alt": "beverges",
       "title": "Thumbs Up",
@@ -496,12 +498,12 @@
       "id": 25
     },
     {
-      "Stock": "56",
+      "Stock": 54,
       "category": "beverages",
       "uniqueId": "26",
       "filterValue": "11",
       "classData": " p-btn--11 p-btn--13 p-btn--26 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "020",
+      "value": "20",
       "image": "assets/images/Beverges/bevergePepsiCan.png",
       "alt": "beverges",
       "title": "Pepsi",
@@ -515,12 +517,12 @@
       "id": 26
     },
     {
-      "Stock": 3,
+      "Stock": 13,
       "category": "household",
       "uniqueId": "27",
-      "filterValue": "15",
+      "filterValue": "13",
       "classData": " p-btn--15 p-btn--22 p-btn--23 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "050",
+      "value": "50",
       "image": "assets/images/HouseHoldProducts/aquaguard.png",
       "alt": "household products",
       "title": "Aquaguard SkyLand",
@@ -534,12 +536,12 @@
       "id": 27
     },
     {
-      "Stock": "31",
+      "Stock": 31,
       "category": "household",
       "uniqueId": "28",
-      "filterValue": "19",
+      "filterValue": "17",
       "classData": " p-btn--19 p-btn--22 p-btn--24 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "040",
+      "value": "40",
       "image": "assets/images/HouseHoldProducts/bajajFan.png",
       "alt": "household products",
       "title": "BAJAJ Crest Neo",
@@ -553,12 +555,12 @@
       "id": 28
     },
     {
-      "Stock": "27",
+      "Stock": 27,
       "category": "household",
       "uniqueId": "29",
-      "filterValue": "18",
+      "filterValue": "16",
       "classData": " p-btn--18 p-btn--22 p-btn--24 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "040",
+      "value": "40",
       "image": "assets/images/HouseHoldProducts/butterfluRapidKettle.png",
       "alt": "household products",
       "title": "Butterfly Kettle & Water Bottle",
@@ -572,12 +574,12 @@
       "id": 29
     },
     {
-      "Stock": "6",
+      "Stock": 84,
       "category": "household",
       "uniqueId": "30",
-      "filterValue": "16",
+      "filterValue": "14",
       "classData": " p-btn--16 p-btn--22 p-btn--24 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "040",
+      "value": "40",
       "image": "assets/images/HouseHoldProducts/electricInduction.png",
       "alt": "household products",
       "title": "Prestige Induction Cooktop",
@@ -591,12 +593,12 @@
       "id": 30
     },
     {
-      "Stock": "7",
+      "Stock": 75,
       "category": "household",
       "uniqueId": "31",
-      "filterValue": "20",
+      "filterValue": "18",
       "classData": " p-btn--20 p-btn--22 p-btn--24 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "040",
+      "value": "40",
       "image": "assets/images/HouseHoldProducts/hairdryer.png",
       "alt": "household products",
       "title": "PHILIPS Hair Dryer",
@@ -610,12 +612,12 @@
       "id": 31
     },
     {
-      "Stock": "39",
+      "Stock": 39,
       "category": "household",
       "uniqueId": "32",
-      "filterValue": "17",
+      "filterValue": "15",
       "classData": " p-btn--17 p-btn--22 p-btn--23 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "050",
+      "value": "50",
       "image": "assets/images/HouseHoldProducts/kettle.png",
       "alt": "household products",
       "title": "Pigeon Electric Kettle",
@@ -629,12 +631,12 @@
       "id": 32
     },
     {
-      "Stock": "61",
+      "Stock": 61,
       "category": "household",
       "uniqueId": "33",
-      "filterValue": "17",
+      "filterValue": "15",
       "classData": "p-btn--17 p-btn--22 p-btn--23 p-btn--27 p-btn--29 p-btn--30 p-btn--31",
-      "value": "050",
+      "value": "50",
       "image": "assets/images/HouseHoldProducts/kettleFlask.png",
       "alt": "household products",
       "title": "Pigeon Electric Kettle & Bottle",
@@ -648,12 +650,12 @@
       "id": 33
     },
     {
-      "Stock": "42",
+      "Stock": 27,
       "category": "household",
       "uniqueId": "34",
-      "filterValue": "21",
+      "filterValue": "19",
       "classData": "p-btn--21 p-btn--22 p-btn--23 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "050",
+      "value": "50",
       "image": "assets/images/HouseHoldProducts/lifelongMixer.png",
       "alt": "household products",
       "title": "Mixer Grinder Dry Iron",
@@ -667,12 +669,12 @@
       "id": 34
     },
     {
-      "Stock": "25",
+      "Stock": 15,
       "category": "household",
       "uniqueId": "35",
-      "filterValue": "18",
+      "filterValue": "16",
       "classData": " p-btn--18 p-btn--22 p-btn--23 p-btn--28 p-btn--30 p-btn--31",
-      "value": "050",
+      "value": "50",
       "image": "assets/images/HouseHoldProducts/mixer.png",
       "alt": "household products",
       "title": "Butterfly Mixer Grinder",
@@ -686,12 +688,12 @@
       "id": 35
     },
     {
-      "Stock": "35",
+      "Stock": 19,
       "category": "household",
       "uniqueId": "36",
-      "filterValue": "19",
+      "filterValue": "17",
       "classData": " p-btn--19 p-btn--22 p-btn--24 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "040",
+      "value": "40",
       "image": "assets/images/HouseHoldProducts/mixer2.png",
       "alt": "household products",
       "title": "Bajaj Mixer Grinder",
@@ -765,13 +767,13 @@
         "Engery Drinks"
       ],
       "categoryClass": [
+        "p-btn--10",
         "p-btn--11",
-        "p-btn--13",
         "p-btn--12"
       ],
       "categoryUniqueValue": [
+        "10",
         "11",
-        "13",
         "12"
       ],
       "id": 2
@@ -779,124 +781,360 @@
     {
       "categoryType": "household",
       "category": [
+        "Aquaguard",
         "Prestige",
+        "Pigeon",
         "Butterfly",
         "Bajaj",
         "Philips",
-        "Other Brands",
-        "Pigeon",
-        "Aquaguard"
+        "Other Brands"
       ],
       "categoryClass": [
+        "p-btn--13",
         "p-btn--14",
+        "p-btn--15",
         "p-btn--16",
         "p-btn--17",
-        "p-btn--19",
-        "p-btn--20",
-        "p-btn--21",
-        "p-btn--15"
+        "p-btn--18",
+        "p-btn--19"
       ],
       "categoryUniqueValue": [
+        "13",
         "14",
+        "15",
         "16",
         "17",
-        "19",
-        "20",
-        "21",
-        "15"
+        "18",
+        "19"
       ],
       "id": 3
     }
   ],
   "cartData": [
     {
-      "productName": "Apple Granny Smith 4 pcs",
-      "title": "Apple Granny",
-      "image": "assets/images/VeggetablesFruits/appleGranny.png",
-      "productUniqueId": "2",
+      "productName": "Pepsi Can (pack 6)",
+      "title": "Pepsi",
+      "image": "assets/images/Beverges/bevergePepsiCan.png",
+      "productUniqueId": "26",
       "quantity": 1,
-      "originalAmount": "249",
-      "productid": 2,
-      "uid": "1",
-      "orderUniqueId": 14005,
+      "originalAmount": "920",
+      "productid": 26,
+      "uid": "2",
+      "orderUniqueId": 61841,
+      "id": 1
+    },
+    {
+      "productName": "Limca Lime n Lemoni",
+      "title": "Limca",
+      "image": "assets/images/Beverges/bevergeLimca.png",
+      "productUniqueId": "15",
+      "quantity": 1,
+      "originalAmount": "68",
+      "productid": 15,
+      "uid": "2",
+      "orderUniqueId": 66558,
       "id": 2
     },
     {
-      "productName": "Apple Fuji Pack 4 pcs",
-      "title": "Apple Fuji",
-      "image": "assets/images/VeggetablesFruits/appleFuji.png",
-      "productUniqueId": 1,
+      "productName": "Badam Drink Mix",
+      "title": "Badam Drink",
+      "image": "assets/images/Beverges/bevergeBadamMix.png",
+      "productUniqueId": "17",
       "quantity": 3,
-      "originalAmount": "169",
-      "productid": 1,
+      "originalAmount": "191",
+      "productid": 17,
+      "uid": "2",
+      "orderUniqueId": 66652,
+      "id": 13
+    },
+    {
+      "productName": "Lifelong LLCMB02 500 W Mixer Grinder & 1 W Dry Iron Combo",
+      "title": "Mixer Grinder Dry Iron",
+      "image": "assets/images/HouseHoldProducts/lifelongMixer.png",
+      "productUniqueId": "34",
+      "quantity": 1,
+      "originalAmount": "1499",
+      "productid": 34,
+      "uid": "2",
+      "orderUniqueId": 37145,
+      "id": 14
+    },
+    {
+      "productName": "Apple Red Delicious 4 pcs",
+      "title": "Apple Red",
+      "image": "assets/images/VeggetablesFruits/appleRed.png",
+      "productUniqueId": "3",
+      "quantity": 6,
+      "originalAmount": "172",
+      "productid": 3,
       "uid": "1",
-      "orderUniqueId": 7871,
+      "orderUniqueId": 75946,
+      "id": 16
+    }
+  ],
+  "Queries": [
+    {
+      "username": "kiran",
+      "email": "kiran2023@gmail.com",
+      "subject": "testing",
+      "textarea": "testing",
+      "queryStatus": "Addressed",
+      "uid": "1",
+      "id": 1,
+      "addressingData": "tested"
+    },
+    {
+      "username": "kiran",
+      "email": "kiran2023@gmail.com",
+      "subject": "kk",
+      "textarea": "kkk",
+      "queryStatus": "Addressed",
+      "uid": "1",
+      "id": 2,
+      "addressingData": "done"
+    },
+    {
+      "username": "kiran",
+      "email": "kiran2023@gmail.com",
+      "subject": "testing",
+      "textarea": "no responded",
+      "queryStatus": "Pending",
+      "uid": "1",
       "id": 3
     },
     {
-      "productName": "Banana Nendran 4 pcs (Box)",
-      "title": "Banana Nendran",
-      "image": "assets/images/VeggetablesFruits/bananaNendran.png",
-      "productUniqueId": "5",
-      "quantity": 1,
-      "originalAmount": "129",
-      "productid": "5",
-      "uid": "1",
-      "orderUniqueId": 84268,
+      "username": "sakthivel",
+      "email": "sakthi@gmail.com",
+      "subject": "test",
+      "textarea": "tetsing",
+      "queryStatus": "Pending",
+      "uid": "2",
       "id": 4
+    },
+    {
+      "username": "sakthivel",
+      "email": "sakthi@gmail.com",
+      "subject": "user",
+      "textarea": "uesr testing",
+      "queryStatus": "Pending",
+      "uid": "2",
+      "id": 5,
+      "addressingData": "tested"
+    },
+    {
+      "username": "sakthivel",
+      "email": "sakthi@gmail.com",
+      "subject": "user",
+      "textarea": "user tets",
+      "queryStatus": "Pending",
+      "uid": "2",
+      "id": 6
+    },
+    {
+      "username": "kiran",
+      "email": "ki@gmail.com",
+      "subject": "non user",
+      "textarea": "non user test",
+      "queryStatus": "Pending",
+      "uid": 62629,
+      "id": 7
     }
   ],
   "orders": [
     {
       "customerName": "kiran",
       "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "7866956856",
+      "customerMobile": "9956995969",
       "customerState": "k",
       "customerCity": "k",
-      "customerPincode": "959495",
+      "customerPincode": "348348",
       "customerAddress": "k",
       "cartItems": [
         {
-          "productName": "Apple Granny Smith 4 pcs",
-          "title": "Apple Granny",
-          "image": "assets/images/VeggetablesFruits/appleGranny.png",
-          "productUniqueId": "2",
+          "productName": "Brinjal Black Big",
+          "title": "Brinjal Black Big",
+          "image": "assets/images/VeggetablesFruits/blackBrinjal.png",
+          "productUniqueId": "13",
           "quantity": 1,
-          "originalAmount": "249",
-          "productid": 2,
+          "originalAmount": "35",
+          "productid": 13,
           "uid": "1",
-          "orderUniqueId": 14005,
-          "id": 2
+          "orderUniqueId": 4470,
+          "id": 15
         },
         {
-          "productName": "Apple Fuji Pack 4 pcs",
-          "title": "Apple Fuji",
-          "image": "assets/images/VeggetablesFruits/appleFuji.png",
-          "productUniqueId": 1,
-          "quantity": 3,
-          "originalAmount": "169",
-          "productid": 1,
+          "productName": "Butterfly Rapid Plus 750 W Mixer Grinder",
+          "title": "Butterfly Mixer Grinder",
+          "image": "assets/images/HouseHoldProducts/mixer.png",
+          "productUniqueId": "35",
+          "quantity": 1,
+          "originalAmount": "3199",
+          "productid": 35,
           "uid": "1",
-          "orderUniqueId": 7871,
-          "id": 3
+          "orderUniqueId": 32776,
+          "id": 17
         },
         {
-          "productName": "Banana Nendran 4 pcs (Box)",
-          "title": "Banana Nendran",
-          "image": "assets/images/VeggetablesFruits/bananaNendran.png",
-          "productUniqueId": "5",
+          "productName": "Thumbs Up",
+          "title": "Thumbs Up",
+          "image": "assets/images/Beverges/bevergeThumbsUp.png",
+          "productUniqueId": "25",
           "quantity": 1,
-          "originalAmount": "129",
-          "productid": "5",
+          "originalAmount": "72",
+          "productid": 25,
           "uid": "1",
-          "orderUniqueId": 84268,
-          "id": 4
+          "orderUniqueId": 94307,
+          "id": 18
+        },
+        {
+          "productName": "Miranda Plastic Bottle",
+          "title": "Miranda",
+          "image": "assets/images/Beverges/bevergeMiranda.png",
+          "productUniqueId": "16",
+          "quantity": 1,
+          "originalAmount": "54",
+          "productid": 16,
+          "uid": "1",
+          "orderUniqueId": 56119,
+          "id": 19
         }
       ],
-      "totalAmount": 885,
+      "totalAmount": 3360,
       "uid": "1",
       "id": 1
+    },
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "9956995969",
+      "customerState": "k",
+      "customerCity": "kk",
+      "customerPincode": "485848",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Apple Red Delicious 4 pcs",
+          "title": "Apple Red",
+          "image": "assets/images/VeggetablesFruits/appleRed.png",
+          "productUniqueId": "3",
+          "quantity": 2,
+          "originalAmount": "172",
+          "productid": 3,
+          "uid": "1",
+          "orderUniqueId": 75946,
+          "id": 16
+        }
+      ],
+      "totalAmount": 344,
+      "uid": "1",
+      "id": 2
+    },
+    {
+      "customerName": "kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "9956995969",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "754785",
+      "customerAddress": "k",
+      "cartItems": [
+        {
+          "productName": "Apple Red Delicious 4 pcs",
+          "title": "Apple Red",
+          "image": "assets/images/VeggetablesFruits/appleRed.png",
+          "productUniqueId": "3",
+          "quantity": 6,
+          "originalAmount": "172",
+          "productid": 3,
+          "uid": "1",
+          "orderUniqueId": 75946,
+          "id": 16
+        }
+      ],
+      "totalAmount": 1032,
+      "uid": "1",
+      "id": 3
     }
   ],
-  "Queries": []
+  "payments": [
+    {
+      "orderid": 4470,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 1
+    },
+    {
+      "orderid": 94307,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 2
+    },
+    {
+      "orderid": 56119,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 3
+    },
+    {
+      "orderid": 32776,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 4
+    },
+    {
+      "orderid": 4470,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 5
+    },
+    {
+      "orderid": 75946,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 6
+    },
+    {
+      "orderid": 75946,
+      "uid": "1",
+      "status": "Payment Done",
+      "id": 7
+    }
+  ],
+  "orderStatusUpdate": [
+    {
+      "orderid": 4470,
+      "status": "Processing",
+      "id": 1
+    },
+    {
+      "orderid": 32776,
+      "status": "Delivered",
+      "id": 2
+    },
+    {
+      "orderid": 94307,
+      "status": "Processing",
+      "id": 3
+    },
+    {
+      "orderid": 56119,
+      "status": "Processing",
+      "id": 4
+    },
+    {
+      "orderid": 94307,
+      "status": "Processing",
+      "id": 5
+    },
+    {
+      "orderid": 75946,
+      "status": "Processing",
+      "id": 6
+    },
+    {
+      "orderid": 75946,
+      "status": "Processing",
+      "id": 7
+    }
+  ]
 }

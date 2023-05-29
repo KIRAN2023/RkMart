@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminProductsService } from '../adminProducts.service';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-addCategory',
@@ -23,9 +24,7 @@ export class AddCategoryComponent implements OnInit {
 
   queryParamData: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private adminService: AdminProductsService, private http: HttpClient, private route: ActivatedRoute, private router: Router) {
-    this.queryParamData = false;
-
+  constructor(private formBuilder: FormBuilder, private adminService: AdminProductsService, private http: HttpClient, private route: ActivatedRoute, private router: Router, private title:Title) {
     this.categoryData = this.formBuilder.group({
       categoryType: [, Validators.required],
       category: [, Validators.required],
@@ -38,23 +37,26 @@ export class AddCategoryComponent implements OnInit {
       this.route.queryParams.subscribe((params) => {
         this.categoryId = this.route.snapshot.paramMap.get('id');
         this.categoryData.controls['categoryType'].setValue(params['categoryType']),
-          this.categoryData.controls['category'].setValue(params['category']),
-          this.categoryData.controls['categoryClass'].setValue(params['categoryClass']),
-          this.categoryData.controls['categoryUniqueValue'].setValue(params['categoryUnique']),
-          this.categoryData.markAsPristine()
+        this.categoryData.controls['category'].setValue(params['category']),
+        this.categoryData.controls['categoryClass'].setValue(params['categoryClass']),
+        this.categoryData.controls['categoryUniqueValue'].setValue(params['categoryUnique']),
+        this.categoryData.markAsPristine();
       });
       this.categoryType = this.categoryData.controls['categoryType'].value;
       this.categoryValueData = this.categoryData.controls['category'].value;
       this.categoryClass = this.categoryData.controls['categoryClass'].value;
       this.categoryUniqueId = this.categoryData.controls['categoryUniqueValue'].value;
+
+      this.title.setTitle(`${this.categoryValueData} | RK MART`);
+    }else{
+      this.title.setTitle(`Category | RK MART`);
     }
   }
 
   ngOnInit() {
-
   }
 
-  addProduct(formData: any) {
+  addCategory(formData: any) {
     let categoryExist: boolean = false;
     let existingCategoryId: string | number | undefined;
 
@@ -74,16 +76,12 @@ export class AddCategoryComponent implements OnInit {
           categoryClass: formData.categoryClass.split(','),
           categoryUniqueValue: formData.categoryUniqueValue.split(',')
         }
-        if (categoryExist) {
-          this.dataUpdating(categoryExist, categoryValues, existingCategoryId);
-        }else{
-          this.dataUpdating(false, categoryValues, existingCategoryId);
-        }
+        categoryExist? this.dataUpdating(categoryExist, categoryValues, existingCategoryId):this.dataUpdating(categoryExist, categoryValues, existingCategoryId); 
       });
     }
   }
 
-  updateProduct(updatedData: any) {
+  updateCategory(updatedData: any) {
     if (!this.categoryData.pristine) {
       this.http.get(`http://localhost:3000/category/${this.categoryId}`).subscribe((categoryData: any) => {
         const categoryTypeData = updatedData.categoryType;

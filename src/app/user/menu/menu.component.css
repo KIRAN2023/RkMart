@@ -298,10 +298,16 @@ button {
     text-decoration: none;
 }
 
-.login_Data #loginError {
+.login_Data #loginError, .Registermodal .registerError {
     color: #Ff0000;
     font-family: 600;
     text-align: center;
+}
+
+.errorData{
+    display: flex;
+    justify-content: center;
+    place-items: center;
 }
 
 /* ------------------------User Login Div--------------------- */

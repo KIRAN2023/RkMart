@@ -14,8 +14,7 @@ import { AdminComponent } from './admin.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { CategoryDataComponent } from './categoryData/categoryData.component';
 import { QueriesComponent } from './queries/queries.component';
-
-
+import { PaymentDataComponent } from './paymentData/paymentData.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,8 @@ import { QueriesComponent } from './queries/queries.component';
     AddProductsComponent,
     CategoryDataComponent,
     AddCategoryComponent,
-    QueriesComponent
+    QueriesComponent,
+    PaymentDataComponent
   ],
   imports: [
     CommonModule,

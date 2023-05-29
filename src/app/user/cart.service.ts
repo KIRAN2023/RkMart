@@ -74,8 +74,8 @@ export class CartService {
     return grandTotal;
   }
 
-  getUsersCartList(userId:any){
-    return this.http.get(`${this.usersCartUrl}${userId}`,{observe:'response'}).subscribe((res)=>{
+  getUsersCartList(userid:any){
+    return this.http.get(`${this.usersCartUrl}${userid}`,{observe:'response'}).subscribe((res)=>{
       if(res && res.body){
         this.cartProducts = res.body;
         this.productList.next(this.cartProducts);
@@ -105,11 +105,13 @@ export class CartService {
     });
   }
 
-  order(orderData:any){
+  order(orderData:any){    
     return this.http.post(`${this.orderUrl}`, orderData)
   }
 
   ordersData(userid:any){
     return this.http.get<order[]>(`${this.ordersDataUrl}${userid}`)
   }
+
+  
 }

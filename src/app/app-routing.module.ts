@@ -18,10 +18,13 @@ import { UsersComponent } from './admin/users/users.component';
 import { AuthUserGuard } from './auth-user.guard';
 import { AddProductsComponent } from './admin/add-products/add-products.component';
 import { AuthAdminGuard } from './admin/auth-admin.guard';
-import { CategoryComponent } from './user/category/category.component';
 import { CategoryDataComponent } from './admin/categoryData/categoryData.component';
 import { AddCategoryComponent } from './admin/addCategory/addCategory.component';
 import { QueriesComponent } from './admin/queries/queries.component';
+import { OrderStatusUpdateComponent } from './admin/orderStatusUpdate/orderStatusUpdate.component';
+import { QueryComponent } from './user/query/query.component';
+import { PaymentDataComponent } from './admin/paymentData/paymentData.component';
+import { UrlGuard } from './url.guard';
 
 
 const routes: Routes = [
@@ -36,10 +39,11 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent, canActivate: [AuthUserGuard] },
   { path: 'contactUs', component: ContactUsComponent },
   { path:'cart', canActivateChild:[AuthUserGuard],children:[
-    { path: 'shipping', component: ShippingComponent },
-    { path: 'shipping/orderDetails', component: OrderDetailsComponent },
-    { path: 'shipping/orderDetails/payment', component: PaymentComponent },
-    { path: 'myOrders', component: MyOrdersComponent }
+    { path: 'shipping', component: ShippingComponent, canActivate: [UrlGuard] },
+    { path: 'shipping/orderDetails', component: OrderDetailsComponent, canActivate: [UrlGuard] },
+    { path: 'shipping/orderDetails/payment', component: PaymentComponent, canActivate: [UrlGuard] },
+    { path: 'myOrders', component: MyOrdersComponent },
+    { path: 'query', component:QueryComponent, canActivate: [UrlGuard] }
   ]},
   {path: 'admin', canActivate:[AuthAdminGuard], component: AdminComponent},
     
@@ -54,6 +58,8 @@ const routes: Routes = [
     { path: 'addCategory', component: AddCategoryComponent },
     { path: 'addCategory/:id', component: AddCategoryComponent },
     { path: 'queries', component: QueriesComponent },
+    { path: 'orderStatus/:orderId', component: OrderStatusUpdateComponent },
+    { path: 'paymentData', component: PaymentDataComponent }
   ]},
 
   { path: '**', component: ErrorComponent }
