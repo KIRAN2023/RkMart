@@ -24,6 +24,7 @@ import { QueriesComponent } from './admin/queries/queries.component';
 import { OrderStatusUpdateComponent } from './admin/orderStatusUpdate/orderStatusUpdate.component';
 import { QueryComponent } from './user/query/query.component';
 import { PaymentDataComponent } from './admin/paymentData/paymentData.component';
+import { UrlGuard } from './url.guard';
 
 
 const routes: Routes = [
@@ -38,11 +39,11 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent, canActivate: [AuthUserGuard] },
   { path: 'contactUs', component: ContactUsComponent },
   { path:'cart', canActivateChild:[AuthUserGuard],children:[
-    { path: 'shipping', component: ShippingComponent },
-    { path: 'shipping/orderDetails', component: OrderDetailsComponent },
-    { path: 'shipping/orderDetails/payment', component: PaymentComponent },
+    { path: 'shipping', component: ShippingComponent, canActivate: [UrlGuard] },
+    { path: 'shipping/orderDetails', component: OrderDetailsComponent, canActivate: [UrlGuard] },
+    { path: 'shipping/orderDetails/payment', component: PaymentComponent, canActivate: [UrlGuard] },
     { path: 'myOrders', component: MyOrdersComponent },
-    { path: 'query', component:QueryComponent }
+    { path: 'query', component:QueryComponent, canActivate: [UrlGuard] }
   ]},
   {path: 'admin', canActivate:[AuthAdminGuard], component: AdminComponent},
     

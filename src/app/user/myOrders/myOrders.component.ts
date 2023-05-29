@@ -18,6 +18,9 @@ export class MyOrdersComponent implements OnInit {
   constructor(private cartService: CartService, private http: HttpClient) { }
 
   ngOnInit() {
+    if(sessionStorage.getItem('shippingData')){
+      sessionStorage.removeItem('shippingData');
+    }
     this.cartService.ordersData(this.userid).subscribe((data: any) => {
       let orderDetails = data;
 
@@ -32,8 +35,6 @@ export class MyOrdersComponent implements OnInit {
               orderStatus: status
             }
             this.orderData.push(orderStatus);
-
-            // })
           })
         });
       });
@@ -46,6 +47,11 @@ export class MyOrdersComponent implements OnInit {
       // }
     });   
   }
+
+  cancelOrder(orderId:any){
+    
+  }
+
   closeOffer() {
     const $offerData: any = document.querySelector('.popupMsg');
     $offerData.close();

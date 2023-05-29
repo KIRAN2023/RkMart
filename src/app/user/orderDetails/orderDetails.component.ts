@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ShippingService } from 'src/app/shipping.service';
+import { UrlGuard } from 'src/app/url.guard';
 import { CartService } from 'src/app/user/cart.service';
 import { ProductsDataService } from 'src/app/user/productsData.service';
 
@@ -16,7 +17,7 @@ export class OrderDetailsComponent implements OnInit {
 
   subTotal:number=0;
   data:any=""
-  constructor(private userData:ProductsDataService, private shippingService:ShippingService ,private cartService:CartService,private title:Title) { }
+  constructor(private userData:ProductsDataService, private shippingService:ShippingService, private cartService:CartService, private urlguard:UrlGuard,private title:Title) { }
 
   ngOnInit() {
     this.userData.registeredUser().subscribe((data) => {

@@ -9,7 +9,7 @@
                 <h2> Card Info </h2>
             </div>
             <div>
-                <form [formGroup]="payment" (ngSubmit)="paymentModal(payment.value)" class="cardInfo">
+                <form [formGroup]="payment" (ngSubmit)="paymentModal()" class="cardInfo">
                     <div class="payment-two-columns">
                         <div class="form_fields">
                             <label for="accountNumber"> Account Number </label>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="form_fields">
                             <label for="expiry"> Expiry Date </label>
-                            <input type="month" name="expiry" formControlName="expiry" placeholder="MM/YYYY" required>
+                            <input type="month" name="expiry" [min]="getCurrentDate()" formControlName="expiry" placeholder="MM/YYYY" required>
                             <div class="errorMessage"
                                 *ngIf="payment.controls['expiry'].invalid && (payment.controls['expiry'].touched||payment.controls['expiry'].dirty)">
                                 <p *ngIf="payment.controls['expiry'].errors?.['required']">This is a required

@@ -14,7 +14,7 @@
         <div class="orderStatusData">
           <p id="OrderId"> <b> Order Id: </b> {{orderData.orderUniqueId}} </p>
           <p id="OrderStatus"> <b> Order: {{orderData.orderStatus}}</b> </p>
-          <button class="btn" id="cancelOrder">Cancel Order</button>
+          <button class="btn" id="cancelOrder" (click)="cancelOrder(orderData.orderUniqueId)" *ngIf="orderData.orderStatus !='Delivered' ">Cancel Order</button>
         </div>
         <hr>
         <div class="orderDescriptionData order-grid order-grid-four-column">

@@ -102,6 +102,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  expiryDate: string|undefined;
+
+  getCurrentDate(): string {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
 
   paymentAmount: number = 0;
   data: any = "";
@@ -133,7 +142,7 @@ export class PaymentComponent implements OnInit {
     this.data = JSON.parse(extractedData);
   }
 
-  paymentModal(paymentDetails: any) {
+  paymentModal() {
     if (this.payment.valid) {
       this.data.cartItems.forEach((product: any) => {
         this.http.get(`http://localhost:3000/Productdata/${product.productid}`).subscribe((data: any) => {

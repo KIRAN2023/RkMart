@@ -105,13 +105,13 @@ export class CartService {
     });
   }
 
-  order(orderData:any){
-    sessionStorage.removeItem("shippingData");
-    
+  order(orderData:any){    
     return this.http.post(`${this.orderUrl}`, orderData)
   }
 
   ordersData(userid:any){
     return this.http.get<order[]>(`${this.ordersDataUrl}${userid}`)
   }
+
+  
 }
