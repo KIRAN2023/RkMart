@@ -15,6 +15,7 @@
       "id": 1
     },
     {
+<<<<<<< HEAD
       "username": "Sakthvel",
       "mail": "sk@gmail.com",
       "mobile": "9887878897",
@@ -27,6 +28,13 @@
       "mobile": "9596586959",
       "password": "U2FsdGVkX1+rTsf+IPqngGqOs0Yh22x5Kma7UqqqFVQ=",
       "id": 3
+=======
+      "username": "sakthivel",
+      "mail": "sakthi@gmail.com",
+      "mobile": "7898696978",
+      "password": "U2FsdGVkX1/K34j9CLDACK4uNtGEMyYORUqhopl/NV4=",
+      "id": 2
+>>>>>>> 789975ee444c335c34775e419b59113fe36c52e2
     }
   ],
   "Productdata": [
@@ -40,9 +48,12 @@
       "image": "assets/images/VeggetablesFruits/appleFuji.png",
       "alt": "Fresh Groceries",
       "title": "Apple Fuji",
-      "productName": "Apple Fuji Pack 4 pcs",
+      "productName": "Apple Fuji Pack 4 ",
       "quantity": "500g - 700g (Approx)",
+<<<<<<< HEAD
       "rating": "3.9",
+=======
+>>>>>>> 789975ee444c335c34775e419b59113fe36c52e2
       "ratingCount": "1726",
       "reviewCount": "105",
       "originalAmount": "169",
