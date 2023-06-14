@@ -11,7 +11,7 @@
           <h1>RK <span> MART </span></h1>
           <p id="main-para">RK Mart is an online shopping site where it caters every need of your
             family. A self-service shop offering a wide range of variety of products in various
-            categories such as Vegetables and household, fruits, Beverages.
+            categories such as vegetables, fruits, household and beverages.
           </p>
           <div class="button">
             <button id="btn" class="btns"> <a routerLink="/products"><i class="fa-solid fa-cart-shopping"></i> Shop Now
@@ -82,10 +82,10 @@
         <img src="../assets/images/SaleImages/SummerSale.png" alt="Sales" title="10% - 45% Off" srcset="">
         <button class="btn"> <a routerLink="/products/beverages"> Grab Now </a> </button>
       </div>
-      <div class="sales-products grid-sales grid-sales-four-column">
+      <div class="sales-products grid-sales grid-saled-three-columns">
         <div *ngFor="let product of beveragesProduct; let i = index">
           <ng-container>
-            <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
+            <a *ngIf="i<=2" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
                 attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
@@ -168,7 +168,7 @@
   <i class="fa-solid fa-xmark fa-1x popupClose" (click)="closeOffer()"></i>
   <div class="offerPopUp">
     <div class="offerImage">
-      <img src="../assets/images/Sales/Sale.jpg" alt="50% Discount" title="50% Off">
+      <img src="../assets/images/Sales/Sale.jpg" alt="10% to 60% Discount" title="10% to 60% Discount">
     </div>
     <div class="offerContent">
       <div class="offerData">

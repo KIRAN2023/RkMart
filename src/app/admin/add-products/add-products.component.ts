@@ -32,7 +32,7 @@ export class AddProductsComponent implements OnInit {
   constructor(private productService: AdminProductsService, private formBuilder: FormBuilder, private activateUrl: ActivatedRoute, private http:HttpClient, private title:Title) {
     this.productService.categoryTypesCount().subscribe((category: any) => {
       category.forEach((category:any) => {        
-        this.category.push(category.categoryTypeData);
+        this.category.push(category.categoryType);
       })
     })
   }

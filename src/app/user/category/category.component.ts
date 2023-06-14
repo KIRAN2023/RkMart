@@ -15,7 +15,9 @@ export class CategoryComponent implements OnInit {
   categoryTypes: any = [];
   categoryDisplay: any = "";
 
-  constructor(private route: ActivatedRoute, private productService: ProductsDataService, private filterService: CategoryFiltrationService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductsDataService, private filterService: CategoryFiltrationService) {
+    // this.categoryTypesData();
+  }
 
   ngOnInit() {
     if (this.route.snapshot.paramMap.get('category')) {
@@ -24,15 +26,23 @@ export class CategoryComponent implements OnInit {
     }
 
     this.productService.getCategory().subscribe((data) => {
-      this.categoryDisplay = data;
+      this.categoryDisplay = data;      
+
+      this.categoryDisplay.forEach((categoryType:any)=>{
+        this.categoryTypes.push(categoryType.categoryType);
+      })
     });
 
-    this.productService.getCategoryTypes().subscribe((categoryType: any) => {
-      categoryType.forEach((data: any) => {
-        this.categoryTypes.push(data.categoryTypeData);
-      })
-    })
+    // this.categoryTypesData();
   }
+
+  // categoryTypesData() {
+  //   this.productService.getCategoryTypes().subscribe((categoryType: any) => {
+  //     categoryType.forEach((data: any) => {
+  //       this.categoryTypes.push(data.categoryTypeData);
+  //     })
+  //   })
+  // }
 
   categorySelected(checkedData: any, id: any) {
     const checkedStatus = (checkedData.target as HTMLInputElement)?.checked
@@ -54,13 +64,13 @@ export class CategoryComponent implements OnInit {
     }
   }
 
-  reviewData(reviewRating:any){
+  reviewData(reviewRating: any) {
     const rating = reviewRating.target.value;
-    
+
     const checkedStatus = (reviewRating.target as HTMLInputElement)?.checked;
-    if(checkedStatus){      
+    if (checkedStatus) {
       this.filterService.addReviewCategory(rating);
-    }else{
+    } else {
       this.filterService.removeReviewCategory(rating);
     }
   }

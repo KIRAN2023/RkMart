@@ -154,11 +154,14 @@ export class PaymentComponent implements OnInit {
 
           let orderId = {
             orderid: product.orderUniqueId,
-            status: 'Processing'
+            productid: product.productid,
+            status: 'Processing',
+            Stock: data.Stock - product.quantity
           }
 
           let payment = {
             orderid: product.orderUniqueId,
+            productid: product.productid,
             uid: product.uid,
             status: this.paymentStatus,
           };

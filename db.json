@@ -8,16 +8,30 @@
   ],
   "registeredUser": [
     {
-      "username": "kiran",
+      "username": "Kiran",
       "mail": "kiran2023@gmail.com",
-      "mobile": "9956995969",
-      "password": "U2FsdGVkX19pEmA8oy9ElPEPyKcXhq5xMSpScSsWmM0=",
+      "mobile": "9565975569",
+      "password": "U2FsdGVkX1907maoX57hzIjdrkUl1W4QdfhnIPjojWg=",
       "id": 1
+    },
+    {
+      "username": "Sakthvel",
+      "mail": "sk@gmail.com",
+      "mobile": "9887878897",
+      "password": "U2FsdGVkX18rXYGEEcjN4QeN6Sxc9DZ6xgny59gXhKo=",
+      "id": 2
+    },
+    {
+      "username": "Rkm",
+      "mail": "rk@gmail.com",
+      "mobile": "9596586959",
+      "password": "U2FsdGVkX1+rTsf+IPqngGqOs0Yh22x5Kma7UqqqFVQ=",
+      "id": 3
     }
   ],
   "Productdata": [
     {
-      "Stock": 87,
+      "Stock": 85,
       "category": "grocery",
       "uniqueId": "1",
       "filterValue": "1",
@@ -28,7 +42,7 @@
       "title": "Apple Fuji",
       "productName": "Apple Fuji Pack 4 pcs",
       "quantity": "500g - 700g (Approx)",
-      "rating": "4.4",
+      "rating": "3.9",
       "ratingCount": "1726",
       "reviewCount": "105",
       "originalAmount": "169",
@@ -36,7 +50,7 @@
       "id": 1
     },
     {
-      "Stock": 91,
+      "Stock": 81,
       "category": "grocery",
       "uniqueId": "2",
       "filterValue": "1",
@@ -55,7 +69,7 @@
       "id": 2
     },
     {
-      "Stock": 81,
+      "Stock": 75,
       "category": "grocery",
       "uniqueId": "3",
       "filterValue": "1",
@@ -283,7 +297,7 @@
       "id": 14
     },
     {
-      "Stock": 22,
+      "Stock": 6,
       "category": "beverages",
       "uniqueId": "15",
       "filterValue": "10",
@@ -492,7 +506,7 @@
       "id": 25
     },
     {
-      "Stock": 54,
+      "Stock": 53,
       "category": "beverages",
       "uniqueId": "26",
       "filterValue": "11",
@@ -573,7 +587,7 @@
       "uniqueId": "30",
       "filterValue": "14",
       "classData": " p-btn--16 p-btn--22 p-btn--24 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "40",
+      "value": "50",
       "image": "assets/images/HouseHoldProducts/electricInduction.png",
       "alt": "household products",
       "title": "Prestige Induction Cooktop",
@@ -649,7 +663,7 @@
       "uniqueId": "34",
       "filterValue": "19",
       "classData": "p-btn--21 p-btn--22 p-btn--23 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
-      "value": "50",
+      "value": "10",
       "image": "assets/images/HouseHoldProducts/lifelongMixer.png",
       "alt": "household products",
       "title": "Mixer Grinder Dry Iron",
@@ -806,16 +820,28 @@
   ],
   "cartData": [
     {
-      "productName": "Pepsi Can (pack 6)",
-      "title": "Pepsi",
-      "image": "assets/images/Beverges/bevergePepsiCan.png",
-      "productUniqueId": "26",
+      "productName": "Apple Red Delicious 4 pcs",
+      "title": "Apple Red",
+      "image": "assets/images/VeggetablesFruits/appleRed.png",
+      "productUniqueId": "3",
       "quantity": 1,
-      "originalAmount": "920",
-      "productid": 26,
-      "uid": "2",
-      "orderUniqueId": 61841,
+      "originalAmount": "172",
+      "productid": 3,
+      "uid": "3",
+      "orderUniqueId": 56856,
       "id": 1
+    },
+    {
+      "productName": "Maaza Mango Drink",
+      "title": "Mango Drink",
+      "image": "assets/images/Beverges/bevergeMaaza.png",
+      "productUniqueId": "19",
+      "quantity": 1,
+      "originalAmount": "33",
+      "productid": 19,
+      "uid": "3",
+      "orderUniqueId": 64361,
+      "id": 2
     },
     {
       "productName": "Limca Lime n Lemoni",
@@ -825,310 +851,95 @@
       "quantity": 1,
       "originalAmount": "68",
       "productid": 15,
-      "uid": "2",
-      "orderUniqueId": 66558,
-      "id": 2
-    },
-    {
-      "productName": "Badam Drink Mix",
-      "title": "Badam Drink",
-      "image": "assets/images/Beverges/bevergeBadamMix.png",
-      "productUniqueId": "17",
-      "quantity": 3,
-      "originalAmount": "191",
-      "productid": 17,
-      "uid": "2",
-      "orderUniqueId": 66652,
-      "id": 13
-    },
-    {
-      "productName": "Lifelong LLCMB02 500 W Mixer Grinder & 1 W Dry Iron Combo",
-      "title": "Mixer Grinder Dry Iron",
-      "image": "assets/images/HouseHoldProducts/lifelongMixer.png",
-      "productUniqueId": "34",
-      "quantity": 1,
-      "originalAmount": "1499",
-      "productid": 34,
-      "uid": "2",
-      "orderUniqueId": 37145,
-      "id": 14
-    },
-    {
-      "productName": "Apple Red Delicious 4 pcs",
-      "title": "Apple Red",
-      "image": "assets/images/VeggetablesFruits/appleRed.png",
-      "productUniqueId": "3",
-      "quantity": 6,
-      "originalAmount": "172",
-      "productid": 3,
       "uid": "1",
-      "orderUniqueId": 75946,
-      "id": 16
+      "orderUniqueId": 9769,
+      "id": 3
     }
   ],
   "Queries": [
     {
-      "username": "kiran",
-      "email": "kiran2023@gmail.com",
-      "subject": "testing",
-      "textarea": "testing",
+      "username": "Rkm",
+      "email": "rk@gmail.com",
+      "subject": "query from registered user",
+      "textarea": "Query Test",
       "queryStatus": "Addressed",
-      "uid": "1",
+      "uid": "3",
       "id": 1,
       "addressingData": "tested"
-    },
-    {
-      "username": "kiran",
-      "email": "kiran2023@gmail.com",
-      "subject": "kk",
-      "textarea": "kkk",
-      "queryStatus": "Addressed",
-      "uid": "1",
-      "id": 2,
-      "addressingData": "done"
-    },
-    {
-      "username": "kiran",
-      "email": "kiran2023@gmail.com",
-      "subject": "testing",
-      "textarea": "no responded",
-      "queryStatus": "Pending",
-      "uid": "1",
-      "id": 3
-    },
-    {
-      "username": "sakthivel",
-      "email": "sakthi@gmail.com",
-      "subject": "test",
-      "textarea": "tetsing",
-      "queryStatus": "Pending",
-      "uid": "2",
-      "id": 4
-    },
-    {
-      "username": "sakthivel",
-      "email": "sakthi@gmail.com",
-      "subject": "user",
-      "textarea": "uesr testing",
-      "queryStatus": "Pending",
-      "uid": "2",
-      "id": 5,
-      "addressingData": "tested"
-    },
-    {
-      "username": "sakthivel",
-      "email": "sakthi@gmail.com",
-      "subject": "user",
-      "textarea": "user tets",
-      "queryStatus": "Pending",
-      "uid": "2",
-      "id": 6
-    },
-    {
-      "username": "kiran",
-      "email": "ki@gmail.com",
-      "subject": "non user",
-      "textarea": "non user test",
-      "queryStatus": "Pending",
-      "uid": 62629,
-      "id": 7
     }
   ],
   "orders": [
     {
-      "customerName": "kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "9956995969",
-      "customerState": "k",
-      "customerCity": "k",
-      "customerPincode": "348348",
-      "customerAddress": "k",
-      "cartItems": [
-        {
-          "productName": "Brinjal Black Big",
-          "title": "Brinjal Black Big",
-          "image": "assets/images/VeggetablesFruits/blackBrinjal.png",
-          "productUniqueId": "13",
-          "quantity": 1,
-          "originalAmount": "35",
-          "productid": 13,
-          "uid": "1",
-          "orderUniqueId": 4470,
-          "id": 15
-        },
-        {
-          "productName": "Butterfly Rapid Plus 750 W Mixer Grinder",
-          "title": "Butterfly Mixer Grinder",
-          "image": "assets/images/HouseHoldProducts/mixer.png",
-          "productUniqueId": "35",
-          "quantity": 1,
-          "originalAmount": "3199",
-          "productid": 35,
-          "uid": "1",
-          "orderUniqueId": 32776,
-          "id": 17
-        },
-        {
-          "productName": "Thumbs Up",
-          "title": "Thumbs Up",
-          "image": "assets/images/Beverges/bevergeThumbsUp.png",
-          "productUniqueId": "25",
-          "quantity": 1,
-          "originalAmount": "72",
-          "productid": 25,
-          "uid": "1",
-          "orderUniqueId": 94307,
-          "id": 18
-        },
-        {
-          "productName": "Miranda Plastic Bottle",
-          "title": "Miranda",
-          "image": "assets/images/Beverges/bevergeMiranda.png",
-          "productUniqueId": "16",
-          "quantity": 1,
-          "originalAmount": "54",
-          "productid": 16,
-          "uid": "1",
-          "orderUniqueId": 56119,
-          "id": 19
-        }
-      ],
-      "totalAmount": 3360,
-      "uid": "1",
-      "id": 1
-    },
-    {
-      "customerName": "kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "9956995969",
-      "customerState": "k",
-      "customerCity": "kk",
+      "customerName": "Rkm",
+      "customerMail": "rk@gmail.com",
+      "customerMobile": "9596586959",
+      "customerState": "tn",
+      "customerCity": "erd",
       "customerPincode": "485848",
-      "customerAddress": "k",
+      "customerAddress": "rkv road erd",
       "cartItems": [
         {
-          "productName": "Apple Red Delicious 4 pcs",
-          "title": "Apple Red",
-          "image": "assets/images/VeggetablesFruits/appleRed.png",
-          "productUniqueId": "3",
+          "productName": "Apple Fuji Pack 4 pcs",
+          "title": "Apple Fuji",
+          "image": "assets/images/VeggetablesFruits/appleFuji.png",
+          "productUniqueId": "1",
           "quantity": 2,
-          "originalAmount": "172",
-          "productid": 3,
-          "uid": "1",
-          "orderUniqueId": 75946,
-          "id": 16
-        }
-      ],
-      "totalAmount": 344,
-      "uid": "1",
-      "id": 2
-    },
-    {
-      "customerName": "kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "9956995969",
-      "customerState": "k",
-      "customerCity": "k",
-      "customerPincode": "754785",
-      "customerAddress": "k",
-      "cartItems": [
+          "originalAmount": "169",
+          "productid": 1,
+          "uid": "3",
+          "orderUniqueId": 3700,
+          "id": 1
+        },
         {
-          "productName": "Apple Red Delicious 4 pcs",
-          "title": "Apple Red",
-          "image": "assets/images/VeggetablesFruits/appleRed.png",
-          "productUniqueId": "3",
-          "quantity": 6,
-          "originalAmount": "172",
-          "productid": 3,
-          "uid": "1",
-          "orderUniqueId": 75946,
-          "id": 16
+          "productName": "Aquaguard SkyLand 18 Ltr",
+          "title": "Aquaguard SkyLand",
+          "image": "assets/images/HouseHoldProducts/aquaguard.png",
+          "productUniqueId": "27",
+          "quantity": 2,
+          "originalAmount": "4578",
+          "productid": 27,
+          "uid": "3",
+          "orderUniqueId": 1693,
+          "id": 2
         }
       ],
-      "totalAmount": 1032,
-      "uid": "1",
-      "id": 3
+      "totalAmount": 9494,
+      "uid": "3",
+      "id": 1
     }
   ],
   "payments": [
     {
-      "orderid": 4470,
-      "uid": "1",
+      "orderid": 3700,
+      "productid": 1,
+      "uid": "3",
       "status": "Payment Done",
       "id": 1
     },
     {
-      "orderid": 94307,
-      "uid": "1",
+      "orderid": 1693,
+      "productid": 27,
+      "uid": "3",
       "status": "Payment Done",
       "id": 2
-    },
-    {
-      "orderid": 56119,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 3
-    },
-    {
-      "orderid": 32776,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 4
-    },
-    {
-      "orderid": 4470,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 5
-    },
-    {
-      "orderid": 75946,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 6
-    },
-    {
-      "orderid": 75946,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 7
     }
   ],
   "orderStatusUpdate": [
     {
-      "orderid": 4470,
+      "orderid": 3700,
+      "productid": 1,
       "status": "Processing",
+      "Stock": 85,
       "id": 1
     },
     {
-      "orderid": 32776,
-      "status": "Delivered",
+      "orderid": 1693,
+      "productid": 27,
+      "status": "Cancelled",
+      "Stock": 11,
       "id": 2
-    },
-    {
-      "orderid": 94307,
-      "status": "Processing",
-      "id": 3
-    },
-    {
-      "orderid": 56119,
-      "status": "Processing",
-      "id": 4
-    },
-    {
-      "orderid": 94307,
-      "status": "Processing",
-      "id": 5
-    },
-    {
-      "orderid": 75946,
-      "status": "Processing",
-      "id": 6
-    },
-    {
-      "orderid": 75946,
-      "status": "Processing",
-      "id": 7
     }
-  ]
+  ],
+  "forgotPasswordRequest": [],
+  "salesAmount": []
 }

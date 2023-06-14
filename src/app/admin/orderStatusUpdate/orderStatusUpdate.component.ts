@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-orderStatusUpdate',
@@ -15,7 +15,7 @@ export class OrderStatusUpdateComponent implements OnInit {
   orderData: any;
   orderStatusData: FormGroup;
 
-  constructor(private router: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient, private title:Title) {
+  constructor(private router: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient, private Router:Router ,private title:Title) {
    if(this.router.snapshot.paramMap.keys.length>0){
     this.router.paramMap.subscribe((url: any) => {
       this.orderId = url.get('orderId');
@@ -26,6 +26,7 @@ export class OrderStatusUpdateComponent implements OnInit {
         this.orderStatusData.controls['status'].setValue(this.orderData.status);
       });
     });
+    
    }
 
     this.orderStatusData = this.formBuilder.group({

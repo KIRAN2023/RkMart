@@ -24,7 +24,7 @@ export class AddCategoryComponent implements OnInit {
 
   queryParamData: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private adminService: AdminProductsService, private http: HttpClient, private route: ActivatedRoute, private router: Router, private title:Title) {
+  constructor(private formBuilder: FormBuilder, private adminService: AdminProductsService, private http: HttpClient, private route: ActivatedRoute, private router: Router, private title: Title) {
     this.categoryData = this.formBuilder.group({
       categoryType: [, Validators.required],
       category: [, Validators.required],
@@ -37,10 +37,10 @@ export class AddCategoryComponent implements OnInit {
       this.route.queryParams.subscribe((params) => {
         this.categoryId = this.route.snapshot.paramMap.get('id');
         this.categoryData.controls['categoryType'].setValue(params['categoryType']),
-        this.categoryData.controls['category'].setValue(params['category']),
-        this.categoryData.controls['categoryClass'].setValue(params['categoryClass']),
-        this.categoryData.controls['categoryUniqueValue'].setValue(params['categoryUnique']),
-        this.categoryData.markAsPristine();
+          this.categoryData.controls['category'].setValue(params['category']),
+          this.categoryData.controls['categoryClass'].setValue(params['categoryClass']),
+          this.categoryData.controls['categoryUniqueValue'].setValue(params['categoryUnique']),
+          this.categoryData.markAsPristine();
       });
       this.categoryType = this.categoryData.controls['categoryType'].value;
       this.categoryValueData = this.categoryData.controls['category'].value;
@@ -48,7 +48,7 @@ export class AddCategoryComponent implements OnInit {
       this.categoryUniqueId = this.categoryData.controls['categoryUniqueValue'].value;
 
       this.title.setTitle(`${this.categoryValueData} | RK MART`);
-    }else{
+    } else {
       this.title.setTitle(`Category | RK MART`);
     }
   }
@@ -76,7 +76,7 @@ export class AddCategoryComponent implements OnInit {
           categoryClass: formData.categoryClass.split(','),
           categoryUniqueValue: formData.categoryUniqueValue.split(',')
         }
-        categoryExist? this.dataUpdating(categoryExist, categoryValues, existingCategoryId):this.dataUpdating(categoryExist, categoryValues, existingCategoryId); 
+        categoryExist ? this.dataUpdating(categoryExist, categoryValues, existingCategoryId) : this.dataUpdating(categoryExist, categoryValues, existingCategoryId);
       });
     }
   }
@@ -107,9 +107,17 @@ export class AddCategoryComponent implements OnInit {
           let exist: boolean = false;
           let existId: any;
           data.find((data: any) => {
-            if (data.categoryType == updatedDataValue.categoryType && this.categoryType != updatedData.categoryType) {
+            let categoryDataValue = data.category;
+            if ((data.categoryType == updatedDataValue.categoryType
+              && categoryDataValue.includes(updatedData.category))) {
               existId = data.id
               exist = true;
+            } else if ((data.categoryType == updatedDataValue.categoryType)) {
+              existId = data.id
+              exist = true;
+            } else if ((data.categoryType != updatedDataValue.categoryType
+              && categoryDataValue.includes(updatedData.category))) {
+              exist = false;
             }
           });
           if (exist == false) {
@@ -161,8 +169,8 @@ export class AddCategoryComponent implements OnInit {
         if (categoryDataExist == false) {
           this.adminService.addCategoryTest(existingCategoryId, "category", "categoryClass", "categoryUniqueValue", categoryData.category, categoryData.categoryClass, categoryData.categoryUniqueValue).subscribe((response) => {
             if (response) {
-              if(this.queryParamData){
-                this.adminService.removeCategoryData(this.categoryId, this.categoryValueData, this.categoryClass, this.categoryUniqueId, true,this.categoryType);
+              if (this.queryParamData) {
+                this.adminService.removeCategoryData(this.categoryId, this.categoryValueData, this.categoryClass, this.categoryUniqueId, true, this.categoryType);
               }
               this.categoryStatusMessage = "Category Updated Successfully";
             }

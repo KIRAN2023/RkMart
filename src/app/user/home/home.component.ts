@@ -42,11 +42,10 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    // setTimeout(function pop(){
-    //   const $offerData:any = document.querySelector('.popupMsg');
-    //   $offerData.showModal();
-    // },3000);
-
+    setTimeout(function pop() {
+      const $offerData: any = document.querySelector('.popupMsg');
+      $offerData.showModal();
+    }, 3000);
   }
 }
 

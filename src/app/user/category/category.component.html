@@ -22,7 +22,7 @@
                 <ng-container *ngFor="let categoryType of categoryTypes">
                     <h3 class="categoryDetails">
                         <div *ngIf="categoryType==this.currentCategory||category==''">
-                            <a routerLink="/products/{{categoryType}}" id="1001"
+                            <a routerLink="/products/{{categoryType}}"
                                 class="categoryAvailable">{{categoryType|titlecase}} <i
                                     class="fa-solid fa-angle-right"></i></a>
                         </div>
@@ -32,14 +32,14 @@
                 <h4 class="categoryChoosen"></h4>
                 <hr>
 
-                <div class="brands categoryAvailable" id="1001">
+                <div class="brands categoryAvailable">
                     <ng-container *ngFor="let category of categoryDisplay">
                         <ng-container *ngIf="category.categoryType==this.currentCategory||this.currentCategory==null">
                             <h5> <b> {{category.categoryType}} </b></h5>
-                            <div class="clearSection">
+                            <!-- <div class="clearSection">
                                 <input type="search" id="grocery" class="clearSearch" placeholder="Search Variety">
                                 <p id="clearFilter">Clear All</p>
-                            </div>
+                            </div> -->
                             <ul>
                                 <li *ngFor="let categoryData of category.category, index as i">
                                     <input type="checkbox" (change)="categorySelected($event, category?.categoryUniqueValue[i])" name={{categoryData}}

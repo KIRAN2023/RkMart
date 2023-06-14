@@ -2,8 +2,6 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-import { product } from 'src/app/admin/product';
 import { CartService } from 'src/app/user/cart.service';
 
 import { ProductsDataService } from 'src/app/user/productsData.service';
@@ -63,6 +61,7 @@ export class ProductsComponent implements OnInit {
           this.titleService.setTitle(`${this.requiredProduct?.charAt(0)?.toUpperCase()}${this.requiredProduct?.slice(1)}  | RK MART`);
 
           this.updatedProducts = this.productsData.filter((product: any) => product.category == this.requiredProduct);
+          this.allProducts = this.productsData.filter((product: any) => product.category == this.requiredProduct);
         });
       });
     } else {
@@ -89,7 +88,7 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  filterProduct() {
+  filterProduct() {    
     let categoryData = this.filtration.getSelectedCategories();
     let discountData = this.filtration.getSelectedDiscount();
     let reviewData = this.filtration.getSelectedReviews();

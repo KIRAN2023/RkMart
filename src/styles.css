@@ -51,6 +51,10 @@ section {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.grid-saled-three-columns{
+  grid-template-columns: repeat(3,1fr);
+}
+
 .grid-four-columns {
   grid-template-columns: repeat(4, 1fr);
 }

@@ -5,11 +5,11 @@
     --para-tint: #e4e4e4;
     --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
     --gradientSupport: -webkit-linear-gradient(0deg,
-        rgb(132 144 255) 0%,
-        rgb(98 189 252) 100%);
-  
+            rgb(132 144 255) 0%,
+            rgb(98 189 252) 100%);
+
     --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
-  }
+}
 
 span {
     color: rgb(8, 5, 97);
@@ -95,6 +95,11 @@ button {
 
 .active {
     border-bottom: 0.1rem solid var(--btns-background);
+    color: var(--btns-background);
+    font-weight: 600;
+}
+
+.activeCart {
     color: var(--btns-background);
     font-weight: 600;
 }
@@ -187,31 +192,39 @@ button {
 
 .cart,
 #mainPageCart {
-  margin: auto 0;
-  font-weight: 900;
-  position: relative;
+    margin: auto 0;
+    font-weight: 900;
+    position: relative;
 }
 
 .cart .fa-cart-shopping,
 #mainPageCart .fa-cart-shopping {
-  font-size: 1.8rem;
+    font-size: 1.4rem;
+}
+
+#mainPageCart{
+    cursor: pointer;
+}
+
+.activeCart{
+    display: flex;
 }
 
 .cart::after {
-  content: attr(current-count);
-  position: absolute;
-  top: 0;
-  transform: translateY(-0.4rem);
-  right: 0;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: rgb(255, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.6rem;
-  color: var(--white);
+    content: attr(current-count);
+    position: absolute;
+    top: -0.1rem;
+    transform: translateY(-0.4rem);
+    right: 0;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6rem;
+    color: var(--white);
 }
 
 /* LOGIN FORM */
@@ -243,7 +256,7 @@ button {
 .loginDiv {
     width: 50%;
     height: 30rem;
-    background-color:#ffff;
+    background-color: #ffff;
     margin-top: 3rem;
     margin-bottom: 3rem;
     border-radius: 2rem;
@@ -298,13 +311,19 @@ button {
     text-decoration: none;
 }
 
-.login_Data #loginError, .Registermodal .registerError {
+.login_Data #loginError,
+.Registermodal .registerError {
     color: #Ff0000;
     font-family: 600;
     text-align: center;
 }
 
-.errorData{
+#loginError {
+    position: absolute;
+    margin-left: 5rem;
+}
+
+.errorData {
     display: flex;
     justify-content: center;
     place-items: center;
@@ -418,6 +437,7 @@ button {
     margin: 3rem 0;
     color: rgb(30, 30, 222);
     cursor: pointer;
+    position: relative;
 }
 
 .newuser p a {
@@ -439,11 +459,66 @@ button {
 .Loginmodal,
 .Registermodal,
 .paymentModal,
-.registerSuccessModal {
+.registerSuccessModal,
+.forgotPasswordModal,
+.ForgotPasswordSuccessModal {
     width: 100%;
     margin: auto;
     background: none;
     border: none;
+}
+
+.forgotPasswordDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.forgotPasswordDiv form {
+    display: flex;
+    flex-direction: column;
+}
+
+.forgotPasswordDiv label {
+    margin: 0 0 0.8rem 0;
+}
+
+.forgotPasswordDiv input {
+    padding: 0.6rem;
+}
+
+.forgotPasswordModalHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgotPasswordModal .sendBtn {
+    display: flex;
+    justify-content: center;
+}
+
+.forgotPasswordModal .btn {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    margin-top: 1.6rem;
+}
+
+.forgotPasswordModal .successMessage h2 {
+    margin: 1.2rem 1.2rem 0.4rem 1.2rem;
+}
+
+.forgotPasswordModal .fa-xmark {
+    position: absolute;
+    margin-right: 0.8rem;
+}
+
+.forgotPasswordModal p {
+    color: rgb(167, 9, 9);
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    position: absolute;
+    font-weight: 600;
+    max-width: 18rem;
 }
 
 #registered {
@@ -612,14 +687,14 @@ input::placeholder {
     margin: 0.4rem;
 }
 
-/* 
-  input:focus::-webkit-input-placeholder {
-    font-size: 0.8rem;
-    position: relative;
-    top: -0.6rem; 
-    transition: 0.2s ease-out;
-    color: var(--btns-background);
-  } */
+.errorBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.errorMessageBox:not(:first-child) {
+    margin-top: 0.7rem;
+}
 
 select {
     padding: 0.2rem;
