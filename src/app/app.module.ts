@@ -1,3 +1,8 @@
+// Reviewer    : Sabapathi Shanmugam
+// Date        : June 13, 2023
+// Participant : Kiran N
+// Mentors     : Snigdha Agarwal, Naveen Subramaniam
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,5 +59,3 @@ import { QueryComponent } from './user/query/query.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
