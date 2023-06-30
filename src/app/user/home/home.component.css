@@ -81,3 +81,10 @@ span {
 .common-heading{
   margin: 0.8rem 0;
 }
+
+.offerData{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}

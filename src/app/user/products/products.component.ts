@@ -33,7 +33,6 @@ export class ProductsComponent implements OnInit {
   private selectedDiscount: Subscription | undefined;
   private selectedReview:Subscription|undefined;
 
-
   public myMath = Math;
 
   productDataFound: any;
@@ -45,7 +44,12 @@ export class ProductsComponent implements OnInit {
   updatedProducts: any = [];
   allProducts: any = [];
 
+  searchProductAvailabilitiy:boolean|undefined;
+
   categoryData: string | undefined | null;
+
+  offerApply:any;
+  
 
   constructor(private data: ProductsDataService, private cartService: CartService, private titleService: Title, private activeRoute: ActivatedRoute, private filtration: CategoryFiltrationService) {
     this.activeRoute.paramMap.subscribe((urlData) => {
@@ -73,6 +77,8 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    this.offerApply = sessionStorage.getItem("offerApply");
     this.titleService.setTitle('Products | RK MART');
 
     this.selectedCategory = this.filtration.selectedCategoriesSubject.subscribe(() => {
@@ -117,6 +123,10 @@ export class ProductsComponent implements OnInit {
     } else {
       this.updatedProducts = this.allProducts
     }
+  }
+
+  searchProduct(){
+    this.searchProductAvailabilitiy = this.updatedProducts.some((product:any) => product.title.toLowerCase().includes(this.searchData));
   }
 
   addtoCartData(productAddtoCart: any, productID: any) {

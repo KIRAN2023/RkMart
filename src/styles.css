@@ -26,6 +26,18 @@ body{
   --background-hover: rgba(19, 110, 29, 0.697);
 }
 
+@media (prefers-color-scheme:dark){
+
+  :root {
+    --box-shadow: -1px 6px 16px -1px rgba(8, 8, 8, 1);
+    --btns-background: rgb(2, 66, 138);
+    --white: #fff;
+    --black: #000000;
+    --font-hover: rgb(244, 240, 240);
+    --background-hover: rgba(1, 92, 11, 0.697);
+  }
+}
+
 section {
   padding: 2rem 0;
 }
@@ -106,6 +118,20 @@ i {
   padding: 2rem;
   margin: 0 0.2rem;
   cursor: pointer;
+}
+
+#clock {
+  background-color: var(--btns-background);
+  color: var(--white);
+  font-weight: 900;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+input{
+  accent-color: var(--btns-background);
+  caret-color: var(--btns-background);
 }
 
 /* --------------------------------------------------- */

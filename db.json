@@ -15,7 +15,6 @@
       "id": 1
     },
     {
-<<<<<<< HEAD
       "username": "Sakthvel",
       "mail": "sk@gmail.com",
       "mobile": "9887878897",
@@ -28,18 +27,25 @@
       "mobile": "9596586959",
       "password": "U2FsdGVkX1+rTsf+IPqngGqOs0Yh22x5Kma7UqqqFVQ=",
       "id": 3
-=======
+    },
+    {
       "username": "sakthivel",
       "mail": "sakthi@gmail.com",
       "mobile": "7898696978",
       "password": "U2FsdGVkX1/K34j9CLDACK4uNtGEMyYORUqhopl/NV4=",
       "id": 2
->>>>>>> 789975ee444c335c34775e419b59113fe36c52e2
+    },
+    {
+      "username": "Nitin",
+      "mail": "nitin@gmail.com",
+      "mobile": "9584986986",
+      "password": "U2FsdGVkX1/KLxkDeUjP6x+eA3bnHC3DMvVjJCXYUZU=",
+      "id": 4
     }
   ],
   "Productdata": [
     {
-      "Stock": 85,
+      "Stock": 75,
       "category": "grocery",
       "uniqueId": "1",
       "filterValue": "1",
@@ -50,18 +56,16 @@
       "title": "Apple Fuji",
       "productName": "Apple Fuji Pack 4 ",
       "quantity": "500g - 700g (Approx)",
-<<<<<<< HEAD
       "rating": "3.9",
-=======
->>>>>>> 789975ee444c335c34775e419b59113fe36c52e2
       "ratingCount": "1726",
       "reviewCount": "105",
       "originalAmount": "169",
       "discounted": "200",
+      "actualAmount": "169",
       "id": 1
     },
     {
-      "Stock": 81,
+      "Stock": 80,
       "category": "grocery",
       "uniqueId": "2",
       "filterValue": "1",
@@ -77,10 +81,11 @@
       "reviewCount": "256",
       "originalAmount": "249",
       "discounted": "299",
+      "actualAmount": "249",
       "id": 2
     },
     {
-      "Stock": 75,
+      "Stock": 69,
       "category": "grocery",
       "uniqueId": "3",
       "filterValue": "1",
@@ -96,10 +101,11 @@
       "reviewCount": "125",
       "originalAmount": "172",
       "discounted": "195",
+      "actualAmount": "172",
       "id": 3
     },
     {
-      "Stock": 19,
+      "Stock": 17,
       "category": "grocery",
       "uniqueId": "4",
       "filterValue": "1",
@@ -115,6 +121,7 @@
       "reviewCount": "236",
       "originalAmount": "99",
       "discounted": "118",
+      "actualAmount": "99",
       "id": 4
     },
     {
@@ -134,10 +141,11 @@
       "reviewCount": "93",
       "originalAmount": "129",
       "discounted": "149",
+      "actualAmount": "129",
       "id": "5"
     },
     {
-      "Stock": 87,
+      "Stock": 81,
       "category": "grocery",
       "uniqueId": "6",
       "filterValue": "2",
@@ -153,10 +161,11 @@
       "reviewCount": "106",
       "originalAmount": "129",
       "discounted": "169",
+      "actualAmount": "129",
       "id": 6
     },
     {
-      "Stock": 60,
+      "Stock": 59,
       "category": "grocery",
       "uniqueId": "7",
       "filterValue": "3",
@@ -172,6 +181,7 @@
       "reviewCount": "369",
       "originalAmount": "108",
       "discounted": "138",
+      "actualAmount": "108",
       "id": 7
     },
     {
@@ -191,6 +201,7 @@
       "reviewCount": "92",
       "originalAmount": "18",
       "discounted": "25",
+      "actualAmount": "18",
       "id": 8
     },
     {
@@ -210,6 +221,7 @@
       "reviewCount": "136",
       "originalAmount": "66",
       "discounted": "84",
+      "actualAmount": "66",
       "id": 9
     },
     {
@@ -229,6 +241,7 @@
       "reviewCount": "69",
       "originalAmount": "39",
       "discounted": "49",
+      "actualAmount": "39",
       "id": 10
     },
     {
@@ -248,6 +261,7 @@
       "reviewCount": "71",
       "originalAmount": "33",
       "discounted": "45",
+      "actualAmount": "33",
       "id": 11
     },
     {
@@ -267,6 +281,7 @@
       "reviewCount": "211",
       "originalAmount": "40",
       "discounted": "50",
+      "actualAmount": "40",
       "id": 12
     },
     {
@@ -286,10 +301,11 @@
       "reviewCount": "32",
       "originalAmount": "35",
       "discounted": "49",
+      "actualAmount": "35",
       "id": 13
     },
     {
-      "Stock": 28,
+      "Stock": 22,
       "category": "grocery",
       "uniqueId": "14",
       "filterValue": "9",
@@ -305,6 +321,7 @@
       "reviewCount": "105",
       "originalAmount": "29",
       "discounted": "38",
+      "actualAmount": "29",
       "id": 14
     },
     {
@@ -324,6 +341,7 @@
       "reviewCount": "2,905",
       "originalAmount": "68",
       "discounted": "95",
+      "actualAmount": "68",
       "id": 15
     },
     {
@@ -343,6 +361,7 @@
       "reviewCount": "1,576",
       "originalAmount": "54",
       "discounted": "99",
+      "actualAmount": "54",
       "id": 16
     },
     {
@@ -362,6 +381,7 @@
       "reviewCount": "805",
       "originalAmount": "191",
       "discounted": "275",
+      "actualAmount": "191",
       "id": 17
     },
     {
@@ -381,6 +401,7 @@
       "reviewCount": "23",
       "originalAmount": "920",
       "discounted": "1200",
+      "actualAmount": "920",
       "id": 18
     },
     {
@@ -400,6 +421,7 @@
       "reviewCount": "6,690",
       "originalAmount": "33",
       "discounted": "40",
+      "actualAmount": "33",
       "id": 19
     },
     {
@@ -419,6 +441,7 @@
       "reviewCount": "1,439",
       "originalAmount": "61",
       "discounted": "99",
+      "actualAmount": "61",
       "id": 20
     },
     {
@@ -438,6 +461,7 @@
       "reviewCount": "4",
       "originalAmount": "3100",
       "discounted": "3500",
+      "actualAmount": "3100",
       "id": 21
     },
     {
@@ -457,6 +481,7 @@
       "reviewCount": "3,180",
       "originalAmount": "60",
       "discounted": "80",
+      "actualAmount": "60",
       "id": 22
     },
     {
@@ -476,6 +501,7 @@
       "reviewCount": "110",
       "originalAmount": "1030",
       "discounted": "1200",
+      "actualAmount": "1030",
       "id": 23
     },
     {
@@ -495,6 +521,7 @@
       "reviewCount": "923",
       "originalAmount": "26",
       "discounted": "35",
+      "actualAmount": "26",
       "id": 24
     },
     {
@@ -514,6 +541,7 @@
       "reviewCount": "1,726",
       "originalAmount": "72",
       "discounted": "95",
+      "actualAmount": "72",
       "id": 25
     },
     {
@@ -533,6 +561,7 @@
       "reviewCount": "6",
       "originalAmount": "920",
       "discounted": "1200",
+      "actualAmount": "920",
       "id": 26
     },
     {
@@ -552,6 +581,7 @@
       "reviewCount": "10,030",
       "originalAmount": "4578",
       "discounted": "14500",
+      "actualAmount": "4578",
       "id": 27
     },
     {
@@ -571,6 +601,7 @@
       "reviewCount": "8,643",
       "originalAmount": "1199",
       "discounted": "2000",
+      "actualAmount": "1199",
       "id": 28
     },
     {
@@ -590,6 +621,7 @@
       "reviewCount": "2,432",
       "originalAmount": "800",
       "discounted": "1499",
+      "actualAmount": "800",
       "id": 29
     },
     {
@@ -609,6 +641,7 @@
       "reviewCount": "1,512",
       "originalAmount": "895",
       "discounted": "2895",
+      "actualAmount": "895",
       "id": 30
     },
     {
@@ -628,6 +661,7 @@
       "reviewCount": "29,548",
       "originalAmount": "598",
       "discounted": "1095",
+      "actualAmount": "598",
       "id": 31
     },
     {
@@ -647,6 +681,7 @@
       "reviewCount": "49,728",
       "originalAmount": "499",
       "discounted": "1245",
+      "actualAmount": "499",
       "id": 32
     },
     {
@@ -666,6 +701,7 @@
       "reviewCount": "29",
       "originalAmount": "699",
       "discounted": "1545",
+      "actualAmount": "699",
       "id": 33
     },
     {
@@ -685,6 +721,7 @@
       "reviewCount": "6,170",
       "originalAmount": "1499",
       "discounted": "1798",
+      "actualAmount": "1499",
       "id": 34
     },
     {
@@ -704,6 +741,7 @@
       "reviewCount": "6,810",
       "originalAmount": "3199",
       "discounted": "6499",
+      "actualAmount": "3199",
       "id": 35
     },
     {
@@ -723,6 +761,7 @@
       "reviewCount": "2,810",
       "originalAmount": "1199",
       "discounted": "2505",
+      "actualAmount": "1199",
       "id": 36
     }
   ],
@@ -829,126 +868,67 @@
       "id": 3
     }
   ],
-  "cartData": [
-    {
-      "productName": "Apple Red Delicious 4 pcs",
-      "title": "Apple Red",
-      "image": "assets/images/VeggetablesFruits/appleRed.png",
-      "productUniqueId": "3",
-      "quantity": 1,
-      "originalAmount": "172",
-      "productid": 3,
-      "uid": "3",
-      "orderUniqueId": 56856,
-      "id": 1
-    },
-    {
-      "productName": "Maaza Mango Drink",
-      "title": "Mango Drink",
-      "image": "assets/images/Beverges/bevergeMaaza.png",
-      "productUniqueId": "19",
-      "quantity": 1,
-      "originalAmount": "33",
-      "productid": 19,
-      "uid": "3",
-      "orderUniqueId": 64361,
-      "id": 2
-    },
-    {
-      "productName": "Limca Lime n Lemoni",
-      "title": "Limca",
-      "image": "assets/images/Beverges/bevergeLimca.png",
-      "productUniqueId": "15",
-      "quantity": 1,
-      "originalAmount": "68",
-      "productid": 15,
-      "uid": "1",
-      "orderUniqueId": 9769,
-      "id": 3
-    }
-  ],
+  "cartData": [],
   "Queries": [
     {
-      "username": "Rkm",
-      "email": "rk@gmail.com",
-      "subject": "query from registered user",
-      "textarea": "Query Test",
-      "queryStatus": "Addressed",
-      "uid": "3",
-      "id": 1,
-      "addressingData": "tested"
+      "username": "Kiran",
+      "email": "kiran2023@gmail.com",
+      "subject": "Demo",
+      "textarea": "Demo Test",
+      "queryStatus": "Pending",
+      "uid": "1",
+      "id": 1
     }
   ],
   "orders": [
     {
-      "customerName": "Rkm",
-      "customerMail": "rk@gmail.com",
-      "customerMobile": "9596586959",
-      "customerState": "tn",
-      "customerCity": "erd",
-      "customerPincode": "485848",
-      "customerAddress": "rkv road erd",
+      "customerName": "Kiran",
+      "customerMail": "kiran2023@gmail.com",
+      "customerMobile": "9565975569",
+      "customerState": "k",
+      "customerCity": "k",
+      "customerPincode": "343434",
+      "customerAddress": "k",
       "cartItems": [
         {
-          "productName": "Apple Fuji Pack 4 pcs",
+          "productName": "Apple Fuji Pack 4 ",
           "title": "Apple Fuji",
           "image": "assets/images/VeggetablesFruits/appleFuji.png",
           "productUniqueId": "1",
-          "quantity": 2,
-          "originalAmount": "169",
+          "quantity": 1,
+          "originalAmount": "200",
+          "actualAmount": "169",
+          "discountedPrice": "200",
           "productid": 1,
-          "uid": "3",
-          "orderUniqueId": 3700,
+          "uid": "1",
+          "orderUniqueId": 96765,
           "id": 1
-        },
-        {
-          "productName": "Aquaguard SkyLand 18 Ltr",
-          "title": "Aquaguard SkyLand",
-          "image": "assets/images/HouseHoldProducts/aquaguard.png",
-          "productUniqueId": "27",
-          "quantity": 2,
-          "originalAmount": "4578",
-          "productid": 27,
-          "uid": "3",
-          "orderUniqueId": 1693,
-          "id": 2
         }
       ],
-      "totalAmount": 9494,
-      "uid": "3",
+      "totalAmount": 200,
+      "uid": "1",
       "id": 1
     }
   ],
   "payments": [
     {
-      "orderid": 3700,
+      "orderid": 96765,
       "productid": 1,
-      "uid": "3",
+      "uid": "1",
       "status": "Payment Done",
       "id": 1
-    },
-    {
-      "orderid": 1693,
-      "productid": 27,
-      "uid": "3",
-      "status": "Payment Done",
-      "id": 2
     }
   ],
   "orderStatusUpdate": [
     {
-      "orderid": 3700,
+      "orderid": 96765,
       "productid": 1,
-      "status": "Processing",
-      "Stock": 85,
-      "id": 1
-    },
-    {
-      "orderid": 1693,
-      "productid": 27,
       "status": "Cancelled",
-      "Stock": 11,
-      "id": 2
+      "deliveryDeadline": false,
+      "delivery": "3/7/2023",
+      "orderDate": "28/6/2023",
+      "Stock": 74,
+      "id": 1
     }
   ],
   "forgotPasswordRequest": [],

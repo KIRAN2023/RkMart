@@ -15,6 +15,7 @@ export interface product {
     originalAmount: any;
     discounted: any;
     offerPercentage: any;
+    actualAmount:any,
     rating: any;
     id: any;
     uid: any
@@ -27,6 +28,8 @@ export interface cart {
     title:any;
     quantity: any;
     originalAmount: any;
+    actualAmount:any,
+    discountedPrice:any,
     id: number|undefined;
     uid: any;
     orderUniqueId:any;

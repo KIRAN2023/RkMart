@@ -99,11 +99,6 @@ button {
     font-weight: 600;
 }
 
-.activeCart {
-    color: var(--btns-background);
-    font-weight: 600;
-}
-
 .menu ul li:not(.active):hover {
     border-bottom: 0.1rem solid var(--btns-background);
     color: var(--btns-background);
@@ -207,6 +202,12 @@ button {
 }
 
 .activeCart{
+    display: flex;
+    color: var(--btns-background);
+    font-weight: 600;
+}
+
+.activeCartDisplay{
     display: flex;
 }
 

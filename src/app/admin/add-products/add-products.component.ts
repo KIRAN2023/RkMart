@@ -54,6 +54,7 @@ export class AddProductsComponent implements OnInit {
       reviewCount: [, Validators.required],
       originalAmount: [, Validators.required],
       discounted: [, Validators.required],
+      actualAmount: [, Validators.required],
     });
 
     this.idData = this.activateUrl.snapshot.paramMap.get('id');
@@ -79,7 +80,8 @@ export class AddProductsComponent implements OnInit {
             this.addProductForm.controls['ratingCount'].setValue(product.ratingCount),
             this.addProductForm.controls['reviewCount'].setValue(product.reviewCount),
             this.addProductForm.controls['originalAmount'].setValue(product.originalAmount),
-            this.addProductForm.controls['discounted'].setValue(product.discounted)
+            this.addProductForm.controls['discounted'].setValue(product.discounted),
+            this.addProductForm.controls['actualAmount'].setValue(product.actualAmount)
         }
         this.title.setTitle(`${this.addProductForm.get('title')?.value} | RK MART`);
       });

@@ -25,6 +25,7 @@ import { OrderStatusUpdateComponent } from './admin/orderStatusUpdate/orderStatu
 import { QueryComponent } from './user/query/query.component';
 import { PaymentDataComponent } from './admin/paymentData/paymentData.component';
 import { UrlGuard } from './url.guard';
+import { OfferTimerComponent } from './user/offerTimer/offerTimer.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   ] },
   { path: 'cart', component: CartComponent, canActivate: [AuthUserGuard] },
   { path: 'contactUs', component: ContactUsComponent },
+  { path: 'offerTimer', component: OfferTimerComponent },
   { path:'cart', canActivateChild:[AuthUserGuard],children:[
     { path: 'shipping', component: ShippingComponent, canActivate: [UrlGuard] },
     { path: 'shipping/orderDetails', component: OrderDetailsComponent, canActivate: [UrlGuard] },

@@ -109,12 +109,15 @@
 }
 
 .orderStatus,
-.deliveryExcepted,
 .total {
   display: flex;
   justify-content: center;
   flex-direction: row;
   padding: 4rem 4rem;
+}
+
+.deliveryExcepted{
+  padding-top: 1.5rem;
 }
 
 .orders {
@@ -125,4 +128,8 @@
 .orders h2 {
   margin-top: 5rem;
   margin-left: 4rem;
+}
+
+.orderPageLine{
+  color: red;
 }

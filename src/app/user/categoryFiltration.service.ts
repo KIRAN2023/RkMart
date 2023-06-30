@@ -9,9 +9,6 @@ export class CategoryFiltrationService {
   selectedDiscountSubject = new BehaviorSubject<any>([]);
   selectedReviewSubject = new BehaviorSubject<any>([]);
 
-  // selectedCategories = this.selectedCategoriesSubject.asObservable();
-  // selectedDiscounts = this.selectedDiscountSubject.asObservable();
-
   constructor() { }
 
   addSelectedCategory(categoryId: number) {

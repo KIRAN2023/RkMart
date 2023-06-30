@@ -142,7 +142,7 @@
 }
 
 .productDiscounts .productRate {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding: 1rem 1rem 1rem 0;
   font-weight: 900;
 }
@@ -259,14 +259,4 @@
 .aboutProducts p span {
   text-align: right;
   align-items: center;
-}
-
-#clock {
-  margin-left: 5rem;
-  background-color: var(--btns-background);
-  color: var(--white);
-  font-weight: 900;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  width: fit-content;
 }

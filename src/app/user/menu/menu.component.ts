@@ -26,11 +26,13 @@ export class MenuComponent implements OnInit {
   cartDataCount: number = 0;
   forgotPasswordFormGroup!: FormGroup;
 
+  remainingTime:any;
+
   private readonly encryptionKey = 'RkMart Member';
 
   @Output() loginStatus: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private dataService: ProductsDataService, private cartService: CartService, private FormBuilder: FormBuilder, private admin: AdminProductsService, private auth: AuthUserGuard, private router: Router, private http: HttpClient) {
+  constructor(private dataService: ProductsDataService, private cartService: CartService, private FormBuilder: FormBuilder, private admin: AdminProductsService, private productDataService:ProductsDataService, private auth: AuthUserGuard, private router: Router, private http: HttpClient) {
     this.dataService.registeredUser().subscribe((user) => {
       this.users = user;
     });
@@ -59,7 +61,7 @@ export class MenuComponent implements OnInit {
 
   registerForm = this.FormBuilder.group(
     {
-      username: [, [Validators['required'], Validators['pattern'], Validators['minLength'], this.userValidate(/^\S+$/, 'pattern1')
+      username: [, [Validators['required'], Validators['pattern'], Validators['minLength'], this.userValidate(/^\S+$/, 'pattern1'), this.userValidate(/^(?!.*([A-Za-z])\1\1\1)[A-Za-z0-9 ]*$/, 'pattern2')
       ]],
       mail: [, [Validators['required'], Validators['pattern']]],
       mobile: [, [Validators['required'], Validators['pattern']]],
@@ -71,6 +73,10 @@ export class MenuComponent implements OnInit {
     return (control: FormControl) => {
       const username: any = control.value;
       const isValid = pattern.test(username);
+
+      if (!username) {
+        return null;
+      }
   
       if (!isValid) {
         return {
@@ -78,7 +84,7 @@ export class MenuComponent implements OnInit {
         };
       }
   
-      return null;
+      return false;
     };
   }
 
@@ -154,7 +160,7 @@ export class MenuComponent implements OnInit {
     this.loggedin = false;
 
     if (usermail.value.trim() !== '' || userpassword.value.trim() !== '') {
-      for (let user of this.users) {
+      this.users.find((user:any) => {
         let decryptedValue = CryptoJS.AES.decrypt(user.password, this.encryptionKey).toString(CryptoJS.enc.Utf8);
         if (usermail.value === user.mail && userpassword.value === decryptedValue) {
           invalidLogin.innerHTML = "";
@@ -171,12 +177,11 @@ export class MenuComponent implements OnInit {
           this.closePanel();
           alert("Login Successful");
           this.loginStatus.emit(this.loggedin);
-          break;
         }
-      }
+      })
 
       if (!this.loggedin) {
-        for (let user of this.admins) {
+        this.admins.find((user:any)=>{
           let decryptedValue = CryptoJS.AES.decrypt(user.password, this.encryptionKey).toString(CryptoJS.enc.Utf8);
 
           if (usermail.value === user.mail && userpassword.value === decryptedValue) {
@@ -186,9 +191,8 @@ export class MenuComponent implements OnInit {
             sessionStorage.setItem('userName', user.name);
             this.closePanel();
             this.router.navigate(['admin/dashboard']);
-            break;
           }
-        }
+        })
       }
 
       if (!this.loggedin) {

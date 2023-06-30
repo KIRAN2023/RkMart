@@ -48,9 +48,6 @@
                       </div>
                     </a>
                     <figcaption class="figCaptionDiv"><b class="findProduct">{{product.productName}}</b></figcaption>
-                    <!-- <div class="addWishlistDiv"><button class="btnD addRemove" title="Add to Category">Add</button> -->
-                    <!-- </div> -->
-                    <!-- <p title="Add to Wishlist"><i class="fa-regular fa-heart"></i></p> -->
                   </figure>
                 </div>
                 <div class="productDetails"><small>{{product.quantity}}</small></div>
@@ -58,11 +55,20 @@
                   <div class="ratings"><span class="rating">{{product.rating}}<i
                         class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
                   </div>
-                  <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' : '1.0-0'}}<s
-                      class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
-                      class="btnD offerBtn"><small
-                        class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
-                        OFF</small></button></p>
+                  <div>
+                    <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :
+                      '1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
+                        class="btnD offerBtn"><small
+                          class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                          OFF</small></button>
+                    </p>
+                  </div>
+                  <div *ngIf="offerApply=='false'">
+                    <p class="discount price-box"><b> Price :
+                        {{product.discounted|currency:'INR':
+                        'symbol' : '1.0-0'}} </b>
+                    </p>
+                  </div>
                 </div>
               </div>
             </a>
@@ -82,10 +88,10 @@
         <img src="../assets/images/SaleImages/SummerSale.png" alt="Sales" title="10% - 45% Off" srcset="">
         <button class="btn"> <a routerLink="/products/beverages"> Grab Now </a> </button>
       </div>
-      <div class="sales-products grid-sales grid-saled-three-columns">
+      <div class="sales-products grid-sales grid-sales-four-column">
         <div *ngFor="let product of beveragesProduct; let i = index">
           <ng-container>
-            <a *ngIf="i<=2" routerLink="/products/productDescription/{{product.id}}">
+            <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
                 attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
@@ -102,11 +108,20 @@
                   <div class="ratings"><span class="rating">{{product.rating}}<i
                         class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
                   </div>
-                  <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' : '1.0-0'}}<s
-                      class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
-                      class="btnD offerBtn"><small
-                        class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
-                        OFF</small></button></p>
+                  <div>
+                    <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :
+                      '1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
+                        class="btnD offerBtn"><small
+                          class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                          OFF</small></button>
+                    </p>
+                  </div>
+                  <div *ngIf="offerApply=='false'">
+                    <p class="discount price-box"><b> Price :
+                        {{product.discounted|currency:'INR':
+                        'symbol' : '1.0-0'}} </b>
+                    </p>
+                  </div>
                 </div>
               </div>
             </a>
@@ -146,11 +161,20 @@
                   <div class="ratings"><span class="rating">{{product.rating}}<i
                         class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
                   </div>
-                  <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' : '1.0-0'}}<s
-                      class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
-                      class="btnD offerBtn"><small
-                        class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
-                        OFF</small></button></p>
+                  <div>
+                    <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :
+                      '1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
+                        class="btnD offerBtn"><small
+                          class="price-box">{{myMath.abs(((product.originalAmount-product.discounted)/product.discounted)*100)|number:'.0-0'}}
+                          OFF</small></button>
+                    </p>
+                  </div>
+                  <div *ngIf="offerApply=='false'">
+                    <p class="discount price-box"><b> Price :
+                        {{product.discounted|currency:'INR':
+                        'symbol' : '1.0-0'}} </b>
+                    </p>
+                  </div>
                 </div>
               </div>
             </a>
@@ -165,7 +189,7 @@
 <!-- Popup Message -->
 
 <dialog class="popupMsg">
-  <i class="fa-solid fa-xmark fa-1x popupClose" (click)="closeOffer()"></i>
+  <i class="fa-solid fa-xmark fa-1x popupClose" title="Close" (click)="closeOffer()"></i>
   <div class="offerPopUp">
     <div class="offerImage">
       <img src="../assets/images/Sales/Sale.jpg" alt="10% to 60% Discount" title="10% to 60% Discount">
@@ -173,6 +197,7 @@
     <div class="offerContent">
       <div class="offerData">
         <p> Mega Sale <span id="offerPercentage">10% to 60% Limited Time Offer </span> </p>
+        <span> <app-offerTimer></app-offerTimer> </span>
       </div>
       <button class="btn"> <a routerLink="/products"> Grab Now </a> </button>
     </div>

@@ -28,9 +28,6 @@
                         <i *ngIf="stockAvailibility && !removeProduct" (click)="deleteFromCart()"
                             class="fa-solid fa-cart-shopping"> Out Of Stock </i>
                     </div>
-                    <!-- <div class="buy addToCart" routerLink="/shipping">
-                        <i class="fa-solid fa-cart-shopping"> Buy Now </i>
-                    </div> -->
                 </div>
             </div>
             <p id="addedCartMessage"></p>
@@ -46,13 +43,19 @@
                 <div class="productCostData">
                     <h4>Special Price</h4>
                     <div class="productDiscounts">
-                        <p class="productRate"> {{finalProduct?.originalAmount|currency:'INR'}} <span>
+                        <p *ngIf="offerApply=='true'" class="productRate"> {{finalProduct?.originalAmount|currency:'INR'}} <span>
                                 <s>{{finalProduct?.discounted|currency:'INR'}}</s>
                                 <small
                                     class="offerData">{{myMath.abs(((finalProduct?.originalAmount-finalProduct?.discounted)/finalProduct?.discounted)*100)|number:'.0-0'}}
                                     OFF</small>
-                            </span> </p>
-                        <!-- <p id="clock"></p> -->
+                            </span>
+                        </p>
+                        <p *ngIf="offerApply=='false'" class="productRate"><span>
+                                {{finalProduct?.discounted|currency:'INR'}}
+                            </span>
+                        </p>
+                        <app-offerTimer *ngIf="offerApply=='true'" id="clock"></app-offerTimer>
+
                     </div>
                 </div>
             </div>

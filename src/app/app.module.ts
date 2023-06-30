@@ -26,6 +26,7 @@ import { MyOrdersComponent } from './user/myOrders/myOrders.component';
 import { AdminModule } from './admin/admin.module';
 import { OrderStatusUpdateComponent } from '../app/admin/orderStatusUpdate/orderStatusUpdate.component';
 import { QueryComponent } from './user/query/query.component';
+import { OfferTimerComponent } from './user/offerTimer/offerTimer.component';
 
 @NgModule({
   declarations: [																			
@@ -45,7 +46,8 @@ import { QueryComponent } from './user/query/query.component';
       PaymentComponent,
       MyOrdersComponent,
       OrderStatusUpdateComponent,
-      QueryComponent
+      QueryComponent,
+      OfferTimerComponent
    ],
   imports: [
     BrowserModule,

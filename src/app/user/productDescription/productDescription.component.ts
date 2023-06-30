@@ -28,6 +28,10 @@ export class ProductDescriptionComponent implements OnInit {
   removeCartProduct: cart | null | undefined;
   pid: number | string | undefined;
 
+  offerApply: any;
+
+  offerEnd: Date = new Date();
+
   constructor(private productDataService: ProductsDataService, private cartService: CartService, private route: ActivatedRoute, private titleService: Title, private http: HttpClient) {
     this.userLoggedin = Boolean(sessionStorage.getItem("userLoggedIn")) || this.productDataService.userLogin;
     this.productDataService.userLogin = this.userLoggedin;
@@ -57,6 +61,7 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.offerApply = sessionStorage.getItem('offerApply')
   }
 
   loadFeaturedProducts() {
@@ -94,13 +99,17 @@ export class ProductDescriptionComponent implements OnInit {
     if (this.productDataService.userLogin) {
 
       let uid = sessionStorage.getItem('userId');
+      let offerPrice = this.offerApply == 'true' ? this.finalProduct.originalAmount : this.finalProduct.discounted;
+
       let dataToCart: cart = {
         productName: this.finalProduct.productName,
         title: this.finalProduct.title,
         image: this.finalProduct.image,
         productUniqueId: this.finalProduct.uniqueId,
         quantity: 1,
-        originalAmount: this.finalProduct.originalAmount,
+        originalAmount: offerPrice,
+        actualAmount: this.finalProduct.originalAmount,
+        discountedPrice: this.finalProduct.discounted,
         productid: this.finalProduct.id,
         uid,
         orderUniqueId: Math.floor(Math.random() * 100000),
@@ -111,9 +120,9 @@ export class ProductDescriptionComponent implements OnInit {
       this.cartService.addToCart(dataToCart)?.subscribe((res: any) => {
         if (res) {
           this.removeProduct = true;
-          let success:any = document.querySelector('#addedCartMessage');
+          let success: any = document.querySelector('#addedCartMessage');
           success.innerHTML = `<b> ${dataToCart.title} Added to the Cart <b>`;
-          setTimeout(()=> success.innerHTML='',3000);
+          setTimeout(() => success.innerHTML = '', 3000);
         } else {
           alert("error");
         }

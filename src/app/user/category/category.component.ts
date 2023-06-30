@@ -48,9 +48,11 @@ export class CategoryComponent implements OnInit {
     const checkedStatus = (checkedData.target as HTMLInputElement)?.checked
     if (checkedStatus) {
       this.filterService.addSelectedCategory(id);
+      checkedData.target.checked = true;
     }
     else {
       this.filterService.removeSelectedCategory(id);
+      checkedData.target.checked = false;
     }
   }
 

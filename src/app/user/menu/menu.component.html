@@ -19,9 +19,11 @@
             <button class="loginBtn" class="login" (click)="loginModal()" [hidden]="loggedin"> <i
                     class="fa-solid fa-user"></i> Login
             </button>
-            <div routerLink="/cart" [ngClass]="{'activeCart': loggedin}" [routerLinkActive]="'activeCart'" [hidden]="!loggedin" id="mainPageCart">
-                <a  class="cart" attr.current-count="{{cartDataCount}}"> <i
-                        class="fa-sharp fa-solid fa-cart-shopping"></i></a> <h3>Cart</h3>
+            <div routerLink="/cart" [ngClass]="{'activeCartDisplay': loggedin}" [routerLinkActive]="'activeCart'"
+                [hidden]="!loggedin" id="mainPageCart">
+                <a class="cart" attr.current-count="{{cartDataCount}}"> <i
+                        class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                <h3>Cart</h3>
             </div>
         </ul>
     </nav>
@@ -115,6 +117,10 @@
                                 <div class="errorMessageBox"
                                     *ngIf="registerForm.controls['username'].hasError('pattern1')">
                                     <p>Space Not Allowed</p>
+                                </div>
+                                <div class="errorMessageBox"
+                                    *ngIf="registerForm.controls['username'].hasError('pattern2')">
+                                    <p>Consecutive 4 Same Alphabets Not Allowed</p>
                                 </div>
                                 <div class="errorMessageBox"
                                     *ngIf="registerForm.controls['username'].errors?.['required']">
