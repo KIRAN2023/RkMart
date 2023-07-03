@@ -20,7 +20,7 @@
           <a routerLink="productDescription/{{product.id}}">
             <div class="productBox groceryProducts grocery {{product.classData}}"
               attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
-              attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+              attr.value="{{product.value}}" attr.reviewrating="{{product.ratingAverage}}">
               <div class="productImage">
                 <figure><a>
                     <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
@@ -38,9 +38,9 @@
               <div class="productDetails"><small>{{product.quantity}}</small></div>
               <div class="productPrice">
                 <div class="ratings"><span class="rating"
-                    [attr.title]=" product.rating + ' Rated' ">{{product.rating}}<i
+                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
                       class="fa-solid fa-star fa-xs"></i></span><span
-                    [attr.title]=" product.reviewCount + ' Verified Reviews' ">({{product.reviewCount}})</span>
+                    [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
                 </div>
                 <div>
                   <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :

@@ -67,7 +67,7 @@ export class CategoryComponent implements OnInit {
   }
 
   reviewData(reviewRating: any) {
-    const rating = reviewRating.target.value;
+    const rating = reviewRating.target.value;    
 
     const checkedStatus = (reviewRating.target as HTMLInputElement)?.checked;
     if (checkedStatus) {

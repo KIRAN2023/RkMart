@@ -15,7 +15,6 @@
                 <p id="userStatus" *ngIf="!userLoggedin"> Login to Buy </p>
             </div>
 
-
             <div [hidden]="!userLoggedin">
                 <div class="buyAddCart">
 
@@ -37,13 +36,14 @@
             <h3>{{finalProduct?.title}}</h3>
             <div class="productRatings">
                 <div class="ratings">
-                    <span class="rating">{{finalProduct?.rating}}<i class="fa-solid fa-star fa-xs"></i></span>
-                    <span> {{finalProduct?.ratingCount}} Ratings </span>
+                    <span class="rating">{{finalProduct.ratingAverage}}<i class="fa-solid fa-star fa-xs"></i></span>
+                    <span> {{finalProduct.rating.length}} Ratings </span>
                 </div>
                 <div class="productCostData">
                     <h4>Special Price</h4>
                     <div class="productDiscounts">
-                        <p *ngIf="offerApply=='true'" class="productRate"> {{finalProduct?.originalAmount|currency:'INR'}} <span>
+                        <p *ngIf="offerApply=='true'" class="productRate">
+                            {{finalProduct?.originalAmount|currency:'INR'}} <span>
                                 <s>{{finalProduct?.discounted|currency:'INR'}}</s>
                                 <small
                                     class="offerData">{{myMath.abs(((finalProduct?.originalAmount-finalProduct?.discounted)/finalProduct?.discounted)*100)|number:'.0-0'}}
@@ -62,10 +62,10 @@
             <div class="discounts">
                 <p>&#9200;</p>
                 <ul>
-                    <li *ngIf="finalProduct?.category==='beverages'"><b>Expiry Date </b> 31 Mar 2023</li>
                     <li *ngIf="finalProduct?.category==='beverages'||finalProduct?.category==='household' "><b>
-                            Manufactured date</b> 04 Jul 2023</li>
-                    <li *ngIf="finalProduct?.category==='grocery'"> <b> Packed - 07 Jan 2023 </b></li>
+                        Manufactured date</b> {{finalProduct.manufacture}} </li>
+                    <li *ngIf="finalProduct?.category==='beverages'"><b>Expiry Date </b>{{finalProduct.expiry}}</li>
+                    <li *ngIf="finalProduct?.category==='grocery'"> <b> Packed - {{finalProduct.packed}} </b></li>
                 </ul>
             </div>
 
@@ -125,7 +125,7 @@
                     <a routerLink="/products/productDescription/{{product.id}}">
                         <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                             attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
-                            attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+                            attr.value="{{product.value}}" attr.reviewrating="{{product.rating.length}}">
                             <div class="productImage">
                                 <figure><a>
                                         <div class="imagePosition"><img [src]="product.image" alt={{product.alt}}
@@ -141,8 +141,8 @@
                             </div>
                             <div class="productDetails"><small>{{product.quantity}}</small></div>
                             <div class="productPrice">
-                                <div class="ratings"><span class="rating">{{product.rating}}<i
-                                            class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
+                                <div class="ratings"><span class="rating">{{product.ratingAverage}}<i
+                                            class="fa-solid fa-star fa-xs"></i></span><span>({{product.rating.length}})</span>
                                 </div>
 
                                 <p class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol'

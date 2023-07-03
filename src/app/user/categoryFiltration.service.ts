@@ -42,8 +42,8 @@ export class CategoryFiltrationService {
   }
 
   addReviewCategory(Value: number) {
-    const selectReviews = this.selectedReviewSubject.getValue();
-    selectReviews.push(Value);
+    const selectReviews = this.selectedReviewSubject.getValue();    
+    selectReviews.push(Value);    
     this.selectedReviewSubject.next(selectReviews);
   }
 

@@ -133,3 +133,30 @@
 .orderPageLine{
   color: red;
 }
+
+.reviewRatingSection {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.reviewRatingSection .btn {
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  width: max-content;
+}
+
+.fa-star {
+  color: gray;
+  cursor: pointer;
+}
+
+.checked {
+  color: gold;
+}
+
+.reviewSection{
+  display: flex;
+  line-height: 4rem;
+  margin: 0 0.4rem;
+}

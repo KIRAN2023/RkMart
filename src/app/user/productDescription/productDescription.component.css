@@ -58,6 +58,7 @@
   max-width: 100%;
   height: 15rem;
   cursor: zoom-in;
+  transition: all 0.3s ease;
 }
 
 .mainImageDiv #userStatus {
@@ -259,4 +260,9 @@
 .aboutProducts p span {
   text-align: right;
   align-items: center;
+}
+
+.productsDescriptionBox .productImage .mainImageDiv img:hover {
+  position: relative;
+  transform: scale(1.2);
 }

@@ -11,12 +11,15 @@ export interface product {
     productName: any;
     quantity: any;
     ratingCount: any;
-    reviewCount: any;
+    ratingAverage: any;
     originalAmount: any;
     discounted: any;
     offerPercentage: any;
     actualAmount:any,
     rating: any;
+    manufacture:any,
+    packed:any,
+    expiry:any,
     id: any;
     uid: any
 }

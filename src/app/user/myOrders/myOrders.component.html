@@ -17,13 +17,31 @@
         <div class="orderStatusData">
           <p id="OrderId"> <b> Order Id: </b> {{orderData.orderUniqueId}} </p>
           <p id="OrderStatus"> <b> Ordered On : </b> {{orderData.orderDate}} </p>
-          <div class="deliveryExcepted" *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' "> <b> Delivery Excepted : </b> {{orderData.delivery}} </div>
-          <div class="deliveryExcepted" *ngIf=" orderData.orderStatus =='Delivered'"> <b> Delivered on : </b> {{orderData.delivery}} </div>
+          <div class="deliveryExcepted"
+            *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' "> <b> Delivery Excepted
+              : </b> {{orderData.delivery}} </div>
+          <div class="deliveryExcepted" *ngIf=" orderData.orderStatus =='Delivered'"> <b> Delivered on : </b>
+            {{orderData.delivery}} </div>
+          <div class="reviewRatingSection" *ngIf="orderData.orderStatus =='Delivered' && orderData.reviewStatus=='false' ">
+            <div class="reviewSection">
+              <p> <b> Rating </b>
+                <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="onStarClick(orderData.productid,star)">
+                  <i class="fa fa-star" [ngClass]="{'checked': star <= userRating[orderData.productid]}"></i>
+                </span>
+              </p>
+              <div id="reviewSubmitButton">
+                <button class="btn" (click)="submitRating(orderData.productid, orderData.orderId)"> Submit </button>
+              </div>
+            </div>
+          </div>
 
           <button class="btn" id="cancelOrder"
             (click)="cancelOrder(orderData.orderUniqueId, orderData.productid, orderData.quantity, orderData.delivery)"
-            *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' && orderData.deliveryDeadline == false ">Cancel Order</button>
-            <div class="deliveryExcepted" *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' && orderData.deliveryDeadline == true" > <b> Order Deliver Soon </b>  </div>
+            *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' && orderData.deliveryDeadline == false ">Cancel
+            Order</button>
+          <div class="deliveryExcepted"
+            *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' && orderData.deliveryDeadline == true">
+            <b> Order Deliver Soon </b> </div>
 
         </div>
         <!-- <hr> -->

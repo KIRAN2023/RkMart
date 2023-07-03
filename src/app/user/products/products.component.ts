@@ -113,9 +113,9 @@ export class ProductsComponent implements OnInit {
           let minimumValue = discountData.length!=0? Math.min(...discountData):0;
           let minimumReview = reviewData.length!=0? Math.min(...reviewData):0;          
           
-          if (categoryData.includes(product.filterValue) && product.value >= minimumValue && product.rating>=minimumReview) {
+          if (categoryData.includes(product.filterValue) && product.value >= minimumValue && product.ratingAverage>=minimumReview) {
             this.updatedProducts.push(product);
-          } else if (categoryData.length == 0 && product.value >= minimumValue && product.rating>=minimumReview) {
+          } else if (categoryData.length == 0 && product.value >= minimumValue && product.ratingAverage>=minimumReview) {
             this.updatedProducts.push(product);
           }
         }
@@ -137,5 +137,3 @@ export class ProductsComponent implements OnInit {
     }
   }
 }
-
-

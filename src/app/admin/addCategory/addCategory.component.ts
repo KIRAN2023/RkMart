@@ -84,8 +84,8 @@ export class AddCategoryComponent implements OnInit {
   updateCategory(updatedData: any) {
     if (!this.categoryData.pristine) {
       this.http.get(`http://localhost:3000/category/${this.categoryId}`).subscribe((categoryData: any) => {
-        const categoryTypeData = updatedData.categoryType;
-
+        let categoryTypeData = updatedData.categoryType;
+        
         const existingCategory = [...categoryData.category];
         existingCategory[existingCategory.indexOf(this.categoryValueData)] = updatedData.category;
 
@@ -106,25 +106,33 @@ export class AddCategoryComponent implements OnInit {
         this.http.get<any>('http://localhost:3000/category').subscribe((data) => {
           let exist: boolean = false;
           let existId: any;
-          data.find((data: any) => {
+          let dataFound:any =false;
+          data.forEach((data: any) => {            
             let categoryDataValue = data.category;
             if ((data.categoryType == updatedDataValue.categoryType
-              && categoryDataValue.includes(updatedData.category))) {
-              existId = data.id
+              && categoryDataValue.includes(updatedData.category) && dataFound==false )) {
+              existId = data.id;
+              dataFound = true;
               exist = true;
-            } else if ((data.categoryType == updatedDataValue.categoryType)) {
-              existId = data.id
+            } else if ((data.categoryType == updatedDataValue.categoryType) && dataFound==false) {              
+              existId = data.id;
+              dataFound = true;
               exist = true;
             } else if ((data.categoryType != updatedDataValue.categoryType
-              && categoryDataValue.includes(updatedData.category))) {
+              && categoryDataValue.includes(updatedData.category)) && dataFound==false ) {
+              dataFound = true;
               exist = false;
             }
           });
           if (exist == false) {
+            console.log("ebter");
+            
             this.adminService.updateCategoryData(this.categoryId, updatedDataValue).subscribe((response) => {
               alert("Updated Successfully");
-            })
+            });
           } else {
+            console.log("elz");
+            
             this.http.get<any>(`http://localhost:3000/category/${existId}`).subscribe((data: any) => {
               let categoryValues = {
                 categoryType: updatedData.categoryType,
@@ -143,7 +151,11 @@ export class AddCategoryComponent implements OnInit {
   }
 
   dataUpdating(categoryExist: boolean, categoryData: any, existingCategoryId: number | string | undefined) {
+    console.log("method entry");
+    
     if (categoryExist == false) {
+      console.log("false ENtry");
+      
       var categoryTypeDataValue: any = { categoryTypeData: categoryData.categoryType }
 
       this.adminService.addCategory(categoryData).subscribe((response) => {
@@ -155,6 +167,8 @@ export class AddCategoryComponent implements OnInit {
       });
     }
     if (categoryExist) {
+      console.log("true entry");
+      
       let categoryDataExist: boolean = false;
       this.http.get(`http://localhost:3000/category/${existingCategoryId}`).subscribe((data: any) => {
 
@@ -164,7 +178,7 @@ export class AddCategoryComponent implements OnInit {
             this.categoryStatusMessage = "Category Already Exist";
             setTimeout(() => this.categoryStatusMessage = undefined, 3000);
           }
-        })
+        });
 
         if (categoryDataExist == false) {
           this.adminService.addCategoryTest(existingCategoryId, "category", "categoryClass", "categoryUniqueValue", categoryData.category, categoryData.categoryClass, categoryData.categoryUniqueValue).subscribe((response) => {

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { map } from 'rxjs';
 import { cart } from 'src/app/admin/product';
 import { CartService } from 'src/app/user/cart.service';
 
@@ -15,6 +16,8 @@ export class MyOrdersComponent implements OnInit {
   orderTotalAmount: any;
 
   cartOrderList: cart[] | undefined;
+
+  userRating: { [productId: number]: number } = {};
 
   constructor(private cartService: CartService, private http: HttpClient, private title: Title) { }
 
@@ -34,33 +37,34 @@ export class MyOrdersComponent implements OnInit {
             let status = response[0].status;
             let delivery = response[0].delivery;
             let orderId = response[0].id;
+            let reviewStatus = response[0].reviewStatus;
             let orderStatus = {
               ...cart,
+              orderId: orderId,
               orderStatus: status,
               delivery: delivery,
-              orderDate: response[0].orderDate
+              orderDate: response[0].orderDate,
+              reviewStatus: reviewStatus
             }
 
             let dateNow: Date = new Date();
             let deliveryData = dateNow.toLocaleDateString();
-            
+
             if (response[0].delivery == deliveryData && dateNow.getHours() > 12) {
-              this.http.patch(`http://localhost:3000/orderStatusUpdate/${orderId}`, { deliveryDeadline: true }).subscribe(() =>{
-                orderStatus.deliveryDeadline = true; 
+              this.http.patch(`http://localhost:3000/orderStatusUpdate/${orderId}`, { deliveryDeadline: true }).subscribe(() => {
+                orderStatus.deliveryDeadline = true;
                 this.orderData.push(orderStatus);
-                console.log(orderStatus);   
               });
-            }else{
-              this.http.patch(`http://localhost:3000/orderStatusUpdate/${orderId}`, { deliveryDeadline: false }).subscribe(() =>{
-                orderStatus.deliveryDeadline = false; 
+            } else {
+              this.http.patch(`http://localhost:3000/orderStatusUpdate/${orderId}`, { deliveryDeadline: false }).subscribe(() => {
+                orderStatus.deliveryDeadline = false;
                 this.orderData.push(orderStatus);
-                console.log(orderStatus); 
               });
             }
+
           });
         });
       });
-
 
 
       if (this.orderData.length == 0) {
@@ -76,42 +80,82 @@ export class MyOrdersComponent implements OnInit {
 
   cancelOrder(orderId: any, productId: any, quantity: any, date: any) {
     let dateNow: Date = new Date();
-    let deliveryData = dateNow.toLocaleDateString();   
+    let deliveryData = dateNow.toLocaleDateString();
 
-    if( deliveryData!=date || (deliveryData == date && dateNow.getHours()<12)){
-      if (confirm("Are you Sure you Want to Cancel Order")) {     
+    if (deliveryData != date || (deliveryData == date && dateNow.getHours() < 12)) {
+      if (confirm("Are you Sure you Want to Cancel Order")) {
 
         let orderDatas;
         let id;
         this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${orderId}`).subscribe((data: any) => {
           orderDatas = data;
           id = orderDatas[0].id;
-  
+
           this.http.patch(`http://localhost:3000/orderStatusUpdate/${id}`, { status: "Cancelled" }).subscribe((res) => {
             if (res) {
               alert("Cancelled Successfully");
             }
           });
-  
+
           this.http.get(`http://localhost:3000/Productdata/${productId}`).subscribe((data: any) => {
-  
+
             let updatedData = {
               ...data,
               Stock: data.Stock + quantity
             }
             this.http.patch(`http://localhost:3000/Productdata/${productId}`, updatedData).subscribe();
-  
+
           });
         });
       }
-    }else{
+    } else {
       alert("Order Out For Delivery You Cannot Cancel Order");
     }
-    
   }
 
   closeOffer() {
     const $offerData: any = document.querySelector('.popupMsg');
     $offerData.close();
   }
+
+  onStarClick(productid: any, rating: number) {
+    this.userRating[productid] = rating;
+  }
+
+  submitRating(productid: any, orderid: any) {
+    this.http.get(`http://localhost:3000/Productdata/${productid}`).pipe(
+      map((productData: any) => {
+        const rating = [...productData.rating, this.userRating[productid]];
+        let reviewAverage = rating;
+
+        const sum = reviewAverage.reduce((total: any, currentValue: any) => total + currentValue, 0);
+        let avgReviewCount = reviewAverage.length > 0 ? Math.round(sum / reviewAverage.length) : 0;
+
+        this.http.patch(`http://localhost:3000/Productdata/${productid}`, { ratingAverage: avgReviewCount }).subscribe((response: any) => {
+          if (response) {
+            this.updateAverageReview({ ...productData, rating }, avgReviewCount, productid, orderid);
+          }
+        });
+      })
+    ).subscribe();
+  }
+
+  updateAverageReview(updatedProductData: any, reviewAverage: any, productid: any, orderid: any) {
+    this.updatedRatingData(productid, updatedProductData).subscribe((response: any) => {
+      if (response) {
+        alert("Review Submitted Successfully");
+        this.http.patch(`http://localhost:3000/orderStatusUpdate/${orderid}`, { reviewStatus: 'true' }).subscribe((response: any) => {
+          if (response) {
+            this.http.patch(`http://localhost:3000/Productdata/${productid}`, { ratingAverage: reviewAverage }).subscribe();
+          }
+        });
+      }
+    });
+  }
+
+  updatedRatingData(productid: any, updatedProduct: any) {
+    return this.http.patch(`http://localhost:3000/Productdata/${productid}`, updatedProduct);
+  }
+
+
 }

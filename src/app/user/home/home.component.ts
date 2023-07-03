@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ProductsDataService } from 'src/app/user/productsData.service';
 import { OfferTimerComponent } from '../offerTimer/offerTimer.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,10 @@ export class HomeComponent implements OnInit {
   offerApply:any;
   offerEnd:Date = new Date();
 
+  userRating: number = 0;
+
   public myMath = Math;
-  constructor(private data: ProductsDataService, private productService:ProductsDataService, private http: ProductsDataService, private titleService: Title) {
+  constructor(private data: ProductsDataService, private productService:ProductsDataService, private http: HttpClient, private titleService: Title) {
     this.offerApply = sessionStorage.getItem("offerApply");
   }
   closeOffer() {

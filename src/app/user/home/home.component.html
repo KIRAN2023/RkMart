@@ -41,7 +41,7 @@
             <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
-                attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+                attr.value="{{product.value}}" attr.reviewrating="{{product.rating.length}}">
                 <div class="productImage">
                   <figure><a>
                       <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
@@ -52,9 +52,11 @@
                 </div>
                 <div class="productDetails"><small>{{product.quantity}}</small></div>
                 <div class="productPrice">
-                  <div class="ratings"><span class="rating">{{product.rating}}<i
-                        class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
-                  </div>
+                  <div class="ratings"><span class="rating"
+                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
+                      class="fa-solid fa-star fa-xs"></i></span><span
+                    [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
+                </div>
                   <div>
                     <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :
                       '1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
@@ -94,7 +96,7 @@
             <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
-                attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+                attr.value="{{product.value}}" attr.reviewrating="{{product.rating.length}}">
                 <div class="productImage">
                   <figure><a>
                       <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
@@ -105,9 +107,11 @@
                 </div>
                 <div class="productDetails"><small>{{product.quantity}}</small></div>
                 <div class="productPrice">
-                  <div class="ratings"><span class="rating">{{product.rating}}<i
-                        class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
-                  </div>
+                  <div class="ratings"><span class="rating"
+                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
+                      class="fa-solid fa-star fa-xs"></i></span><span
+                    [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
+                </div>
                   <div>
                     <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :
                       '1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
@@ -147,7 +151,7 @@
             <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
-                attr.value="{{product.value}}" attr.reviewrating="{{product.ratingCount}}">
+                attr.value="{{product.value}}" attr.reviewrating="{{product.rating.length}}">
                 <div class="productImage">
                   <figure><a>
                       <div class="imagePosition"><img [src]="product.image" alt={{product.alt}} title={{product.title}}>
@@ -158,9 +162,11 @@
                 </div>
                 <div class="productDetails"><small>{{product.quantity}}</small></div>
                 <div class="productPrice">
-                  <div class="ratings"><span class="rating">{{product.rating}}<i
-                        class="fa-solid fa-star fa-xs"></i></span><span>({{product.reviewCount}})</span>
-                  </div>
+                  <div class="ratings"><span class="rating"
+                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
+                      class="fa-solid fa-star fa-xs"></i></span><span
+                    [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
+                </div>
                   <div>
                     <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :
                       '1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
@@ -186,6 +192,7 @@
 </section>
 
 <hr>
+
 <!-- Popup Message -->
 
 <dialog class="popupMsg">

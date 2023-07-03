@@ -105,7 +105,7 @@ export class AdminProductsService {
   }
 
   updateProductData(product: product, productID: string | undefined | null) {
-    return this.http.put<product>(`${this.getProductDataUrl}/${productID}`, product);
+    return this.http.patch<product>(`${this.getProductDataUrl}/${productID}`, product);
   }
 
   removerUser(user: any) {

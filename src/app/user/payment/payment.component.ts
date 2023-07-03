@@ -71,7 +71,8 @@ export class PaymentComponent implements OnInit {
             deliveryDeadline: false,
             delivery: deliveryData,
             orderDate: new Date().toLocaleDateString(),
-            Stock: data.Stock - product.quantity
+            Stock: data.Stock - product.quantity,
+            reviewStatus: 'false'
           }
 
           let payment = {

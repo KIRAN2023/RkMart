@@ -136,5 +136,4 @@ export class ProductDescriptionComponent implements OnInit {
     this.cartService.removeProduct(this.removeCartProduct!, sessionStorage.getItem('userId'))?.subscribe();
     this.removeProduct = false;
   }
-
 }
