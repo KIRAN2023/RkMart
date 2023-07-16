@@ -41,7 +41,7 @@ export class OrderStatusUpdateComponent implements OnInit {
       this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${this.orderId}`).subscribe((data: any) => {
         let id = data[0].id;
         if (this.orderStatusData.controls['status'].value != 'Delivered') {
-          this.http.patch(`http://localhost:3000/orderStatusUpdate/${id}`, { status: this.orderStatusData.controls['status'].value}).subscribe((res) => {
+          this.http.patch(`http://localhost:3000/orderStatusUpdate/${id}`, { status: this.orderStatusData.controls['status'].value }).subscribe((res) => {
             if (res) {
               alert("updated Successfully")
             }
@@ -53,6 +53,14 @@ export class OrderStatusUpdateComponent implements OnInit {
               alert("updated Successfully")
             }
           });
+        }
+        if (this.orderStatusData.controls['status'].value == 'Cancelled') {
+          this.http.get(`http://localhost:3000/salesAmount/1`).subscribe((data: any) => {
+            if (data) {
+              let total = data.totalAmount - this.orderData.amount;
+              this.http.put(`http://localhost:3000/salesAmount/1`, { totalAmount: total }).subscribe((data: any) => {})
+            }
+          })
         }
       });
     }

@@ -32,12 +32,113 @@
   place-items: center;
 }
 
-#noProductFound img{
+#noProductFound img {
   height: 80%;
   border: solid 0.2rem var(--btns-background);
 }
 
-.grid-two-section{
+.grid-two-section {
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 18% 82%;
+}
+
+
+@media screen and (max-width:1060px) {
+  .grid-four-columns {
+    margin-left: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width:840px) {
+  .productImage img {
+    height: 3rem;
+  }
+
+  .figCaptionDiv,
+  .rating,
+  .productDetails,
+  .productPrice,
+  .amountDiv,
+  .productPrice .ratings,
+  .ratings span, .offerBtn {
+    font-size: 0.8rem;
+  }
+
+  .btnD{
+    padding: 0.3rem;
+    font-size: 0.5rem;
+  }
+
+  .price-box{
+    padding: 0.1rem;
+  }
+
+  .productBox {
+    height: 15rem;
+  }
+
+  #categoryData {
+    display: none;
+  }
+
+  .grid-two-section {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-four-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .searchBox {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width:720px) {
+  .grid-four-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width:540px) {
+  .figCaptionDiv,
+  .rating,
+  .productDetails,
+  .productPrice,
+  .amountDiv,
+  .productPrice .ratings,
+  .ratings span {
+    font-size: 0.6rem;
+  }
+
+  .figCaptionDiv {
+    min-height: 2rem;
+  }
+
+  .addWishlistDiv .btnD {
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    font-size: 0.5rem;
+  }
+
+  .productBox {
+    height: 12rem;
+  }
+
+  .productBox {
+    padding: 1rem;
+  }
+
+  .searchBox input {
+    padding: 0.4rem;
+    margin-right: 1rem;
+    width: 8rem;
+  }
+}
+
+@media screen and (max-width:420px) {
+  .grid-four-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

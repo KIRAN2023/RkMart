@@ -252,5 +252,10 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/home']);
     }
   }
+
+  toggleMenuBar(){
+    let menu = document.querySelector('.menuBox');
+    menu?.classList.toggle('menuActive');
+  }
 }
 

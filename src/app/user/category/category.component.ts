@@ -14,9 +14,12 @@ export class CategoryComponent implements OnInit {
 
   categoryTypes: any = [];
   categoryDisplay: any = "";
+  
+  offerApply:any;
 
   constructor(private route: ActivatedRoute, private productService: ProductsDataService, private filterService: CategoryFiltrationService) {
     // this.categoryTypesData();
+    this.offerApply = sessionStorage.getItem('offerApply');
   }
 
   ngOnInit() {
@@ -75,5 +78,11 @@ export class CategoryComponent implements OnInit {
     } else {
       this.filterService.removeReviewCategory(rating);
     }
+  }
+
+  toggleCategory(){
+    let menu = document.querySelector('.bevergeSection');
+
+    menu?.classList.toggle('menuActive');
   }
 }

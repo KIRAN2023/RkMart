@@ -38,7 +38,7 @@
       <div class="sales-products grid-sales grid-sales-four-column">
         <div *ngFor="let product of householdProduct; let i = index">
           <ng-container>
-            <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
+            <a *ngIf="(screenWidth > 1100 && i<=3) || (screenWidth <= 1100 && i<=2) && (screenWidth > 650) || (screenWidth <= 650 && i<=1)" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
                 attr.value="{{product.value}}" attr.reviewrating="{{product.rating.length}}">
@@ -53,11 +53,11 @@
                 <div class="productDetails"><small>{{product.quantity}}</small></div>
                 <div class="productPrice">
                   <div class="ratings"><span class="rating"
-                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
+                    [attr.title]=" product.ratingAverage + ' Average Rated' ">{{product.ratingAverage}}<i
                       class="fa-solid fa-star fa-xs"></i></span><span
                     [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
                 </div>
-                  <div>
+                  <div class="amountDiv">
                     <p *ngIf="offerApply=='true'" class="discount price-box">{{product.originalAmount|currency:'INR': 'symbol' :
                       '1.0-0'}}<s class="price-box">{{product.discounted|currency:'INR': 'symbol' : '1.0-0'}}</s><button
                         class="btnD offerBtn"><small
@@ -65,7 +65,7 @@
                           OFF</small></button>
                     </p>
                   </div>
-                  <div *ngIf="offerApply=='false'">
+                  <div class="amountDiv" *ngIf="offerApply=='false'">
                     <p class="discount price-box"><b> Price :
                         {{product.discounted|currency:'INR':
                         'symbol' : '1.0-0'}} </b>
@@ -93,7 +93,7 @@
       <div class="sales-products grid-sales grid-sales-four-column">
         <div *ngFor="let product of beveragesProduct; let i = index">
           <ng-container>
-            <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
+            <a *ngIf="(screenWidth > 1100 && i<=3) || (screenWidth <= 1100 && i<=2) && (screenWidth > 650) || (screenWidth <= 650 && i<=1)" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
                 attr.value="{{product.value}}" attr.reviewrating="{{product.rating.length}}">
@@ -108,7 +108,7 @@
                 <div class="productDetails"><small>{{product.quantity}}</small></div>
                 <div class="productPrice">
                   <div class="ratings"><span class="rating"
-                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
+                    [attr.title]=" product.ratingAverage + ' Average Rated' ">{{product.ratingAverage}}<i
                       class="fa-solid fa-star fa-xs"></i></span><span
                     [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
                 </div>
@@ -148,7 +148,7 @@
       <div class="sales-products grid-sales grid-sales-four-column">
         <div *ngFor="let product of groceryProduct; let i = index">
           <ng-container>
-            <a *ngIf="i<=3" routerLink="/products/productDescription/{{product.id}}">
+            <a *ngIf="(screenWidth > 1100 && i<=3) || (screenWidth <= 1100 && i<=2) && (screenWidth > 650) || (screenWidth <= 650 && i<=1)" routerLink="/products/productDescription/{{product.id}}">
               <div class="productBox groceryProducts grocery {{product.classData}}" attr.id="{{product.id}}"
                 attr.filtervalue="{{product.filterValue}}" attr.uniqueid="{{product.uniqueId}}"
                 attr.value="{{product.value}}" attr.reviewrating="{{product.rating.length}}">
@@ -163,7 +163,7 @@
                 <div class="productDetails"><small>{{product.quantity}}</small></div>
                 <div class="productPrice">
                   <div class="ratings"><span class="rating"
-                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
+                    [attr.title]=" product.ratingAverage + ' Average Rated' ">{{product.ratingAverage}}<i
                       class="fa-solid fa-star fa-xs"></i></span><span
                     [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
                 </div>

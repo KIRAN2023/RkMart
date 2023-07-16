@@ -11,7 +11,7 @@ a {
   color: none;
 }
 
-body{
+body {
   background-color: rgb(253, 255, 253);
 }
 
@@ -26,7 +26,7 @@ body{
   --background-hover: rgba(19, 110, 29, 0.697);
 }
 
-@media (prefers-color-scheme:dark){
+@media (prefers-color-scheme:dark) {
 
   :root {
     --box-shadow: -1px 6px 16px -1px rgba(8, 8, 8, 1);
@@ -63,8 +63,8 @@ section {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid-saled-three-columns{
-  grid-template-columns: repeat(3,1fr);
+.grid-saled-three-columns {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .grid-four-columns {
@@ -127,9 +127,10 @@ i {
   padding: 0.3rem;
   border-radius: 0.5rem;
   width: fit-content;
+  font-size: 0.9rem;
 }
 
-input{
+input {
   accent-color: var(--btns-background);
   caret-color: var(--btns-background);
 }
@@ -137,7 +138,9 @@ input{
 /* --------------------------------------------------- */
 
 input,
-button, select, textarea {
+button,
+select,
+textarea {
   border: 0.1rem solid var(--btns-background);
 }
 
@@ -303,11 +306,11 @@ input[type="number"] {
 
 /* Shipping Section */
 
-:is(.shippingBox, .shipmentSection, .paymentSection ) .btn{
+:is(.shippingBox, .shipmentSection, .paymentSection) .btn {
   font-weight: 700;
 }
 
-:is(.shippingBox, .shipmentSection, .paymentSection ) .btn:hover{
+:is(.shippingBox, .shipmentSection, .paymentSection) .btn:hover {
   background: var(--btns-background);
   color: var(--white);
 }
@@ -372,14 +375,14 @@ input[type="number"] {
   transition: all 0.3s linear;
 }
 
-.fa-xmark {
+.popupMsg .fa-xmark {
   border-radius: 50%;
   padding: 0.2rem 0.6rem;
   transition: all 0.3s linear;
 }
 
 .popupMsg .popupClose:hover,
-.fa-xmark:hover {
+.popupMsg .fa-xmark:hover {
   background-color: var(--btns-background);
   color: var(--white);
 }
@@ -473,6 +476,12 @@ main {
   justify-content: center;
   align-items: center;
   padding-right: 3rem;
+}
+
+.ProductDescriptionSection {
+  position: absolute;
+  top: 5rem;
+  margin-left: 2rem;
 }
 
 .productDetails {
@@ -612,3 +621,14 @@ main {
 
 
 /* -------------------------------Resuable Code Ends--------------------------------------- */
+
+@media screen and (max-width:420px) {
+  .offerPopUp {
+    width: 20rem;
+    height: 22rem;
+  }
+
+  .offerPopUp .offerContent {
+    padding: 0;
+  }
+}

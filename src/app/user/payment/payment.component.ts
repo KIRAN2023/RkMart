@@ -53,8 +53,8 @@ export class PaymentComponent implements OnInit {
   paymentModal() {
     if (this.payment.valid) {
       this.data.cartItems.forEach((product: any) => {
-        let date:Date = new Date();
-        date.setDate(date.getDate()+5);
+        let date: Date = new Date();
+        date.setDate(date.getDate() + 5);
         let deliveryData = date.toLocaleDateString();
 
         this.http.get(`http://localhost:3000/Productdata/${product.productid}`).subscribe((data: any) => {
@@ -67,6 +67,7 @@ export class PaymentComponent implements OnInit {
           let orderId = {
             orderid: product.orderUniqueId,
             productid: product.productid,
+            amount: product.originalAmount * product.quantity,
             status: 'Processing',
             deliveryDeadline: false,
             delivery: deliveryData,
@@ -87,6 +88,17 @@ export class PaymentComponent implements OnInit {
           this.http.post('http://localhost:3000/orderStatusUpdate', orderId).subscribe();
 
           this.http.post(`http://localhost:3000/payments`, payment).subscribe();
+
+          this.http.get(`http://localhost:3000/salesAmount/1`).subscribe((data: any) => {
+            if (data) {
+              let total = data.totalAmount + product.originalAmount * product.quantity;              
+              this.http.put(`http://localhost:3000/salesAmount/1`, {totalAmount:total}).subscribe((data: any) => {
+                if(data){
+                  sessionStorage.removeItem('shippingData');
+                }
+              })
+            }
+          })
         })
       })
 

@@ -29,11 +29,13 @@ export class AddProductsComponent implements OnInit {
   filterValue = ['10', '20', '30', '40', '50'];
   category: any = [];
 
-  currentProduct:any;
+  currentProduct: any;
 
   constructor(private productService: AdminProductsService, private formBuilder: FormBuilder, private activateUrl: ActivatedRoute, private http: HttpClient, private title: Title) {
     this.productService.categoryTypesCount().subscribe((category: any) => {
       category.forEach((category: any) => {
+        console.warn(category);
+
         this.category.push(category.categoryType);
       })
     })
@@ -51,8 +53,8 @@ export class AddProductsComponent implements OnInit {
       title: [, Validators.required],
       productName: [, Validators.required],
       quantity: [, Validators.required],
-      rating: [, Validators.required],
-      ratingAverage: [, Validators.required],
+      rating: [],
+      ratingAverage: [],
       originalAmount: [, Validators.required],
       discounted: [, Validators.required],
       actualAmount: [, Validators.required],
@@ -66,7 +68,7 @@ export class AddProductsComponent implements OnInit {
       this.head = "Update Product";
       this.editOptionData = "Update Product";
       this.productService.editProduct(this.idData).subscribe((product) => {
-        
+
         if (product) {
           this.currentProduct = product;
           this.head = "Update Product";
@@ -90,11 +92,14 @@ export class AddProductsComponent implements OnInit {
             this.addProductForm.controls['manufacture']?.setValue(product.manufacture),
             this.addProductForm.controls['packed']?.setValue(product.packed),
             this.addProductForm.controls['expiry']?.setValue(product.expiry)
+
+          this.title.setTitle(`${this.addProductForm.get('title')?.value} | RK MART`);
         }
-        this.title.setTitle(`${this.addProductForm.get('title')?.value} | RK MART`);
       });
 
       this.addProductForm.markAsPristine()
+    } else {
+      this.title.setTitle(`Add Product | RK MART`);
     }
     this.activateUrl.paramMap.subscribe((data) => {
       this.editProductURLId = data.get('id');
@@ -102,9 +107,12 @@ export class AddProductsComponent implements OnInit {
   }
 
   addProduct(formData: product) {
+    let rating: any = [];
+
     let productStatusMessageDiv = document.querySelector('#addProductMessage');
     let existProductData: any = false;
     this.addProductForm.invalid ? this.addProductMessage = 'Fill all the fields' : this.addProductMessage = undefined;
+    setTimeout(() => { this.addProductMessage = '' }, 3000)
 
     this.productService.getProducts().subscribe((products: any) => {
       products.find((product: any) => {
@@ -113,10 +121,23 @@ export class AddProductsComponent implements OnInit {
         }
       });
       if (existProductData == false) {
+        let updated: any;
         productStatusMessageDiv?.classList.remove('invalid');
         productStatusMessageDiv?.classList.add('valid');
         if (this.addProductForm.valid && existProductData != formData.productName) {
-          this.productService.addProduct(formData).subscribe((response) => {
+          if (this.idData) {
+            updated = {
+              ...formData,
+              rating: rating,
+              ratingAverage: 0
+            }
+          } else {
+            updated = {
+              ...formData
+            }
+          }
+
+          this.productService.addProduct(updated).subscribe((response) => {
             if (response) {
               this.addProductMessage = "Product Added Successfully";
             }
@@ -143,8 +164,6 @@ export class AddProductsComponent implements OnInit {
         }
         setTimeout(() => this.addProductMessage = undefined, 3000);
       });
-    } else {
-      alert("No Data has been Modified");
     }
   }
 

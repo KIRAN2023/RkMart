@@ -16,6 +16,7 @@ export class ProductsDataService {
   activeUserMail: string = "";
 
   endTime: Date = new Date();
+  offerApply:any;
 
   remainingTime: any = {
     days:0,
@@ -64,20 +65,19 @@ export class ProductsDataService {
     startTime.setHours(12, 0, 0); 
   
     const endTime = new Date();
-    console.log(endTime.getMonth());
     
-    endTime.setFullYear(2023, 5, 30)
-    endTime.setHours(17, 0, 0); 
+    endTime.setFullYear(2023, 6, 18)
+    endTime.setHours(18, 0, 0); 
   
     this.calculateRemainingTime(startTime, endTime);
   
     this.timerId = setInterval(() => {
       this.updateRemainingTime();
       if (this.remainingTime.days === 0 && this.remainingTime.hours === 0 && this.remainingTime.minutes === 0 && this.remainingTime.seconds === 0) {
-        sessionStorage.setItem("offerApply", "false");
+        this.offerApply = sessionStorage.setItem("offerApply", "false");
         clearInterval(this.timerId);
       } else {
-        sessionStorage.setItem("offerApply", "true");
+        this.offerApply = sessionStorage.setItem("offerApply", "true");
       }
     }, 1000);
   }

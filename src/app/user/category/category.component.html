@@ -1,17 +1,12 @@
-<!-- ------------------Navigation Menu----------------- -->
-<app-menu></app-menu>
-
 <!-- -------------Catergory Section----------------- -->
+
 <div class="mainDivison bevergeSection">
-
-    <div class="productsCount">
-        <p id="productsAvailable"></p>
-        <p id="OverallProductsAvailable"></p>
-        <p id="noProductsAvailable"></p>
+    <div class="category-bar" (click)="toggleCategory()">
+        <p  id="categoryBar"> <i class="fa-solid fa-bars"></i> Filter</p>
+        <p  id="categoryCloseMenu"> <i class="fa-solid fa-xmark"></i> Filter</p>
     </div>
-
     <div class="twoSection sectionGrid">
-
+    
         <div class="categoryData">
             <aside>
                 <h2>Filters</h2>
@@ -42,8 +37,9 @@
                             </div> -->
                             <ul>
                                 <li *ngFor="let categoryData of category.category, index as i">
-                                    <input type="checkbox" (change)="categorySelected($event, category?.categoryUniqueValue[i])" name={{categoryData}}
-                                        attr.data-btn-num={{category?.categoryUniqueValue[i]}}
+                                    <input type="checkbox"
+                                        (change)="categorySelected($event, category?.categoryUniqueValue[i])"
+                                        name={{categoryData}} attr.data-btn-num={{category?.categoryUniqueValue[i]}}
                                         value={{category?.categoryUniqueValue[i]}} class={{category?.categoryClass[i]}}>
                                     {{categoryData|titlecase}}
                                 </li>
@@ -52,7 +48,7 @@
                     </ng-container>
                 </div>
                 <hr>
-                <div class="accordin">
+                <div class="accordin" *ngIf="offerApply=='true'">
                     <input type="checkbox" name="discount" id="accordinData" class="accordinInput">
                     <label for="accordinData" class="accordinLabel">
                         <h5><b>Discounts</b></h5> <i class="fa-solid fa-chevron-down"></i>

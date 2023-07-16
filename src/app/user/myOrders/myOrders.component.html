@@ -22,7 +22,8 @@
               : </b> {{orderData.delivery}} </div>
           <div class="deliveryExcepted" *ngIf=" orderData.orderStatus =='Delivered'"> <b> Delivered on : </b>
             {{orderData.delivery}} </div>
-          <div class="reviewRatingSection" *ngIf="orderData.orderStatus =='Delivered' && orderData.reviewStatus=='false' ">
+          <div class="reviewRatingSection"
+            *ngIf="orderData.orderStatus =='Delivered' && orderData.reviewStatus=='false' ">
             <div class="reviewSection">
               <p> <b> Rating </b>
                 <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="onStarClick(orderData.productid,star)">
@@ -34,15 +35,17 @@
               </div>
             </div>
           </div>
-
           <button class="btn" id="cancelOrder"
             (click)="cancelOrder(orderData.orderUniqueId, orderData.productid, orderData.quantity, orderData.delivery)"
             *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' && orderData.deliveryDeadline == false ">Cancel
             Order</button>
           <div class="deliveryExcepted"
             *ngIf=" orderData.orderStatus !='Delivered' && orderData.orderStatus !='Cancelled' && orderData.deliveryDeadline == true">
-            <b> Order Deliver Soon </b> </div>
-
+            <b> Order Deliver Soon </b>
+          </div>
+          <div class="deliveryExcepted" title="Download" (click)="printOrder(orderData)" >
+            <i class="fa-solid fa-download"></i>
+          </div>
         </div>
         <!-- <hr> -->
         <div class="orderDescriptionData order-grid order-grid-four-column">

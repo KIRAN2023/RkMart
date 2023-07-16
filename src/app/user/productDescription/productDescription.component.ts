@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { cart, product } from 'src/app/admin/product';
@@ -32,6 +32,13 @@ export class ProductDescriptionComponent implements OnInit {
 
   offerEnd: Date = new Date();
 
+  screenWidth: any;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = event.target.innerWidth;
+  }
+
   constructor(private productDataService: ProductsDataService, private cartService: CartService, private route: ActivatedRoute, private titleService: Title, private http: HttpClient) {
     this.userLoggedin = Boolean(sessionStorage.getItem("userLoggedIn")) || this.productDataService.userLogin;
     this.productDataService.userLogin = this.userLoggedin;
@@ -50,6 +57,7 @@ export class ProductDescriptionComponent implements OnInit {
         });
 
         this.finalProduct = this.allProducts.find((product: product) => product.id == this.requiredProduct);
+        console.log(this.finalProduct);
 
         this.cartService.getUsersCartList(sessionStorage.getItem("userId"));
         this.loadFeaturedProducts();
@@ -61,7 +69,8 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.offerApply = sessionStorage.getItem('offerApply')
+    this.screenWidth = window.innerWidth;
+    this.offerApply = sessionStorage.getItem('offerApply');
   }
 
   loadFeaturedProducts() {

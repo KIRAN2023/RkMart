@@ -12,6 +12,7 @@ import { CartService } from 'src/app/user/cart.service';
 })
 export class MyOrdersComponent implements OnInit {
   userid = sessionStorage.getItem("userId");
+  username = sessionStorage.getItem('userName');
   orderData: any = [];
   orderTotalAmount: any;
 
@@ -87,13 +88,22 @@ export class MyOrdersComponent implements OnInit {
 
         let orderDatas;
         let id;
+        let amount = 0;
         this.http.get(`http://localhost:3000/orderStatusUpdate?orderid=${orderId}`).subscribe((data: any) => {
           orderDatas = data;
           id = orderDatas[0].id;
+          amount = orderDatas[0].amount;
 
           this.http.patch(`http://localhost:3000/orderStatusUpdate/${id}`, { status: "Cancelled" }).subscribe((res) => {
             if (res) {
-              alert("Cancelled Successfully");
+              this.http.get(`http://localhost:3000/salesAmount/1`).subscribe((data: any) => {
+                if (data) {
+                  let total = data.totalAmount - amount;
+                  this.http.put(`http://localhost:3000/salesAmount/1`, { totalAmount: total }).subscribe((data: any) => {
+                    alert("Cancelled Successfully");
+                  })
+                }
+              })
             }
           });
 
@@ -157,5 +167,73 @@ export class MyOrdersComponent implements OnInit {
     return this.http.patch(`http://localhost:3000/Productdata/${productid}`, updatedProduct);
   }
 
+  printOrder(orderData:any){
+
+    let printReceipt = `
+    <html lang="en">
+    <head>
+      <title> ${this.username} - Order ID : ${ orderData.orderUniqueId } - RkMart </title>
+      <style>
+      .orderBox {
+        width: max-content;
+        height: max-content;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        background-color: #fff;
+        border: 0.1rem solid rgb(29, 106, 193);;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h2, .status{
+        color:rgb(191, 53, 53);
+      }
+      span{
+        color:rgb(8, 5, 97);
+      }
+      </style>
+    </head>
+    <body>
+
+    <h2> RK <span> MART <span> </h2>
+    <h4> User Name : ${this.username} </h4>
+
+    <div class="orderBox">
+        <div>
+          <p> <b> Order Id: </b> ${orderData.orderUniqueId} </p>
+          <p> <b> Ordered On : </b> ${orderData.orderDate} </p>
+          <div
+            ${orderData.orderStatus !=='Delivered' && orderData.orderStatus !=='Cancelled'?'':'style="display:none"'}> <b> Delivery Excepted
+              : </b> ${orderData.delivery} </div>
+          <div ${orderData.orderStatus =='Delivered'?'':'style="display:none"'}> <b> Delivered On : </b>
+            ${orderData.delivery} 
+          </div>
+        </div>
+        <div>
+          <div>
+            <p> <b> Product : </b> ${ orderData.productName }</p>
+            <div>
+              <p> <b>Quantity : </b>${ orderData.quantity }</p>
+              <p> <b> Total Amount : </b> ${ orderData.originalAmount } </p>
+            </div>
+          </div>
+        </div>
+        <div>
+        <hr>
+        <p> <b> Status : <span class="status"> ${orderData.orderStatus} </span> </b></p>
+        <p> <b> Total : </b> ${ orderData.originalAmount * orderData.quantity}</p>
+        </div>
+    </div>
+      
+    </body>
+    </html>
+    `
+    let receipt = window.open('','_blank');
+    receipt?.document.write(printReceipt);
+    receipt?.document.close();
+    receipt?.print();
+  }
 
 }

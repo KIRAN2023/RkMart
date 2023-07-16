@@ -2,11 +2,11 @@
 <app-menu (loginStatus)="loginStatusData($event)"></app-menu>
 
 <!-- -------------------------Product Description----------------------- -->
-
+<div class="ProductDescriptionSection">
+    <div class="btn" routerLink="../../"> <i class="fa-solid fa-arrow-left"></i> Back</div>
+</div>
 <div class="productsDescriptionBox">
-    <div class="ProductDescriptionSection">
-        <div class="btn" routerLink="../../"> <i class="fa-solid fa-arrow-left"></i> Back</div>
-    </div>
+   
     <div class="productGrid productgrid-two-columns">
         <div class="productImage productDec">
             <div class="mainImageDiv">
@@ -36,8 +36,8 @@
             <h3>{{finalProduct?.title}}</h3>
             <div class="productRatings">
                 <div class="ratings">
-                    <span class="rating">{{finalProduct.ratingAverage}}<i class="fa-solid fa-star fa-xs"></i></span>
-                    <span> {{finalProduct.rating.length}} Ratings </span>
+                    <span class="rating"> {{finalProduct?.ratingAverage}} <i class="fa-solid fa-star fa-xs"></i></span>
+                    <span> {{finalProduct?.rating.length}} Ratings </span>
                 </div>
                 <div class="productCostData">
                     <h4>Special Price</h4>

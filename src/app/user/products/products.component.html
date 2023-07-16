@@ -2,9 +2,9 @@
 <app-menu></app-menu>
 
 <!-- ------------------Product Section----------- -->
-
 <div class="grid-section grid-two-section">
   <app-category></app-category>
+ 
   <div>
     <div class="searchBox">
       <input type="search" id="productBox" class="clearSearch" [(ngModel)]="searchData" (ngModelChange)="searchProduct()" placeholder="Search Products">
@@ -38,7 +38,7 @@
               <div class="productDetails"><small>{{product.quantity}}</small></div>
               <div class="productPrice">
                 <div class="ratings"><span class="rating"
-                    [attr.title]=" product.ratingAverage + ' Rated' ">{{product.ratingAverage}}<i
+                    [attr.title]=" product.ratingAverage + ' Average Rated' ">{{product.ratingAverage}}<i
                       class="fa-solid fa-star fa-xs"></i></span><span
                     [attr.title]=" product.rating.length + ' Verified Reviews' ">({{product.rating.length}})</span>
                 </div>

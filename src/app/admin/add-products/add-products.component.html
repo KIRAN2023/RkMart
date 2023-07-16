@@ -73,15 +73,15 @@
                         <label for="originalAmount"> Actual Amount </label>
                         <input type="text" name="actualAmount" formControlName="actualAmount">
                     </div>
-                    <div class="form-fields" *ngIf="currentProduct.category=='beverages' || currentProduct.category=='household' ">
+                    <div class="form-fields">
                         <label for="manufacture"> Manufactured </label>
                         <input type="text" name="manufacture" formControlName="manufacture">
                     </div>
-                    <div class="form-fields" *ngIf="currentProduct.category=='grocery'">
+                    <div class="form-fields" >
                         <label for="packed"> Packed </label>
                         <input type="text" name="packed" formControlName="packed">
                     </div>
-                    <div class="form-fields"  *ngIf="currentProduct.category=='beverages'">
+                    <div class="form-fields" >
                         <label for="expiry"> Expiry </label>
                         <input type="text" name="expiry" formControlName="expiry">
                     </div>

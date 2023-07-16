@@ -15,46 +15,18 @@
       "id": 1
     },
     {
-      "username": "Sakthvel",
-      "mail": "sk@gmail.com",
-      "mobile": "9887878897",
-      "password": "U2FsdGVkX18rXYGEEcjN4QeN6Sxc9DZ6xgny59gXhKo=",
-      "id": 2
-    },
-    {
-      "username": "Rkm",
-      "mail": "rk@gmail.com",
-      "mobile": "9596586959",
-      "password": "U2FsdGVkX1+rTsf+IPqngGqOs0Yh22x5Kma7UqqqFVQ=",
-      "id": 3
-    },
-    {
-      "username": "sakthivel",
+      "username": "Sakthivel",
       "mail": "sakthi@gmail.com",
-      "mobile": "7898696978",
-      "password": "U2FsdGVkX1/K34j9CLDACK4uNtGEMyYORUqhopl/NV4=",
+      "mobile": "9845946759",
+      "password": "U2FsdGVkX19HRpVFRfdWZDAB6yvKKUxYLqdRDqHhT6s=",
       "id": 2
-    },
-    {
-      "username": "Nitin",
-      "mail": "nitin@gmail.com",
-      "mobile": "9584986986",
-      "password": "U2FsdGVkX1/KLxkDeUjP6x+eA3bnHC3DMvVjJCXYUZU=",
-      "id": 4
-    },
-    {
-      "username": "Rkm",
-      "mail": "rkm@gmail.com",
-      "mobile": "6888384834",
-      "password": "U2FsdGVkX1/qQQHwiXqzwvAqhJG/aNZJOxaHKQuH6bg=",
-      "id": 5
     }
   ],
   "Productdata": [
     {
-      "Stock": 71,
+      "Stock": 69,
       "category": "grocery",
-      "packed": "March 3, 2023",
+      "packed": "June 3, 2023",
       "uniqueId": "1",
       "filterValue": "1",
       "classData": "p-btn--1 p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
@@ -72,11 +44,11 @@
       "id": 1
     },
     {
-      "Stock": 79,
-      "category": "grocery",
-      "packed": "June 3, 2023",
+      "Stock": 75,
+      "packed": "July 3, 2023",
       "uniqueId": "2",
       "filterValue": "1",
+      "category": "grocery",
       "classData": "p-btn--1 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
       "value": "10",
       "image": "assets/images/VeggetablesFruits/appleGranny.png",
@@ -84,8 +56,10 @@
       "title": "Apple Granny",
       "productName": "Apple Granny Smith 4 pcs",
       "quantity": "450g - 600g (Approx)",
-      "rating": [],
-      "ratingAverage": 0,
+      "rating": [
+        3
+      ],
+      "ratingAverage": 3,
       "originalAmount": "249",
       "discounted": "299",
       "actualAmount": "249",
@@ -134,7 +108,7 @@
     {
       "Stock": 90,
       "category": "grocery",
-      "packed": "July 3, 2023",
+      "packed": "June 3, 2023",
       "uniqueId": "5",
       "filterValue": "2",
       "classData": " p-btn--2 p-btn--14 p-btn--27 p-btn--28 p-btn--30 p-btn--31",
@@ -154,7 +128,7 @@
     {
       "Stock": 79,
       "category": "grocery",
-      "packed": "July 3, 2023",
+      "packed": "May 3, 2023",
       "uniqueId": "6",
       "filterValue": "2",
       "classData": " p-btn--2 p-btn--14 p-btn--27 p-btn--26 p-btn--28 p-btn--30 p-btn--31",
@@ -244,7 +218,7 @@
       "id": 9
     },
     {
-      "Stock": 90,
+      "Stock": 89,
       "category": "grocery",
       "packed": "July 3, 2023",
       "uniqueId": "10",
@@ -258,9 +232,10 @@
       "quantity": "1kg (Approx)",
       "rating": [
         1,
-        1
+        1,
+        4
       ],
-      "ratingAverage": 1,
+      "ratingAverage": 2,
       "originalAmount": "39",
       "discounted": "49",
       "actualAmount": "39",
@@ -347,7 +322,7 @@
       "id": 14
     },
     {
-      "Stock": 6,
+      "Stock": 0,
       "category": "beverages",
       "manufacture": "June, 2023",
       "expiry": "March, 2024",
@@ -368,7 +343,7 @@
       "id": 15
     },
     {
-      "Stock": 50,
+      "Stock": 47,
       "category": "beverages",
       "manufacture": "June, 2023",
       "expiry": "March, 2024",
@@ -434,7 +409,7 @@
       "id": 18
     },
     {
-      "Stock": 39,
+      "Stock": 38,
       "category": "beverages",
       "manufacture": "June, 2023",
       "expiry": "March, 2024",
@@ -448,9 +423,10 @@
       "productName": "Maaza Mango Drink",
       "quantity": "500ml",
       "rating": [
-        2
+        2,
+        4
       ],
-      "ratingAverage": 2,
+      "ratingAverage": 3,
       "originalAmount": "33",
       "discounted": "40",
       "actualAmount": "33",
@@ -583,7 +559,7 @@
       "id": 25
     },
     {
-      "Stock": 52,
+      "Stock": 50,
       "category": "beverages",
       "manufacture": "June, 2023",
       "expiry": "March, 2024",
@@ -696,7 +672,7 @@
       "id": 30
     },
     {
-      "Stock": 75,
+      "Stock": 72,
       "category": "household",
       "manufacture": "January, 2023",
       "uniqueId": "31",
@@ -736,7 +712,7 @@
       "id": 32
     },
     {
-      "Stock": 61,
+      "Stock": 59,
       "category": "household",
       "manufacture": "January, 2023",
       "uniqueId": "33",
@@ -756,7 +732,7 @@
       "id": 33
     },
     {
-      "Stock": 27,
+      "Stock": 26,
       "category": "household",
       "manufacture": "January, 2023",
       "uniqueId": "34",
@@ -828,10 +804,6 @@
     {
       "categoryTypeData": "household",
       "id": 3
-    },
-    {
-      "categoryTypeData": "k",
-      "id": 4
     }
   ],
   "category": [
@@ -921,508 +893,18 @@
         "19"
       ],
       "id": 3
-    },
-    {
-      "categoryType": "krt",
-      "category": [
-        "k"
-      ],
-      "categoryClass": [
-        "k"
-      ],
-      "categoryUniqueValue": [
-        "k"
-      ],
-      "id": 4
     }
   ],
-  "cartData": [
-    {
-      "productName": "Apple Fuji Pack 4 ",
-      "title": "Apple Fuji",
-      "image": "assets/images/VeggetablesFruits/appleFuji.png",
-      "productUniqueId": "1",
-      "quantity": 3,
-      "originalAmount": "200",
-      "actualAmount": "169",
-      "discountedPrice": "200",
-      "productid": 1,
-      "uid": "5",
-      "orderUniqueId": 16669,
-      "id": 4
-    },
-    {
-      "productName": "Apple Indian 6 pcs",
-      "title": "Apple Indian",
-      "image": "assets/images/VeggetablesFruits/appleIndian.png",
-      "productUniqueId": "4",
-      "quantity": 1,
-      "originalAmount": "118",
-      "actualAmount": "99",
-      "discountedPrice": "118",
-      "productid": 4,
-      "uid": "5",
-      "orderUniqueId": 44085,
-      "id": 5
-    },
-    {
-      "productName": "Maaza Mango Drink",
-      "title": "Mango Drink",
-      "image": "assets/images/Beverges/bevergeMaaza.png",
-      "productUniqueId": "19",
-      "quantity": 1,
-      "originalAmount": "40",
-      "actualAmount": "33",
-      "discountedPrice": "40",
-      "productid": 19,
-      "uid": "1",
-      "orderUniqueId": 49290,
-      "id": 6
-    }
-  ],
+  "cartData": [],
   "Queries": [],
-  "orders": [
-    {
-      "customerName": "Kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "9565975569",
-      "customerState": "k",
-      "customerCity": "k",
-      "customerPincode": "473473",
-      "customerAddress": "k",
-      "cartItems": [
-        {
-          "productName": "Prestige Atlas 3.0 Induction Cooktop",
-          "title": "Prestige Induction Cooktop",
-          "image": "assets/images/HouseHoldProducts/electricInduction.png",
-          "productUniqueId": "30",
-          "quantity": 2,
-          "originalAmount": "2895",
-          "actualAmount": "895",
-          "discountedPrice": "2895",
-          "productid": 30,
-          "uid": "1",
-          "orderUniqueId": 41844,
-          "id": 1
-        },
-        {
-          "productName": "Apple Red Delicious 4 pcs",
-          "title": "Apple Red",
-          "image": "assets/images/VeggetablesFruits/appleRed.png",
-          "productUniqueId": "3",
-          "quantity": 1,
-          "originalAmount": "195",
-          "actualAmount": "172",
-          "discountedPrice": "195",
-          "productid": 3,
-          "uid": "1",
-          "orderUniqueId": 70862,
-          "id": 2
-        },
-        {
-          "productName": "Banana Red (Box)",
-          "title": "Banana Red",
-          "image": "assets/images/VeggetablesFruits/bananaRed.png",
-          "productUniqueId": "6",
-          "quantity": 2,
-          "originalAmount": "169",
-          "actualAmount": "129",
-          "discountedPrice": "169",
-          "productid": 6,
-          "uid": "1",
-          "orderUniqueId": 5251,
-          "id": 3
-        }
-      ],
-      "totalAmount": 6323,
-      "uid": "1",
-      "id": 1
-    },
-    {
-      "customerName": "Kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "9565975569",
-      "customerState": "o",
-      "customerCity": "k",
-      "customerPincode": "122121",
-      "customerAddress": "ay",
-      "cartItems": [
-        {
-          "productName": "Pepsi Can (pack 6)",
-          "title": "Pepsi",
-          "image": "assets/images/Beverges/bevergePepsiCan.png",
-          "productUniqueId": "26",
-          "quantity": 1,
-          "originalAmount": "1200",
-          "actualAmount": "920",
-          "discountedPrice": "1200",
-          "productid": 26,
-          "uid": "1",
-          "orderUniqueId": 40888,
-          "id": 1
-        },
-        {
-          "productName": "Badam Drink Mix",
-          "title": "Badam Drink",
-          "image": "assets/images/Beverges/bevergeBadamMix.png",
-          "productUniqueId": "17",
-          "quantity": 1,
-          "originalAmount": "275",
-          "actualAmount": "191",
-          "discountedPrice": "275",
-          "productid": 17,
-          "uid": "1",
-          "orderUniqueId": 78855,
-          "id": 2
-        },
-        {
-          "productName": "Lauki (Bottle Gourd)",
-          "title": "Lauki",
-          "image": "assets/images/VeggetablesFruits/bottleGourd.png",
-          "productUniqueId": "10",
-          "quantity": 1,
-          "originalAmount": "49",
-          "actualAmount": "39",
-          "discountedPrice": "49",
-          "productid": 10,
-          "uid": "1",
-          "orderUniqueId": 78071,
-          "id": 3
-        }
-      ],
-      "totalAmount": 1524,
-      "uid": "1",
-      "id": 2
-    },
-    {
-      "customerName": "Kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "9565975569",
-      "customerState": "ok",
-      "customerCity": "ay",
-      "customerPincode": "727273",
-      "customerAddress": "okay",
-      "cartItems": [
-        {
-          "productName": "Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle",
-          "title": "Butterfly Kettle & Water Bottle",
-          "image": "assets/images/HouseHoldProducts/butterfluRapidKettle.png",
-          "productUniqueId": "29",
-          "quantity": 1,
-          "originalAmount": "1499",
-          "actualAmount": "800",
-          "discountedPrice": "1499",
-          "productid": 29,
-          "uid": "1",
-          "orderUniqueId": 50677,
-          "id": 1
-        },
-        {
-          "productName": "Green Capsicum",
-          "title": "Green Capsicum",
-          "image": "assets/images/VeggetablesFruits/greenCapsicum.png",
-          "productUniqueId": "9",
-          "quantity": 3,
-          "originalAmount": "84",
-          "actualAmount": "66",
-          "discountedPrice": "84",
-          "productid": 9,
-          "uid": "1",
-          "orderUniqueId": 53216,
-          "id": 2
-        },
-        {
-          "productName": "Limca Lime n Lemoni",
-          "title": "Limca",
-          "image": "assets/images/Beverges/bevergeLimca.png",
-          "productUniqueId": "15",
-          "quantity": 4,
-          "originalAmount": "95",
-          "actualAmount": "68",
-          "discountedPrice": "95",
-          "productid": 15,
-          "uid": "1",
-          "orderUniqueId": 65535,
-          "id": 3
-        }
-      ],
-      "totalAmount": 2131,
-      "uid": "1",
-      "id": 3
-    },
-    {
-      "customerName": "Rkm",
-      "customerMail": "rkm@gmail.com",
-      "customerMobile": "6888384834",
-      "customerState": "r",
-      "customerCity": "k",
-      "customerPincode": "789898",
-      "customerAddress": "m",
-      "cartItems": [
-        {
-          "productName": "Apple Fuji Pack 4 ",
-          "title": "Apple Fuji",
-          "image": "assets/images/VeggetablesFruits/appleFuji.png",
-          "productUniqueId": "1",
-          "quantity": 3,
-          "originalAmount": "200",
-          "actualAmount": "169",
-          "discountedPrice": "200",
-          "productid": 1,
-          "uid": "5",
-          "orderUniqueId": 16669,
-          "id": 4
-        },
-        {
-          "productName": "Apple Indian 6 pcs",
-          "title": "Apple Indian",
-          "image": "assets/images/VeggetablesFruits/appleIndian.png",
-          "productUniqueId": "4",
-          "quantity": 1,
-          "originalAmount": "118",
-          "actualAmount": "99",
-          "discountedPrice": "118",
-          "productid": 4,
-          "uid": "5",
-          "orderUniqueId": 44085,
-          "id": 5
-        }
-      ],
-      "totalAmount": 718,
-      "uid": "5",
-      "id": 4
-    },
-    {
-      "customerName": "Kiran",
-      "customerMail": "kiran2023@gmail.com",
-      "customerMobile": "9565975569",
-      "customerState": "k",
-      "customerCity": "k",
-      "customerPincode": "382382",
-      "customerAddress": "k",
-      "cartItems": [
-        {
-          "productName": "Maaza Mango Drink",
-          "title": "Mango Drink",
-          "image": "assets/images/Beverges/bevergeMaaza.png",
-          "productUniqueId": "19",
-          "quantity": 1,
-          "originalAmount": "40",
-          "actualAmount": "33",
-          "discountedPrice": "40",
-          "productid": 19,
-          "uid": "1",
-          "orderUniqueId": 49290,
-          "id": 6
-        }
-      ],
-      "totalAmount": 40,
-      "uid": "1",
-      "id": 5
-    }
-  ],
-  "payments": [
-    {
-      "orderid": 41844,
-      "productid": 30,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 1
-    },
-    {
-      "orderid": 70862,
-      "productid": 3,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 2
-    },
-    {
-      "orderid": 5251,
-      "productid": 6,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 3
-    },
-    {
-      "orderid": 40888,
-      "productid": 26,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 4
-    },
-    {
-      "orderid": 78855,
-      "productid": 17,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 5
-    },
-    {
-      "orderid": 78855,
-      "productid": 17,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 6
-    },
-    {
-      "orderid": 78071,
-      "productid": 10,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 7
-    },
-    {
-      "orderid": 50677,
-      "productid": 29,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 8
-    },
-    {
-      "orderid": 16669,
-      "productid": 1,
-      "uid": "5",
-      "status": "Payment Done",
-      "id": 9
-    },
-    {
-      "orderid": 44085,
-      "productid": 4,
-      "uid": "5",
-      "status": "Payment Done",
-      "id": 10
-    },
-    {
-      "orderid": 49290,
-      "productid": 19,
-      "uid": "1",
-      "status": "Payment Done",
-      "id": 11
-    }
-  ],
-  "orderStatusUpdate": [
-    {
-      "orderid": 41844,
-      "productid": 30,
-      "status": "Delivered",
-      "deliveryDeadline": false,
-      "delivery": "1/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 82,
-      "reviewStatus": "true",
-      "id": 1
-    },
-    {
-      "orderid": 5251,
-      "productid": 6,
-      "status": "Delivered",
-      "deliveryDeadline": false,
-      "delivery": "1/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 79,
-      "reviewStatus": "true",
-      "id": 2
-    },
-    {
-      "orderid": 70862,
-      "productid": 3,
-      "status": "Cancelled",
-      "deliveryDeadline": false,
-      "delivery": "6/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 68,
-      "reviewStatus": "true",
-      "id": 3
-    },
-    {
-      "orderid": 40888,
-      "productid": 26,
-      "status": "Delivered",
-      "deliveryDeadline": false,
-      "delivery": "1/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 52,
-      "reviewStatus": "true",
-      "id": 4
-    },
-    {
-      "orderid": 78855,
-      "productid": 17,
-      "status": "Delivered",
-      "deliveryDeadline": false,
-      "delivery": "1/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 32,
-      "reviewStatus": "true",
-      "id": 5
-    },
-    {
-      "orderid": 78855,
-      "productid": 17,
-      "status": "Processing",
-      "deliveryDeadline": false,
-      "delivery": "6/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 32,
-      "reviewStatus": "false",
-      "id": 6
-    },
-    {
-      "orderid": 78071,
-      "productid": 10,
-      "status": "Delivered",
-      "deliveryDeadline": false,
-      "delivery": "1/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 90,
-      "reviewStatus": "true",
-      "id": 7
-    },
-    {
-      "orderid": 50677,
-      "productid": 29,
-      "status": "Delivered",
-      "deliveryDeadline": false,
-      "delivery": "1/7/2023",
-      "orderDate": "1/7/2023",
-      "Stock": 26,
-      "reviewStatus": "true",
-      "id": 8
-    },
-    {
-      "orderid": 16669,
-      "productid": 1,
-      "status": "Delivered",
-      "deliveryDeadline": false,
-      "delivery": "2/7/2023",
-      "orderDate": "2/7/2023",
-      "Stock": 71,
-      "reviewStatus": "true",
-      "id": 9
-    },
-    {
-      "orderid": 44085,
-      "productid": 4,
-      "status": "Processing",
-      "deliveryDeadline": false,
-      "delivery": "7/7/2023",
-      "orderDate": "2/7/2023",
-      "Stock": 16,
-      "reviewStatus": "false",
-      "id": 10
-    },
-    {
-      "orderid": 49290,
-      "productid": 19,
-      "status": "Delivered",
-      "deliveryDeadline": true,
-      "delivery": "3/7/2023",
-      "orderDate": "3/7/2023",
-      "Stock": 39,
-      "reviewStatus": "true",
-      "id": 11
-    }
-  ],
+  "orders": [],
+  "payments": [],
+  "orderStatusUpdate": [],
   "forgotPasswordRequest": [],
-  "salesAmount": []
+  "salesAmount": [
+    {
+      "totalAmount": 0,
+      "id": 1
+    }
+  ]
 }
