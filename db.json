@@ -16,6 +16,20 @@
     },
     {
       "username": "Sakthivel",
+      "mail": "sk@gmail.com",
+      "mobile": "9887878897",
+      "password": "U2FsdGVkX18rXYGEEcjN4QeN6Sxc9DZ6xgny59gXhKo=",
+      "id": 2
+    },
+    {
+      "username": "Rkm",
+      "mail": "rk@gmail.com",
+      "mobile": "9596586959",
+      "password": "U2FsdGVkX1+rTsf+IPqngGqOs0Yh22x5Kma7UqqqFVQ=",
+      "id": 3
+    },
+    {
+      "username": "sakthivel",
       "mail": "sakthi@gmail.com",
       "mobile": "9845946759",
       "password": "U2FsdGVkX19HRpVFRfdWZDAB6yvKKUxYLqdRDqHhT6s=",
@@ -38,6 +52,8 @@
       "quantity": "500g - 700g (Approx)",
       "rating": [],
       "ratingAverage": 0,
+      "ratingCount": "1726",
+      "reviewCount": "105",
       "originalAmount": "169",
       "discounted": "200",
       "actualAmount": "169",
